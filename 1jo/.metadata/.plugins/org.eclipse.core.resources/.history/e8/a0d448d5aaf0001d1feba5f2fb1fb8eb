@@ -1,0 +1,64 @@
+package heesung;
+
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.impl.StdSchedulerFactory;
+
+public class CronTriggerTest {
+	private SchedulerFactory schedFact;
+	private Scheduler sched;
+		
+	
+	public CronTriggerTest() {
+		try {
+		schedFact = new StdSchedulerFactory();
+			sched = schedFact.getScheduler();
+			
+//=================================첫번째 스케줄러=================================
+	    	
+//	    	ㅡ job1은 CronTestJob1.class의 내용을 실행한다.ㅡ
+			JobDetail job1 = JobBuilder.newJob(CronTestJob1.class)
+					.withIdentity("cJob1", Scheduler.DEFAULT_GROUP)
+					.build();
+			Trigger tg1 = (Trigger) TriggerBuilder.newTrigger()
+					.withIdentity("CronTrigger1", "c_group1")
+					.startNow()
+					.withSchedule(CronScheduleBuilder.cronSchedule("0/5 0 5-6 * * ?"))
+//																		ㄴ 0/5가 속한 위치는 "초" 필드이며, 0부터 시작하여 5초 간격으로 실행됨을 의미한다.
+//					.modifiedByCalendar("test")
+					.build();
+			sched.scheduleJob(job1, tg1);
+			
+
+//=================================두번째 스케줄러=================================
+	    	
+//	    	ㅡ job1은 CronTestJob1.class의 내용을 실행한다.ㅡ
+			JobDetail job2 = JobBuilder.newJob(CronTestJob2.class)
+					.withIdentity("cJob2", Scheduler.DEFAULT_GROUP)
+					.build();
+			Trigger tg2 = (Trigger) TriggerBuilder.newTrigger()
+					.withIdentity("CronTrigger2", "c_group2")
+					.startNow()
+					.withSchedule(CronScheduleBuilder.cronSchedule("0/10 * 5-6 * * ?"))
+					.build();
+					
+			sched.scheduleJob(job2, tg2);
+					
+			sched.start();
+			
+		} catch (SchedulerException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		new CronTriggerTest();
+	}
+	
+}

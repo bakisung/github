@@ -1,0 +1,37 @@
+package heesung;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/LoginServlet.do")
+public class LoginServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String id = req.getParameter("id");
+		String password = req.getParameter("password");
+		
+		String loginResult = "/01/loginResult.jsp";
+		HttpSession session = req.getSession();
+		if (id != null && password != null) {
+			if (id.equals("dongju") && password.equals("1004")) {
+				session.setAttribute("memId", id);
+			}
+		}
+		RequestDispatcher rd = req.getRequestDispatcher(loginResult);
+		rd.forward(req, resp);
+	}
+	
+}

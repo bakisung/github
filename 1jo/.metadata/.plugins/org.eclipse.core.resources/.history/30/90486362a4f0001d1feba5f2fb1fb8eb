@@ -1,0 +1,59 @@
+package heesung;
+
+
+
+import java.sql.Date;
+import java.sql.Timestamp;
+
+import org.quartz.Calendar;
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.impl.StdSchedulerFactory;
+import org.quartz.impl.calendar.BaseCalendar;
+import org.quartz.impl.calendar.HolidayCalendar;
+
+public class CronModifiedTest {
+
+	public static void main(String[] args) throws SchedulerException {
+
+		SchedulerFactory schedFact = new StdSchedulerFactory(); 
+//							ㄴ 스케줄러 팩토리의 객체를 생성한다.
+		Scheduler sched = schedFact.getScheduler();		
+//										ㄴ 스케줄러 팩토리를 통해 스케줄러를 가져올 수 있다.
+		
+		HolidayCalendar hc = new HolidayCalendar();
+//						ㄴ 휴일을 의미하는 객체이다.
+
+		Date date = Date.valueOf("2023-05-12");
+		hc.addExcludedDate(date);
+		
+//		Timestamp t = Timestamp.valueOf("2023-05-12 01:33:00");
+//		hc.addExcludedDate(new Date(3000));
+//		hc.addExcludedDate(t);
+		
+		sched.addCalendar("MyCalendar", hc, false, true);
+//			 ㄴ addCalendar(캘린더명, 생성한 캘린더 객체, 캘린더에 지정된 일정을 무시하는지 여부, 스케줄러가 캘린더의 일정을 대체하는지 여부)
+		
+//		
+		JobDetail job = JobBuilder.newJob(CronTestJob1.class)
+				.withIdentity("mjob", Scheduler.DEFAULT_GROUP)
+				.build();
+		
+		Trigger tg = (Trigger) TriggerBuilder.newTrigger()
+				.withIdentity("newTrigger", "group1")
+				.withSchedule(CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+				.modifiedByCalendar("MyCalendar")
+				.build();
+		
+		sched.scheduleJob(job, tg);
+		
+		sched.start();
+	}
+
+}
