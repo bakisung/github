@@ -31,7 +31,7 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="sp_board.exerd" partName="sp_board.exerd" path="C:/github/eXERD/sp_board/sp_board.exerd" title="sp_board.exerd" tooltip="sp_board/sp_board.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="sp_board.exerd" partName="sp_board.exerd" path="D:/github/eXERD/sp_board/sp_board.exerd" title="sp_board.exerd" tooltip="sp_board/sp_board.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/sp_board/sp_board.exerd"/>
 </editor>
 </editors>
