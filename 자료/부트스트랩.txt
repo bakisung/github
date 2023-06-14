@@ -1,0 +1,16 @@
+1.구글 검색창 부트스트랩 어드민 lte
+2.제일 위 사이트 클릭
+3.라이브 프리뷰
+4.다운로드
+4.v3.2.0 버전 zip 파일 다운
+5.압축풀기
+6.starter.html 더블클릭
+7.페이지 우클릭해서 페이지원본(소스)보기 클릭
+8.dist폴더 plugins 폴더 (페이지소스에 있으므로) 필요한거임
+9.이클립스 web-inf에 html 파일 복사
+10.파일명 ~.jsp 파일로 변경
+11.최상단에 <!doctype html> 위에 
+	<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    	pageEncoding="EUC-KR"%> <- 복붙
+12.webcontent 폴더 하위에 assets 폴더 만들고 adminLTE 폴더의 dist와 plugins 폴더 복사붙여넣기
+13.main.jsp 코드 안에서 경로 수정
