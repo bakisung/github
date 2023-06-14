@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="assign">
+	<select id="getLecAssignList" parameterClass="String" resultClass="assignVO">
+		SELECT max(a.lec_code) lec_code
+			 , max(assign_no)	assign_no
+			 , max(assign_name)	assign_name
+			 , max(assign_content)	assign_content
+			 , max(assign_start)	assign_start
+			 , max(assign_end)	assign_end
+			 , max(lec_name)	lec_name
+		FROM all_assignment a, all_lecturelist l
+		WHERE a.lec_code = l.lec_code
+		AND a.lec_code = #lec_code#
+		GROUP BY assign_no
+	</select>
+
+	<insert id="insertAssign" parameterClass="assignVO">
+		<selectKey keyProperty="assign_no" resultClass="int">
+			SELECT assign_seq.nextval assign_no FROM dual
+		</selectKey>
+		INSERT INTO all_assignment VALUES (#assign_no#, #assign_name#, #assign_content#, #assign_start#, #assign_end#, #lec_code#)
+	</insert>
+	
+	<select id="getSubStudent" parameterClass="int" resultClass="assignVO">
+		SELECT max(a.assign_no) assign_no, a.stu_id, max(assign_subdate) assign_subdate, max(assign_path) assign_path, max(lec_name) lec_name, max(stu_name) stu_name, max(dept_name) dept_name
+		FROM assignment a, all_assignment aa, students s, all_lecturelist l, dept d
+		WHERE a.assign_no = aa.assign_no
+		AND a.stu_id = s.stu_id
+		AND aa.lec_code = l.lec_code
+		AND d.dept_code = s.dept_code
+		AND a.assign_no = #assign_no#
+		AND assign_path is not NULL
+		GROUP BY a.stu_id
+	</select>
+	
+	<select id="getStuAssignList" parameterClass="String" resultClass="assignVO">
+		SELECT max(a.lec_code) lec_code
+			 , max(a.assign_no)	assign_no
+			 , max(assign_name)	assign_name
+			 , max(assign_content)	assign_content
+			 , max(assign_start)	assign_start
+			 , max(assign_end)	assign_end
+			 , max(lec_name)	lec_name
+		FROM all_assignment a, all_lecturelist al, lecture l
+		WHERE a.lec_code = l.lec_code
+		AND a.lec_code = al.lec_code
+		AND l.stu_id = #stu_id#
+		GROUP BY a.assign_no
+		
+	</select>
+	
+	<select id="viewAssign" parameterClass="int" resultClass="assignVO">
+		SELECT *
+		FROM all_assignment
+		WHERE assign_no = #assign_no#
+	</select>
+	
+	<update id="updateAssign" parameterClass="assignVO">
+		UPDATE all_assignment SET assign_name = #assign_name#, assign_content = #assign_content#, assign_start = #assign_start#, assign_end = #assign_end#
+		WHERE assign_no = #assign_no#
+	</update>
+	
+	<delete id="deleteAssign" parameterClass="int">
+		DELETE all_assignment WHERE assign_no = #assign_no#
+	</delete>
+	
+	<insert id="insertAssignFile" parameterClass="assignVO">
+		INSERT INTO assignment VALUES (#assign_no#, #stu_id#, sysdate, #assign_path#)
+	</insert>
+	
+	<select id="existAssignFile" parameterClass="assignVO" resultClass="int">
+		SELECT COUNT(*)
+		FROM assignment
+		WHERE stu_id = #stu_id# AND assign_no = #assign_no#
+	</select>
+	
+	<update id="updateAssignFile">
+		UPDATE assignment SET assign_path = #assign_path#, assign_subdate = sysdate
+		WHERE stu_id = #stu_id# AND assign_no = #assign_no#
+	</update>
+	
+	<select id="getSubAssignFile" parameterClass="assignVO" resultClass="assignVO">
+		SELECT assign_no, assign_subdate, assign_path, stu_id
+		FROM assignment
+		WHERE assign_no = #assign_no# AND stu_id = #stu_id#
+	</select>
+	
+	<select id="getAllAssignPath" parameterClass="int" resultClass="String">
+		SELECT assign_path
+		FROM assignment
+		WHERE assign_no = #assign_no#
+	</select>
+</sqlMap>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="staff">
+	
+	<select id="staffLogin" parameterClass="String" resultClass="staffVO">
+		SELECT *
+		FROM staffs
+		WHERE staff_id = #staff_id#
+	</select>
+	
+	<select id="getStaffName" parameterClass="String" resultClass="String">
+		SELECT staff_name FROM staffs WHERE staff_id = #staff_id#
+	</select>
+	
+	<select id="idEmailCheck" parameterClass="staffVO" resultClass="int">
+		SELECT count(*) FROM staffs WHERE staff_id = #staff_id# AND staff_email = #staff_email#
+	</select>
+	<select id="getAllProfessorList" resultClass="StaffVO" parameterClass="Map">
+		SELECT *
+		  FROM (
+				SELECT *
+				FROM (
+					  SELECT rownum rnum, v1.*
+					  FROM (
+							SELECT s.*, d.dept_name
+							FROM staffs s, dept d
+							WHERE s.dept_code = d.dept_code
+					  		) v1
+					  WHERE rownum <![CDATA[ <= ]]> #end#
+					  ) v2
+				WHERE v2.rnum <![CDATA[ >= ]]> #start#
+			) b
+	</select>
+	<select id="getDept" resultClass="StaffVO">
+		SELECT dept_code, dept_name
+		  FROM dept
+	
+	</select>
+	<insert id="professorInsert" parameterClass="StaffVO">
+		INSERT INTO staffs (
+							   staff_id
+							  ,staff_name
+							  ,staff_gender
+							  ,staff_resnum
+							  ,staff_zipcode
+							  ,staff_addr
+							  ,staff_detailaddr
+							  ,dept_code
+							  ,staff_div
+							  ,staff_tel
+							  ,staff_email
+							  ,staff_state
+							  ,staff_hiredate
+							  ,auth_cd
+							  ,staff_pwd	
+							  )
+				VALUES (
+							   #staff_id#
+							  ,#staff_name#
+							  ,#staff_gender#
+							  ,#staff_resnum#
+							  ,#staff_zipcode#
+							  ,#staff_addr#
+							  ,#staff_detailaddr#
+							  ,#dept_code#
+							  ,#staff_div#
+							  ,#staff_tel#
+							  ,#staff_email#
+							  ,#staff_state#
+							  ,SYSDATE
+							  ,#auth_cd#
+							  ,#staff_pwd#
+							)
+	</insert>
+	
+	<delete id="professorDelete" parameterClass="String">
+		DELETE staffs WHERE staff_id = #staff_id#
+	</delete>
+	
+	<select id="getstaffInfo" parameterClass="String" resultClass="staffVO">
+		SELECT s.*, d.dept_name
+		  FROM staffs s, dept d
+		 WHERE s.dept_code = d.dept_code
+		   AND staff_id = #staff_id#
+	</select>
+	
+	<update id="professorUpdate" parameterClass="StaffVO">
+		UPDATE staffs SET staff_name = #staff_name#
+						 ,staff_gender = #staff_gender#
+						 ,staff_resnum = #staff_resnum#
+						 ,staff_zipcode = #staff_zipcode#
+						 ,staff_addr = #staff_addr#
+						 ,staff_detailaddr = #staff_detailaddr#
+						 ,dept_code = #dept_code#
+						 ,staff_tel = #staff_tel#
+						 ,staff_email = #staff_email#
+						 ,staff_state = #staff_state#
+			WHERE staff_id = #staff_id#
+	</update>
+	
+	<select id="selectProfessorCount" resultClass="int" parameterClass="String">
+		SELECT COUNT(*) cnt
+		  FROM staffs
+	</select>
+	
+	<update id="staffPasswordUpdate" parameterClass="staffVO">
+		UPDATE staffs SET staff_pwd = #staff_pwd#
+		 WHERE staff_id = #staff_id#
+	</update>
+	
+	<update id="staffInfoUpdate" parameterClass="staffVO">
+		UPDATE staffs SET staff_zipcode = #staff_zipcode#
+						 ,staff_addr = #staff_addr#
+						 ,staff_detailaddr = #staff_detailaddr#
+						 ,staff_tel = #staff_tel#
+		 WHERE staff_id = #staff_id#
+	</update>
+	
+	<select id="getDateList" resultClass="dateVO">
+		SELECT *
+		FROM datelist
+		ORDER BY year DESC, term DESC
+	</select>
+	
+	<insert id="insertDate" parameterClass="dateVO">
+		INSERT INTO datelist VALUES (#year#, #term#, #reg_start#, #reg_end#, #lec_start#, #lec_end#)
+	</insert>
+	
+	<select id="getDate" parameterClass="dateVO" resultClass="dateVO">
+		SELECT *
+		FROM datelist
+		WHERE year = #year# AND term = #term#
+	</select>
+	
+	<select id="existDate" parameterClass="dateVO" resultClass="int">
+		SELECT count(*)
+		FROM datelist
+		WHERE year = #year# AND term = #term#
+	</select>
+	
+	<update id="updateDate" parameterClass="dateVO">
+		UPDATE datelist SET reg_start = #reg_start#, reg_end = #reg_end#, lec_start = #lec_start#, lec_end = #lec_end#
+		WHERE year = #year# AND term = #term#
+	</update>
+</sqlMap>

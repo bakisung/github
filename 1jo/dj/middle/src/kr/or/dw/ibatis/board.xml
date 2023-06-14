@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="board">
+
+	<select id="selectBoardList" parameterClass="Map" resultClass="boardVO">
+		SELECT bd_no, bd_title, bd_content, bd_wdt, bd_hit
+		FROM (
+				SELECT *
+				FROM (
+					  SELECT rownum rnum, v1.*
+					  FROM (
+							SELECT *
+							FROM notice_board
+					  		WHERE gb_del = 'N'
+					  		AND bd_title like #search#	<!-- 추가 -->
+					  		ORDER BY bd_no DESC
+					  		) v1
+					  WHERE rownum <![CDATA[ <= ]]> #end#
+					  ) v2
+				WHERE v2.rnum <![CDATA[ >= ]]> #start#
+			) b
+	</select>
+	
+	<select id="selectBoardCount" resultClass="int" parameterClass="String">
+		SELECT COUNT(*) cnt
+		FROM notice_board
+		WHERE gb_del = 'N'
+		AND bd_title like #search# <!-- 추가 -->
+	</select>
+	
+	<select id="getBulletinBoardView" parameterClass="int" resultClass="boardVO">
+		SELECT *
+		FROM notice_board
+		WHERE bd_no = #bd_no#
+	</select>
+
+	<update id="deleteBulletinContent" parameterClass="int">
+		UPDATE notice_board SET gb_del = 'Y' WHERE bd_no = #bd_no#
+	</update>
+	
+	<insert id="insertBulletinContent" parameterClass="boardVO">
+		<selectKey keyProperty="bd_no" resultClass="int">
+			SELECT notice_board_seq.nextval bd_no FROM dual
+		</selectKey>
+		
+		INSERT INTO 
+			notice_board (
+						bd_no
+					   ,bd_title
+					   ,bd_content
+					   ,staff_id
+					   ,bd_wdt
+					   ,bd_hit
+					   ,gb_del
+				
+					)
+			VALUES (
+						#bd_no#
+					   ,#bd_title#
+					   ,#bd_content#
+					   ,#staff_id#
+					   ,sysdate
+					   ,0
+					   ,'N'
+					)
+			
+	</insert>
+	
+	<update id="updateBulletinContent" parameterClass="boardVO">
+		UPDATE notice_board SET bd_title = #bd_title#, bd_content = #bd_content#
+		WHERE bd_no = #bd_no#
+	</update>
+	
+	<update id="hitBulletinBoard" parameterClass="int">
+		UPDATE notice_board SET bd_hit = bd_hit + 1 WHERE bd_no = #bd_no#
+	</update>
+	
+	
+	<resultMap id="get-reno-result" class="boardVO">
+		<result property="re_no" column="re_no" nullValue="0" /> 
+		<result property="bd_no" column="bd_no" nullValue="0" /> 
+		<result property="bd_title" column="bd_title" nullValue="0" /> 
+		<result property="bd_content" column="bd_content" nullValue="0" /> 
+		<result property="bd_wdt" column="bd_wdt" nullValue="0" /> 
+		<result property="bd_hit" column="bd_hit" nullValue="0" /> 
+		<result property="stu_id" column="stu_id" nullValue="0" /> 
+		<result property="stu_name" column="stu_name" nullValue="0" /> 
+    </resultMap>
+	
+	
+	
+	<select id="selectStuBoardList" parameterClass="Map" resultClass="boardVO" resultMap="get-reno-result">
+		SELECT bd_no, bd_title, bd_content, bd_wdt, bd_hit, b.stu_id stu_id, stu_name, re_no
+		FROM (
+				SELECT *
+				FROM (
+					  SELECT rownum rnum, v1.*
+					  FROM (
+							SELECT sb.*, re_no
+							FROM stu_board sb, STU_BOARD_RE sbr
+					  		WHERE sb.bd_no = sbr.bd_no(+)
+					  		AND sb.gb_del = 'N'
+					  		AND bd_title like #search#
+					  		ORDER BY sb.bd_no DESC
+					  		) v1
+					  WHERE rownum <![CDATA[ <= ]]> #end#
+					  ) v2
+				WHERE v2.rnum <![CDATA[ >= ]]> #start#
+			) b, students s
+		WHERE b.stu_id = s.stu_id
+		ORDER BY bd_no DESC
+	</select>
+	
+	<select id="selectStuBoardCount" resultClass="int" parameterClass="String">
+		SELECT COUNT(*) cnt
+		FROM stu_board
+		WHERE gb_del = 'N'
+		AND bd_title like #search#
+	</select>
+	
+	<select id="getStuBoardView" parameterClass="int" resultClass="boardVO">
+		SELECT b.*, stu_name
+		FROM stu_board b, students s
+		WHERE b.stu_id = s.stu_id
+		AND bd_no = #bd_no#
+	</select>
+
+	<update id="deleteStuContent" parameterClass="int">
+		UPDATE stu_board SET gb_del = 'Y' WHERE bd_no = #bd_no#
+	</update>
+	
+	<insert id="insertStuContent" parameterClass="boardVO">
+		<selectKey keyProperty="bd_no" resultClass="int">
+			SELECT stu_board_seq.nextval bd_no FROM dual
+		</selectKey>
+		
+		INSERT INTO 
+			stu_board (
+						bd_no
+					   ,bd_title
+					   ,bd_content
+					   ,stu_id
+					   ,bd_wdt
+					   ,bd_hit
+					   ,gb_del
+				
+					)
+			VALUES (
+						#bd_no#
+					   ,#bd_title#
+					   ,#bd_content#
+					   ,#stu_id#
+					   ,sysdate
+					   ,0
+					   ,'N'
+					)
+			
+	</insert>
+	
+	<update id="updateStuContent" parameterClass="boardVO">
+		UPDATE stu_board SET bd_title = #bd_title#, bd_content = #bd_content#
+		WHERE bd_no = #bd_no#
+	</update>
+	
+	<update id="hitStuBoard" parameterClass="int">
+		UPDATE stu_board SET bd_hit = bd_hit + 1 WHERE bd_no = #bd_no#
+	</update>
+	
+	<select id="selectStaffInfo" parameterClass="int" resultClass="replyVO">
+		SELECT sbr.*, s.staff_name, s.staff_id
+		  FROM stu_board_re sbr, staffs s
+		 WHERE sbr.staff_id = s.staff_id
+		   AND bd_no = #bd_no#
+	</select>
+	
+	<insert id="stuBoardInsert" parameterClass="replyVO">
+		<selectKey keyProperty="re_no" resultClass="int">
+			SELECT reply_seq.nextval re_no FROM dual
+		</selectKey>
+		INSERT INTO stu_board_re (
+									re_no
+								   ,bd_no
+								   ,staff_id
+								   ,re_content
+								   ,re_wdt
+								   ,gb_del
+								)
+							VALUES (
+									#re_no#
+								   ,#bd_no#
+								   ,#staff_id#
+								   ,#re_content#
+								   ,SYSDATE
+								   ,'N'
+										)
+	</insert>
+	
+	<update id="stuBoardReplyUpdate" parameterClass="replyVO">
+		UPDATE stu_board_re SET re_content = #re_content#
+							   ,re_wdt = SYSDATE
+			WHERE bd_no = #bd_no#
+	</update>
+</sqlMap>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="student">
+	
+	<select id="studentLogin" parameterClass="String" resultClass="stuVO">
+		SELECT *
+		FROM students
+		WHERE stu_id = #stu_id#
+	</select>
+	
+	<select id="studentAllInfo" resultClass="stuVO" parameterClass="Map">
+		SELECT *
+		  FROM (
+				SELECT *
+				FROM (
+					  SELECT rownum rnum, v1.*
+					  FROM (
+							SELECT s.*, d.dept_name
+							FROM students s, dept d
+							WHERE s.dept_code = d.dept_code
+					  		) v1
+					  WHERE rownum <![CDATA[ <= ]]> #end#
+					  ) v2
+				WHERE v2.rnum <![CDATA[ >= ]]> #start#
+			) b
+	</select>
+	
+	<select id="studentInfo" parameterClass="String" resultClass="stuVO">
+		SELECT s.*, d.dept_name
+		  FROM students s, dept d 
+		 WHERE s.stu_id = #stu_id#
+		   AND s.dept_code = d.dept_code
+	</select>
+	
+	<update id="stuInfoUpdate" parameterClass="stuVO">
+		UPDATE students SET stu_addr = #stu_addr# 
+						   ,stu_detailaddr =  #stu_detailaddr#
+						   ,stu_zipcode = #stu_zipcode#
+						   ,stu_tel = #stu_tel#
+		 WHERE stu_id = #stu_id#
+	</update>
+
+	<update id="passwordUpdate" parameterClass="stuVO">
+		UPDATE students SET stu_pwd = #stu_pwd# WHERE stu_id = #stu_id#
+	</update>
+	
+	<select id="idEmailCheck" parameterClass="stuVO" resultClass="int">
+		SELECT count(*) FROM students WHERE stu_id = #stu_id# AND stu_email = #stu_email#
+	</select>
+	<insert id="studentInsert" parameterClass="stuVo">
+		INSERT INTO students (
+							   stu_id
+							  ,stu_name
+							  ,stu_gender
+							  ,stu_resnum
+							  ,stu_addr
+							  ,stu_detailaddr
+							  ,stu_zipcode
+							  ,dept_code
+							  ,stu_tel
+							  ,stu_email
+							  ,stu_state
+							  ,stu_entdate
+							  ,auth_cd
+							  ,stu_pwd	
+							  )
+				VALUES (
+							   #stu_id#
+							  ,#stu_name#
+							  ,#stu_gender#
+							  ,#stu_resnum#
+							  ,#stu_addr#
+							  ,#stu_detailaddr#
+							  ,#stu_zipcode# 
+							  ,#dept_code#
+							  ,#stu_tel#
+							  ,#stu_email#
+							  ,#stu_state#
+							  ,sysdate
+							  ,'S'
+							  ,#stu_pwd#
+							)
+	</insert>
+	
+	<select id="getDept" resultClass="stuVo">
+		SELECT dept_code, dept_name
+		  FROM dept 
+
+	</select>
+	
+	<delete id="studentDelete" parameterClass="String">
+		DELETE students WHERE stu_id = #stu_id#
+	</delete>
+	
+	<update id="studentUpdate" parameterClass="stuVO">
+		UPDATE students SET 
+							   stu_name = #stu_name#
+							  ,stu_gender = #stu_gender#
+							  ,stu_resnum = #stu_resnum#
+							  ,stu_zipcode = #stu_zipcode#
+							  ,stu_addr = #stu_addr#
+							  ,stu_detailaddr = #stu_detailaddr#
+							  ,dept_code = #dept_code#
+							  ,stu_tel = #stu_tel#
+							  ,stu_email = #stu_email#
+							  ,stu_state = #stu_state#
+		WHERE stu_id = #stu_id#
+	</update>
+	
+	<select id="selectStuCount" resultClass="int">
+		SELECT COUNT(*) cnt
+		FROM students
+	</select>
+	
+	<select id="getStudentName" parameterClass="String" resultClass="String">
+		SELECT stu_name
+		  FROM students
+		 WHERE stu_id = #stu_id#
+	</select>
+</sqlMap>

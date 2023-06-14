@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="lecture">
+	
+	<select id="getAllLecture" parameterClass="String" resultClass="lecVO">
+		SELECT lec_code
+			 , MAX(lec_name) lec_name
+			 , max(staff_id) staff_id
+			 , max(staff_name) staff_name
+			 , max(lec_loc) lec_loc
+			 , max(lec_day) lec_day
+			 , min(lec_time) lec_time
+			 , count(lec_time) lec_hour
+			 , max(lec_credit) lec_credit
+			 , max(lec_year) lec_year
+			 , max(lec_div) lec_div
+			 , max(lec_term) lec_term
+			 , max(plan_path) plan_path
+			 , max(stu_score) stu_score
+			 , max(stu_grade) stu_grade
+			 , max(dept_code) dept_code
+		FROM (
+				SELECT a.lec_code, lec_name, l.STU_ID, a.staff_id, staff_name, lec_loc, lec_day, lec_time, lec_div, lec_credit, lec_year, lec_term, stu_score, stu_grade, plan_path, dept_code
+				FROM lecture l, ALL_LECTURELIST a, STAFFS s 
+				WHERE l.LEC_CODE = a.LEC_CODE 
+				AND a.staff_id = s.STAFF_ID 
+				AND STU_ID = #stu_id#
+				ORDER BY lec_year DESC, lec_term DESC, LEC_CODE
+				)
+		GROUP BY lec_code	
+	</select>
+	
+	<select id="selecteLecCode" resultClass="String">
+		SELECT ('C' || LPAD(lec_seq.nextval, 5, '0'))
+		FROM dual
+	</select>
+	
+	<insert id="insertLecture" parameterClass="lecVO">
+		INSERT INTO all_lecturelist 
+		(lec_code, lec_name, staff_id, lec_loc, lec_year, lec_term, lec_day, lec_time, lec_div, lec_credit, lec_maxpeo, plan_path)
+		VALUES 
+		(#lec_code#, #lec_name#, #staff_id#, #lec_loc#, #lec_year#, #lec_term#, #lec_day#, #lec_time#, #lec_div#, #lec_credit#, #lec_maxpeo#, #plan_path#)
+	</insert>
+	
+	<select id="staffLecList" parameterClass="String" resultClass="lecVO">
+		SELECT lec_code
+			 , MAX(lec_name) lec_name
+			 , max(staff_id) staff_id
+			 , max(lec_loc) lec_loc
+			 , max(lec_day) lec_day
+			 , min(lec_time) lec_time
+			 , count(lec_time) lec_hour
+			 , max(lec_credit) lec_credit
+			 , max(lec_year) lec_year
+			 , max(plan_path) plan_path
+			 , max(lec_div) lec_div
+			 , max(lec_term) lec_term
+		FROM (
+				SELECT lec_code, lec_name, staff_id, lec_loc, lec_day, lec_time, lec_div, lec_credit, lec_year, lec_term, plan_path
+				FROM ALL_LECTURELIST
+				WHERE staff_id = #staff_id#
+				ORDER BY lec_year DESC, lec_term DESC, LEC_CODE
+				)
+		GROUP BY lec_code
+	</select>
+	
+	<select id="selectLecture" parameterClass="String" resultClass="lecVO">
+		SELECT lec_code
+			 , MAX(lec_name) lec_name
+			 , max(lec_loc) lec_loc
+			 , max(lec_day) lec_day
+			 , min(lec_time) lec_time
+			 , count(lec_time) lec_hour
+			 , max(lec_credit) lec_credit
+			 , max(lec_year) lec_year
+			 , max(lec_div) lec_div
+			 , max(lec_term) lec_term
+			 , max(lec_maxpeo) lec_maxpeo
+		FROM (
+				SELECT lec_code, lec_name, lec_loc, lec_day, lec_time, lec_div, lec_credit, lec_year, lec_term, lec_maxpeo
+				FROM ALL_LECTURELIST 
+				WHERE lec_code = #lec_code#
+				ORDER BY lec_year DESC, lec_term DESC, LEC_CODE
+				)
+		GROUP BY lec_code
+	</select>
+	
+	<delete id="deleteLecture" parameterClass="String">
+		DELETE all_lecturelist WHERE lec_code = #lec_code#
+	</delete>
+	
+	<select id="getLectureStudent" parameterClass="String" resultClass="lecVO">
+		SELECT l.stu_id, stu_name, dept_name, stu_score, stu_grade
+		FROM lecture l, students s, dept d
+		WHERE l.stu_id = s.stu_id
+		AND s.DEPT_CODE = d.DEPT_CODE
+		AND lec_code = #lec_code#
+	</select>
+	
+	<update id="updateScore" parameterClass="lecVO">
+		UPDATE lecture SET stu_score = #stu_score#, stu_grade = #stu_grade#
+		WHERE stu_id = #stu_id# 
+		AND lec_code = #lec_code#
+	</update>
+	
+	<update id="updatePlanFile" parameterClass="lecVO">
+		UPDATE all_lecturelist SET plan_path = #plan_path# WHERE lec_code = #lec_code#
+	</update>
+	
+	<select id="getPlanPath" parameterClass="String" resultClass="String">
+		SELECT max(plan_path) FROM all_lecturelist WHERE lec_code = #lec_code#
+	</select>
+	
+	<select id="getAllLectureRegister" parameterClass="Map" resultClass="lecVO">
+		SELECT *
+				FROM (
+					  SELECT rownum rnum, lec_code, lec_term
+										   , lec_day
+										   , lec_name
+										   , staff_id
+										   , lec_loc
+										   , lec_year
+										   , lec_time
+										   , lec_div
+										   , lec_credit
+										   , lec_maxpeo
+										   , staff_name
+										   , lec_hour
+					  FROM (
+							SELECT lec_code, max(lec_term) lec_term
+										   , max(lec_day) lec_day
+										   , max(lec_name) lec_name
+										   , max(al.staff_id) staff_id
+										   , max(lec_loc) lec_loc
+										   , max(lec_year) lec_year
+										   , max(lec_time) lec_time
+										   , count(lec_time) lec_hour
+										   , max(lec_div) lec_div
+										   , max(lec_credit) lec_credit
+										   , max(lec_maxpeo) lec_maxpeo
+						   				   , max(staff_name) staff_name
+							FROM all_lecturelist al, staffs s
+					  		WHERE al.staff_id = s.staff_id 
+					  		AND lec_term = #term#
+					  		AND lec_year = #year#
+					  		AND lec_code like #search#
+					  		GROUP BY lec_code
+					  		) v1
+					  WHERE rownum <![CDATA[ <= ]]> #end#
+					  ) v2
+				WHERE v2.rnum <![CDATA[ >= ]]> #start#
+	</select>
+	
+	<insert id="regusterLecture">
+		INSERT INTO lecture VALUES (#stu_id#, #lec_code#, 0, 'null')
+	</insert>
+	
+	<delete id="deleteStudentLecture" parameterClass="lecVO">
+		DELETE lecture WHERE lec_code = #lec_code# AND stu_id = #stu_id#
+	</delete>
+	
+	<select id="getMaxPeo" parameterClass="String" resultClass="int">
+		SELECT max(lec_maxpeo)
+		FROM all_lecturelist 
+		WHERE lec_code = #lec_code#
+		GROUP BY lec_code
+	</select>
+	
+	<select id="getCurPeo" parameterClass="String" resultClass="int">
+		SELECT count(*)
+		FROM lecture
+		WHERE lec_code = #lec_code#
+	</select>
+	
+	<select id="lectureStuListForm" parameterClass="String" resultClass="stuVO">
+		SELECT l.stu_id, stu_name, stu_gender, dept_name, stu_tel
+		FROM students s, lecture l, dept d
+		WHERE s.stu_id = l.stu_id
+		AND s.dept_code = d.dept_code
+		AND lec_code = #lec_code#
+	</select>
+	
+	<select id="getStuDeptCode" parameterClass="String" resultClass="String">
+		SELECT dept_code
+		FROM students
+		WHERE stu_id = #stu_id#
+	</select>
+	
+	<select id="getLecName" parameterClass="String" resultClass="String">
+	 	SELECT max(lec_name)
+	 	FROM all_lecturelist
+	 	WHERE lec_code = #lec_code#
+	 	GROUP BY lec_code
+	</select>
+	
+	<select id="getStuLecCnt" parameterClass="String" resultClass="int">
+		SELECT COUNT(*)
+		FROM lecture
+		WHERE stu_id = #stu_id#
+	</select>
+	
+	<select id="getStuEvalCnt" parameterClass="String" resultClass="int">
+		SELECT COUNT(*)
+		FROM evaluation
+		WHERE stu_id = #stu_id#
+	</select>	
+	
+	<select id="selectLectureCount" parameterClass="Map" resultClass="int">
+		SELECT count(*)
+		FROM(
+				SELECT lec_code
+				FROM all_lecturelist
+				WHERE lec_year = #year# AND lec_term = #term# AND lec_code like #search#
+				GROUP BY lec_code)
+	</select>
+</sqlMap>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="eval">
+	<insert id="insertEval" parameterClass="evalVO">
+		INSERT INTO evaluation VALUES (#lec_code#, #stu_id#, #que1#, #que2#, #que3#, #que4#, #que5#, #que6#, #que7#, #que8#, #que9#)
+	</insert>
+	
+	<select id="getEvalVo" parameterClass="evalVO" resultClass="evalVO">
+		SELECT *
+		FROM evaluation
+		WHERE lec_code = #lec_code# AND stu_id = #stu_id#
+	</select>
+	
+	<update id="updateEval">
+		UPDATE evaluation SET que1 = #que1#
+							, que2 = #que2#
+							, que3 = #que3#
+							, que4 = #que4#
+							, que5 = #que5#
+							, que6 = #que6#
+							, que7 = #que7#
+							, que8 = #que8#
+							, que9 = #que9#
+		WHERE lec_code = #lec_code# AND stu_id = #stu_id#
+	</update>
+	
+	<select id="getEvalAvg" parameterClass="String" resultClass="evalVO">
+		SELECT avg(que1) avg_que1
+			 , avg(que2) avg_que2
+			 , avg(que3) avg_que3
+			 , avg(que4) avg_que4
+			 , avg(que5) avg_que5
+			 , avg(que6) avg_que6
+			 , avg(que7) avg_que7
+			 , avg(que8) avg_que8
+		FROM EVALUATION 
+		WHERE lec_code = #lec_code#
+		GROUP BY lec_code
+	</select>
+	
+	<select id="getQue9List" parameterClass="String" resultClass="String">
+		SELECT que9
+		FROM evaluation
+		WHERE lec_code = #lec_code#
+	</select>
+</sqlMap>
