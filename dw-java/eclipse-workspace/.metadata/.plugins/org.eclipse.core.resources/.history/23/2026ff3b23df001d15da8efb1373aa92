@@ -1,0 +1,13 @@
+package i_collection;
+
+import java.util.HashMap;
+
+public class HashMapClass {
+
+	public static void main(String[] args) {
+
+		HashMap<String, Object> map = new HashMap<>(); // <키값의 타입, 원하는 타입> | Object : 모든 클래스의 조상
+		
+	}
+
+}

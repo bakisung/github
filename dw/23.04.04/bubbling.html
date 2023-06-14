@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubbling</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="alert('div onclick 이벤트')">
+        <em><code>EM</code>을 클릭했는데도 <code>div</code>에 할당한 이벤트가 동작합니다.</em>
+    </div>
+    <br><br><br>
+    <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+            <p onclick="alert('p')">P</p>
+        </div>
+    </form>
+    <br><br><br>
+    <div onclick="alert('버블링은 여기까지 도달 못함')">
+        <button onclick="event.stopImmediatePropagation()">클릭해주세요</button>
+    </div>
+</body>
+</html>

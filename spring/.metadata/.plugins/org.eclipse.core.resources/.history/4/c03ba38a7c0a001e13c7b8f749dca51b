@@ -1,0 +1,10 @@
+package kr.or.dw.controller;
+
+import com.sun.istack.internal.logging.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
+
+public class MemberController {
+	
+	private static final Logger logger = (Logger) LoggerFactory.getLogger(MemberController.class);
+	
+}

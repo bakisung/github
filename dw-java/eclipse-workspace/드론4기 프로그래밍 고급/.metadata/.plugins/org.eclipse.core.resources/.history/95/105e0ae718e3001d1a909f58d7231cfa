@@ -1,0 +1,53 @@
+package kr.or.dw.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class JdbcTest03 {
+
+	public static void main(String[] args) {
+
+		Connection conn = null;
+//		Statement stmt = null; => 이건 요즘 잘 안 쓴다고 하셨음
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;	// 사용할 SQL문이 select문일 경우에 필요
+		Scanner sc = new Scanner(System.in);
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "park", "java");
+			String sql = "select * from emp";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			System.out.println("==================SQL문의 처리 결과==================");
+			System.out.println("숫자를 입력해주세요.");
+			int input = Integer.parseInt(sc.nextLine());
+			while (rs.next()) {
+				if (input < rs.getInt("empno")) {
+					System.out.println("empno : " + rs.getInt("empno"));
+					System.out.println("ename : " + rs.getString(2));
+					System.out.println("job : " + rs.getString("job"));
+				}
+			}
+			System.out.println("=================================================");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) try {rs.close(); } catch(SQLException e2) {}
+			if (conn != null) try {conn.close(); } catch(SQLException e2) {}
+			if (stmt != null) try {stmt.close(); } catch(SQLException e2) {}
+		}
+		
+		
+		
+		
+		
+	}
+
+}

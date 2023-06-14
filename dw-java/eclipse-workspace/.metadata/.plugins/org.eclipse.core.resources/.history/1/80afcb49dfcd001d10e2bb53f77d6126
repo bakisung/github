@@ -1,0 +1,23 @@
+package b_operator;
+
+public class Etc {
+
+	public static void main(String[] args) {
+		/*
+		 * <<기타연산자 >>
+		 * - . (참조연산자) : 특정 범위 내에 속해있는 멤버를 지칭할 때 사용한다.
+		 * - (type) : 형변환(casting)
+		 * - ?: (삼항연산자) : 조건식이 참일 경우 수행할 문장 : 조건식이 거짓일 경우 수행할 문장
+		 * - instanceof : 참조형 타입 확인
+		 */
+
+		int x = 10;
+		int y = 20;
+		int result = x < y ? x : y;
+		System.out.println(result);
+		
+		
+		
+	}
+
+}

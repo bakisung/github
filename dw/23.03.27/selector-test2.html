@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('p').css('title');
+            $('p[title="툴팁으로 보입니다"]').css({
+                                                    'backgroundColor': 'yellow', 
+                                                    'border':'2px solid black'
+                                                });
+            $('input[type="text"]').css('border', '2px solid red');
+            $('input[type^="p"]').css('backgroundColor', 'red');
+        });
+    </script>
+</head>
+<body>
+    <p> 일반 문단입니다 </p>
+    <p title="툴팁으로 보입니다">타이틀을 가지고 있는 문단입니다 </p>
+    <input type="text"> 회원번호 </input>
+    <input type="password"> 비밀번호 </input>
+</body>
+</html>

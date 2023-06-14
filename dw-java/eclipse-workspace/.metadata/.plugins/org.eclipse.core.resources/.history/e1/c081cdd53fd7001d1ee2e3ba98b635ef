@@ -1,0 +1,73 @@
+package myGame2;
+
+public class Character {
+
+	String name;
+	int maxHp;
+	int maxMp;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	int level;
+	int exp;
+	Item[] items;
+	
+	Character(String name, int maxHp, int maxMp, int hp, int mp, int att, int def) {
+		this.name = name;
+		this.maxHp = maxHp;
+		this.maxMp = maxMp;
+		this.hp = hp;
+		this.mp = mp;
+		this.att = att;
+		this.def = def;
+		this.level = 1;
+		this.exp = 0;
+		this.items = new Item[10];
+	}
+
+	public void showInfo() {
+		System.out.println("======================================");
+		System.out.println("------------------ 상 태  ---------------");
+		System.out.println("이름 : " + name);
+		System.out.println("레벨 : " + level + "(" + exp + "/100)");
+		System.out.println("체력 : " + hp + "/" + maxHp);
+		System.out.println("체력 : " + mp + "/" + maxMp);
+		System.out.println("공격 : " + att);
+		System.out.println("방어 : " + def);
+		System.out.println("----------------- 아이템  ---------------");
+		for (int i = 0; i < items.length; i++) {
+			if (items[i] != null) {
+				System.out.println(items[i].itemInfo());
+			}
+		}
+		System.out.println("======================================");
+	}
+
+	void attack(Monster m) {
+		int damage = att - m.def;
+		damage = damage <= 0 ? 1 : damage;
+		m.hp = m.hp < damage ? m.hp - m.hp : m.hp - damage;
+		System.out.println("name" + "가 공격으로" + m.name + "에게" + damage + "만큼 데미지를 주었습니다.");
+		System.out.println(m.name + "의 남은 HP : " + m.hp);
+	}
+
+	void getExp() {
+		System.out.println(exp + "의 경험치를 획득하였습니다.");
+		this.exp += exp;
+		while(100 <= this.exp) {
+			// 레벨업
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+} // class 종료

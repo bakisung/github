@@ -1,0 +1,25 @@
+package kr.or.dw.service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kr.or.dw.vo.MenuVO;
+
+@Service
+public class MenuServiceImpl implements MenuService{
+
+	@Autowired
+	private MenuDAO menuDAO;	// == MenuDAOImpl.getInstance();
+	
+	@Override
+	public List<MenuVO> selectMainMenuList() throws SQLException {
+		
+		List<MenuVO> menuList = menuDAO.selectMainMenuList();
+		
+		return menuList;
+	}
+
+}

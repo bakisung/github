@@ -1,0 +1,23 @@
+package GameProject;
+
+public class training {
+	
+	String user;
+	int cm;
+	int kg;
+	int age;
+	String sex;
+	String hobby;
+	
+	
+	void 박희성() {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		training tr = new training();
+		
+	}
+
+}

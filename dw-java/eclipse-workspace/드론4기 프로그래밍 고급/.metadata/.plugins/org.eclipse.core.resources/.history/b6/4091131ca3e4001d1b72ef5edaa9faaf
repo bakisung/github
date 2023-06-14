@@ -1,0 +1,35 @@
+package kr.or.dw.basic;
+
+import java.util.Stack;
+
+public class StackQueueTest {
+
+	/*
+	 * Stack ==> LIFO(Last In First Out - 후입선출)방식의 자료 구조
+	 * Queue ==> FIFO(First In First Out - 선입선출)방식의 자료 구조
+	 */
+	
+	public static void main(String[] args) {
+		/*
+		 * Stack의 명령
+		 * 1. 자료 입력 : push(추가할데이터);
+		 * 2. 자료 출력 : pop() ==> 자료를 꺼내온 후에 꺼내온 자료를 Stack에서 지운다.
+		 * 			   peek() ==> 삭제 없이 자료를 꺼내온다.
+		 */
+		
+		Stack<String> stack = new Stack<>();
+		
+		stack.push("홍길동");
+		stack.push("성춘향");
+		stack.push("이몽룡");
+		stack.push("변학도");
+		
+		System.out.println("현재 stack 값 : " + stack);
+		
+		String data = stack.pop();
+		System.out.println("꺼내온 값 : " + data);
+		System.out.println("꺼내온 값 : " + stack.pop());
+		System.out.println("현재 stact 값 : " + stack);
+	}
+
+}

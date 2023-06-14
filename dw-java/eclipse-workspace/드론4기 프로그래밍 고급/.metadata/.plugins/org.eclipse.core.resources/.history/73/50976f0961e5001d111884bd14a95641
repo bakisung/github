@@ -1,0 +1,11 @@
+package kr.or.dw.basic;
+
+public class FileIOTest03 {
+
+	public static void main(String[] args) {
+		//	사용자가 입력한 내용을 그대로 파일로 출력하기
+		
+		// 	System.in 
+	}
+
+}

@@ -1,0 +1,20 @@
+INDEX VERSION 1.131+C:\github\dw-java\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+2881090498.index
+2285200117.index
+1556112258.index
+1960968085.index
+3586842023.index
+1835793023.index
+3941569023.index
+3426407964.index
+2994696274.index
+3234887170.index
+3296696871.index
+323873795.index
+2375009664.index
+3608334970.index
+2603003138.index
+1149124315.index
+1472661382.index
+31556620.index
+3726111349.index

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" placeholder="TODO List">
+    <button onclick="callback()">Click</button>
+    <div></div>
+
+    <script>
+        const input = document.querySelector("#input");
+        const div = document.querySelector("div");
+        const callback = function () {
+            const pTag = document.createElement("p"); /* <p></p> */
+            pTag.innerHTML = input.value;
+            console.log(pTag);
+            div.appendChild(pTag); /* div 안에 pTag를 넣는다. */
+            input.value = "";
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+C:\github\dw-java\eclipse-workspace\드론4기 프로그래밍 고급\Highjava2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+978394009.index
+574890429.index
+4164448729.index
+3545728697.index
+926921692.index
+1300954960.index
+303509223.index
+2740472355.index
+2079782881.index

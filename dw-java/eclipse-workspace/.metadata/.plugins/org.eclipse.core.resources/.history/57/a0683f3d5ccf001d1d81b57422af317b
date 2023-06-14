@@ -1,0 +1,137 @@
+package c_statement;
+
+import java.util.Scanner;
+import java.util.function.Function;
+
+public class ConditionalStatement {
+
+	public static void main(String[] args) {
+
+		/*
+		 * << if 문 >>
+		 * - if : 조건식의 결과가 true 이면 블럭 안의 문장을 수행한다.
+		 * - else if : 다수의 조건이 필요할 때 if 뒤에 추가한다.
+		 * - else : 결과가 true 인 조건식이 하나도 없는 경우를 위해 추가한다.
+		 */
+
+//		========================================주석선==============================================================
+//		int a = 10;
+//		if(a < 100) {
+//			System.out.println("조건식의 연산 결과가 true 이면 수행된다.");
+//		}
+//		
+//		if(a < 10) {
+//			System.out.println("조건식의 연산 결과가 false 이면 수행된다.");
+//		}
+//		
+//		// 주민등록번호 앞자리에 따른 성별 확인 코드 (if문)
+////		int regNo = 1; // 주민등록번호 첫자리
+//		String gender = null; //성별
+//		for (int i = 1; i > 0; i++) {
+//			System.out.println("주민등록번호 뒷자리에서 첫번째 숫자를 입력해주세요.");
+//			Scanner regNo = new Scanner(System.in);
+//			int inputNum = Integer.parseInt(regNo.nextLine());
+//			
+//			/*// boolean 과 matches를 활용하여 0~9까지의 숫자만 사용해야 트루값이 나오게 할 수 있다 
+//			 * boolean result = input.matches("[0-9]+");
+//			 */
+//			
+//			if (inputNum < 5 ) {
+//				if (inputNum%1 != 0) {
+//					System.out.println("정수만 입력해주세요");
+//				} else if ( inputNum == 1 || inputNum == 3) {
+//					gender = "남자";
+//				} else if ( inputNum == 2 || inputNum == 4 ) {
+//					gender = "여자";
+//				};
+//				System.out.println("당신의 성별은 " + gender + " 입니다.");
+//			} else {
+//				System.out.println("잘못 입력하셨습니다. 1~4 범위에서 입력해주세요.");
+//			};
+//			========================================주석선==============================================================
+			
+			
+			// 성적에 등급을 부여하는 프로그램을 작성하세요. (Scanner를 활용하여 숫자를 입력받아 해당하는 성적을 출력하세요.)
+//			for (int i = 1; i > 0; i++) {	
+//				System.out.println("점수를 입력해주세요. 등급을 분류해드립니다.");
+//				Scanner regNo2 = new Scanner(System.in);
+//				int inputNum2 = Integer.parseInt(regNo2.nextLine());
+////				boolean result = input.matches("[0-9]+");
+//			
+//				switch(inputNum2 / 10) {
+//					case 10:
+//						System.out.println("당신의 등급은 " + "A+" + " 입니다.");
+//						break;
+//					case 9:
+//						System.out.println("당신의 등급은 " + "A" + " 입니다.");
+//						break;
+//					case 8:
+//						System.out.println("당신의 등급은 " + "B" + " 입니다.");
+//						break;
+//					case 7:
+//						System.out.println("당신의 등급은 " + "C" + " 입니다.");
+//						break;
+//					case 6:
+//						System.out.println("당신의 등급은 " + "D" + " 입니다.");
+//						break;
+//					case 5:
+//						System.out.println("당신의 등급은 " + "E" + " 입니다.");
+//						break;
+//					default:
+//						System.out.println("낫닝겐");
+//						break;
+//				};
+//			};
+//		==================================주석=======================================
+		
+		// 숫자를 입력받아 그 숫자가 0인지 0이 아닌지 출력해주세요.
+//		System.out.println("숫자를 입력하세요.");
+//		Scanner s = new Scanner(System.in);
+//		int num = Integer.parseInt(s.nextLine()); // 값이 String으로 들어오기 때문에 int 타입으로 형변환 해줘야 한다.
+//		switch (num) {
+//		case 0:
+//			System.out.println("입력한 숫자는 0입니다.");
+//			break;
+//		default:
+//			System.out.println("입력한 숫자는 0이 아닙니다.");
+//			break;
+//		}
+
+//		==================================주석=======================================
+		//숫자를 입력받아 그 숫자가 홀수인지 짝수인지 출력해주세요.
+//		System.out.println("숫자를 입력하세요. 홀수인지 짝수인지 분류해드리겠습니다.");
+//		Scanner inputNum = new Scanner(System.in);
+//		int num2 = Integer.parseInt(inputNum.nextLine());
+//		if (num2%2 == 0) {
+//			System.out.println("당신이 고른 숫자는 " + num2 + " 입니다."
+//					+ num2 + " 는 짝수입니다.");
+//		} else {
+//			System.out.println("당신이 고른 숫자는 " + num2 + " 입니다."
+//					+ num2 + " 는 홀수입니다.");
+//		}
+		
+//		==================================주석=======================================
+		//두개의 숫자를 입력받아 더 큰 숫자를 출력해주세요.
+		System.out.println("첫번째 숫자를 입력해주세요.");
+		Scanner num1 = new Scanner(System.in);
+		int num01 = Integer.parseInt(num1.nextLine());
+		
+		System.out.println("두번째 숫자를 입력해주세요.");
+		Scanner num2 = new Scanner(System.in);
+		int num02 = Integer.parseInt(num2.nextLine());
+		
+		System.out.println("당신이 입력한 숫자는 " + num01 + " 과 " + num02 + " 입니다.");
+		System.out.println("합계는 " + num01 num02 + " 입니다.");
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+	}
+
+}

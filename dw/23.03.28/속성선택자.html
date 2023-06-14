@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+
+    <script>
+        $(document).ready(function() { /* == $(function({})) */
+            $('input[value="클릭하슈~~"]').on('click', function () {
+                $('input[value="클릭하슈~~"]').css('backgroundColor', 'red')
+                $('a[href*="mailto"]').css({'backgroundColor':'red','text-decoration':'none'}); /* ({' ' : ' ' , ' ' : ' '}) 이런식으로 css를 두개 먹일 수 있다. */
+
+                $('img[title]').css('border', '5px solid green')
+                $('img[alt]').css('border', '5px solid deeppink')
+            }) 
+        });
+    </script>
+</head>
+<body>
+    <a href="http://tjdaewoo.co.kr/">DW아카데미</a><br><br>
+    <a href="mailto:kjy.devops@gmail.com">kjy에게 메일보내기</a><br><br>
+    <div><label>Some images:</label></div>
+    <div>
+        <img src="../img/싱하형.jpg" id="img1" alt="sing-ha" width="240px" height="290px">
+        <img src="../img/트리플h.jpg" id="img2" title="tripple" width="240px" height="290px">
+        <img src="../img/커트앵글.jpg" id="img3" alt="cutt" width="240px" height="290px">
+        <img src="../img/부커티.jpeg" id="img4" title="buker" width="240px" height="290px">
+        <img src="../img/201411040057002336_1.jpeg" id="img5" alt="under" width="240px" height="290px">
+        <img src="../img/헐크호건.jpg" id="img6" title="hulk" width="240px" height="290px">
+        <img src="../img/싱하형2.jpg" alt="sing-ha2" width="240px" height="290px">
+    </div>
+    <div id="someDiv">이곳은 ID속성이 <tt>someDiv</tt>인 &lt;div&gt;태그 입니다. </div>
+    <form>
+        <div>
+            <label>Text</label> <input type="text" id="aTextField" name="someTextField">
+        </div>
+        <button type="submit" id="submitButton">Submit</button><input type="button" value="클릭하슈~~">
+        <!-- 사진 클릭하면 kjy에게 메일 보내기에 백그라운드 컬러 변경되어야 하고 사진 클릭했을때 사진 보더 색상 다 각각 달라야함 -->
+    </form>
+</body>
+</html>

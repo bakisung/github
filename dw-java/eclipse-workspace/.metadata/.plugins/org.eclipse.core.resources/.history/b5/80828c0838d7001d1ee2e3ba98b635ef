@@ -1,0 +1,75 @@
+package myGame2;
+
+import java.util.Scanner;
+
+public class MyGame2 {
+
+	Character c;
+	Item[] items;
+	
+	MyGame2() {
+		c = new Character("가렌", 500, 200, 500, 200, 20, 10);
+		
+		items = new Item[10];
+		items[0] = new Item("무한의 대검",0, 0, 10, 0);
+		items[1] = new Item("가시갑옷", 0, 0, 0, 10);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+		new MyGame2().start();
+		
+	} // main 종료
+
+
+
+
+
+
+
+
+	private void start() {
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("1.내정보/t2.사냥/t3.종료");
+			int input = 0;
+			input = Integer.parseInt(sc.nextLine());
+			
+			switch (input) {
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				System.out.println("게임을 종료합니다.");
+			System.exit(0); // 프로그램을 종료시키는 메소드
+				break;
+
+			default:
+				break;
+			}
+			
+		} // while 종료
+	}
+
+
+
+
+
+
+
+
+
+
+	
+
+} // class 종료

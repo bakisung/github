@@ -1,0 +1,40 @@
+package kr.or.dw.basic;
+
+import java.util.HashMap;
+
+public class MapTest {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Map ==> key값과 value값을 한 쌍으로 관리하는 객체
+		 * - key값은 중복을 허용하지 않고, 순서(index)가 없다. (Set의 특징을 갖는다.)
+		 * - value 값은 중복을 허용한다.
+		 */
+		
+		HashMap<String, String> map = new HashMap<>();
+		map.put("name", "싱하횽");
+		map.put("add", "굴다리 밑");
+		map.put("tel", "042-8282-8282 대리운전");
+		
+		System.out.println("map : " + map);
+		
+		// 자료 수정 : 데이터를 추가할 때 key 값이 같으면 나중에 추가한 value 값이 저장된다.
+		map.put("add", "굴다리 위");
+		System.out.println("map : " + map);
+		
+		// 	자료 삭제 	: remove(key값) ==> 'key값'이 같은 자료를 찾아서 삭제한다.
+		//			: 반환값 ==> 삭제된 value 값이 반환된다.
+		String removeData = map.remove("tel");
+		System.out.println("");
+		System.out.println("삭제된 데이터 : " + removeData);
+		
+		// 자료 읽기 : get(key값) ==> key값과 같은 쌍의 value 값을 반환한다.
+		System.out.println("이름 : " + map.get("name"));
+		System.out.println("전화 : " + map.get("tel"));
+		
+		// key값의 존재 여부를 나타내는 메서드 : containsKey(key값)
+		//	==> 해당 'key값'이 있으면 true, 없으면 false를 반환한다.
+	}
+
+}

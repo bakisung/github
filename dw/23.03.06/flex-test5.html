@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0px;
+        }
+        ul {
+            display: flex;
+            padding: 0px;
+            list-style-type: none;
+            height: 300px;
+            border: 5px solid red;
+            }
+
+        li {
+            background-color: beige;
+        }
+
+        li:nth-child(2n) {
+            background-color: coral;
+        }
+
+        li:nth-child(2) {
+            flex-grow: 1; /* 기본값 0 */
+            /* flex-shrink: 2; */ /* 기본값 1 */ /* 0은 작동안함 */
+        }
+
+        li:nth-child(3) {
+            flex-grow: 2;
+            /* flex-shrink: 3; */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>거북이</li>
+        <li>호랑이</li>
+        <li>다람쥐</li>
+        <li>청설모</li>
+        <li>고라니</li>
+    </ul>
+</body>
+</html>

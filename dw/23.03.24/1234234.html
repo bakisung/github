@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>딜레이 테스트</title>
+    <script>
+        function showAlert() {
+            setInterval(function () { 
+                const pTag = document.querySelector("p");
+                pTag.style.backgroundColor = "red"; 
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <p>
+        버튼을 누르면 이 글씨의 배경색이 반복하여 바뀝니다.
+        중지를 원하면 아래 버튼을 클릭하세요.
+    </p>
+    
+    <button onclick="showAlert()">멈춰!</button>
+</body>
+</html>

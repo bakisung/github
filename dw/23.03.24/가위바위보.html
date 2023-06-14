@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>딜레이 테스트</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        // 프롬프트 로 "가위, 바위, 보"를 입력 받는다.
+        // 콤피타가 랜덤으로 0~2의 숫자중 하나를 내뱉는다.
+        // 콤피타가 입력한 텍스트를 "가위 = 0, 바위 = 1, 보 = 2"로 변환한다.
+        // 입력 받은 값과 콤피타가 내뱉은 숫자를 텍스트로 변환한다.
+        // if 함수를 이용하여 텍스트를 비교 후 승패를 결정한다.
+        // 승패 결과를 도큐먼트에 라이트 한다.
+        const pTag = document.querySelector("p");
+        let input = prompt("가위, 바위, 보");
+        document.write("당신의 선택은 " + input + " 입니다.<br>");
+        console.log(input);
+
+        const 랜덤숫자 = Math.floor(Math.random() * 3)
+        console.log(랜덤숫자);
+        
+        // 내가 적은 답
+        // 0 = 가위 1 = 바위 2 = 보
+        if (랜덤숫자 == 0 && input == "가위") {
+            document.write("콤피타가 낸것은 가위 입니다 무승부");
+        } else if (랜덤숫자 == 0 && input == "바위") {
+            document.write("콤피타가 낸것은 가위 입니다 니가 이김")
+        } else if (랜덤숫자 == 0 && input == "보") {
+            document.write("콤피타가 낸것은 가위 입니다 ㅂㅅ")
+        
+        } else if (랜덤숫자 == 1 && input == "가위") {
+            document.write("콤피타가 낸것은 바위 입니다 ㅂㅅ")
+        } else if (랜덤숫자 == 1 && input == "바위") {
+            document.write("콤피타가 낸것은 바위 입니다 무승부")
+        } else if (랜덤숫자 == 1 && input == "보") {
+            document.write("콤피타가 낸것은 바위 입니다 니가 이김")
+        
+        } else if (랜덤숫자 == 2 && input == "가위") {
+            document.write("콤피타가 낸것은 보 입니다 니가 이김")
+        } else if (랜덤숫자 == 2 && input == "바위") {
+            document.write("콤피타가 낸것은 보 입니다 ㅂㅅ")
+        } else if (랜덤숫자 == 2 && input == "보") {
+            document.write("콤피타가 낸것은 보 입니다 무승부")
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+package kr.or.dw.basic;
+
+import java.io.File;
+
+public class FileTest01 {
+
+	public static void main(String[] args) {
+		
+		// 형식1) new File(String 파일 또는 경로)
+		File file1 = new File("C:\\Users\\admin\\Documents\\file.txt");
+		System.out.println("━━━━━━━━━━━━━━━━━━[File1]");
+		System.out.println("파일명 : " + file1.getName());
+		System.out.println("path : " + file1.getPath());
+		System.out.println("디렉토리인가? : " + file1.isDirectory());
+		System.out.println("파일인가? : " + file1.isFile());
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━");
+		
+		File file2 = new File("C:\\Users\\admin\\Documents");
+		System.out.println("━━━━━━━━━━━━━━━━━━[File2]");
+		System.out.println("파일명 : " + file2.getName());
+		System.out.println("path : " + file2.getPath());
+		System.out.println("디렉토리인가? : " + file2.isDirectory());
+		System.out.println("파일인가? : " + file2.isFile());
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━");
+		
+		// 형식2) new File(File parent, String child)
+		//		: 'parent' 디렉토리 안에 있는 'child' 파일을 갖는다.
+		File file3 = new File(file2, "file.txt");
+		System.out.println("━━━━━━━━━━━━━━━━━━[File3]");
+		System.out.println("파일명 : " + file3.getName());
+		System.out.println("path : " + file3.getPath());
+		System.out.println("디렉토리인가? : " + file3.isDirectory());
+		System.out.println("파일인가? : " + file3.isFile());
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━");
+	}
+
+}

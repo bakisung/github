@@ -1,0 +1,43 @@
+package b_operator;
+
+public class ComparisonOperator {
+
+	public static void main(String[] args) {
+		
+		/*
+		 * << 비교 연산자 >>
+		 *  - < : 작다
+		 *  - > : 크다
+		 *  - <= : 작거나 같다
+		 *  - >= : 크거나 같다
+		 *  - == : 같다
+		 *  - != : 같지 않다
+		 */
+		
+		boolean b = 10 < 20;
+		System.out.println(b);
+		b = 10 <= 20 - 15; // 20 - 15 를 먼저 계산함. 산술연산자가 비교연산자보다 먼저 수행된다.
+		System.out.println(b);
+		
+		b = 10.0f == 10.0;
+		System.out.println(b);
+		b = 10.1f == 10.1;
+		System.out.println(b);
+		
+		// double을 float 으로 형변환해야 정확하게 비교할 수 있다.
+		b = 10.1f == (float)10.1;
+		System.out.println(b);
+		
+		// 문자열 비교
+		b = "abc" == "abc";
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

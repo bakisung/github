@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수선언식만 호이스팅의 대상이다.
+        // 호이스팅 : 위로 끌려올려주는것
+        // 실행전 
+        console.log(logMessage());
+        console.log(sumNumbers());
+
+        function logMessage() { /* 선언식 */
+            return 'worked';
+        };
+
+        var sumNumbers = function () { /* 표현식 */
+            return 10 + 20;
+        };
+    </script>
+</body>
+</html>

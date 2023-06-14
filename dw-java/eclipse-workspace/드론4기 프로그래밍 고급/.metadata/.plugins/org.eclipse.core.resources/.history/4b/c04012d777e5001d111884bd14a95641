@@ -1,0 +1,48 @@
+package kr.or.dw.basic;
+
+import java.io.Serializable;
+
+public class ObjectIOTest {
+
+	public static void main(String[] args) {
+		// 객체를 파일에 저장하는 매체
+		Member mem1;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	} // main 종료
+
+	// 데이터 저장용 클래스 작성
+	class Member implements Serializable {
+		// Serialization(직렬화)
+		// 직렬화란? 객체를 직렬화하여 전송 가능한 형태로 만드는것을 의미한다.
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,30 @@
+package GameProject;
+
+public class training {
+	
+	// 선언
+	String name;
+	int cm;
+	int kg;
+	int age;
+	String sex;
+	String hobby;
+	
+	// 인물
+	training(int cm, int kg) {
+		this.cm = cm;
+		this.kg = kg;
+	}
+	
+	public static void main(String[] args) {
+		
+		training tr1 = new training(180, 60);
+		training tr2 = new training(177, 78);
+		training tr3 = new training(185, 90);
+		
+		System.out.println(tr1.cm);
+		System.out.println(tr2.cm);
+		System.out.println(tr3.cm);
+	}
+
+}

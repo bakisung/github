@@ -1,0 +1,31 @@
+package h_api;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.text.SimpleAttributeSet;
+
+public class DateClass {
+
+	public static void main(String[] args) {
+
+		Date today = new Date();	// 현재 날짜
+		System.out.println(today);
+		
+		// 날짜 -> 문자열 ============================================================================
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yy/MM/dd a hh:mm");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss.SSS"); 
+		// 대문자 H는 24시간을 기준으로한다. 대문자 SSS는 1/1000초 (millisecond)를 나타낸다. M = month, m = minute
+		SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		SimpleDateFormat sdf4 = new SimpleDateFormat("yy-MM-dd(E) HH:mm:ss a"); 
+		
+		System.out.println(sdf1.format(today));
+		System.out.println(sdf2.format(today));
+		System.out.println(sdf3.format(today));
+		System.out.println(sdf4.format(today));
+		// =======================================================================================
+		
+		// 문자열 -> 날짜
+	}
+
+}

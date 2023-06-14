@@ -1,0 +1,11 @@
+package kr.or.dw.basic;
+
+public class ThreadTest05 {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

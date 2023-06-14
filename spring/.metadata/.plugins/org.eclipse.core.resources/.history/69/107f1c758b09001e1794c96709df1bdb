@@ -1,0 +1,17 @@
+package kr.or.dw.vo;
+
+public interface MemberVO {
+
+	private String id        ;
+	private String pwd       ;
+	private String email     ;
+	private String picture   ;
+	private String enabled   ;
+	private String regdate   ;
+	private String phone     ;
+	private String name      ;
+	private String register  ;
+	private String address   ;
+	private String authority ;
+	
+}

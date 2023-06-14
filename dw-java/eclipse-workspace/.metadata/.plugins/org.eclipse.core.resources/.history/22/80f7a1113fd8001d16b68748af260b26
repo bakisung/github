@@ -1,0 +1,20 @@
+package GameProject;
+
+public class BankAccount {
+
+	int 잔액;
+	int 입금;
+	int 출금;
+	int 잔액조회;
+	
+	void 내통장() {
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		
+				
+	} // main 종료
+	
+} // class 종료

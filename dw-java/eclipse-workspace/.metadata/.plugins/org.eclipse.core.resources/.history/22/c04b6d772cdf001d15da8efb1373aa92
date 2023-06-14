@@ -1,0 +1,80 @@
+package i_collection;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Set;
+
+public class HashMapClass {
+
+	public static void main(String[] args) {
+		/*
+		 * Object put(Object key, Object value) : 지정된 키와 값을 저장한다.
+		 * Object remove(Object key) : 지정된 키로 저장된 값을 제거한다.
+		 * Object get(Object key) : 지정된 키의 값(없으면 null)을 반환한다.
+		 * Set keySet() : 저장된 모든 키를 Set으로 반환한다.
+		 */
+		
+		HashMap<String, Object> map = new HashMap<>(); // <키값의 타입, 원하는 타입> | Object : 모든 클래스의 조상
+		
+		map.put("a", 10);
+		map.put("b", "홍길동");
+		map.put("c", new Date());
+
+		System.out.println(map);
+		
+		map.put("b", "이순신");
+		
+		System.out.println(map);	// 키값이 동일하기 때문에 value를 덮어쓴다.
+		
+		map.remove("a");
+		System.out.println(map);
+		
+		Object value = map.get("b");
+		System.out.println(value);
+		System.out.println(map.get("b"));
+		
+		Set<String> keys = map.keySet();	// 저장된 모든 키를 반환한다.
+		System.out.println(keys);
+		for(String key : keys) {
+			System.out.println("key 값 : " + key + " / value : " + map.get(key));
+		}
+		
+		int[] a = new int[10];
+		for (int i = 0; i < a.length; i++) {
+			a[i] += i;
+		}
+		for (int i : a) {
+			System.out.print(i + 1+ "\t");
+		}
+		System.out.println();
+		
+		map.put("array", a);
+		int[] bb = (int[])map.get("array");
+		System.out.println(bb[bb.length - 1]);
+		
+		// 회원 테이블
+		// 이름, 연봉, 주소, 이메일, 아이디, 차종, 전화번호...
+		/*
+		 * 이름 : 관리자
+		 * 아이디 : admin
+		 * 비밀번호 : admin123
+		 * 전화번호 : 010-1234-5678
+		 * 연봉 : 8500만원
+		 * 차종 : GV80
+		 */
+		HashMap<String, String> user = new HashMap<String, String>();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	} // main 종료
+
+} // class 종료

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>NAVER</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        HTML, body, .wrapper{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: grid;
+            width: 60%;
+            height: 150%;
+            grid-template-rows: 2fr 9.9fr 1fr;
+        }
+            .header {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                /* border: 3px solid red; */
+                grid-template-rows: 7.7fr 2.3fr;
+            }
+                .main {
+                    display: grid;
+                    width: 100%;
+                    height: 100%;
+                    grid-template-columns: 1.5fr 3fr 1.5fr;
+                }
+                    .logo { /* 네이버 로고 */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .logo a {
+                        display: flex;
+                        justify-content: center;
+                    }
+                        .logo-a { /* 네이버 로고 링크 */
+                            display: flex;
+                            justify-content: center;
+                        }
+                    .search { /* 네이버 검색창 */
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        /* border: 3px solid red; */
+                        color: greenyellow;
+                    }
+                        .searchbar { /* 검색창 */
+                            width: 80%;
+                            height: 30%;
+                            background-image: url();
+                            border: 3px solid #19CE60;
+                        }
+                        .searchbarimage {/* 검색이미지 */
+                            /* background: url(../img/네이버\ 검색창.jpg); */
+                            width: 10%;
+                            height: 30%;
+                            border: 3px solid #19CE60;
+                            background-color: #19CE60;
+                        }
+                .nav {
+                    display: grid;
+                    width: 100%;
+                    height: 100%;
+                    border-top: 1px solid rgb(216, 210, 210);
+                    border-bottom: 1px solid rgb(216, 210, 210);
+                    grid-template-columns: 7fr 3fr;
+                }
+                    .menu { /* 메뉴 */
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                        .menu-2 {
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            justify-content: space-evenly;
+                            align-items: center;
+                        }
+                        .menu-2 a {
+                            color: #19CE60;
+                            text-decoration: none;
+                        }
+                        .menu-2-2 {
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            justify-content: space-evenly;
+                            align-items: center;
+                        }
+                        .menu-2-2 a {
+                            color: black;
+                            text-decoration: none;
+                        }
+                    .weather{ /* 날씨 정보 */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+            .body {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                grid-template-rows: 1fr 1.5fr 1.5fr 1fr;
+                /* border: 3px solid blue; */
+            }
+                .box1 {
+                    display: grid;
+                    grid-template-columns: 2.2fr 0.8fr;
+                    grid-template-rows: 2fr 1fr;
+                }
+                    .guang-go {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .login { /* 로그인 */
+                        display: grid;
+                        background-color: rgb(247, 247, 247);
+                        border: 1px solid rgb(216, 210, 210);
+                        width: 100%;
+                        height: 100%;
+                        grid-template-rows: 0.9fr 1fr 0.9fr;
+                    }
+                        .login-top {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .login-in { /* 로그인 내부 */
+                            width: 100%;
+                            height: 100%;
+                        }
+                            .login-in2 {
+                                display: flex;
+                                width: 100%;
+                                height: 100%;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                                .login-in-btn { /* 로그인 버튼 */    
+                                    width: 90%;
+                                    height: 100%;
+                                    background-color: #19CE60;
+                                    color: white;
+                                    border: none;
+                                    font-weight: 900;
+                                }
+                        .login-bottom {
+                            width: 100%;
+                            height: 100%;
+                        }
+                .box2 {
+                    background-color: blue;
+                }
+                    .newbar { /* 로그인 */
+                            background-color: rgb(247, 247, 247);
+                            border: 1px solid rgb(216, 210, 210);
+                            width: 100%;
+                            height: 100%;
+                        }
+                    .stock { /* 증시 현황 */
+                        background-color: rgb(247, 247, 247);
+                        border: 1px solid rgb(216, 210, 210);
+                        width: 100%;
+                        height: 100%;
+                    }
+                .box3 {
+                    background-color: coral;
+                }
+                .box4 {
+                    background-color: crimson;
+                }
+
+
+
+
+            .footer {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                border: 3px solid yellow;
+            }
+    </style>
+</head>
+<body>
+    <div class="wrapper item">
+        <div class="container">
+            <div class="item header">
+                <div class="item main">
+                    <div class="item logo"><!-- 네이버 로고 -->
+                            <a href="#">
+                                <img src="../img/네이버로고.jpg" alt="X" width="85%">
+                            </a>
+                    </div>
+                    <div class="item"><!-- 네이버 검색창 -->
+                        <form class="search">
+                            <input class="searchbar" type="search">
+                            <input class="searchbarimage" type="submit" id="searchbarimage" value="">
+                        </form>
+                    </div>
+                    <div class="item"><!-- 네이버를 시작페이지로 -->
+                        <div>
+                            <h4 class="firstpage">
+                                네이버를 시작페이지로
+                                쥬니어네이버
+                                해피빈
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item nav">
+                    <div class="item menu"> <!-- 메뉴 -->
+                        <div class="item menu-2">
+                            <a href="#"><strong>메일</strong></a>
+                            <a href="#"><strong>카페</strong></a>
+                            <a href="#"><strong>블로그</strong></a>
+                            <a href="#"><strong>지식iN</strong></a>
+                            <a href="#"><strong>쇼핑</strong></a>
+                            <a href="#"><strong>쇼핑LIVE</strong></a>
+                            <a href="#"><strong>Pay</strong></a>
+                            <a href="#"><strong>TV</strong></a>
+                        </div>
+                        <div class="item menu-2-2"> <!-- 메뉴2 -->
+                            <a href="#"><b>사전</b></a>
+                            <a href="#"><b>뉴스</b></a>
+                            <a href="#"><b>증권</b></a>
+                            <a href="#"><b>부동산</b></a>
+                            <a href="#"><b>지도</b></a>
+                            <a href="#"><b>VIBE</b></a>
+                            <a href="#"><b>도서</b></a>
+                            <a href="#"><b>웹툰</b></a>
+                        </div>
+                    </div>
+                    <div class="item weather"> <!-- 날씨 -->
+                        <img src="../img/네이버 날씨.jpg" alt="X">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item body">
+                <div class="item box1">
+                    <div class="item guang-go"> <!-- 광고 -->
+                        <a href="#">
+                        <img src="../img/싱하형2.jpg" alt="X" width="40%" height="100%">
+                        <img src="../img/네이버 광고1.jpg" alt="X" width="58%" height="100%">
+                        </a>
+                    </div>
+                    <div class="item login"> <!-- 로그인 -->
+                        <div class="item">
+                            <p style="font-size: 0.75em;">네이버를 더 안전하고 편리하게 사용하세요</p>
+                        </div>
+                        <div class="item">
+                            <div class="login-in2">
+                                <input class="login-in-btn" type="button" value="NAVER 로그인">
+                            </div>
+                        </div>
+                        <div class="item">
+
+                        </div>
+                    </div>
+                    <div class="item newbar"> <!-- 뉴스바 -->
+                        123
+                    </div>
+                    <div class="item stock">
+                        
+                    </div>
+                </div>
+                <div class="item box2">
+                    123
+                </div>
+                <div class="item box3">
+                    123
+                </div>
+                <div class="item box4">
+                    123
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="item footer">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

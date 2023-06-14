@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">body div
+        <div style="width: 300px;">div
+            <ul>
+                <li>li
+                    <span id="span1">span</span>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 300px;">div
+            <ul>
+                <li>li
+                    <span id="span2">span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // parent : ~의 바로 위 부모
+            // $('span').parent().css({'color':'red', 'border':'2px solid red'});
+            
+            // parents : ~의 위에 있는 부모 모두
+            // $('span').parents().css({'color':'red', 'border':'2px solid red'});
+
+            // parentsUntil : ~에서부터 그 위에 있는 특정 부모까지의 범위
+            // $('span').parentsUntil('div').css({'color':'red', 'border':'2px solid red'});
+
+            // closest : 가장 근접한것 (span으로부터 가장 근접한 부모요소)
+            $('span').closest('div').css({'color':'red', 'border':'2px solid red'});
+            // 2번 스판에서 시작해서 1번에 있는 ul의 색깔을 노란색으로 바꾸시오
+            $('#span2').closest('div').prev('div').find('ul').css({'color':'yellow', 'border':'2px solid yellow'});
+        });
+    </script>
+</body>
+</html>

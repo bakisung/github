@@ -1,0 +1,9 @@
+package service.copy;
+
+import javax.servlet.http.HttpSession;
+
+public interface MemberService {
+	
+	// 로그인
+	void login(String id, String pwd, HttpSession session);
+}

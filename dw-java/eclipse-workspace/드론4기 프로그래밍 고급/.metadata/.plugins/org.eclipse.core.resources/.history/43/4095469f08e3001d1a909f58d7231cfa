@@ -1,0 +1,21 @@
+package kr.or.dw.basic;
+
+public class jdbcTest01 {
+
+	public static void main(String[] args) {
+
+		//	JDBC(Java DataBase Connectivity) 라이브러리를 이용한 DB자료 처리하기
+		
+		/*
+		 * - 데이터베이스 처리 순서
+		 * 1. 드라이버 로딩 : 라이브러리를 사용할 수 있게 메모리로 읽어들이는 작업
+		 * 					ㄴClass.forName("oracle.jdbc.driver.OracleDriver");
+		 * 2. DB시스템에 접속하기 : 접속이 완료되면 Connection 객체가 생성되어 반환된다.
+		 * 					ㄴDriverManager.getConnection() 메서드를 사용한다.
+		 * 3. 질의 : SQL문장을 DB서버에 보내서 그 결과를 얻어온다.
+		 * 					ㄴ(Statement 객체나 PreparedStatement 객체를 이요하여 작업한다.)
+		 */
+		
+	}
+
+}

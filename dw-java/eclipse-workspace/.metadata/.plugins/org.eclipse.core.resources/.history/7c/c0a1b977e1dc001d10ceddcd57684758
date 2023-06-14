@@ -1,0 +1,51 @@
+package training;
+
+import java.util.Scanner;
+
+public class SimpleRPG {
+
+	static Scanner s = new Scanner(System.in);
+	
+	Character c;
+	Monster m;
+	item[] item;
+	Potion p;
+	
+	SimpleRPG() {
+		c = new Character("박희성", 10, 10, 10, 10, 1, 1, 1, 0);
+		m = new Monster("몬스터", 10, 10, 10, 10, 1, 1, 1, 0);
+	}
+
+public static void main(String[] args) {
+		
+		SimpleRPG rpg = new SimpleRPG();
+	
+		while (true) {
+			System.out.println("===================");
+			System.out.println("1) 내 정보\t2) 사냥\t3) 종료");
+			System.out.println("===================");
+			int input = Integer.parseInt(s.nextLine());
+
+			switch (input) {
+				case 1:
+					System.out.println("내 정보를 불러옵니다.");
+					rpg.c.showme();
+					break;
+				case 2:
+					System.out.println("사냥을 시작합니다.");
+					rpg.c.hunt();
+					break;
+				case 3:
+					System.out.println("게임을 종료합니다.");
+					System.exit(input);
+					break;
+				default :
+					System.out.println("다시 입력하세요.");
+					break;
+			}
+
+		} // 와일 종료
+	
+	} // 메인 종료
+
+} // 클래스 종료

@@ -1,0 +1,92 @@
+package d_array;
+
+import java.util.Arrays;
+
+import javax.swing.text.html.MinimalHTMLWriter;
+
+public class Array {
+
+	public static void main(String[] args) {
+		
+		//=======================================절취선=======================================
+
+		/*
+		 * << 배열 >>
+		 * - 여러개의 값을 하나의 변수에 저장해서 사용하는 것이다.
+		 * - 참조형 타입이다.
+		 * - 인덱스로 값을 구분한다.
+		 * - 길이를 변경할 수 없다.
+		 */
+		
+		int[] array; // 배열의 주소를 저장할 공간이 만들어진다.
+		array = new int[5]; //배열을 생성하고 그 주소가 저장된다.
+		
+//		int[] array2 = new int[5];
+		
+//		array = new int[] {1, 2, 3, 4, 5};
+//		array = {1, 2, 3, 4, 5}; // 이 방법은 변수의 선언과 초기화를 동시에 해야한다.
+		int[] array2 = {1, 2, 3, 4, 5};
+		
+//		System.out.println(array2[0]);
+//		System.out.println(array2[1]);
+//		System.out.println(array2[2]);
+//		System.out.println(array2[3]);
+//		System.out.println(array2[4]);
+		
+//		int sum = 0;
+//		for(int i = 0; i < array2.length; i++) {
+//			sum += array2[i];
+//		}
+//		System.out.println("합계: " + sum);
+		
+//		int[] arrayx;
+//		arrayx = new int[10];
+//		
+//		for (int i = 0; i < arrayx.length; i++) {
+//			arrayx[i] = (int)(Math.random() * 100) + 1;
+//		}
+//		System.out.println(Arrays.toString(arrayx)); // 배열의 값들을 불러오는 방법이다.
+//		
+//		// 위에서 만든 임의의 숫자 10개 배열에서 최대값과 최소값을 구해주세요.
+//		// max와 min을 선언하고 배열들과 비교하여 for문으로 반복한 arrayx[i] 중에서 가장 큰 값이 결국 마지막 max값이 되고, 가장 작은 값이 마지막 min값이 된다.
+//		int max = arrayx[0];
+//		int min = arrayx[0];
+//		for (int i = 0; i < arrayx.length; i++) {
+//			if (arrayx[i] > max) {
+//				max = arrayx[i];
+//			} else if (arrayx[i] < min) {
+//				min = arrayx[i];
+//			}
+//		}
+//		System.out.println("최대값은 " + max + " 입니다.");
+//		System.out.println("최소값은 " + min + " 입니다.");
+		
+		
+		
+		//=======================================절취선=======================================
+		
+		// 1 ~ 10 까지의 숫자를 배열 x에 랜덤하게 배치하세요.
+		int[] x = new int[10];
+		int randomNum = x[0];
+		
+		for (int i = 0; i <= x.length; i++) {
+			x[i] = (int)(Math.random() * 10 + 1);
+			if (x[i] != randomNum) {
+				randomNum = x[i];
+				System.out.print(randomNum + " ");
+			} else if (x[i] == randomNum){
+				randomNum = "동일숫자";
+				System.out.print(randomNum);
+			}
+		}
+		
+		
+		
+		
+		
+		
+		//=======================================절취선=======================================
+
+	}
+
+}

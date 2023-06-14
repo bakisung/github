@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    .bgBlue {
+      background-color: lightblue;
+    }
+  </style>
+  <title>QUIZ</title>
+</head>
+  <body>
+    <h1>Hello World</h1>
+    <input id="name" value="Amigo" />
+    <button class="btn">click</button>
+    <div class="divClass"></div>
+
+    <script src="quiz.js"></script>
+    <script>
+      const h1 = document.querySelector("h1");
+      console.log(h1.innerHTML); // Hello World
+
+      const button = document.querySelector(".btn");
+      const callback = function (e) {
+        const input = document.querySelector("#name");
+        const div = document.querySelector(".divClass");
+        div.innerHTML = `Hi~ ${input.value}`;
+        console.log(div.innerHTML); // Hi~ Amigo
+      };
+
+      const changeColor = function (e) {
+        console.log(e);
+        if (e.type == "mouseenter") {
+          h1.classList.add("bgBlue");
+        } else {
+          h1.classList.remove("bgBlue");
+        }
+      };
+      button.addEventListener("click", callback);
+      h1.addEventListener("mouseenter", changeColor);
+      h1.addEventListener("mouseleave", changeColor);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <!-- <div id="div"></div>
+        <div class="class"></div>
+        <p></p>
+        <span></span> -->
+
+        <script>
+            // 변수 variable
+            // divElement 같은 작명방법을 CamelCase 라고 함
+            const divElement = document.querySelector("#div"); /* assignment 뜻 : 선언한다. */
+            divElement("#div").innerHTML = "fuck1";
+            divElement("#div").style.color = "red";
+            divElement("#div").style.backgroundColor = "yellow";
+            divElement("#div").style.fontSize = "40px";
+
+            console.dir(divElement);
+            console.log(typeof divElement);
+
+            // display, margin, padding, fontFamily, fontStyle, fontWeight 등을 사용해주세요
+            // const 변수를 이용해주세요.
+            document.querySelector(".class").innerHTML = "여기는 class 태그 정보";
+            divElement.innerHTML = "에베베";
+            document.querySelector("p").innerHTML = "여기는 p 태그 정보";
+
+            document.querySelector("").innerHTML = "여기는 span 태그 정보";
+        </script>
+    </body>
+</html>

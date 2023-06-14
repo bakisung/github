@@ -1,0 +1,11 @@
+package kr.or.dw.basic;
+
+public class ThreadTest02 {
+
+	public static void main(String[] args) {
+		
+		// Thread를 사용하는 방법
+		
+	}
+
+}

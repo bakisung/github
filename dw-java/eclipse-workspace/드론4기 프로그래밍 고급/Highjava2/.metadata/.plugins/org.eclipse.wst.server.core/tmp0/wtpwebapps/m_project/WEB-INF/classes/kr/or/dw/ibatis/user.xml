@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="user">
+
+	<select id="getUserNick" parameterClass="String" resultClass="String">
+		SELECT nick FROM t_user WHERE nick = #nick#
+	</select>
+	
+	<insert id="insertUser" parameterClass="userVO">
+	
+		<selectKey keyProperty="user_no" resultClass="int">
+			SELECT t_user_seq.nextval user_no FROM dual
+		</selectKey>
+	
+		INSERT INTO t_user (
+							 user_no
+							,email
+							,pass
+							,nick
+							,name
+							,bir
+							,gender
+							,auth_cd
+							,gb_del
+							)
+					VALUES (
+							 #user_no#
+							,#email#
+							,#pass#
+							,#nick#
+							,#name#
+							,#bir#
+							,#gender#
+							,'A101'
+							,'N'
+							)
+	</insert>
+	
+	<select id="loginUser" parameterClass="String" resultClass="userVO">
+		SELECT * FROM t_user WHERE email = #email#
+	</select>
+	
+	<update id="updateUserPicPath" parameterClass="userVO">
+		UPDATE t_user SET pic_path = #pic_path# WHERE user_no = #user_no#
+	</update>
+
+</sqlMap>

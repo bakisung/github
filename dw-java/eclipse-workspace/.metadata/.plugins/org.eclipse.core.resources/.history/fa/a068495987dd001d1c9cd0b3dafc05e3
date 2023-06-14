@@ -1,0 +1,11 @@
+package f_oop2;
+
+public abstract class Animal {
+
+	void run() {
+		System.out.println("달려간다~~~");
+	}
+	
+	abstract void sound();
+	
+}

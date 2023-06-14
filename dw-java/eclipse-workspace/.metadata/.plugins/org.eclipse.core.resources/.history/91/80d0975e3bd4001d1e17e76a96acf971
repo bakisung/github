@@ -1,0 +1,16 @@
+package e_oop;
+
+public class UserDefinedDataType {
+
+	public static void main(String[] args) {
+
+		/*
+		 * 사용자 정의 데이터 타입 (클래스의 다른말)
+		 *  - 데이터의 최종 진화 형태이다.(변수 -> 배열 -> 구조체 -> 클래스)
+		 *  - 서로 다른 타입의 데이터를 묶어서 사용하는 것이다.
+		 *  - 변수와 메서드로 구성할 수 있다.
+		 */
+		
+	}
+
+}

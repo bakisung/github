@@ -1,0 +1,28 @@
+package dw_package;
+
+public class ConditionalStatement {
+
+	public static void main(String[] args) {
+
+		/*
+		 * << if 문 >>
+		 * - if : 조건식의 결과가 true 이면 블럭 안의 문장을 수행한다.
+		 * - else if : 다수의 조건이 필요할 때 if 뒤에 추가한다.
+		 * - else : 결과가 true 인 조건식이 하나도 없는 경우를 위해 추가한다.
+		 */
+		
+		int a = 10;
+		if(a < 100) {
+			System.out.println("조건식의 연산 결과가 true 이면 수행된다.")
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package kr.or.dw.controller;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class CommonController {
+
+	public String loginForm(HttpServletResponse res) throws Exception {
+		
+	}
+	
+}

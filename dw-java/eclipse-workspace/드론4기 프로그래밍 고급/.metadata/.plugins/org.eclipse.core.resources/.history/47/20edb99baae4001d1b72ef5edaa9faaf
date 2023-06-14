@@ -1,0 +1,28 @@
+package kr.or.dw.basic;
+
+import java.util.Stack;
+
+public class StackTest {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}
+
+class Browser {
+	private Stack<String> back;		// 이번 방문 내역이 저장될 스택 변수
+	private Stack<String> forward;	// 다음 방문 내역이 저장될 스택 변수
+	private String currentURL;		// 현재 페이지
+	public Browser(Stack<String> back, Stack<String> forward, String currentURL) {
+		super();
+		this.back = back;
+		this.forward = forward;
+		this.currentURL = currentURL;
+	}
+	
+	// 생성자
+	
+}

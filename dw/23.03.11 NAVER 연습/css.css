@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+HTML, body {
+    width: 100%;
+}
+.center
+ {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto;
+}
+.header {
+    display: grid;
+    border: 1px solid red;
+    grid-template-rows: 8fr 2fr;
+}
+    .header-top {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .header-bottom {
+        display: flex;
+
+    }
+    ul {
+        list-style: none;
+    }
+    li {
+        float: left;
+        margin-right: 10px;
+    }

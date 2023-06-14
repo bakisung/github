@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" placeholder="이름을 적어주세요."> <!-- 텍스트 작성 칸 -->
+    <button onclick="callback()">click</button> <!-- 클릭 버튼 -->
+    <p id="greeting"></p> <!-- 작성한 값을 남겨둘 공간 -->
+
+    <script> 
+        /* 이름을 적고 클릭 버튼을 누르면 그 값이 p태그에 표시되게 하라 */
+            const callback = function() { 
+                const input = document.querySelector("#input")
+                document.querySelector("#greeting").innerHTML = input.value;
+                input.value = ""; /* 클릭하면 작성한 텍스트 초기화 */
+            };
+    </script>
+</body>
+</html>

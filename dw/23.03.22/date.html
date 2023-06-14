@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 날짜
+        const d1 = new Date(); /* 날짜 객체 생성자 */
+        console.log(d1);
+        // 날씨 객체를 만드는 여러가지 포맷(더 많은 사항은 구글링할것)
+        const d2 = new Date("2022-03-25");
+        console.log(d2);
+        const d3 = new Date("October 13, 2014 11:13:00")
+        console.log(d3);
+        const d4 = new Date(2018, 11, 24, 10, 33, 30, 0);
+        console.log(d4);
+        const d5 = new Date(2023); /* year가 아니라 ms(밀리세컨드)이다 */
+        console.log(d5);
+        console.log(d1.getTime());
+
+        const date1 = new Date(); /* 오늘 날짜 */
+        const date2 = new Date("12/25/2023"); /* 2023년 크리스마스 */
+        const diff = date2.getTime() - date1.getTime(); /* 두 날짜의 사이 시간의 밀리세컨드 */
+        const 남은날짜 = Math.round(diff / (24 * 60 * 60 * 1000));
+        console.log(남은날짜);
+        
+        // 기억해야할 내용
+            // 날짜를 계산할때는 ms(밀리세컨드)로 바꿔서 한다 (getTime함수)
+            // getTime함수의 리턴값은 1970년 1월1일부터 해당 날짜까지의 시간을 밀리세컨드로 표시한것
+            // 1970년 1월1일은 국제표준에서 정한 기준일 !!! 
+
+        // 1초 = 1000밀리세컨드
+        // 1분 = 60초
+        // 1시간 = 60분
+        // 1일 = 24시간
+
+        const now = new Date();
+        console.log(now.getFullYear()); 
+        console.log(now.getMonth()); /* 0~11월까지 있음. 0월이 1월 */
+        console.log(now.getDate());
+        console.log(now.getDay()); /* 0~6까지 있음. 0 = 일요일 */
+        console.log(now.getTime()); /* 1980년1월1일 이후 밀리세컨드시간 */
+    </script>
+</body>
+</html>

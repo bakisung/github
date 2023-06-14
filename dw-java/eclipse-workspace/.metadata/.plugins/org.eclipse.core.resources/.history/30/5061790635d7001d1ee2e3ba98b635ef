@@ -1,0 +1,16 @@
+package myGame2;
+
+public class MyGame2 {
+
+	MyGame2() {
+		
+	}
+	
+	
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

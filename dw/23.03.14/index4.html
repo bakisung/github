@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text"></div>
+    <button onclick="callback()">click</button>
+    
+    <script>
+        const text = prompt("텍스트를 입력해주세요.");
+        const div = document.querySelector("#text");
+        div.innerHTML = text;
+
+        const callback = function() {
+            div.style.backgroundColor = "red";
+        };
+    </script>
+</body>
+</html>

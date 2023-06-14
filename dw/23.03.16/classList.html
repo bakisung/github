@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .myStyle {
+            background-color: coral;
+            padding: 16px;
+        }
+        div {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <p>나는 DIV 입니다.</p>
+    </div>
+    <button id="addbtn">클래스 추가</button>
+    <button id="delbtn">클래스 삭제</button>
+    <button id="onebtn">Toggle 토글</button>
+
+    <script>
+        const addbtn = document.querySelector("#addbtn");
+        const 함수 = function(e) {
+            const div = document.querySelector("#myDiv");
+            div.classList.add("myStyle");
+        };
+        addbtn.addEventListener("click", 함수);
+
+        const delbtn = document.querySelector("#delbtn");
+        const 함수2 = function(e) {
+            const div = document.querySelector("#myDiv")
+            div.classList.remove("myStyle");
+        }
+        delbtn.addEventListener("click", 함수2)
+
+        const onebtn = document.querySelector("#onebtn");
+        const 함수3 = function(e) {
+            const div = document.querySelector("#myDiv")
+            div.classList.toggle("myStyle");
+        }
+        onebtn.addEventListener("click", 함수3)
+
+
+
+        // classList는 DOM 요소의 클래스 목록을 다루는 JavaScript 객체입니다. 
+        // classList 객체를 사용하면 요소의 클래스를 추가, 제거, 전환하거나, 
+        // 클래스가 존재하는지 확인할 수 있습니다.
+
+        // classList 객체의 주요 메서드는 다음과 같습니다.
+        
+            // add(className): 요소에 클래스를 추가합니다.
+            // remove(className): 요소에서 클래스를 제거합니다.
+            // toggle(className): 요소에 클래스가 존재하면 제거하고, 존재하지 않으면 추가합니다.
+            // contains(className): 요소에 클래스가 존재하는지 확인합니다.
+    </script>
+</body>
+</html>

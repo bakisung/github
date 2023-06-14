@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+        .big {
+            font-size: 200%;
+            color: black;
+            font-weight: bold;
+        }
+        .back {
+            background-color: yellow;
+        }
+        .reddish {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="width: 500px;">
+        <ul>
+            <li class="start">li class="start"</li>
+            <li class="my">li class="my"</li>
+            <li>li</li>
+            <li class="my">li class="my"</li>
+            <li class="stop">li class="stop"</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul>
+    </div>
+    <button id="fadeOutBtn">요소 Fade Out</button>
+    <button id="fadeInBtn">요소 Fade In</button>
+    <button id="fadeToggleBtn">요소 Fade Toggle</button>
+    <button id="fadeToBtn">요소 Fade To</button>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        function showConsole(target) {
+            console.log(target);
+        }
+
+        $('.start').addClass('reddish');
+        $('li:last').css('border', '3px solid red');
+
+        $('#fadeOutBtn').on('click', function () {
+            $('li:last').fadeOut(); // fadeIn 기본형
+            // $('li:last').fadeOut(); // fadeIn 파라미터 숫자
+            // $('li:last').fadeOut(); // fadeIn 파라미터 문자열
+        })
+        $('#fadeInBtn').on('click', function () {
+            $('li:last').fadeIn(); // fadeIn 기본형
+            // $('li:last').fadeIn(); // fadeIn 파라미터 숫자
+            // $('li:last').fadeIn(); // fadeIn 파라미터 문자열
+        })
+        $('#fadeToggleBtn').on('click', function () {
+            $('li:last').toggle(); // toggle 기본형
+            // $('li:last').toggle(); // toggle 파라미터 숫자
+            // $('li:last').toggle(); // toggle 파라미터 문자열
+        })
+        $('#fadeToBtn').on('click', function () {
+            $('li:last').fadeTo('slow', 0.2); // fadeTo 기본형
+            // $('li:last').fadeTo(); // fadeTo 파라미터 숫자
+            // $('li:last').fadeTo(); // fadeTo 파라미터 문자열
+        })
+
+    </script>
+</body>
+</html>

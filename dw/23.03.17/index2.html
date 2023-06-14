@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>Guess the number between 1-10</p>
+    <input id="guessed" type="text" style="padding: 5px" />
+    <button onclick="verify()">Submit</button>
+    <div></div>
+
+    <script>
+        // 1. 인풋창에 1~10 숫자 입력하고 버튼 클릭
+        // 2. 창 밑에 1~10 랜덤하게 출력
+        function verify() {
+            let input = document.querySelector("#guessed").value;
+            const random = Math.floor(Math.random() * (11 - 1)) + 1;
+            const div = document.querySelector("div");
+            input = parseInt(input, 10);
+
+        // NaN : Not a Number (숫자가 아니다 라는 경고)
+        // isNaN은 문자열인지 아닌지 여부를 물어보는 함수이다. 답은 항상 참 or 거짓으로 나온다.
+            if (isNaN(input)) {
+                div.innerHTML = "숫자로 써..";
+                return; 
+                // 리턴구문을 만나면 더이상 프로세스를 진행하지 않고 나간다.
+                // 아래쪽 코드는 실행되지 않음
+            };
+
+            if (input <= 1 || input > 10) {
+                div.innerHTML = "1 ~ 10 사이로만 쓰라고";
+                return; 
+            };
+                
+            // 3. 내가 입력한 숫자와 출력된 숫자가 같으면 "win"
+            // 4. 숫자가 다르면 "lose"
+                if (input === random) {
+                    div.innerHTML = random + ": ㅊㅋ";
+                } else {
+                    div.innerHTML = random + ": ㅂㅅ";
+                }
+        };
+    </script>
+</body>
+</html>

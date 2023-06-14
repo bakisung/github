@@ -1,0 +1,19 @@
+package kr.or.dw.basic;
+
+public class SetTest {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Set의 특징(List와 비교)
+		 * 1. List
+		 *	- 데이터의 순서(index)가 있다.
+		 *	- 중복되는 데이터를 저장할 수 있다.
+		 * 2. Set
+		 * 	- 데이터의 순서(index)가 없다.
+		 * 	- 중복되는 데이터를 저장할 수 없다.
+		 */
+		
+	}
+
+}

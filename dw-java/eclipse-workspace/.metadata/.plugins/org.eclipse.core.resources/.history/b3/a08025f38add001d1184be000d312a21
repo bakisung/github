@@ -1,0 +1,82 @@
+package f_oop2;
+
+public class Starcraft {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class Unit {
+	int hp; // 체력
+	final int MAX_HP; // 최대 체력
+	
+	Unit(int hp){
+		MAX_HP = hp;
+		this.hp = hp;
+	}
+}
+
+class MArine extends Unit {
+
+	MArine() {
+		super(40);
+	}
+	
+}
+
+class Tank extends Unit{
+	
+	Tank() {
+		super(150);
+	}
+}
+
+class Dropship extends Unit {
+
+	Dropship() {
+		super(200);
+
+	}
+	
+}
+
+class SCV extends Unit implements Repairable{
+
+	SCV() {
+		super(50);
+
+	}
+	
+	void repair() {
+		
+	}
+	
+}
+
+interface Repairable {};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

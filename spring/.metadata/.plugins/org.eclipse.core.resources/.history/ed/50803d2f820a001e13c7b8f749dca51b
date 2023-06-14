@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%@ include file="../include/header.jsp" %>
+
+	<div class="content-wrapper">
+	    <div class="content-header">
+			<h2>indexPage 입니다...................................</h2>
+			<div style="border: solid 10px red; padding: 10px;">
+				<input type="button" class="btn btn-warning" style="width: 15em; margin-right: 3em;" value="고">
+				<input type="button" class="btn btn-primary" style="width: 10em" value="최">
+				<input type="button" class="btn btn-danger" style="width: 10em" value="동">
+				<input type="button" class="btn btn-success" style="width: 10em" value="주">
+			</div>
+		</div>
+	</div>
+	
+<%@ include file="../include/footer.jsp" %>

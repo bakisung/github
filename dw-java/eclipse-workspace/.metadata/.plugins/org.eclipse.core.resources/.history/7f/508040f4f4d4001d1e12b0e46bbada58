@@ -1,0 +1,11 @@
+package e_oop.score;
+
+public class Score {
+
+	public static void main(String[] args) {
+
+		Student[] students = new Student[10];
+		
+	}
+
+}

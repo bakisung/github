@@ -1,0 +1,21 @@
+package i_collection;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+
+public class Board_p {
+
+	public static void main(String[] args) {
+
+		ArrayList<HashMap<String, String>> table = new ArrayList<>();
+		HashMap<String, String> boadwritting = new HashMap<>();
+		int count = 0;
+		Date today = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat('yy/MM/dd a hh:mm');
+		String day sdf.format(today);
+		
+	}
+
+}

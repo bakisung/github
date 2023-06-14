@@ -1,0 +1,51 @@
+package e_oop;
+
+import java.util.Scanner;
+
+public class TV_home_training {
+	
+	
+	//입력
+	Scanner s = new Scanner(System.in);
+
+	// 전원
+	static boolean power;
+	void power() {
+		String onOff = s.nextLine(); // onOff에 입력되는 값을 저장해둔다.
+		if (onOff.equals("on")) { // 위에서 저장된 값이 on인 경우
+			power = true;
+			System.out.println("전원이 켜집니다. enjoy");
+			
+		} else if (onOff.equals("off")) {
+			power = false;
+			System.out.println("전원이 꺼집니다. 꺼지세요");
+		}
+	}
+	
+	
+
+	public static void main(String[] args) {
+		
+		// 사용 설명
+		System.out.println(
+				"TV 사용에 대한 설명입니다.\n"
+				+ "\"on/off\"를 입력하여 TV의 전원을 켜고 끌 수 있습니다.\n"
+				+ "\"volumeUp/volumeDown\"을 입력하여 소리를 조절할 수 있습니다.\n"
+				+ "\"channelUp/channelDown\"을 입력하여 소리를 조절할 수 있습니다."
+				);
+		
+		TV_home_training tv = new TV_home_training();
+		
+		while(power) {
+			if (power == true) {
+				
+			} else if (power == false) {
+				System.out.println("게임이 종료됩니다.");
+				break;
+			}
+			tv.power();
+		}
+		
+	}
+
+}

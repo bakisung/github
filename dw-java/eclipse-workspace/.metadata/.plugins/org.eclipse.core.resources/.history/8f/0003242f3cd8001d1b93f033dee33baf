@@ -1,0 +1,26 @@
+package GameProject;
+
+import javax.swing.Spring;
+
+public class footballPlayer {
+	
+	String name;
+	int cm;
+	int kg;
+	String club;
+	int backNumber;
+	
+	beckham(int cm, int kg, String club, int backNumber) {
+		this.cm = cm;
+		this.kg = kg;
+		this.club = club;
+		this.backNumber = backNumber;
+	}
+
+	public static void main(String[] args) {
+
+	backham backha2m = new backham();
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package kr.or.dw.controller;
+
+import org.slf4j.Logger;
+
+public class MemberController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
+}

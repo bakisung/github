@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select id="mySelect">
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+    </select>
+
+    <p id="selectedValue"></p>
+
+    <script>
+        // 보기가 바뀌는 순간 옵션1이다 옵션2다 등등 알림 문구 떠야함 addEventListener    change이벤트
+        
+        // 대상 선언
+        const options = document.querySelector("#mySelect");
+        console.log(options);
+
+        // 함수 선언
+        const callback = function (e) {
+            console.log(e);
+            const p = document.querySelector("#selectedValue");
+            p.innerHTML = e.target.value + " is selected.";
+        };
+        // 함수와 이벤트 등록
+        options.addEventListener("change", callback);
+    </script>
+</body>
+</html>

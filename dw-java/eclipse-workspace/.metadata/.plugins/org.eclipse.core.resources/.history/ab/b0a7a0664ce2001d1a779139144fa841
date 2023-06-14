@@ -1,0 +1,31 @@
+package i_collection;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Board_p {
+
+	public static void main(String[] args) {
+
+		ArrayList<HashMap<String, String>> table = new ArrayList<>();
+		HashMap<String, String> boadwritting = new HashMap<>();
+		int count = 0;
+		Date today = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd a hh:mm:ss");
+		String day = sdf.format(today);
+		Scanner sc = new Scanner(System.in);
+		
+		end: while(true) {
+			System.out.println("번호\t제목\t작성자\t작성일");
+			
+			for (int i = 0; i < table.size(); i++) {
+				System.out.print(i+1 + "\t");
+			}
+		}
+		
+	}
+
+}

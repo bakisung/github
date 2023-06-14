@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        const colors = ["red","blue","green","deeppink","coral","yellowgreen","orange","yellow"];
+        // 1단계 대상 만들기
+        // window
+        // 2단계 함수 만들기
+            const func = function(e) {
+                const width = window.innerWidth; /* 브라우저 창의 가로길이 */
+                const div = document.querySelector("div");
+                div.innerHTML = width;
+                if (width > 0 && width < 200) {
+                    document.body.style.backgroundColor = colors[0];
+                } else if (width > 200 && width < 300) {
+                    document.body.style.backgroundColor = colors[1];
+                } else if (width > 300 && width < 400) {
+                    document.body.style.backgroundColor = colors[2];
+                } else if (width > 400 && width < 500) {
+                    document.body.style.backgroundColor = colors[3];
+                } else if (width > 500 && width < 600) {
+                    document.body.style.backgroundColor = colors[4];
+                } else if (width > 600 && width < 700) {
+                    document.body.style.backgroundColor = colors[5];
+                } else if (width > 700 && width < 800) {
+                    document.body.style.backgroundColor = colors[6];
+                } else {
+                    document.body.style.backgroundColor = colors[7];
+                }
+            };
+        // 3단계 대상에 이벤트와 함수 등록하기
+        window.addEventListener("resize", func);
+    </script>
+</body>
+</html>

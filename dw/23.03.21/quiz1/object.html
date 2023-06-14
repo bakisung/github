@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName : "gildong",
+            lastName : "Hong",
+            age : 30,
+            display: function () {
+                return person. lastName + ", " + person.firstName + ", " + person.age;
+            }
+        };
+        // document.write(person.age); /* body태그에 쓰는것과 같음 */
+        // ㄴdocument.body.innerHTML = person.age;
+        // document.write(person); 객체는 이런식으로 화면에 보여주지 않는다.
+        // document.write(person.display()); 내부의 멤버함수를 이용하는것을
+
+        const tom = person;
+        tom.age = 25;
+        tom.firstName = "Tom";
+        tom.lastName = "Smith";
+        // 위와 같이 만들면 참조복사가 일어나므로 원본인 person의 값이 바뀐다.
+        document.write(tom.display());
+        document.write(person.display())
+
+        // 생성자 만드는 방법 - 중요* 첫글자는 대문자!!
+        function Person(first, last, age) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.display = function () {
+                return this.lastName + ", " + this.firstName + ", " + this.age + " "
+            }
+        }
+        const steve = new Person("Steve", "Kim", 45);
+        document.write(steve.display());
+        const tim = new Person("Tim", "Allen", 23);
+        document.write(tim.display());
+        const park = new Person("Park", "Hee-Sung", 31);
+        document.write(park.display());
+
+    </script>
+</body>
+</html>

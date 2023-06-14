@@ -1,0 +1,24 @@
+package myGame2;
+
+public class Item {
+
+	String name;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	
+	Item(String name, int hp, int mp, int att, int def) {
+		this.name = name;
+		this.hp = hp;
+		this.mp = mp;
+		this.att = att;
+		this.def = def;
+	}
+
+	public String itemInfo() {
+		
+		return null;
+	}
+	
+} // class 종료

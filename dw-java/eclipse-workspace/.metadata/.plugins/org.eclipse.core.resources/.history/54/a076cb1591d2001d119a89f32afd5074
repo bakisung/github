@@ -1,0 +1,111 @@
+package c_statement;
+
+import java.util.Scanner;
+
+public class ReptetitiveStatement {
+
+	public static void main(String[] args) {
+
+		//=======================================절취선=======================================
+		
+		// while 문과 do-while 문 비교
+//		int a = 0;
+//		while(a < 0) {
+//			System.out.println(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while(a < 0);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 1) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 1);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 10) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 10);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+
+//		int a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			++a;
+//		} while (a < 10);
+		
+		//=======================================절취선=======================================
+		
+		// 숫자 맞추기 게임을 만들어 봅시다. Up & Down 게임 (Do while 활용)
+		
+//		System.out.println("범위를 설정합니다 최대값을 입력해주세요.");
+//		Scanner s1 = new Scanner(System.in);
+		System.out.println("범위를 설정합니다 최대값을 입력해주세요.");
+		Scanner s2 = new Scanner(System.in);
+		int inputs2 = Integer.parseInt(s2.nextLine());
+		
+		int a = (int)(Math.floor(Math.random()*inputs2 + 1));
+		System.out.println("(정답은 " + a + ")");
+		int inputNum;
+		int repet = 3;
+		Scanner s = new Scanner(System.in);
+		
+		do {
+			System.out.println("0-" + inputs2 + "범위에서 숫자를 입력해주세요." + "\n기회는 " + repet + "회 입니다.");
+			inputNum = Integer.parseInt(s.nextLine());
+			
+			if (inputNum > a) {
+				System.out.println("DOWN ㅋ");
+			} else if (inputNum < a) {
+				System.out.println("UP ㅋ");
+			}
+			
+			repet--;
+			if (inputNum == a) {
+				System.out.println("정답입니다!");
+				break;
+			} else if (repet <= 0) {
+				System.out.println("3회의 기회를 모두 소진하였습니다.");
+				break;
+			}
+		} while(inputNum != a);
+		
+//		while(b <= 3);
+//			System.out.println("기회를 모두 소진하였습니다.");
+		
+		//=======================================절취선=======================================
+
+
+	}
+
+}

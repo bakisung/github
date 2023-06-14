@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello~~</h2>
+    <script>
+        // 1단계 : 이벤트의 대상을 선언
+        const h2 = document.querySelector("h2");
+        // 2단계 : 콜백함수 선언
+        const mouseEnter = function(e) {
+            h2.innerHTML = "삐";
+            h2.style.backgroundColor = "red";
+            h2.style.color = "white";
+            h2.style.fontSize = "5em";
+        };
+        const mouseLeave = function(e) {
+            h2.innerHTML = "뽀"
+            h2.style.backgroundColor = "blue"
+        };
+        // 3단계 : 대상에게 콜백함수와 원하는 이벤트를 등록한다.
+        // "mouseenter", "mouseleave"
+        h2.addEventListener("mouseenter", mouseEnter)
+        h2.addEventListener("mouseleave", mouseLeave)
+    </script>
+</body>
+</html>

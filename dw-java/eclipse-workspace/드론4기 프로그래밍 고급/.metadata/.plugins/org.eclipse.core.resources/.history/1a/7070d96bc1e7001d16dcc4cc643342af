@@ -1,0 +1,16 @@
+package kr.or.dw.basic;
+
+public class ThreadTest04 {
+
+	/*
+	 *  1 ~ 20억 까지의 합계를 구하는 프로그램을 하나의 쓰레드가 단독으로 처리할때와
+	 *  여러개의 쓰레드가 협력해서 처리할 때의 경과시간을 비교해보자.
+	 */
+
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

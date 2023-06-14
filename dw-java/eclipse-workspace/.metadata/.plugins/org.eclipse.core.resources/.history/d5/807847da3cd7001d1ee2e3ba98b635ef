@@ -1,0 +1,25 @@
+package myGame2;
+
+public class Monster {
+
+	String name;
+	int maxHp;
+	int maxMp;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	Item[] items; // 드랍 아이템
+	
+	Monster(String name, int maxHp, int maxMp, int hp, int mp, int att, int def, Item[] items) {
+		this.name = name;
+		this.maxHp = maxHp;
+		this.maxMp = maxMp;
+		this.hp = hp;
+		this.mp = mp;
+		this.att = att;
+		this.def = def;
+		this.items = new Item[10];
+	}
+	
+}

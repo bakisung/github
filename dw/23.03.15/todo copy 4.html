@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" placeholder="TODO List">
+    <button onclick="callback()">Click</button>
+    <div></div>
+
+    <script>
+    /* 검색순대로 투두리스트에 들어가야됨 */
+    const todoList = [];
+    const div = document.querySelector("div");
+    const input = document.createElement("p");
+
+    const callback = function() {
+        todoList.push(input.value);
+        console.log(todoList);
+        input.value
+
+    };
+
+    const display = function (todoList, div) {
+        for (let i=0; i<todoList.length; i++) {
+
+        };
+    };
+            
+    /* 인수로 배열과 위치태그요소를 사용한다. */
+
+    /* 엘리먼츠에 기록되는 텍스트가 중복으로 쌓이지 않게 만든다. */
+
+    </script>
+</body>
+</html>

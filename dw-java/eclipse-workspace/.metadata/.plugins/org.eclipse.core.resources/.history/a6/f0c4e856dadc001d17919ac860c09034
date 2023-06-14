@@ -1,0 +1,60 @@
+package f_oop2;
+
+class Product {
+	String name;	// 품명
+	int price;		// 가격
+	
+	Product(String name, int price){
+		this.name = name;
+		this.price = price;
+	}
+	
+	// 상품의 정보를 반환하는 메서드
+	String getInfo() {
+		return name + "(" + price + "원)";
+	}
+}
+
+class Desktop extends Product {
+
+	Desktop(String name, int price) {
+		super(name, price);
+	}
+	
+	void programming() {
+		System.out.println("프로그램을 만듭니다.");
+	}
+	
+}
+
+class Aircon extends Product {
+	
+	Aircon(String name, int price) {
+		super(name, price);
+	}
+	
+	void setTemperature() {
+		System.out.println("온도를 설정합니다.");
+	}
+}
+
+class MoodLamp extends Product {
+	
+	MoodLamp(String name, int price) {
+		super(name, price);
+	}
+	
+	void setLight() {
+		System.out.println("밝기를 조절합니다.");
+	}
+}
+
+public class Store {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

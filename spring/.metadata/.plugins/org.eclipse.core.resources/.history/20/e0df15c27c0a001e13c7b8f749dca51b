@@ -1,0 +1,10 @@
+package kr.or.dw.controller;
+
+import org.sun.slf4j.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
+
+public class MemberController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
+}

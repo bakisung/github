@@ -1,0 +1,21 @@
+package kr.or.dw.basic;
+
+import java.io.File;
+
+public class FileTest01 {
+
+	public static void main(String[] args) {
+
+		File file1 = new File("C:\\Users\\admin\\Documents\\file.txt");
+		
+		System.out.println("=========================[File1=========================]");
+		System.out.println("파일명 : " + file1.getName());
+		System.out.println("path : " + file1.getPath());
+		System.out.println("디렉토리인가? : " + file1.isDirectory());
+		System.out.println("파일인가? : " + file1.isFile());
+		System.out.println("파일명 : " + file1.getName());
+		System.out.println("파일명 : " + file1.getName());
+		System.out.println("========================================================");
+	}
+
+}

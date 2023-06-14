@@ -1,0 +1,50 @@
+package e_oop;
+
+import java.util.Scanner;
+
+public class Running {
+	
+	boolean power;
+	double speed;
+	int time;
+	int incline;
+	int temp;
+	double cal;
+	double weight;
+	static String wtf;
+	
+	static Scanner sc = new Scanner(System.in);
+
+	boolean power() {
+		if(wtf.equals("on")) {
+			this.power = true;
+		} else {
+			this.power = false;
+		}
+		
+		return this.power;
+	}
+	
+	public static void main(String[] args) {
+
+		Running run = new Running();
+		
+		String option =   "[전원 키기 : on /\n "
+						+ "전원 끄기 : off /\n "
+						+ "속도 조절 : spup OR spdown OR \"속도입력\" /\n "
+						+ "각도 조절 : incup OR incdown]";
+		
+//		System.out.println(option);
+		
+		while(true) {
+			System.out.println(option);
+			wtf = sc.nextLine();
+			
+			if (wtf.equals("on") || wtf.equals("off")) {
+				run.power();
+			}
+		}
+		
+	}
+
+}

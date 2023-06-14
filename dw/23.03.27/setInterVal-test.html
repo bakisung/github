@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1500px;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" value="멈춰!"></button>
+    <script>
+        const div = document.createElement("div");
+        const body = document.querySelector("body");
+        body.appendChild(div);
+
+        var a = 230;
+        var red = 0;
+        var green = 0;
+        var blue = 255;
+        
+
+        setInterval(function (e) {
+            let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            div.style.backgroundColor = randomColor;
+            // document.write("ㅋ")
+        }, 300);
+
+
+
+        // var p = document.querySelector("#demo");
+        // setInterval(function () {
+        //     p.innerHTML += "Hello";
+        // }, 1000);
+    </script>
+</body>
+</html>

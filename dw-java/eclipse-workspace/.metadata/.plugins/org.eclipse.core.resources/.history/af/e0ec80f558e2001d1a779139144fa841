@@ -1,0 +1,92 @@
+package i_collection;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Board_p {
+
+	public static void main(String[] args) {
+
+		ArrayList<HashMap<String, String>> table = new ArrayList<>();
+		HashMap<String, String> boadwritting = new HashMap<>();
+		int count = 0;
+		Date today = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd a hh:mm:ss");
+		String day = sdf.format(today);
+		Scanner sc = new Scanner(System.in);
+		
+		end: while(true) {
+			System.out.println("번호\t제목\t작성자\t작성일");
+			
+			for (int i = 0; i < table.size(); i++) {
+				System.out.print(i+1 + "\t");
+				if (table.get(i) != null) {
+					System.out.print(table.get(i).get("제목") + "\t");
+					System.out.print(table.get(i).get("작성자") + "\t");
+					System.out.print(table.get(i).get("작성일") + "\t");
+				}
+				System.out.println();
+			} // for 종료
+			System.out.println("=========================");
+			System.out.println("1)조회\t2)글쓰기\t3)종료");
+			
+			int input = Integer.parseInt(sc.nextLine());
+			
+			// 조회 , 수정, 삭제
+			switch (input) {
+			case 1:
+				System.out.println("조회하려는 글의 번호를 입력하시게");
+				input = Integer.parseInt(sc.nextLine());
+				if (table.get(0) == null) {
+					System.out.println("작성된 게시글이 없다네..");
+				} else {
+					System.out.println(input + "번 게시글을 조회합니다.\t"
+							+ "제목 : " + table.get(input - 1).get("제목") + "\t"
+							+ "내용 : " + table.get(input - 1).get("내용"));
+					System.out.println("\n1)수정\t2)삭제\t3)뒤로가기");
+				}
+				break;
+			case 2:
+				System.out.println("\n글을 작성합니다\n");
+				
+				System.out.println("제목을 적으시오.");
+				String inputStr = sc.nextLine();
+				boadwritting.put("제목", inputStr);
+				
+				System.out.println("내용을 적으시오.");
+				inputStr = sc.nextLine();
+				boadwritting.put("내용", inputStr);
+				
+				System.out.println("작성자를 적으시오.");
+				inputStr = sc.nextLine();
+				boadwritting.put("작성자", inputStr);
+				
+				boadwritting.put("작성일", day);
+				
+				table.add(boadwritting);
+				System.out.println("작성이 완료되었슈!");
+				break;
+			case 3:
+				System.out.println("게시판을 종료해유..");
+				System.exit(1);
+				break;
+
+			default:
+				break;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		} // while 종료
+		
+	}
+
+}

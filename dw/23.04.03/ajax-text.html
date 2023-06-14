@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul id="authors">
+        <!-- <li>
+            <h2>이름</h2>
+            <p>email</p>
+            <span>우편번호</span>
+        </li> -->
+    </ul>
+    <button onclick="doAction()">Action</button>
+    <button onclick="doAjax()">Ajax</button>
+
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        const url = 'https://jsonplaceholder.typicode.com/users';
+
+            function doAction() {
+                alert('시작');
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET",url)
+                xhr.send();
+                xhr.onreadystatechange = function (){
+                    if (this.readyState == 4 && this.status == 200) {
+                        let res = this.responseText;
+                        res = JSON.parse(res);
+                        for (let i = 0; i <= res.length; i++) {
+                                $('#authors').append(
+                                    $('<li>').append(
+                                        $('<h2>').text(res[i].name),
+                                        $('<p>').text(res[i].email),
+                                        $('<p>').text(res[i].address.zipcode)
+                                    )
+                                );
+                        }
+                    }
+                }
+            }
+
+            function doAjax() {
+                $.ajax({
+                    type : 'GET',
+                    url : url,
+                    success : function(res) {
+                        for (let i in res) {
+                            $('#authors').append(
+                                $('<li>').append(
+                                    $('<h2>').text(res[i].name),
+                                    $('<p>').text(res[i].email),
+                                    $('<p>').text(res[i].address.zipcode)
+                                )
+                            );
+                        }
+                    },
+                    error : function (xhr, status, error) {
+                        console.log(xhr)
+                        console.log(status)
+                        console.log(error)
+                    }
+                })
+            }
+
+    </script>
+</body>
+</html>

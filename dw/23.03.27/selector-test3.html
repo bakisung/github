@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+
+    <script>
+        // 제이쿼리로 하는 방법
+        $(document).ready(function() {
+            $('h2').on('click', function() {
+                $(this).css('display', 'none');
+            });
+        });
+        // e.target과 this 는 같은 용도로 사용된다.
+    </script>
+</head>
+<body>
+    <h2>클릭하면 사라집니다1.</h2>
+    <h2>클릭하면 사라집니다2.</h2>
+    <h2>클릭하면 사라집니다3.</h2>
+    <h2>클릭하면 사라집니다4.</h2>
+    <h2>클릭하면 사라집니다5.</h2>
+    <h2>클릭하면 사라집니다6.</h2>
+    <h2>클릭하면 사라집니다7.</h2>
+</body>
+</html>

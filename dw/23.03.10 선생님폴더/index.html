@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <div id="div"></div>
+    <div class="class"></div>
+    <p></p>
+    <span></span>
+
+    <script>
+      // 변수 variable
+      // divElement 같은 작명방법을 CamelCase 라고 함
+      const divElement = document.querySelector("#div"); // Assignment 어싸인한다. 선언한다.
+      divElement.innerHTML = "여기는 div 태그 정보";
+      divElement.style.color = "red";
+      divElement.style.backgroundColor = "yellow";
+      divElement.style.fontSize = "26px";
+
+      console.dir(divElement);
+      console.log(typeof divElement);
+
+      // display, margin, padding, fontFamily, fontStyle, fontWeight 등을 사용해주세요..
+      // const 변수를 이용해주세요.
+      const classElem = document.querySelector(".class");
+      classElem.innerHTML = "여기는 class 태그 정보";
+      //classElem.style.color = "#6495ED";
+      //classElem.style.color = "CornflowerBlue";
+      classElem.style.color = "rgb(100, 149, 237)";
+      classElem.style.margin = "30px 30px 30px 30px";
+      classElem.style.fontFamily = "Impact, Charcoal, sans-serif";
+      classElem.style.fontStyle = "italic";
+
+      document.querySelector("p").innerHTML = "여기는 p 태그 정보";
+      document.querySelector("span").innerHTML = "여기는 span 태그 정보";
+    </script>
+  </body>
+</html>

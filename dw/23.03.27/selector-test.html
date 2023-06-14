@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <h2>클릭하면 사라집니다1.</h2>
+    <h2>클릭하면 사라집니다2.</h2>
+    <h2>클릭하면 사라집니다3.</h2>
+    <h2>클릭하면 사라집니다4.</h2>
+    <h2>클릭하면 사라집니다5.</h2>
+    <h2>클릭하면 사라집니다6.</h2>
+    <h2>클릭하면 사라집니다7.</h2>
+    <script>
+        // $(document).ready(function(e) {
+        //     h2s.forEach(h2 => {
+        //         function 클릭() {
+        //             h2.style.display = "none";
+        //             h2.addEventListener("click", 클릭)
+        //         }
+        //     });
+        // });
+        
+        // 순수 자바스크립트 방법
+        const h2s = document.querySelectorAll("h2");
+        console.log(h2s)
+        h2s.forEach(h2 => {
+            function 클릭(e) {
+                h2.style.display = "none";
+                console.log(e);
+            }
+            h2.addEventListener("click", 클릭);
+        });
+
+        // $(document).ready(function(){
+        //     // 전체 배경색을 변경
+        //     $('body').css('backgroundColor', 'red');
+        //     // h1 요소의 글자색을 파랑
+        //     $('h1').css('color', 'deepskyblue');
+        //     // id가 small인 요소의 글자색은 녹색
+        //     $('#small').css('color','yellow');
+        //     // class 가 sample요소의 글자색은 빨강
+        //     $('.sample').css('color','blue');
+        // });
+    </script>
+</body>
+</html>

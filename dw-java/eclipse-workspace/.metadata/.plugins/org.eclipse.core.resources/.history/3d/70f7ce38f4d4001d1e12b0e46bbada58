@@ -1,0 +1,15 @@
+package e_oop.score;
+
+public class student {
+
+	int kor;
+	int eng;
+	int math;
+	int sum;
+	double avg;
+	String name;
+	int rank;
+	
+	
+	
+}

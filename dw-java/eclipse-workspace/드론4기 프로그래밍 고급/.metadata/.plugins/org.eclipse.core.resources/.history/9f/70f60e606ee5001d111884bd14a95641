@@ -1,0 +1,22 @@
+package kr.or.dw.basic;
+
+import java.io.File;
+
+public class FileTest03 {
+
+	public static void main(String[] args) {
+		
+		FileTest03 test = new FileIOTest03();
+		File file = new File("C:/Users/admin/Documents");
+		test.displayFileList(file);
+		
+	}
+
+	public void displayFileList(File dir) { // dir : 디렉토리
+		if (!dir.isDirectory()) {
+			System.out.println(dir.getName() + "은 디렉토리(폴더)가 아닙니다.");
+			return;
+		}
+	}
+	
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        체크박스(라이도버튼) : <input type="checkbox" id="checkTest" checked><br><br>
+        리스트박스(select객체) :
+        <select id="selTest">
+            <option value="1">하나</option> <option value="2">둘</option>
+            <option value="3" selected >셋</option> <option value="4">넷</option>
+        </select><br><br>
+        text객체 (readonly) : <input type="text" value="가나다" id="txtTest" readonly><br><br>
+        button객체(disabled) : <input type="button" value="실행" id="runBtn" disabled><br><br>
+        체크박스(전체선택/해제):<br><br>
+        <input type="checkbox" name="test" value="all" id = allche>
+        <label for="all">전체선택</label>
+        <input type="checkbox" name="one" value="one" class="che">
+        <label for="one">111</label>
+        <input type="checkbox" name="two" value="two" class="che">
+        <label for="two">222</label>
+        <input type="checkbox" name="three" value="three" class="che">
+        <label for="three">333</label>
+        <input type="checkbox" name="four" value="four" class="che">
+        <label for="four">444</label>
+        <input type="checkbox" name="five" value="five" class="che">
+        <label for="five">555</label>
+    </form>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function (){
+            //attr : html 태그에 있는 속성의 값을 가져오는것 ex) checked, selected, readonly, disabled
+            //prop : 현재의 속성의 상태를 보여준다 ex true, false
+            //prop를 쓰는것을 권장한다
+            console.log($('#checkTest').attr('id')); 
+            console.log($('#checkTest').prop('id'));
+
+            console.log($('#checkTest').attr('checked'));
+            console.log($('#checkTest').prop('checked'));
+
+            console.log($('#selTest option:selected').attr('selected')); 
+            console.log($('#selTest option:selected').prop('selected')); 
+
+            console.log($('#txtTest').attr('readonly')); 
+            console.log($('#txtTest').prop('readonly')); 
+
+            console.log($('#runBtn').attr('disabled')); 
+            console.log($('#runBtn').prop('disabled')); 
+            
+            $('#selTest').on('change', function () {  
+            console.log($('#selTest option:selected').text());                                               
+            console.log($('#selTest option:selected').val());
+            })
+
+            // 1. 전체선택을 체크하면 모든 체크박스가 체크되어야 한다.
+            // 2. 전체선택을 체크해제하면 모드 체크박스의 체크가 해제되어야 한다.
+            // 3. 체크박스 5개를 체크하면 전체선택도 체크되어야 한다.
+            // 4. 체크박스 5개중 하나를 해제하고 다시 체크하여 5개가 체크되었을때도 전체선택이 체크 되어야한다.
+
+            var i = 0;
+            $('#allche').on('click', function () {
+                if ($('#allche').prop('checked')) {
+                    $('.che').prop('checked', true)
+                    i = 5;
+                } else {
+                    $('.che').prop('checked', false)
+                    i = 0;
+                }
+                console.log(i);
+            })
+            $('.che').on('click', function () {
+                
+                if ($(this).prop('checked')) {
+                i = i + 1;
+                } else if ($(this).prop('checked') == false){
+                i = i - 1;
+                }
+                console.log(i);
+                if (i == 5) {
+                    $('#allche').prop('checked', true);
+                } else if (i < 5) {
+                    $('#allche').prop('checked', false);
+                }
+            });
+        })
+    </script>
+</body>
+</html>

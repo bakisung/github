@@ -1,0 +1,9 @@
+package e_oop.myGame;
+
+public class MyGame {
+
+	public static void main(String[] args) {
+
+	}
+
+}

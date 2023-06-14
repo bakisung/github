@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인터벌 테스트</title>
+    <style>
+        p {
+            color:red;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p id="p">This Color</p>
+    <button onclick="stopInterval()">STOP</button>
+    <script>
+        var p = document.getElementById('p');
+        var changeColor = setInterval(function () {
+                let red = parseInt(Math.random() * 256);    // RGB code -> 0~255
+                red = red.toString(16);
+                let green = parseInt(Math.random() * 256);
+                green = green.toString(16);
+                let blue = parseInt(Math.random() * 256);
+                blue = blue.toString(16);
+                // p.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+                p.style.backgroundColor = `#${red}${green}${blue}`;
+        }, 100);
+
+        function stopInterval(){
+            clearInterval(changeColor);
+        }
+    </script>
+</body>
+</html>

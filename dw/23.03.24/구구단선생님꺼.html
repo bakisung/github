@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단 테스트</title>
+    <style>
+        table {
+            margin: 20px;
+            float: left;
+        }
+        table, th {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        th, td { padding: 10px 15px; }
+        th { background: white}
+    </style>
+</head>
+<body>
+    <script>
+        // i 와 j 를 선언해준다.
+        var i, j;
+
+        // 1단부터 9단까지 반복하여 만들 포문을 만든다.
+        for ( i = 1; i <= 9; i++) { /* 단수 */
+            // createElement를 선언해 table tr th 태그를 만든다.
+            let tb = document.createElement("table"); 
+            let tr = document.createElement("tr");
+            let th = document.createElement("th");
+            
+            // 각 단의 th(ex:1단)를 만들고 tr은 tb에, th는 tr에 붙여준다.
+            th.innerHTML = i + "단";
+            tr.appendChild(th);
+            tb.appendChild(tr);
+            // document.write("<h1>" + i + "단</h1>");
+
+            // 각 단들의 곱셈식을 만든다.
+            for(j = 1; j <=9; j++){ /* 실제 곱해질 수 */
+                // document.write(`${i} X ${j} = ${i*j}<br>`);
+                let tr2 = document.createElement("tr");
+                let td = document.createElement("td");
+
+                td.innerHTML = `${i} X ${j} = ${i*j}`
+                tr2.appendChild(td);
+                tb.appendChild(tr2);
+            }
+            document.body.appendChild(tb);
+        };
+    </script>
+</body>
+</html>

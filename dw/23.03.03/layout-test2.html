@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃 테스트2</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        #wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            margin: 0px;
+        }
+        #header {
+            background-color: blueviolet;
+            width: 100%;
+            height: 20%;
+            text-align: center;
+            border-radius: 30px;
+        }
+        #nav {
+            background-color: coral;
+            float: left;
+            width: 32%;
+            height: 60%;
+            border-radius: 30px;
+        }
+        #body {
+            position: absolute; left: 35%;
+            background-color: darkgoldenrod;
+            float: right;
+            width: 70%;
+            height: 60%;
+            border-radius: 30px;
+            margin-left: 5px;
+            margin: 0px 5px 5px 0px
+        }
+        #footer {
+            position: absolute; bottom: 0%;
+            background-color: pink;
+            color: black;
+            clear: both;
+            height: 18%;
+            width: 99%;
+            border-radius: 30px;
+            margin: 5px;
+        }
+        #바디글씨 {
+            position: relative; 
+            left: 20px;
+            border: 1px solid black;
+            width: 90%;
+            height: 30%;
+            border-radius: 20px;
+            padding: 5px;
+            margin: 0;
+        }
+        #headertext {
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            position: relative; left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div style="border: 5px solid blue; width: 100%; height: 100%;">
+            <div id="header" style="position: relative;"><h1 id="headertext">My Blog Page</h1></div>
+            <div id="nav">
+                <h2>Links</h2>
+                <ul>
+                        <a href="#"><li>W3C</li></a>
+                        <a href="#"><li>MOZILLA</li></a>
+                        <a href="#"><li>HTML Dogs</li></a>
+                </ul>
+                <!-- 홍길동 사진 가운데 정렬 -->
+                <div>
+                    <img src="../img/홍길동.jpg" 
+                    width="40%" height="40%" 
+                    style="position: relative; left: 40px;"><br>
+                </div>
+                <div style="text-align: center;">홍길동</div>
+            </div>
+            <div id="body">
+                <h2>Semantic Tags</h2>
+                <p id="바디글씨">
+                시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나<br>
+                목적을 명확하게 알려주는 요소이다
+                </p>
+                <h2>div와 span</h2>
+                <p id="바디글씨">
+                div은 "divide"의 약자로써 페이지를 논리적인 섹션으로 분리하는데<br>
+                사용되는 태그이다. span 요소는 인라인 요소로서 텍스트를 위한<br>
+                컨테이너로 사용할 수 있다.
+                </p>
+            </div>
+            <div id="footer" style="text-align: center;">
+                <p>Copyright (c) 2013 Hong</p>
+                <div style="background-color: bisque;"></div>
+                <!-- 푸터 젤 아래에 하얀 공간 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

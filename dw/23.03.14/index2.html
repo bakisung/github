@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="name"></div>
+
+    <script> 
+    // 이름을 프롬프트로 받는다
+        const userName = prompt("이름을 입력해주세요.");
+
+    // 컬러를 프롬프트로 받는다
+        const color = prompt("표현할 컬러를 입력해주세요.");
+    
+    const func = function(x, y) {
+        // 이름을 div 태그안에 넣는다. innerHTML 이용
+        const divElement = document.querySelector("#name");
+        divElement.innerHTML = x;
+
+        // 이름의 색을 color로 바꾼다. style.color 이용
+        divElement.style.color = y;
+    };
+    func(userName, color);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+package b_operator;
+
+public class LogiclOperator {
+
+	public static void main(String[] args) {
+		
+		/*
+		 * << 논리 연산자 >>
+		 * - &&(AND) : 피연산자 둘 다 true이면 true를 결과로 얻는다.
+		 * - ||(OR) : 피연산자 중 하나라도 true이면 true를 결과로 얻는다.
+		 * - !(NOT) : 피연산자가 true이면 false를, false이면 true를 결과로 얻는다.
+		 * - 피연산자로 boolean만 허용한다.
+		 */
+		
+		// a가 0보다 크고 10보다 작거나 같다.
+		int a = 6;
+		boolean b1 = 0 < a; // a가 0보다 크다
+		boolean b2 = 0 <= 10; // a가 10보다 작거나 같다.
+		boolean b = b1 && b2;
+		System.out.println(b);
+	}
+
+}

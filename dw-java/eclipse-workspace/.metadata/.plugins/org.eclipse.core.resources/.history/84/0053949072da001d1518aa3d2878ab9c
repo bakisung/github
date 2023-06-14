@@ -1,0 +1,18 @@
+package f_oop2;
+
+public class SampleChild extends SampleParent {
+	
+	void childMethod() {
+		// 상속받은 변수와 메서드를 사용할 수 있다.
+		System.out.println(var);			// 상속받은 변수
+		System.out.println(method(7, 13));	// 상속받은 메소드
+		System.out.println(k);
+		System.out.println(super.k);
+	}
+
+	public static void main(String[] args) {
+		SampleChilde sc = new SampleChild();
+		
+	}
+
+}

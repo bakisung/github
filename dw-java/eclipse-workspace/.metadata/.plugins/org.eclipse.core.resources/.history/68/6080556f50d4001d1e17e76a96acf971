@@ -1,0 +1,30 @@
+package e_oop;
+
+import java.util.Scanner;
+
+public class Running {
+	
+	boolean power;
+	double speed;
+	int time;
+	int incline;
+	int temp;
+	double cal;
+	double weight;
+	static String wtf;
+	
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		Running run = new Running();
+		
+		String option =   "[전원 키기 : on /\n "
+						+ "전원 끄기 : off /\n "
+						+ "속도 조절 : spup OR spdown OR \"속도입력\" /\n "
+						+ "각도 조절 : incup OR incdown]";
+		
+		System.out.println(option);
+	}
+
+}

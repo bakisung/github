@@ -1,0 +1,31 @@
+package h_api;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.Scanner;
+
+public class SetComma {
+		
+	
+	
+//	void comma() {
+//		if () {
+//			
+//		}
+//	}
+	
+	public static void main(String[] args) {
+		
+		// 숫자를 입력받아서 3자리마다 콤마(,)를 붙여 출력해주세요.
+		// 1000000 ==> 1,000,000
+		System.out.println("숫자를 입력하시오.");
+		Scanner s = new Scanner(System.in);
+		int inputNum = Integer.parseInt(s.nextLine());
+
+		DecimalFormat df = new DecimalFormat("#,###");
+		String inputNumber = df.format(inputNum);
+		System.out.println(inputNumber);
+		
+	}
+
+}

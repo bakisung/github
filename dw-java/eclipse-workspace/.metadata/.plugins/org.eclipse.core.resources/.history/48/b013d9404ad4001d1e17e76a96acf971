@@ -1,0 +1,81 @@
+package e_oop;
+
+import java.util.Scanner;
+
+public class TV {
+
+	static boolean power; // 전원 : 켰다, 껐다
+	int channel; // 채널 : 직접 숫자 누르는 방법, 채널 버튼으로 올리고 내리는 방법
+	int volume; // 볼륨 : 음량 올리는 방법, 내리는 방법
+	static String what;
+	Scanner s = new Scanner(System.in);
+	
+	void power( ) {
+		String onOff = s.nextLine();
+		if (onOff.equals("on")) {
+			power = true;
+			System.out.println("전원이 켜졌습니다. 현재 채널 : " + channel + "번 / 현재 음량 : " + volume);
+		} else if (onOff.equals("off")) {
+			power = false;
+			System.out.println("전원이 꺼졌습니다. 꺼지세요.");
+		}
+	}
+	
+	void poweroff() {
+		System.out.println("전원이 꺼졌습니다.");
+	}
+	void channelDirect() {
+		System.out.println(what + " 번 채널 입니다.");
+		channel = Integer.parseInt(what);
+	}
+	
+	void channelUpAndDown() {
+		String ChUpAndDown = what;
+		if (ChUpAndDown.equals("chup")) {
+			channel++;
+			System.out.println(channel + " 번 입니다.");
+		} else if(ChUpAndDown.equals("chdown")) {
+			channel--;
+			System.out.println(channel + " 번 입니다.");
+		}
+	}
+	
+	void volumUpAndDown() {
+		String volumUpAndDown = what;
+		if (volumUpAndDown.equals("volup")) {
+			volume++;
+			System.out.println("현재 음량 " + volume + " 입니다.");
+		} else if (volumUpAndDown.equals("voldown")) {
+			volume--;
+			System.out.println("현재 음량 " + volume + " 입니다.");
+		}
+	}
+	
+	public static void main(String[] args) {
+
+		TV tv = new TV();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("전원 켜기 : on / 전원 끄기 : off / 채널 변경 : 숫자입력 or chup or chdoun / 볼륨 변경 : volup or voldown");
+		
+		tv.power();
+		
+		while(power) {
+			what = sc.nextLine();
+		
+			if(what.equals("chup") || what.equals("chdown")) {
+				tv.channelUpAndDown();
+			} else if(what.equals("volup") || what.equals("voldown")) {
+				tv.volumUpAndDown();
+			} else if(what.equals("off")) {
+				power = false;
+				break;
+			} else {
+				tv.channelDirect();
+			}
+		}
+	
+//		tv.poweroff();
+	}
+
+}

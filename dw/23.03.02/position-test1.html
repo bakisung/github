@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>위치 테스트1</title>
+    <style>
+        #one {
+            background-color: cyan;
+            width: 200px;
+            height: 50px;
+        }
+        #two {
+            position: relative; /* 본인을 미는것 즉 본인이 컨테이너가 됨*/
+            left: 30px;
+            background-color: yellow;
+            width: 200px;
+            height: 50px;
+        }
+        #three{
+            background-color: lightgreen;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p id="one">block #1</p>
+    <div id="two">
+        block #2<br >
+        position:relative;<br />
+    </div>
+    <p id="three">block #3</p>
+</body>
+</html>

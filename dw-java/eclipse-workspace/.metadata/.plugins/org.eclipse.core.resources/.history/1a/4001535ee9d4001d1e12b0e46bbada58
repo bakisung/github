@@ -1,0 +1,26 @@
+package e_oop;
+
+public class OOP {
+
+	public static void main(String[] args) {
+
+		/*
+		 * 객체지향 프로그래밍(Objct Oriented Programming)
+		 *  - 프로그래밍을 단순히 코드의 연속으로 보는것이 아니라 객체간의 상호작용으로 보는것.
+		 *  - 코드의 재사용성이 높고 유지보수가 용이하다.
+		 */
+		
+		SampleClass sc = new SampleClass();	// SampleClass 타입의 변수를 만들어서 주소를 저장.
+											// new SampleClass(); 부분이 객체를 생성.
+											// 이 생성된 객체의 위치를 변수에 저장한 것.
+
+		System.out.println(sc.field);
+		sc.method1();
+		
+		String returnValue = sc.method2(10);
+		System.out.println(returnValue);
+		
+		sc.flowTest1();
+	}
+
+}

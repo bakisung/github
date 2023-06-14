@@ -1,0 +1,9 @@
+package f_oop2;
+
+public class AccessModifier {
+
+	public static void main(String[] args) {
+
+	}
+
+}

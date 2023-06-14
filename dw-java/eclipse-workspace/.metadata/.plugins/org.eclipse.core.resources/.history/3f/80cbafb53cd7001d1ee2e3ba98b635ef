@@ -1,0 +1,14 @@
+package myGame2;
+
+public class Monster {
+
+	String name;
+	int maxHp;
+	int maxMp;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	Item[] items; // 드랍 아이템
+	
+}

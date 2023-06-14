@@ -1,0 +1,25 @@
+/* 박스 사이징 */
+* {
+    box-sizing: border-box;
+}
+
+/* 컨테이너 가운데 정렬 */
+.center {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* 링크 밑줄 제거 */
+a {
+    text-decoration: none;
+}
+
+/* 최상단 메뉴 */
+.center>div>ul {
+    float: right;
+    text-align: right;
+}
+.center>div>ul>li {
+    display: inline
+}

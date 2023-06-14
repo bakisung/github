@@ -1,0 +1,73 @@
+package h_api;
+
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class SetComma {
+		
+	
+	
+//	void comma() {
+//		if () {
+//			
+//		}
+//	}
+	
+	public static void main(String[] args) {
+		
+//=================================================================================================
+		// 숫자를 입력받아서 3자리마다 콤마(,)를 붙여 출력해주세요.
+		// 1000000 ==> 1,000,000
+
+		Scanner s = new Scanner(System.in);
+		System.out.println("숫자를 입력하시오.");
+		String inputNum = s.nextLine();
+		int count = 0;
+		String rev = "";
+
+		// 첫번째 방법
+//		for (int i = inputNum.length() - 1; i >= 0; i--) {
+//			rev += inputNum.charAt(i);
+//			count++;
+//			if (count % 3 == 0 && count < inputNum.length()) {
+//				rev += ",";
+//			}
+//		}
+//		
+//		for (int i = rev.length() - 1; i >= 0; i--) {
+//			System.out.print(rev.charAt(i));
+//		}
+//=================================================================================================
+//		// 두번째 방법
+//		for (int i = inputNum.length() - 1; i >= 0; i--) {
+//			rev = inputNum.charAt(i) + rev;
+//			count++;
+//			if (count % 3 == 0 && i != 0) {
+//				rev = "," + rev;
+//			}
+//		}
+//		System.out.println(rev);
+		
+//=================================================================================================
+		// 세번째 방법
+//		Scanner s = new Scanner(System.in);
+//		for ( ; ; ) {
+//		System.out.println("숫자를 입력하시오.");
+//		int inputNum = Integer.parseInt(s.nextLine());
+//
+//		DecimalFormat df = new DecimalFormat("#,###");
+//		String inputNumber = df.format(inputNum);
+//		System.out.println("변환값은 " + inputNumber + " 입니다.");
+//		}
+//=================================================================================================
+		// 가장 간단한 방법
+		NumberFormat nf = NumberFormat.getInstance();
+		String str = nf.format(123456);
+		System.out.println(str);
+//=================================================================================================
+
+	}
+
+}

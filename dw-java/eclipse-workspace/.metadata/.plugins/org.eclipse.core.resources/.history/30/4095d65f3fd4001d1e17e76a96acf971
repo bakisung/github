@@ -1,0 +1,24 @@
+package e_oop;
+
+public class VariableInit {
+
+	// 멤버 변수 초기화
+	int var = 10; // 인스턴스 변수
+	static int staticVar = 20; // 클래스 변수
+		
+	/*
+	 * 생성자
+	 *  - 클래스와 같은 이름의 메서드
+	 *  - 인스턴스 변수를 초기화하기 위해 사용한다.
+	 *  - 클래스에 생성자는 반드시 하나 이상 존재해야 한다.
+	 *  - 직접 선언해주지 않으면 컴파일러가 기본 생성자를 만들어준다.
+	 *  - 생성자는 리턴타입이 없다.
+	 */
+	
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

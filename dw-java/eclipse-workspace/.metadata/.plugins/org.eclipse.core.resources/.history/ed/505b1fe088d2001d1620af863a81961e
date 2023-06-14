@@ -1,0 +1,94 @@
+package c_statement;
+
+import java.util.Scanner;
+
+public class ReptetitiveStatement {
+
+	public static void main(String[] args) {
+
+		//=======================================절취선=======================================
+		
+		// while 문과 do-while 문 비교
+//		int a = 0;
+//		while(a < 0) {
+//			System.out.println(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while(a < 0);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 1) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 1);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 10) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 10);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+
+//		int a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			++a;
+//		} while (a < 10);
+		
+		//=======================================절취선=======================================
+		
+		// 숫자 맞추기 게임을 만들어 봅시다. Up & Down 게임 (Do while 활용)
+		int a = (int)(Math.floor(Math.random()*100 + 1));
+		System.out.println(a);
+		int inputNum;
+		do {
+			Scanner s = new Scanner(System.in);
+			System.out.println("0-100 범위에서 정답인 숫자를 입력하세요.");
+			inputNum = Integer.parseInt(s.nextLine());
+			if (inputNum > a) {
+				System.out.println("UPㅋ");
+			} else if (inputNum < a) {
+				System.out.println("DOWNㅋ");
+			}
+		} while(inputNum != a);
+			System.out.println("정답입니다!");
+		
+		
+//		System.out.println("오답입니다.\n다시 시도하세요.");
+//		System.out.println("정답입니다!"); 
+		
+		//=======================================절취선=======================================
+
+
+	}
+
+}

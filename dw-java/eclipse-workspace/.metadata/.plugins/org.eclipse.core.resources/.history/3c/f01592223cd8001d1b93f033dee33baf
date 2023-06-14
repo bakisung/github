@@ -1,0 +1,21 @@
+package GameProject;
+
+import javax.swing.Spring;
+
+public class footballPlayer {
+	
+	String name;
+	int cm;
+	int kg;
+	String club;
+	String backNumber;
+	
+	
+
+	public static void main(String[] args) {
+
+	footballPlayer player = new footballPlayer();
+		
+	}
+
+}

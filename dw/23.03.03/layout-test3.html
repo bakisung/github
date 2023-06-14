@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Web shop Page</title>
+
+    <style>
+        HTML, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #wrapper{
+            width: 100%;
+            height: 100%;
+        }
+                            #header{ /* 윗대가리 */
+                                width: 100%;
+                                height: 15%;
+                                background-color: blanchedalmond;
+                                position: relative;
+                            }
+                            #header a{
+                                text-decoration: none;
+                                text-align: center;
+                            }
+                            #nav{ /* 메뉴 공간 */
+                                width: 100%;
+                                height: 10%;
+                                background-color: white;
+                                font-size: 1.2em;
+                                text-align: center;
+                                text-transform: capitalize;
+                            }
+                                #menu{ /* 메뉴 */
+                                    position: relative; top: 25%;
+                                    letter-spacing: 0.3em;
+                                    border-top: 1px solid red;
+                                    border-bottom: 1px solid red;
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                }
+                                #menu a{
+                                    text-decoration-line: none;
+                                    color: black;
+                                }
+
+                            #body{
+                                width: 100%;
+                                height: 60%;
+                                background-color: darkcyan;
+                            }
+                                #body1{
+                                    width: 25%;
+                                    height: 100%;
+                                    background-color: darkgrey;
+                                    float: left;
+                                }
+                                    #카테고리 a{
+                                        border: 1px solid black;
+                                        background-color: black;
+                                        color: white;
+                                        text-decoration-line: none;
+                                    }
+                                #body2{
+                                    width: 25%;
+                                    height: 100%;
+                                    background-color: darkgoldenrod;
+                                    float: left;
+                                }
+                                #body3{
+                                    width: 25%;
+                                    height: 100%;
+                                    background-color: blue;
+                                    float: left;
+                                }
+                                #body4{
+                                    width: 25%;
+                                    height: 100%;
+                                    background-color: brown;
+                                    float: left;
+                                }
+
+                            #footer{
+                                width: 100%;
+                                height: 15%;
+                                background-color: coral;
+                            }
+                                #pstyle{
+                                    position: relative; top: 100px;
+                                    margin: 0;
+                                }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div>
+                <div style="position: absolute; top: 25%;">
+                    <a href="layout-test3.html" target="_self" style="position: relative; left: 50%;">
+                        <img src="../img/싱하형.jpg" width="10%" height="60%">
+                        <span style="font-size: 3em;">Web Shop</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav id="nav">
+            <div id="menu">
+                    <a href="이동된페이지.html" target="_self">HOME</a>&nbsp;&nbsp;
+                    <a href="이동된페이지.html" target="_self">ABOUT US</a>&nbsp;&nbsp;
+                    <a href="이동된페이지.html" target="_self">NEWS</a>&nbsp;&nbsp;
+                    <a href="이동된페이지.html" target="_self">MY ACCOUNT</a>&nbsp;&nbsp;
+                    <a href="이동된페이지.html" target="_self">CONTACTS</a>&nbsp;&nbsp;
+            </div>
+        </nav>
+        
+        <div id="body">
+            <div id="body1">
+                <p>카테고리</p>
+                <table id="카테고리" style="background-color: black;">
+                    <tr><td><a href="이동된페이지.html" target="_self">컴퓨터</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">의류</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">음악</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">영화</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">스포츠/레저</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">가구/인테리어</a></tr></td>
+                    <tr><td><a href="이동된페이지.html" target="_self">식품</a></tr></td>
+                </table>
+            </div>
+
+            <div id="body2">
+                <img src="../img/컴퓨터.jpg" alt="X" width="80%" height="30%">
+                <p>
+                    심플하고 슬림한 본체에 코어i5 3480과 지포스 GT630을 장착<br>
+                    CPU:인텔 코어i5 3470(아이비브릿지 3세대)<br>
+                    사용 가격: 1,200,000원
+                    <br><br><br><br><br><br><br>
+                    <button onclick="alert('추가 되었습니다')">쇼핑카트에 추가하기</button>
+                </p>
+            </div>
+            <div id="body3">
+                <img src="../img/노트북.jpg" alt="X" width="80%" height="30%">
+                <p>
+                    Full-HD로 선명한 화면, ISP패널로 시야각도 좋다!<br>
+                    CPU: 인텔 코어i7 3630 QM<br>
+                    CPU: 인텔 코어i7 3630 QM<br>
+                    가격: 1,200,000원
+                    <br><br><br><br><br><br><br>
+                    <button onclick="alert('추가 되었습니다')">쇼핑카트에 추가하기</button>
+                </p>
+            </div>
+            <div id="body4">
+                <div>
+                    <p>
+                        <h3>Shopping charset</h3>
+                        현재 쇼핑카트에 물품이 없습니다.
+                        <br><br>
+                        <a href="이동된페이지.html" name="view-cart">쇼핑카트 보기</a>
+                    </p>
+                </div>
+                <div>
+                    <form>
+                    <h3>Log in</h3>
+                    <p>
+                        아이디<br>
+                        <input type="text" name="ID"><br>
+                        패스워드<br>
+                        <input type="password" name="password">
+                        <br><br>
+                        <a href="./이동된페이지.html">
+                        <input type="button" name="rogin" value="로그인" onclick="alert('확인을 누르면 다음 페이지로 넘어갑니다;')">
+                        </a>
+                        <input type="reset" at name="reset" value="초기화">
+                        <br><br>
+                        <a href="./이동된페이지.html" name="회원가입" onclick="alert('회원가입 페이지로 넘어갑니다')">
+                            회원가입
+                        </a>
+                        <a href="./이동된페이지.html" name="비밀번호-분실" onclick="alert('비밀번호를 찾습니다')">비밀번호 분실</a>
+                    </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p id=pstyle>Coptyright (c) 2013 Web Shob</p>
+        </div>
+    </div>
+</body>
+</html>

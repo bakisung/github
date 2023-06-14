@@ -1,0 +1,11 @@
+package g_exception;
+
+public class Finally {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>피자 주문</title>
+</head>
+<body>
+    <form>
+        <p>고객 명 : <input type="text" name="name"></p>
+        <p>전화번호 : <input type="tel" name="tel"></p>
+        <p>E-maile : <input type="email" name="email"></p>
+        <fieldset style="width: 300px;">
+            <legend>피자 사이즈</legend>
+
+            <p>
+            <input type="radio" name="pizzasize" id="small">
+            <label for="small">Small</label>
+            </p>
+            <p>
+            <input type="radio" name="pizzasize" id="medium">
+            <label for="medium">Medium</label>
+            </p>
+            <p>
+            <input type="radio" name="pizzasize" id="large">
+            <label for="large">Large</label>
+        </fieldset>
+        <fieldset style="width: 300px;">
+            <legend>토핑 선택</legend>
+            <p>
+            <input type="checkbox" name="toppingchoice" id="베이컨">
+            <label for="베이컨">베이컨</label>
+            </p>
+            <p>
+            <input type="checkbox" name="toppingchoice" id="치즈">
+            <label for="치즈">치즈</label>
+            </p>
+            <p>
+            <input type="checkbox" name="toppingchoice" id="양파">
+            <label for="양파">양파</label>
+            </p>
+            <p>
+            <input type="checkbox" name="toppingchoice" id="버섯">
+            <label for="버섯">버섯</label>
+            </p>
+        </fieldset>
+        <p>희망배송시간 : <input type="time" name="time"></p>
+        <p>배송시 요청사항 : <textarea rows="2" cols="20"></textarea></p>
+        <input type="button" id="주문" value="주문하기">
+        <input type="reset" name="reset" value="다시 선택하기">
+    </form>
+</body>
+</html>

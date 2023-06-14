@@ -1,0 +1,9 @@
+package kr.or.dw.basic;
+
+public class ObjectIOTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

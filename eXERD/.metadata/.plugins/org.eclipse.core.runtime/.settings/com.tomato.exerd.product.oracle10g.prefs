@@ -1,0 +1,4 @@
+#Mon May 15 16:43:09 KST 2023
+eclipse.preferences.version=1
+com.tomato.exerd.preference.PropertyPagePrefConstants.oracle10g.USE_OWNER_PREFIX=false
+com.tomato.exerd.preference.PropertyPagePrefConstants.oracle10g.DROP_TABLE=false

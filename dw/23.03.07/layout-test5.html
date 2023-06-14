@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배달의 민족발</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        HTML, body, .wrapper{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr 1fr;
+            height: 100%;
+            width: 100%;
+        }
+        .item {
+            width: 100%;
+            height: 100%;
+            display: grid;
+        }
+        .header {
+            border: 1px solid red;
+            display: grid;
+        }
+            .head {
+                border: 2px solid darkblue;
+            }
+            .nav {
+                border: 2px solid darkorchid
+            }
+        .content {
+            border: 1px solid orange;
+        }
+        .footer {
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="item header">
+                <div class="head">
+                    123
+                </div>
+                <div class="nav">
+                    123
+                </div>
+            </div>
+            <div class="item content">
+                123
+            </div>
+            <div class="item footer">
+                123
+            </div>
+        </div>
+    </div>
+</body>
+</html>

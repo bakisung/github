@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- cdn 방식 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.js"></script>" -->
+    
+    <!-- 내부 스크립트 방식 -->
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 전체 배경색을 변경
+            $('body').css('backgroundColor', 'red');
+            // h1 요소의 글자색을 파랑
+            $('h1').css('color', 'deepskyblue');
+            // id가 small인 요소의 글자색은 녹색
+            $('#small').css('color','yellow');
+            // class 가 sample요소의 글자색은 빨강
+            $('.sample').css('color','blue');
+        });
+    </script>
+</head>
+<body>
+    <h1>제목입니다</h1>
+    <h2 id="small">작은 제목입니다</h2>
+    <h2 class="sample">샘플입니다</h2>
+</body>
+</html>

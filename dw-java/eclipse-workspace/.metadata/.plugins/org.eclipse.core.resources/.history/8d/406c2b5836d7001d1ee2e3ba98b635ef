@@ -1,0 +1,20 @@
+package myGame2;
+
+public class Character {
+
+	String name;
+	int maxHp;
+	int maxMp;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	int level;
+	int exp;
+	Item[] items;
+	
+	Character(String name, int maxHp, int maxMp, int hp, int mp, int att, int def) {
+		
+	}
+	
+} // class 종료

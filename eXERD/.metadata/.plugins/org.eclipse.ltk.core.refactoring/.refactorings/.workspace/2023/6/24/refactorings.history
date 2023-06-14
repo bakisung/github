@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="&apos;sp_board/sp_board&apos; 자원을 삭제합니다." deleteContents="false" description="&apos;sp_board/sp_board&apos; 자원을 삭제합니다." element1="/sp_board/sp_board" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1686554004053"/>&#x0A;&#x0A;</session>

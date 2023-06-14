@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="demo">
+    <button>click</button>
+
+    <script>
+        //1. 타겟을 선언한다 ex)btn
+        const btn = document.querySelector("button");
+        
+        //2. 콜백함수의 선언. 이벤트등록보다 위에 선언해야함.
+        const callback = function () {
+            console.log("버튼 클릭");
+        };
+        const input = document.querySelector("#demo");
+        const func1 = function (e) {
+            // console.log("input keydown 이벤트")
+            // console.log(e.code);
+            if (e.code === "Space") {
+                console.log("Space키가 눌림");
+            }
+        };
+
+        //3. 이벤트 등록, 독립적으로 사용하지말고 반드시 타겟에 붙여 사용해야한다.
+        btn.addEventListener("click", callback);
+        input.addEventListener("keydown", func1);
+    </script>
+</body>
+</html>

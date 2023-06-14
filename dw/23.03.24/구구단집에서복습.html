@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내가 만든 구구단</title>
+    <style>
+        div {
+            display: inline-block;
+        }
+        th {
+            background-color: aqua;
+            padding: 10px 50px 10px 50px;
+            border: 2px solid black;
+        }
+        td {
+            background-color: deeppink;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            margin: -1px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const body = document.querySelector("body");
+        // const table = document.createElement("table");
+        // body.appendChild(table);
+
+        for (let i = 1; i <= 9; i++) {
+            const div = document.createElement("div");
+            body.appendChild(div);
+            const table = document.createElement("table");
+            div.appendChild(table);
+            const tr = document.createElement("tr");
+            table.appendChild(tr);
+            const th = document.createElement("th");
+            tr.appendChild(th);
+
+            th.innerHTML = i + "단"
+
+            for (let j = 1; j <= 9; j++) {
+                const tr2 = document.createElement("tr");
+                table.appendChild(tr2);
+                const td = document.createElement("td");
+                tr2.appendChild(td);
+
+                td.innerHTML = `${i} X ${j} = ${i*j}`;
+            }
+        }
+        
+    </script>
+</body>
+</html>

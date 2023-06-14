@@ -1,0 +1,9 @@
+package kr.or.dw.basic;
+
+public class EqualsHashCodeTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

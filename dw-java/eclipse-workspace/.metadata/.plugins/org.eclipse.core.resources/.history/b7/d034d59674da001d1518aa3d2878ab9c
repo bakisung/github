@@ -1,0 +1,39 @@
+package f_oop2;
+
+public class SampleChild extends SampleParent {
+	
+	void childMethod() {
+		// 상속받은 변수와 메서드를 사용할 수 있다.
+		System.out.println(var);			// 상속받은 변수
+		System.out.println(method(7, 13));	// 상속받은 메소드
+		System.out.println(k);
+		System.out.println(super.k);
+	}
+	
+	// 오버라이딩 : 부모클래스의 메서드 내용을 변경하여 재구성 하는것
+	// super, super() : this 와 비슷한 역할. 부모클래스의 멤버와 자식클래스의 멤버가 이름이 똑같을 때,
+	//					둘을 구분해 주기 위해서 사용한다.
+
+	@Override
+	int method(int a, int b) {
+		return a * b;
+	}
+	
+	int var;
+	void test(double var) {
+		System.out.println(var);		// 지역변수
+		System.out.println(this.var);	// 인스턴스 변수
+		System.out.println(super.var);	// 부모클래스의 인스턴스 변수
+		System.out.println(this.method(10, 20));
+		System.out.println(super.method(10, 20));
+	}
+	
+	public static void main(String[] args) {
+		SampleChild sc = new SampleChild();
+		SampleParent sp = new SampleParent();
+		sc.childMethod();
+		System.out.println(sp.method(7, 13));
+		System.out.println(sc.method(7, 13));
+	}
+
+}

@@ -1,0 +1,24 @@
+package kr.or.dw.basic;
+
+public class ThreadTest03 {
+
+	public static void main(String[] args) {
+		// 쓰레드가 수행되는 시간 체크해보기
+		Thread th = new Thread(new MyRunner());
+
+	}
+
+}
+
+class MyRunner implements Runnable {
+
+	@Override
+	public void run() {
+		long sum = 0L;
+		for(long i = 1L; i <= 1_000_000_000L; i++) {
+			sum += i;
+		}
+		System.out.println("합계 : " + sum);
+	}
+	
+}

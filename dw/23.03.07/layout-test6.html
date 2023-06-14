@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>My World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        HTML, body, .wrapper {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: 2fr 5fr 1fr;
+        }
+
+    .header {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            border: 3px solid red;
+            grid-template-rows: 2fr 1fr;
+        }
+        .간판 {
+            background-color: aqua;
+        }
+        .메뉴 {
+            background-color: chocolate;
+        }
+
+    .body {
+        display: grid;
+            width: 100%;
+            height: 100%;
+            border: 3px solid blue;
+            grid-template-columns: 1fr 3fr 1fr;
+    }
+        .카테고리 {
+            background-color: darkkhaki;
+        }
+        .내용 {
+            background-color: darkorchid;
+        }
+        .로그인 {
+            background-color: forestgreen;
+        }
+
+    .footer {
+        display: grid;
+            width: 100%;
+            height: 100%;
+            border: 3px solid mediumspringgreen;
+    }
+        .하단 {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body class="container">
+    
+    <div class="header">
+        <div class="item 간판">
+            main.html
+        </div>
+        <div class="item 메뉴">
+                HOME
+                SHOPPING ABOUT
+                NEWS
+                MY ACCOUNT
+                CONTACTS
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="item 카테고리">
+            <ul>
+                <h2 style="position: relative; right: 20%;">카테고리</h2>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ul>
+        </div>
+        <div class="item 내용">
+
+        </div>
+        <div class="item 로그인">
+
+        </div>
+    </div>
+
+    <div class="footer 하단">
+        <div class="item">
+
+        </div>
+    </div>
+</body>
+</html>

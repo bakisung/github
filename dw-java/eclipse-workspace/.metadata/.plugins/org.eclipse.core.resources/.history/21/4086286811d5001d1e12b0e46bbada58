@@ -1,0 +1,34 @@
+package e_oop.myGame;
+
+import java.util.Scanner;
+
+public class MyGame {
+
+	public static void main(String[] args) {
+
+		/*
+		 * 거지 키우기 게임을 만들어봅시다.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		game : while(true) {
+			System.out.println("1. 상태확인 2. 돈벌기 3.쇼핑 0. 종료");
+			int input = Integer.parseInt(sc.nextLine());
+			switch (input) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 0:
+				break game;
+			default:
+				break;
+			}
+		}
+		
+	}
+
+}

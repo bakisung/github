@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>append test</title>
+    <style>
+        div {
+            height: 300px;
+            border: 4px solid red;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .classA { 
+            border: 2px solid blue;
+        }
+
+        .classB {
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>append test</h1>
+    <button id="append1">뒤쪽으로 싱하가 생겨요!</button>
+    <button id="append2">앞쪽으로 빅쇼가 생겨요!</button>
+    <button id="removeBtn">모든 이미지를 삭제합니다!</button>
+    <br><br>
+    <div id="imgWrapper">
+        <!-- <img src="img/시바.jpg"> -->
+    </div>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            var wrapper = $('#imgWrapper');
+            $('#append1').on('click', function(){
+                wrapper.append(
+                    $('<img>').prop({
+                        src : '../img/싱하형.jpg'
+                       ,class : 'classA'
+                    })
+                );
+            });
+            $('#append2').on('click', function(){
+                wrapper.prepend(
+                    $('<img>').prop({
+                        src : '../img/빅쇼.jpg'
+                       ,class : 'classB'
+                    })
+                );
+            });
+            $('#removeBtn').on('click', function () {
+                $('img').remove();
+            })
+        })
+    </script>
+</body>
+</html>

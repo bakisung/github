@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="board">
+
+	<select id="selectBoardList" parameterClass="Map" resultClass="boardVO">
+		SELECT bd_no
+			  ,bd_title
+			  ,bd_content
+			  ,bd_wdt
+			  ,bd_hit
+			  ,bd_like
+			  ,b.nick
+			  ,pic_path
+		  FROM (
+				SELECT *
+				  FROM (
+				  		SELECT rownum rnum, v1.*
+						  FROM (
+						  		SELECT *
+								  FROM t_board
+								 WHERE gb_del = 'N'
+								 ORDER BY bd_no DESC
+						  		) v1
+						 WHERE rownum <![CDATA[ <= ]]> #end#
+				  		) v2
+				 WHERE rnum <![CDATA[ >= ]]> #start#
+				) b ,t_user u
+		 WHERE b.user_no = u.user_no
+	</select>
+	
+	<select id="selectBoardCount" resultClass="int">
+		SELECT COUNT(*) cnt
+		  FROM t_board
+		 WHERE gb_del = 'N'
+	</select>
+	
+	<insert id="insertContent" parameterClass="boardVO">
+		
+		<selectKey keyProperty="bd_no" resultClass="int">
+			SELECT t_board_seq.nextval bd_no FROM dual
+		</selectKey>
+		
+		INSERT INTO
+			t_board (
+						bd_no
+					   ,bd_title
+					   ,bd_content
+					   ,bd_wdt
+					   ,bd_hit
+					   ,bd_like
+					   ,user_no
+					   ,gb_del
+					   ,nick
+					)
+			VALUES (
+						#bd_no#
+					   ,#bd_title#
+					   ,#bd_content#
+					   ,SYSDATE
+					   ,0
+					   ,0
+					   ,#user_no#
+					   ,'N'
+					   ,#nick#
+					)
+	
+	</insert>
+	
+	<select id="selectBoardView" parameterClass="int" resultClass="boardVO">
+		SELECT bd_no
+			  ,bd_title
+			  ,bd_content
+			  ,bd_wdt
+			  ,bd_hit
+			  ,bd_like
+			  ,b.user_no
+			  ,b.nick
+			  ,pic_path
+		  FROM t_board b
+		  	  ,t_user u
+		 WHERE b.user_no = u.user_no
+		   AND b.gb_del = 'N'
+		   AND bd_no = #bd_no#
+	</select>
+	
+	<update id="updateContent" parameterClass="boardVO">
+		UPDATE t_board
+		   SET bd_title = #bd_title#,
+		   	   bd_content = #bd_content#
+		 WHERE bd_no = #bd_no#
+	</update>
+	
+	<update id="deleteContent" parameterClass="int">
+		UPDATE t_board
+		   SET gb_del = 'Y'
+		 WHERE bd_no = #bd_no#
+	</update>
+	
+	<insert id="insertReply" parameterClass="replyVO">
+	
+		<selectKey keyProperty="re_no" resultClass="int">
+			SELECT re_seq.nextval re_no FROM dual
+		</selectKey>
+		
+		INSERT INTO
+			t_board_re (
+				re_no
+			   ,bd_no
+			   ,re_content
+			   ,re_wdt
+			   ,user_no
+			   ,nick
+			   ,gb_del
+			)
+			VALUES (
+				#re_no#
+			   ,#bd_no#
+			   ,#re_content#
+			   ,SYSDATE
+			   ,#user_no#
+			   ,#nick#
+			   ,'N'
+			)
+	
+	</insert>
+	
+	<select id="selectReply" parameterClass="int" resultClass="replyVO">
+		SELECT re_no
+			  ,bd_no
+			  ,re_content
+			  ,re_wdt
+			  ,r.user_no
+			  ,r.nick
+			  ,pic_path
+		  FROM t_board_re r
+		  	  ,t_user u
+		 WHERE r.user_no = u.user_no
+		   AND r.gb_del = 'N'
+		   AND re_no = #re_no#
+	</select>
+	
+	<select id="selectReplyList" parameterClass="int" resultClass="replyVO">
+		SELECT 	re_no
+				,bd_no
+				,re_content
+				,re_wdt
+				,r.user_no
+				,r.nick
+				,pic_path
+		FROM	t_board_re r
+				,t_user u
+		WHERE	r.user_no = u.user_no
+		AND		r.gb_del = 'N'
+		AND 	bd_no = #bd_no#
+		ORDER BY re_no DESC
+	</select>
+	
+	<update id="updateReply" parameterClass="replyVO">
+		UPDATE t_board_re SET re_content = #re_content# WHERE re_no = #re_no#
+	</update>
+	
+	<update id="deleteReply" parameterClass="int">
+		UPDATE t_board_re SET gb_del = 'Y' WHERE re_no = #re_no#
+	</update>
+	
+
+</sqlMap>

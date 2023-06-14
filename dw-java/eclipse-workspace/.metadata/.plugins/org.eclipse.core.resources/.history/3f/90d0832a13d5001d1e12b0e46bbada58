@@ -1,0 +1,14 @@
+package e_oop.myGame;
+
+public class Skill {
+
+	String[] skills = {"복습안하기", "수업시간에자기", "수업시간에유튜브보기", ""};
+	
+	String skillInfoList(int level) {
+		String skillList = " ";
+		for (int i = 0; i < level; i++) {
+			skillList += (i + 1) + ". " + skills[i] + " ";
+		}
+		return skillList;
+	}
+}

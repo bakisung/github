@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = ["Smith", "Tom", "Steve", "Allen"];
+        const 함수 = function (x, y) {
+            // 배열에서 찾으면 위치를 리턴한다.
+            // 못찾으면 -1을 리턴한다.
+            let i = 0;
+            for (i; i < x.length; i++) {
+                if (x[i] === y) {
+                    break;
+                }
+            };
+            if (i < x.length) {
+                return i; /* 찾으면 */
+            } else { 
+                return -1; /* 못찾으면, i === x.length */
+            };
+        };
+        const 위치 = 함수(users, "Michael")
+        if (위치 < 0) {
+            console.log("존재하지 않음");
+        } else {
+            console.log(`인덱스 ${위치} 번째에 있음`);
+        };
+        // continue 컨티뉴 아래 코드를 실행하지 않고 반복
+        for (let i = 0; i < users.length; i++) {
+            if (users[i] === "Tom") {
+                // continue;
+            }
+            console.log(users[i]);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+package i_collection;
+
+import java.util.Date;
+import java.util.HashMap;
+
+public class HashMapClass {
+
+	public static void main(String[] args) {
+		/*
+		 * Object put(Object key, Object value) : 지정된 키와 값을 저장한다.
+		 * Object remove(Object key) : 지정된 키로 저장된 값을 제거한다.
+		 * Object get(Object key) : 지정된 키의 값(없으면 null)을 반환한다.
+		 * Set keySet() : 저장된 모든 키를 Set으로 반환한다.
+		 */
+		
+		HashMap<String, Object> map = new HashMap<>(); // <키값의 타입, 원하는 타입> | Object : 모든 클래스의 조상
+		
+		map.put("a", 10);
+		map.put("b", "홍길동");
+		map.put("c", new Date());
+		
+		System.out.println(map);
+		
+	}
+
+}

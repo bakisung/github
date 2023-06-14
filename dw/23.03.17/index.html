@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Library 라이브러리
+        // 개발자들을 위하여 편리한 기능을 미리 만들어서 모아놓은것
+        const num1 = 10.5555555555555555;
+        const 반올림 = Math.round(num1);
+        console.log(반올림);
+        const 내림 = Math.floor(num1);
+        console.log(내림);
+
+        const num2 = 10.1;
+        const 올림 = Math.ceil(num2);
+        console.log(올림);
+
+        const num3 = -4.7;
+        const 절대값 = Math.abs(num3);  /* abs : 앱솔루트(절대값) */
+        console.log(절대값); 
+
+        const x = 10;
+        const y = 9;
+        const z = 11;
+        console.log(Math.min(x, y, z)); /* 작은값을 찾는것 */
+        console.log(Math.max(x, y, z)); /* 큰값을 찾는것 */
+
+        const 랜덤 = Math.random(); /* 0.000000 ~ 0.999999 범위에서 무작위로 선정되는 숫자 */
+        console.log(랜덤);
+        const value = Math.floor(Math.random() * 10); /* 내림(랜덤*10) = 0 ~ 9 */
+        console.log(value);
+
+        // 랜덤넘버 공식 - min은 랜덤값에 포함이고 max는 포함하지 않는다.
+        // Math.floor(Math.random() * (max - min)); + min;
+        
+        // 문제. 101 ~ 999를 뽑으려면 어떻게 해야할까?
+        const value2 = Math.floor(Math.random() * (1000 - 101) + 101);
+        console.log(value2);
+    </script>
+</body>
+</html>

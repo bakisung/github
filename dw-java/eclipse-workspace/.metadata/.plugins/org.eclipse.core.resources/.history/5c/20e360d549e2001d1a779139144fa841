@@ -1,0 +1,15 @@
+package i_collection;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Board_p {
+
+	public static void main(String[] args) {
+
+		ArrayList<HashMap<String, String>> table = new ArrayList<>();
+		HashMap<String, String> boadwritting = new HashMap<>();
+		
+	}
+
+}

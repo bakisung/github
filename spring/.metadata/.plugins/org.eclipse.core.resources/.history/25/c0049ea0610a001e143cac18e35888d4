@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="<%= request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+<body>
+
+	<ul id="commentUl">
+		
+	</ul>
+	<!-- 
+		1. 템플레이팅할 html을 세팅한다. 이때 데이터 바인딩 시킬 부분은
+		{{ 바인딩시킬 데이터의 프로퍼티명 }} 의 형태로 적는다.
+	 -->
+	
+	<script type="template" id="commentTemplate">
+
+		
+</body>
+</html>

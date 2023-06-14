@@ -1,0 +1,52 @@
+package f_oop2;
+
+public class Time {
+
+	private int hour;
+	private int minute;
+	private int second;
+
+//	public int hour;
+//	public int minute;
+//	public int second;
+	
+	String getTime() {
+		return hour + ":" + minute + ":" + second;
+	}
+	
+	// hour
+	public int getHour() {
+		return hour;
+	}
+	
+	public void setHour(int hour) {
+		if (hour > 0 && hour < 24) {
+			this.hour = hour;
+		} else if (hour >= 24) {
+			this.hour = hour - 24;
+		}
+	}
+	
+	// minite
+	public int getMinute() {
+		return minute;
+	}
+	
+	public void setMinute() {
+		if (minute > 0 && minute < 60) {
+			this.minute = minute;
+		} else if (minute >= 60) {
+			this.minute = minute - 60;
+		}
+	}
+	
+	
+	
+	
+	// second
+	
+	
+	
+	
+	
+}

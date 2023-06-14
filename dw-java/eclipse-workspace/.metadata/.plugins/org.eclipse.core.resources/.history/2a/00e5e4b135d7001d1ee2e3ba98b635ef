@@ -1,0 +1,16 @@
+package myGame2.copy.copy;
+
+public class Character {
+
+	String name;
+	int maxHp;
+	int maxMp;
+	int hp;
+	int mp;
+	int att;
+	int def;
+	int level;
+	int exp;
+	Item[] items;
+	
+} // class 종료

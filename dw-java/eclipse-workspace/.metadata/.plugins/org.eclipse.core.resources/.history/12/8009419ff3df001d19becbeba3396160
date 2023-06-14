@@ -1,0 +1,36 @@
+package i_collection;
+
+import java.util.ArrayList;
+
+public class Score {
+
+	public static void main(String[] args) {
+
+		// 학생 이름
+		ArrayList<String> names = new ArrayList<>();
+		names.add("유재석");
+		names.add("박명수");
+		names.add("정준하");
+		names.add("정형돈");
+		names.add("길성준");
+		
+		// 과목명
+		ArrayList<String> subjects = new ArrayList<>();
+		subjects.add("국어");
+		subjects.add("영어");
+		subjects.add("수학");
+		subjects.add("사회");
+		subjects.add("과학");
+		subjects.add("Java");
+		subjects.add("Oracle");
+		
+		// 점수 난수 발생
+		for (int i = 0; i < subjects.size(); i++) {
+			ArrayList<Integer> score = new ArrayList<>();
+			for(int j = 0; j < subjects.size(); j++) {
+				
+			}
+		}
+	}
+
+}

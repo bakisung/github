@@ -1,0 +1,754 @@
+--CREATE TABLE students (
+--   stu_id varchar2(9) CONSTRAINT PK_stu_id PRIMARY KEY,
+--   stu_name varchar2(10),
+--   stu_gender varchar2(1),
+--   stu_resnum varchar2(16),
+--   stu_addr varchar2(500),
+--   stu_zipcode number(5, 0),
+--   stu_deptcode number(5, 0),
+--   stu_depname varchar2(20),
+--   stu_pwd varchar2(20),
+--   stu_tel varchar2(13),
+--   stu_email varchar2(50),
+--   CONSTRAINT Stu_gender CHECK (stu_gender = 'M' OR stu_gender = 'F')
+--);
+--
+--DROP TABLE students;
+--
+--INSERT INTO students values('202312345', '홍길동', 'M', '20000101-3111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '123456', '010-1234-5678', '11111@naver.com');
+--INSERT INTO students values('202311111', '성춘향', 'F', '20000101-4111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '123456', '010-1234-9876', '12345@naver.com');
+--
+--SELECT *
+--FROM students;
+--
+------------------------------------------------------------------------------------------------------------------------------------------------------
+--
+--CREATE TABLE BOARD (
+--b_id number(4) PRIMARY KEY,
+--b_name varchar2(20),
+--b_title varchar2(100),
+--b_content varchar2(300),
+--b_date DATE DEFAULT sysdate,
+--b_hit number(4) DEFAULT 0,
+--b_group number(4),
+--b_step number(4),
+--b_indent number(4))
+--;
+--SELECT * FROM board;
+--CREATE SEQUENCE board_seq;
+--
+------------테스트 전용 dummy data--------;
+--INSERT INTO board (b_id, b_name, b_title, b_content, b_hit, b_group, b_step, b_indent)
+--values (board_seq.nextval, '동주', '동주는', '천사다.', 0, board_seq.currval, 0, 0);
+--
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+--
+--SELECT *
+--FROM board;
+--
+--
+--CREATE TABLE students (
+--   stu_id varchar2(9) CONSTRAINT PK_stu_id PRIMARY KEY,
+--   stu_name varchar2(50),       /* 이름 */
+--   stu_gender varchar2(6),    /* 성별 */
+--   stu_resnum varchar2(16),    /* 주민등록번호 */
+--   stu_addr varchar2(500),    /* 주소 */
+--   stu_zipcode number(5, 0),    /* 우편번호 */
+--   stu_deptcode number(5, 0),    /* 학과코드 */
+--   stu_deptname varchar2(20),    /* 학과이름 */
+--   stu_pwd varchar2(20),       /* 비밀번호 */
+--   stu_tel varchar2(13),       /* 전화번호 */
+--   stu_email varchar2(50),    /* 이메일 */
+--   stu_state varchar2(10),    /* 상태(재학, 휴학, 졸업) */
+--   stu_entDate Date,          /* 입학일 */
+--   stu_grdDate DATE,          /* 졸업일 */
+--   auth_cd varchar2(1)       /* 권한코드 */
+--);
+--
+--INSERT INTO students values('202312345', '홍길동', 'male', '20000101-3111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '123456', '010-1234-5678', '11111@naver.com', '재학', '2023-03-02', NULL, 'S');
+--INSERT INTO students values('202311111', '성춘향', 'female', '20000101-4111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '123456', '010-1234-9876', '12345@naver.com', '재학', '2023-03-02', NULL, 'S');
+--
+--CREATE TABLE staffs (
+--   staff_id varchar2(9) CONSTRAINT PK_staff_id PRIMARY KEY,
+--   staff_name varchar2(50),       /* 이름 */
+--   staff_gender varchar2(6),    /* 성별 */
+--   staff_resnum varchar2(16),    /* 주민등록번호 */
+--   staff_addr varchar2(500),    /* 주소 */
+--   staff_zipcode number(5, 0),    /* 우편번호 */
+--   staff_deptcode number(5, 0),    /* 부서코드 */
+--   staff_deptname varchar2(20),    /* 부서이름 */
+--   staff_div varchar2(20),    /* 구분(교수, 관리자) */
+--   staff_pwd varchar2(20),       /* 비밀번호 */
+--   staff_tel varchar2(13),       /* 전화번호 */
+--   staff_email varchar2(50),    /* 이메일 */
+--   staff_state varchar2(10),    /* 상태(재직,퇴직) */
+--   auth_cd varchar2(1),    /* 권한코드(관리자 A, 교수 P) */
+--   staff_joinDate Date          /* 가입일 */
+--);
+--
+--INSERT INTO staffs values('123456789', '가가가', 'male', '20000101-3111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '교수', '123456', '010-1234-5678', '11111@naver.com', '재직', 'P', '2023-03-02');
+--INSERT INTO staffs values('987654321', '나나나', 'female', '20000101-4111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '교수', '123456', '010-1234-9876', '12345@naver.com', '재직', 'P', '2023-03-02');
+--INSERT INTO staffs values('000000000', '다다다', 'female', '20000101-4111111', '대전 중구 선화동', '11111', 00001, '유아교육과', '교수', '123456', '010-1234-9876', '12345@naver.com', '재직', 'P', '2023-03-02');
+--;
+--CREATE TABLE all_lecturelist (
+--   lec_code VARCHAR2(10) CONSTRAINT PK_lec_code PRIMARY KEY, /* 강의코드 */
+--   lec_name VARCHAR2(50), /* 강의명 */
+--   staff_id VARCHAR2(9), /* 교수아이디 */
+--   staff_name VARCHAR2(20), /* 교수명 */
+--   lec_loc VARCHAR2(50), /* 강의실 */
+--   lec_year NUMBER(4), /* 강의년도 */
+--   lec_term NUMBER(1), /* 강의 학기 */
+--   lec_day varchar2(10), /* 강의 요일 */
+--   lec_time varchar2(30), /* 강의 시간 */
+--   lec_div VARCHAR2(50), /* 구분 */
+--   lec_credit NUMBER(1) /* 학점 */
+--);
+--
+--INSERT INTO all_lecturelist VALUES ('C0001', '유아교육론', '123456789', '가가가', '인사관 102호', 2023, 1, '월', '1, 2, 3', '전공필수', 3);
+--INSERT INTO all_lecturelist VALUES ('C0002', '유아복지론', '987654321', '나나나', '인사관 103호', 2023, 1, '화',  '2, 3, 4', '전공필수', 3);
+--INSERT INTO all_lecturelist VALUES ('C0003', '유아미술교육', '000000000', '다다다', '인사관 104호', 2023, 2, '수', '5, 6, 7', '전공선택', 3);
+--INSERT INTO all_lecturelist VALUES ('C0004', '유아음악교육', '000000001', '라라라', '인사관 105호', 2022, 1, '목', '2, 3, 4', '전공선택', 3);
+--INSERT INTO all_lecturelist VALUES ('C0005', '유아생태교육', '000000002', '마마마', '인사관 201호', 2022, 2, '금', '4, 5', '전공선택', 2);
+--INSERT INTO all_lecturelist VALUES ('C0006', '유아발달론', '000000003', '바바바', '인사관 202호', 2021, 1, '월', '5, 6, 7', '전공필수', 3);
+--INSERT INTO all_lecturelist VALUES ('C0007', '유아교육의 발달', '000000004', '사사사', '인사관 505호', 2021, 2, '화', '6, 7, 8', '전공필수', 3);
+--INSERT INTO all_lecturelist VALUES ('C0008', '교과교육론', '000000005', '아아아', '인사관 504호', 2022, 1, '수', '7, 8', '전공필수', 2);
+--INSERT INTO all_lecturelist VALUES ('C0009', '체육', '000000006', '자자자', '체육관', 2023, 2, '목', '4, 5', '교양', 2);
+--SELECT * FROM students;
+--CREATE TABLE lecture (
+--   lec_code VARCHAR2(10) NOT NULL, /* 강의코드 */
+--   stu_id VARCHAR2(9) NOT NULL, /* 학번 */
+--   stu_grade varchar2(1), /* 성적 */
+--   stu_score NUMBER(3,2), /* 평점 */
+--CONSTRAINT FK_lec_code FOREIGN KEY(lec_code)
+--REFERENCES all_lecturelist(lec_code)
+--ON DELETE CASCADE,
+--CONSTRAINT FK_stu_id FOREIGN KEY(stu_id)
+--REFERENCES students(stu_id)
+--ON DELETE CASCADE
+--);
+--INSERT INTO lecture VALUES ('C0001', 202312345, 'A', 4.0);
+--INSERT INTO lecture VALUES ('C0004', 202312345, 'A', 4.0);
+--INSERT INTO lecture VALUES ('C0001', 202311111, 'B', 3.0);
+--INSERT INTO lecture VALUES ('C0002', 202312345, 'A', 4.0);
+--INSERT INTO lecture VALUES ('C0002', 202311111, 'C', 2.0);
+--INSERT INTO lecture VALUES ('C0003', 202312345, 'A', 4.0);
+--INSERT INTO lecture VALUES ('C0004', 202311111, 'B', 3.0);
+--INSERT INTO lecture VALUES ('C0005', 202312345, 'A', 4.0);
+--INSERT INTO lecture VALUES ('C0005', 202311111, 'C', 2.0);
+--INSERT INTO lecture VALUES ('C0006', 202311111, 'B', 3.0);
+--INSERT INTO lecture VALUES ('C0007', 202312345, 'A', 4.0);
+--
+--SELECT * FROM students;
+--SELECT * FROM lecture;
+--SELECT * FROM all_lecturelist;
+--SELECT * FROM staffs;
+--
+--
+--
+-----------
+--
+--/* 전체강의목록 */
+--CREATE TABLE all_lecturelist (
+--   lec_code VARCHAR2(10) NOT NULL, /* 강의코드 */
+--   lec_time NUMBER(1) NOT NULL, /* 강의교시 */
+--   lec_day VARCHAR2(10) NOT NULL, /* 강의요일 */
+--   lec_name VARCHAR2(30), /* 강의명 */
+--   staff_id VARCHAR2(9), /* 교수아이디 */
+--   lec_loc VARCHAR2(50), /* 강의실 */
+--   lec_year NUMBER(4), /* 강의년도 */
+--   lec_term NUMBER(1), /* 강의학기 */
+--   lec_div VARCHAR2(50), /* 구분 */
+--   lec_credit NUMBER(1), /* 학점 */
+--   lec_maxpeo NUMBER(5) /* 최대수강인원 */
+--);
+--
+--COMMENT ON TABLE all_lecturelist IS '전체강의목록';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_code IS '강의코드';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_time IS '강의교시';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_day IS '강의요일';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_name IS '강의명';
+--
+--COMMENT ON COLUMN all_lecturelist.staff_id IS '교수아이디';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_loc IS '강의실';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_year IS '강의년도';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_term IS '강의학기';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_div IS '구분';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_credit IS '학점';
+--
+--COMMENT ON COLUMN all_lecturelist.lec_maxpeo IS '최대수강인원';
+--
+--CREATE UNIQUE INDEX PK_all_lecturelist
+--   ON all_lecturelist (
+--      lec_code ASC,
+--      lec_time ASC,
+--      lec_day ASC
+--   );
+--
+--ALTER TABLE all_lecturelist
+--   ADD
+--      CONSTRAINT PK_all_lecturelist
+--      PRIMARY KEY (
+--         lec_code,
+--         lec_time,
+--         lec_day
+--      );
+--
+--/* 학생 */
+--CREATE TABLE students (
+--   stu_id VARCHAR2(9) NOT NULL, /* 학번 */
+--   stu_name VARCHAR2(50), /* 이름 */
+--   stu_pwd VARCHAR2(20), /* 비밀번호 */
+--   stu_gender VARCHAR2(6), /* 성별 */
+--   stu_resnum VARCHAR2(16), /* 주민번호 */
+--   stu_addr VARCHAR2(500), /* 주소 */
+--   stu_zipcode NUMBER(5), /* 우편번호 */
+--   dept_code VARCHAR2(5), /* 부서코드 */
+--   stu_tel VARCHAR2(13), /* 전화번호 */
+--   stu_email VARCHAR2(50), /* 이메일 */
+--   stu_state VARCHAR2(10), /* 상태 */
+--   stu_entdate DATE, /* 입학일 */
+--   stu_grddate DATE, /* 졸업일 */
+--   auth_cd VARCHAR2(1) /* 권한코드 */
+--);
+--
+--COMMENT ON TABLE students IS '학생';
+--
+--COMMENT ON COLUMN students.stu_id IS '학번';
+--
+--COMMENT ON COLUMN students.stu_name IS '이름';
+--
+--COMMENT ON COLUMN students.stu_pwd IS '비밀번호';
+--
+--COMMENT ON COLUMN students.stu_gender IS '성별';
+--
+--COMMENT ON COLUMN students.stu_resnum IS '주민번호';
+--
+--COMMENT ON COLUMN students.stu_addr IS '주소';
+--
+--COMMENT ON COLUMN students.stu_zipcode IS '우편번호';
+--
+--COMMENT ON COLUMN students.dept_code IS '부서코드';
+--
+--COMMENT ON COLUMN students.stu_tel IS '전화번호';
+--
+--COMMENT ON COLUMN students.stu_email IS '이메일';
+--
+--COMMENT ON COLUMN students.stu_state IS '상태';
+--
+--COMMENT ON COLUMN students.stu_entdate IS '입학일';
+--
+--COMMENT ON COLUMN students.stu_grddate IS '졸업일';
+--
+--COMMENT ON COLUMN students.auth_cd IS '권한코드';
+--
+--CREATE UNIQUE INDEX PK_students
+--   ON students (
+--      stu_id ASC
+--   );
+--
+--ALTER TABLE students
+--   ADD
+--      CONSTRAINT PK_students
+--      PRIMARY KEY (
+--         stu_id
+--      );
+--
+--
+--
+--/* 수강목록 */
+--CREATE TABLE lecture (
+--   stu_id VARCHAR2(9) NOT NULL, /* 학번 */
+--   lec_code VARCHAR2(10) NOT NULL, /* 강의코드 */
+--   stu_score NUMBER(3, 2), /* 평점 */
+--   stu_grade VARCHAR2(5) /* 등급 */
+--);
+--
+--COMMENT ON TABLE lecture IS '수강목록';
+--
+--COMMENT ON COLUMN lecture.stu_id IS '학번';
+--
+--COMMENT ON COLUMN lecture.lec_code IS '강의코드';
+--
+--COMMENT ON COLUMN lecture.stu_score IS '평점';
+--
+--COMMENT ON COLUMN lecture.stu_grade IS '등급';
+--
+--
+--
+--   
+--CREATE UNIQUE INDEX pk_lecture
+--   ON lecture (
+--      stu_id ASC,
+--      lec_code ASC
+--   );
+--
+--ALTER TABLE lecture
+--   ADD
+--      CONSTRAINT PK_lecture
+--      PRIMARY KEY (
+--         stu_id,
+--         lec_code
+--      );
+--
+--
+--/* 교직원 */
+--CREATE TABLE staffs (
+--   staff_id VARCHAR2(9) NOT NULL, /* 교직원아이디 */
+--   staff_name VARCHAR2(50), /* 교직원이름 */
+--   staff_pwd VARCHAR2(20), /* 비밀번호 */
+--   staff_gender VARCHAR2(6), /* 성별 */
+--   staff_resnum VARCHAR2(16), /* 주민번호 */
+--   staff_addr VARCHAR2(500), /* 주소 */
+--   staff_zipcode NUMBER(5), /* 우편번호 */
+--   dept_code VARCHAR2(5), /* 부서코드 */
+--   staff_div VARCHAR2(20), /* 구분(교수,관리자) */
+--   staff_tel VARCHAR2(13), /* 전화번호 */
+--   staff_email VARCHAR2(50), /* 이메일 */
+--   staff_state VARCHAR2(10), /* 상태(재직, 퇴직) */
+--   staff_hiredate DATE, /* 입사일 */
+--   auth_cd VARCHAR2(1) /* 권한코드 */
+--);
+--
+--COMMENT ON TABLE staffs IS '교직원';
+--
+--COMMENT ON COLUMN staffs.staff_id IS '교직원아이디';
+--
+--COMMENT ON COLUMN staffs.staff_name IS '교직원이름';
+--
+--COMMENT ON COLUMN staffs.staff_pwd IS '비밀번호';
+--
+--COMMENT ON COLUMN staffs.staff_gender IS '성별';
+--
+--COMMENT ON COLUMN staffs.staff_resnum IS '주민번호';
+--
+--COMMENT ON COLUMN staffs.staff_addr IS '주소';
+--
+--COMMENT ON COLUMN staffs.staff_zipcode IS '우편번호';
+--
+--COMMENT ON COLUMN staffs.dept_code IS '부서코드';
+--
+--COMMENT ON COLUMN staffs.staff_div IS '구분(교수,관리자)';
+--
+--COMMENT ON COLUMN staffs.staff_tel IS '전화번호';
+--
+--COMMENT ON COLUMN staffs.staff_email IS '이메일';
+--
+--COMMENT ON COLUMN staffs.staff_state IS '상태(재직, 퇴직)';
+--
+--COMMENT ON COLUMN staffs.staff_hiredate IS '입사일';
+--
+--COMMENT ON COLUMN staffs.auth_cd IS '권한코드';
+--
+--CREATE UNIQUE INDEX PK_staffs
+--   ON staffs (
+--      staff_id ASC
+--   );
+--
+--ALTER TABLE staffs
+--   ADD
+--      CONSTRAINT PK_staffs
+--      PRIMARY KEY (
+--         staff_id
+--      );
+--
+--/* 부서 */
+--CREATE TABLE dept (
+--   dept_code VARCHAR2(5) NOT NULL, /* 부서코드 */
+--   dept_name VARCHAR2(20), /* 부서이름 */
+--   dept_loc VARCHAR2(50) /* 위치 */
+--);
+--
+--COMMENT ON TABLE dept IS '부서';
+--
+--COMMENT ON COLUMN dept.dept_code IS '부서코드';
+--
+--COMMENT ON COLUMN dept.dept_name IS '부서이름';
+--
+--COMMENT ON COLUMN dept.dept_loc IS '위치';
+--
+--CREATE UNIQUE INDEX PK_dept
+--   ON dept (
+--      dept_code ASC
+--   );
+--
+--ALTER TABLE dept
+--   ADD
+--      CONSTRAINT PK_dept
+--      PRIMARY KEY (
+--         dept_code
+--      );
+--
+--
+--
+--/* 문의게시판 */
+--CREATE TABLE stu_board (
+--   bd_no NUMBER NOT NULL, /* 글번호 */
+--   bd_title VARCHAR2(30), /* 제목 */
+--   stu_id VARCHAR2(9), /* 작성자 아이디 */
+--   bd_content VARCHAR2(1000), /* 내용 */
+--   bd_wdt DATE, /* 작성일 */
+--   bd_hit NUMBER, /* 조회수 */
+--   gb_del VARCHAR2(1) /* 삭제여부 */
+--);
+--
+--COMMENT ON TABLE stu_board IS '문의게시판';
+--
+--COMMENT ON COLUMN stu_board.bd_no IS '글번호';
+--
+--COMMENT ON COLUMN stu_board.bd_title IS '제목';
+--
+--COMMENT ON COLUMN stu_board.stu_id IS '작성자 아이디';
+--
+--COMMENT ON COLUMN stu_board.bd_content IS '내용';
+--
+--COMMENT ON COLUMN stu_board.bd_wdt IS '작성일';
+--
+--COMMENT ON COLUMN stu_board.bd_hit IS '조회수';
+--
+--COMMENT ON COLUMN stu_board.gb_del IS '삭제여부';
+--
+--CREATE UNIQUE INDEX PK_stu_board
+--   ON stu_board (
+--      bd_no ASC
+--   );
+--
+--ALTER TABLE stu_board
+--   ADD
+--      CONSTRAINT PK_stu_board
+--      PRIMARY KEY (
+--         bd_no
+--      );
+--
+--/* 게시판 댓글 */
+--CREATE TABLE stu_board_re (
+--   re_no NUMBER NOT NULL, /* 답변번호 */
+--   bd_no NUMBER, /* 글번호 */
+--   staff_id VARCHAR2(9), /* 답변교직원아이디 */
+--   re_content VARCHAR2(100), /* 답변 */
+--   re_wdt DATE, /* 답변작성일 */
+--   gb_del VARCHAR2(1) /* 삭제여부 */
+--);
+--
+--COMMENT ON TABLE stu_board_re IS '게시판 댓글';
+--
+--COMMENT ON COLUMN stu_board_re.re_no IS '답변번호';
+--
+--COMMENT ON COLUMN stu_board_re.bd_no IS '글번호';
+--
+--COMMENT ON COLUMN stu_board_re.staff_id IS '답변교직원아이디';
+--
+--COMMENT ON COLUMN stu_board_re.re_content IS '답변';
+--
+--COMMENT ON COLUMN stu_board_re.re_wdt IS '답변작성일';
+--
+--COMMENT ON COLUMN stu_board_re.gb_del IS '삭제여부';
+--
+--CREATE UNIQUE INDEX PK_stu_board_re
+--   ON stu_board_re (
+--      re_no ASC
+--   );
+--
+--ALTER TABLE stu_board_re
+--   ADD
+--      CONSTRAINT PK_stu_board_re
+--      PRIMARY KEY (
+--         re_no
+--      );
+--
+--/* 공지사항게시판 */
+--CREATE TABLE notice_board (
+--   bd_no NUMBER NOT NULL, /* 글번호 */
+--   bd_title VARCHAR2(30), /* 제목 */
+--   staff_id VARCHAR2(9), /* 작성교직원아이디 */
+--   bd_content VARCHAR2(1000), /* 내용 */
+--   bd_wdt DATE, /* 작성일 */
+--   bd_hit NUMBER, /* 조회수 */
+--   gb_del VARCHAR2(1) /* 삭제여부 */
+--);
+--
+--COMMENT ON TABLE notice_board IS '공지사항게시판';
+--
+--COMMENT ON COLUMN notice_board.bd_no IS '글번호';
+--
+--COMMENT ON COLUMN notice_board.bd_title IS '제목';
+--
+--COMMENT ON COLUMN notice_board.staff_id IS '작성교직원아이디';
+--
+--COMMENT ON COLUMN notice_board.bd_content IS '내용';
+--
+--COMMENT ON COLUMN notice_board.bd_wdt IS '작성일';
+--
+--COMMENT ON COLUMN notice_board.bd_hit IS '조회수';
+--
+--COMMENT ON COLUMN notice_board.gb_del IS '삭제여부';
+--
+--CREATE UNIQUE INDEX PK_notice_board
+--   ON notice_board (
+--      bd_no ASC
+--   );
+--
+--ALTER TABLE notice_board
+--   ADD
+--      CONSTRAINT PK_notice_board
+--      PRIMARY KEY (
+--         bd_no
+--      );
+--
+--/* 첨부파일 */
+--CREATE TABLE notice_att (
+--   att_no NUMBER NOT NULL, /* 첨부파일번호 */
+--   att_nm VARCHAR2(50), /* 첨부파일명 */
+--   bd_no NUMBER, /* 글번호 */
+--   staff_id VARCHAR2(9) /* 교직원아이디 */
+--);
+--
+--COMMENT ON TABLE notice_att IS '첨부파일';
+--
+--COMMENT ON COLUMN notice_att.att_no IS '첨부파일번호';
+--
+--COMMENT ON COLUMN notice_att.att_nm IS '첨부파일명';
+--
+--COMMENT ON COLUMN notice_att.bd_no IS '글번호';
+--
+--COMMENT ON COLUMN notice_att.staff_id IS '교직원아이디';
+--
+--CREATE UNIQUE INDEX PK_notice_att
+--   ON notice_att (
+--      att_no ASC
+--   );
+--
+--ALTER TABLE notice_att
+--   ADD
+--      CONSTRAINT PK_notice_att
+--      PRIMARY KEY (
+--         att_no
+--      );
+--
+--ALTER TABLE all_lecturelist
+--   ADD
+--      CONSTRAINT FK_staffs_TO_all_lecturelist
+--      FOREIGN KEY (
+--         staff_id
+--      )
+--      REFERENCES staffs (
+--         staff_id
+--      );
+--
+--ALTER TABLE students
+--   ADD
+--      CONSTRAINT FK_dept_TO_students
+--      FOREIGN KEY (
+--         dept_code
+--      )
+--      REFERENCES dept (
+--         dept_code
+--      );
+--
+--
+--
+--ALTER TABLE lecture
+--   ADD
+--      CONSTRAINT FK_students_TO_lecture
+--      FOREIGN KEY (
+--         stu_id
+--      )
+--      REFERENCES students (
+--         stu_id
+--      );
+--
+--ALTER TABLE staffs
+--   ADD
+--      CONSTRAINT FK_dept_TO_staffs
+--      FOREIGN KEY (
+--         dept_code
+--      )
+--      REFERENCES dept (
+--         dept_code
+--      );
+--
+--ALTER TABLE stu_board
+--   ADD
+--      CONSTRAINT FK_students_TO_stu_board
+--      FOREIGN KEY (
+--         stu_id
+--      )
+--      REFERENCES students (
+--         stu_id
+--      );
+--
+--ALTER TABLE stu_board_re
+--   ADD
+--      CONSTRAINT FK_stu_board_TO_stu_board_re
+--      FOREIGN KEY (
+--         bd_no
+--      )
+--      REFERENCES stu_board (
+--         bd_no
+--      );
+--
+--ALTER TABLE stu_board_re
+--   ADD
+--      CONSTRAINT FK_staffs_TO_stu_board_re
+--      FOREIGN KEY (
+--         staff_id
+--      )
+--      REFERENCES staffs (
+--         staff_id
+--      );
+--
+--ALTER TABLE notice_board
+--   ADD
+--      CONSTRAINT FK_staffs_TO_notice_board
+--      FOREIGN KEY (
+--         staff_id
+--      )
+--      REFERENCES staffs (
+--         staff_id
+--      );
+--
+--ALTER TABLE notice_att
+--   ADD
+--      CONSTRAINT FK_notice_board_TO_notice_att
+--      FOREIGN KEY (
+--         bd_no
+--      )
+--      REFERENCES notice_board (
+--         bd_no
+--      );
+--
+--ALTER TABLE notice_att
+--   ADD
+--      CONSTRAINT FK_staffs_TO_notice_att
+--      FOREIGN KEY (
+--         staff_id
+--      )
+--      REFERENCES staffs (
+--         staff_id
+--      );
+--
+--INSERT INTO dept VALUES ('00001', '유아교육과', '인문사회관 2층');
+--INSERT INTO dept VALUES ('00002', '컴퓨터공학과', '이공관 3층');
+--INSERT INTO dept VALUES ('90001', '행정', '본관 1층');
+--
+--
+--INSERT INTO students VALUES ('11111', '홍길동', '123456', 'Male', '111111-1111111', '대전 중구 선화동', 11111, '00001', '010-1111-1111', 'test@test.com', '재학', '2023-03-02', null, 'S');
+--INSERT INTO students VALUES ('22222', '성춘향', '123456', 'Female', '222222-2222222', '대전 중구 선화동', 11111, '00001', '010-2222-2222', 'test2@test2.com', '재학', '2023-03-02', null, 'S');
+--
+--
+--INSERT INTO staffs VALUES ('33333', '교수님', '123456', 'Male', '111111-1111111', '대전 중구 선화동', 11111, '00001', '교수', '010-3333-3333', 'test3@test3.com', '재직', '2023-03-02', 'P');
+--INSERT INTO staffs VALUES ('44444', '교수님2', '123456', 'Female', '222222-2222222', '대전 중구 선화동', 11111, '00002', '교수', '010-4444-4444', 'test4@test4.com', '재직', '2023-03-02', 'P');
+--INSERT INTO staffs VALUES ('12345', '관리자', '123456', 'Male', '111111-1111111', '대전 중구 선화동', 11111, '90001', '관리자', '010-5555-5555', 'test5@test5.com', '재직', '2023-03-02', 'A');
+--
+--
+--
+--INSERT INTO all_lecturelist VALUES ('C00001', '1', '월', '유아교육론', '33333', '인문사회관 202호', 2023, 1, '전공필수', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00001', '2', '월', '유아교육론', '33333', '인문사회관 202호', 2023, 1, '전공필수', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00001', '3', '월', '유아교육론', '33333', '인문사회관 202호', 2023, 1, '전공필수', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00002', '3', '화', '유아발달론', '33333', '인문사회관 203호', 2023, 1, '전공선택', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00002', '4', '화', '유아발달론', '33333', '인문사회관 203호', 2023, 1, '전공선택', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00002', '5', '화', '유아발달론', '33333', '인문사회관 203호', 2023, 1, '전공선택', 3, 40);
+--INSERT INTO all_lecturelist VALUES ('C00003', '5', '수', '유아음악교육', '33333', '인문사회관 204호', 2023, 1, '전공선택', 2, 40);
+--INSERT INTO all_lecturelist VALUES ('C00003', '6', '수', '유아음악교육', '33333', '인문사회관 204호', 2023, 1, '전공선택', 2, 40);
+--INSERT INTO all_lecturelist VALUES ('C00004', '6', '목', '컴퓨터', '44444', '이공관 301호', 2023, 1, '교양', 2, 40);
+--INSERT INTO all_lecturelist VALUES ('C00004', '7', '목', '컴퓨터', '44444', '이공관 301호', 2023, 1, '교양', 2, 40);
+--
+--
+--INSERT INTO lecture VALUES ('11111', 'C00001', NULL, null);
+--
+--INSERT INTO lecture VALUES ('11111', 'C00002', NULL, null);
+--
+--INSERT INTO lecture VALUES ('11111', 'C00003', NULL, null);
+--
+--INSERT INTO lecture VALUES ('11111', 'C00004', NULL, null);
+--
+--INSERT INTO lecture VALUES ('22222', 'C00001', NULL, null);
+--
+--INSERT INTO lecture VALUES ('22222', 'C00002', NULL, null);
+--
+--INSERT INTO lecture VALUES ('22222', 'C00003', NULL, null);
+--
+--INSERT INTO lecture VALUES ('22222', 'C00004', NULL, null);
+--
+--CREATE SEQUENCE lec_seq
+--INCREMENT BY 1 --증가값
+--START WITH 5 -- 시작값
+--MINVALUE 5 -- 최솟값
+--;
+--
+--SELECT * FROM students;
+--SELECT * FROM lecture;
+--SELECT * FROM all_lecturelist;
+--SELECT * FROM staffs;
+
+--DROP TABLE lecture;
+--
+--CREATE TABLE lecture (
+--   stu_id VARCHAR2(9) NOT NULL, /* 학번 */
+--   lec_code VARCHAR2(10) NOT NULL, /* 강의코드 */
+--   stu_score NUMBER(5, 2), /* 성적합계 */
+--   stu_grade VARCHAR2(5) /* 등급 */
+--);
+--
+--COMMENT ON TABLE lecture IS '수강목록';
+--
+--COMMENT ON COLUMN lecture.stu_id IS '학번';
+--
+--COMMENT ON COLUMN lecture.lec_code IS '강의코드';
+--
+--COMMENT ON COLUMN lecture.stu_score IS '평점';
+--
+--COMMENT ON COLUMN lecture.stu_grade IS '등급';
+--
+--
+--
+--   
+--CREATE UNIQUE INDEX pk_lecture
+--   ON lecture (
+--      stu_id ASC,
+--      lec_code ASC
+--   );
+--
+--ALTER TABLE lecture
+--   ADD
+--      CONSTRAINT PK_lecture
+--      PRIMARY KEY (
+--         stu_id,
+--         lec_code
+--      );
+--
+--INSERT INTO lecture VALUES ('11111', 'C00001', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('11111', 'C00002', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('11111', 'C00003', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('11111', 'C00004', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('22222', 'C00001', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('22222', 'C00002', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('22222', 'C00003', 0, 'null');
+--
+--INSERT INTO lecture VALUES ('22222', 'C00004', 0, 'null');
+
+ALTER TABLE STUDENTS DROP COLUMN stu_pwd;
+
+ALTER TABLE STUDENTS ADD stu_pwd VARCHAR(255);
+
+UPDATE STUDENTS SET STU_PWD = '123456';
+
+ALTER TABLE STAFFS  DROP COLUMN staff_pwd;
+
+ALTER TABLE STAFFS  ADD staff_pwd VARCHAR(255);
+
+UPDATE STAFFS SET STAFF_PWD = '123456';

@@ -1,0 +1,27 @@
+package f_oop2;
+
+public class Inheritance {
+
+	class Human {
+		String name;
+		int age;
+		void eat() {};
+		void sleep() {};
+	}
+	
+	class Student extends Human {
+		int studentID;
+		void goToSchool() {};
+	}
+	
+	class Worker extends Human {
+		int workerID;
+		void goToWork() {};
+	}
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

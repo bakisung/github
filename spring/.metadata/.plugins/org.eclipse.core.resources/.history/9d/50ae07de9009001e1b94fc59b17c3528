@@ -1,0 +1,15 @@
+package kr.or.dw.service;
+
+import javax.servlet.http.HttpSession;
+
+import kr.or.dw.vo.MemberVO;
+
+public class MemberServiceImpl implements MemberService{
+
+	@Override
+	public void login(String id, String pwd, HttpSession session) {
+		MemberVO member = memberDAO.selectMemberById(id);
+		member.
+	}
+
+}

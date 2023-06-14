@@ -1,0 +1,13 @@
+package f_oop2;
+
+public class Time {
+
+	private int hour;
+	private int minute;
+	private int second;
+
+	String getTime() {
+		return hour + ":" + minute + ":" + second;
+	}
+	
+}

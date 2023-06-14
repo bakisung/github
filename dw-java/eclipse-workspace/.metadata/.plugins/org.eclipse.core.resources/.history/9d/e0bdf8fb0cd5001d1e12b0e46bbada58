@@ -1,0 +1,9 @@
+package e_oop.pack2;
+
+public class D {
+
+	public void print () {
+		
+	}
+	
+}

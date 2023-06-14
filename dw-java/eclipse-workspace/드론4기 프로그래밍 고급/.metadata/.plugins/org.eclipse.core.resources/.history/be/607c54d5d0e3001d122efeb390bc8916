@@ -1,0 +1,14 @@
+package kr.or.dw.basic;
+
+public class MapTest {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Map ==> key값과 value값을 한 쌍으로 관리하는 객체
+		 * - key값은 중복을 허용하지 않고, 순서(index)가 없다
+		 */
+		
+	}
+
+}

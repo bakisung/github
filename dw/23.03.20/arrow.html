@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button>click</button>
+
+    <script>
+        // 1번 방법
+        // const myFunc = function(a, b) {
+        //     return a * b;
+        // };
+
+        // 2번 방법
+        // const myFunc = (a, b) => {
+        //     return a * b;
+        // };
+        
+        // 3번 방법 = 에로우("=>")
+        const myFunc = (a, b) => a * b; /* 평션 내용이 단순한 경우 에로우를 사용하여 간소화 시킨다. */
+
+        const val = myFunc(2, 3);
+        console.log(val);
+
+        // 이벤트 등록 1단계 대상 선언
+        const button = document.querySelector("button");
+        
+        // 이벤트 등록 2단계 함수 선언
+        // const callback = function (e) {};
+        // ㄴ애로우 함수로 변경
+        const callback = (e) => {
+            const h1 = document.querySelector("h1");
+            let counter = parseInt(h1.innerHTML, 10);
+            counter = counter + 1;
+            h1.innerHTML = counter;
+        }
+        
+        // 이벤트 등록 3단계 버튼에 이벤트 등록
+        // 익명함수 - 함수 선언시 함수 이름을 만들지 않는것 ( button.addEventListener("click", 이 자리에 함수 값을 때려 넣음) => {}); )
+        button.addEventListener("click", (e) => {
+            const h1 = document.querySelector("h1");
+            let counter = parseInt(h1.innerHTML, 10);
+            counter = counter + 1;
+            h1.innerHTML = counter;
+        });
+        
+        // 
+        const 배열 = [1, 2, 3, 4, 5];
+        // 익명함수 스타일
+        배열.forEach((배열의멤버, index) => {
+            console.log(배열의멤버);
+        });
+        // 일반함수 스타일
+        const 함수 = function (배열의멤버, indext) {
+            console.log(배열의멤버);
+        };
+        배열.forEach(함수);
+    </script>
+</body>
+</html>

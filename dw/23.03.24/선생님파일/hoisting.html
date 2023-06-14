@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>호이스팅</title>
+</head>
+<body>
+    <script>
+        // 실행 전 
+        console.log(logMessage());
+        sumNumbers();
+
+        function logMessage() {
+            return 'worked';
+        }
+
+        var sumNumbers = function () {
+            return 10 + 20;
+        };
+    </script>
+</body>
+</html>

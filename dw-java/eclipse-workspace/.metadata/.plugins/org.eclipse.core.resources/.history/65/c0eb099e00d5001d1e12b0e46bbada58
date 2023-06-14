@@ -1,0 +1,44 @@
+package e_oop.score;
+
+public class Student {
+
+	int kor;
+	int eng;
+	int math;
+	int sum;
+	double avg;
+	String name;
+	int rank;
+	
+	Student() {
+		
+	}
+	
+	Student(int i) {
+		name = "학생" + (i + 1);
+		rank = 1;
+		kor = (int)(Math.random() * 100) + 1;
+		eng = (int)(Math.random() * 100) + 1;
+		math = (int)(Math.random() * 100) + 1;
+		sum = kor + eng + math;
+		avg = Math.round(((double)(sum / 3) * 100)) / 100;
+	}
+
+	@Override // Alt + Shift + S = Generate
+	public String toString() {
+		return "Student [kor=" + kor + ", eng=" + eng + ", math=" + math + ", sum=" + sum + ", avg=" + avg + ", name="
+				+ name + ", rank=" + rank + "]";
+	}
+
+	void ranking(Student[] students) {
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students.length; j++) {
+				if (students[i].sum < students[j].sum) {
+					students[i].rank++;
+				}
+			}
+		}
+	}
+	
+	
+}

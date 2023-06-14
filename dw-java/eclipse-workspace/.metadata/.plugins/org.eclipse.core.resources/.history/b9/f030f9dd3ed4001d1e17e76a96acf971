@@ -1,0 +1,17 @@
+package e_oop;
+
+public class VariableInit {
+
+	// 멤버 변수 초기화
+	int var = 10; // 인스턴스 변수
+	static int staticVar = 20; // 클래스 변수
+		
+	
+	
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

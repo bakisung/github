@@ -1,0 +1,11 @@
+package kr.or.dw.vo;
+
+public class MenuVO {
+	mcode
+	mname
+	murl
+	micon
+	upcode
+	mlevel
+	isnav
+}

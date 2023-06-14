@@ -1,0 +1,19 @@
+package kr.or.dw.basic;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileIOTest02 {
+
+	public static void main(String[] args) {
+		// 파일에 데이터를 출력하는 예제
+		
+		try {
+			
+		} catch (FileNotFoundException e) {
+		}
+		
+		
+	}
+
+}

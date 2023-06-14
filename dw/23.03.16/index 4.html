@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello~~</h2>
+    <script>
+        // resize : 사이즈를 다시 바꾼다는 의미이다.
+        // 1단계 : 이벤트의 대상을 선언
+        // resize 이벤트는 그 대상이 window이다.
+        // 2단계 : 콜백함수 선언
+        const resize = function (e) {
+            const h2 = document.querySelector("h2");
+            h2.innerHTML = "just Resize";
+        };
+        const rightclick = function(e) {
+            const h2 = document.querySelector("h2");
+            h2.innerHTML = "뷁";
+            e.preventDefault();
+        }
+        // 3단계 : 대상에게 콜백함수와 원하는 이벤트를 등록한다.
+        // "resize"
+        // window는 브라우저가 로딩시 선언한 글로벌 변수이므로 선언이 불필요하다.
+        window.addEventListener("resize", resize);
+        /* (resize라는 벤트 이름 , 내가 지정한 함수를 담고있는 변수 이름) */
+        window.addEventListener("contextmenu", rightclick)
+    </script>
+</body>
+</html>

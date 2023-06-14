@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인터벌 테스트</title>
+    <style>
+        p {
+            color:red;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p id="p">This Color</p>
+    <p id="demo"></p>
+
+    <script>
+        var p = document.querySelector("#demo");
+        setInterval(function () {
+            p.innerHTML += "Hello";
+        }, 1000);
+    </script>
+</body>
+</html>

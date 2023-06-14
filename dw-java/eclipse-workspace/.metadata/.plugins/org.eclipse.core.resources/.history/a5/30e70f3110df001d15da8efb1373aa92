@@ -1,0 +1,23 @@
+package h_api;
+
+public class WrapperClass {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Wrapper 클래스 	: 기본형 타입을 객체로 사용해야할 때 대신 사용하는 클래스
+		 * - boolean	: Boolean
+		 * - char		: Character
+		 * - byte		: Byte
+		 * - short		: short
+		 * - int		: Integer
+		 * - long		: Long
+		 * - float		: Float
+		 * - double		: Double
+		 */
+		
+		int a = 20;
+		
+	}
+
+}

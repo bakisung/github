@@ -1,0 +1,11 @@
+package e_oop;
+
+public class SampleClass {
+
+	public static void main(String[] args) {
+
+		int local = 10; // 지역변수 : 메소드 안에서만 사용 가능한 변수
+		
+	}
+
+}

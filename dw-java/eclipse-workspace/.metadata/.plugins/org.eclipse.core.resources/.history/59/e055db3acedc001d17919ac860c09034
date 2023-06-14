@@ -1,0 +1,17 @@
+package f_oop2;
+
+public class Time {
+
+//	private int hour;
+//	private int minute;
+//	private int second;
+
+	public int hour;
+	public int minute;
+	public int second;
+	
+	String getTime() {
+		return hour + ":" + minute + ":" + second;
+	}
+	
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <style>
+        #div1 {
+            width: 300px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+        #div2 {
+            width: 300px;
+            border: 2px solid red;
+            margin: 10px;
+        }
+        p {
+            background-color: yellow;
+        }
+        input {
+            border: 2px solid deeppink;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#div1').on({
+                'click': function () {
+                    alert('div1 이벤트 입니다.')
+                },
+                'mouseover': function () {
+                    alert('div1 태그에 마우스 올렸다!')
+                }
+            });
+            $('#div2').on('click', function () {
+                alert('div2 이벤트 입니다.');
+            });
+            // $('p').on('mouseover', function () {
+            //     alert('p태그에 마우스 올렸다!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            // })
+            $('input').on('change',function () {
+                alert($('input').val());
+            })
+            $('.test').on('click', function () {
+                alert($(this).text());
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="div1">
+        클릭 이벤트 111
+    </div>
+    <div id="div2">
+        클릭 이벤트 222
+    </div>
+    <p>
+        p태그 입니다 !!!
+    </p>
+    <input type="text">
+    <p class="test">p태그1111111111111111111111111</p>
+    <p class="test">p태그222222222222222222222</p>
+    <p class="test">p태그3333333333333333333333333333</p>
+    <p class="test">p태그4444444444444444444444444444</p>
+    <p class="test">p태그5555555555555555555555555555</p>
+    <p class="test">p태그6666666666666666666666666666666</p>
+    <p class="test">p태그777777777777777777777777777</p>
+</body>
+</html>

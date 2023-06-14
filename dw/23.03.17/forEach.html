@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>
+        
+        <script>
+            const 배열 = [1, 2, 3, 4, 5];
+                for ( let i=0; i<배열.length; i++) {
+                    console.log(배열[i]);
+                };
+
+                // forEach
+                // 배열.forEach();  /* 기본적인 형태 */
+
+                배열.forEach(function (멤버, index, 배열본인) {
+                    // console.log(멤버, index, 배열본인);
+                    console.log(index + "번째 멤버는 : " + 멤버);
+                });
+                // 1. forEach는 반드시 배열에 붙여서 사용 (배열의 메쏘드이다.)
+                // 2. forEach는 인수로서 반드시 함수를 받는다.
+                // 3. forEach는 함수를 호출할때 파라미터로 3가지를 넣어준다.
+                // ㄴ(배열의 멤버, 인덱스, 배열본인)
+
+                // while loop
+                // 조건이 참이어야 내부코드가 반복된다. 거짓이면 exit
+                // 중요!!! 기본적으로 while구문은 무한히 반복하는 동작을 가짐
+                // 내부코드에 반드시 카운터를 증가시켜서 조건을 거짓으로 만드는 코드가 필요하다!!!
+                // ex) counter = counter + 1;
+                let counter = 0;
+                while (counter < 배열.length) {
+                    console.log(배열[counter]);
+                    counter = counter + 1;
+                }
+        </script>
+    </body>
+</html>

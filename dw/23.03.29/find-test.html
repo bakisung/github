@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="width: 500px;">
+        <ul>
+            <li class="start">li class="start"</li>
+            <li class="my">li class="my"</li>
+            <li>li</li>
+            <li class="my">li class="my"</li>
+            <li class="stop">li class="stop"</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul>
+    </div>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            // ~의 다음것
+            // $('li.start').next().css({"color" : "red", "border" : "2px solid red"});
+
+            // ~의 다음부터 모두
+            // $('li.start').nextAll().css({"color" : "red", "border" : "2px solid red"});
+
+            // ~으로부터 ~까지 범위
+            // $('li.start').nextUntil('li.stop').css({"color" : "red", "border" : "2px solid red"});
+
+            // prev로 지정한 stop 클래스의 바로 전
+            // $('li.stop').prev().css({"color" : "red", "border" : "2px solid red"});
+
+            // prev로 지정한 stop 클래스의 전 모두
+            // $('li.stop').prevAll().css({"color" : "red", "border" : "2px solid red"});
+
+            // prevUntil로 지정한 stop 클래스의 전부터 start 클래스 전까지의 범위
+            // $('li.stop').prevUntil('li.start').css({"color" : "red", "border" : "2px solid red"});
+
+            // siblings : li.stop 본인을 제외한 형제들 중에서 my 클래스들을 선택
+            $('li.stop').siblings('.my').css({"color" : "red", "border" : "2px solid red"});
+
+
+
+        });
+    </script>
+</body>
+</html>

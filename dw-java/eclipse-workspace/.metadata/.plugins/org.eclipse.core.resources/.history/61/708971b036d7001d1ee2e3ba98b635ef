@@ -1,0 +1,36 @@
+package myGame2;
+
+public class MyGame2 {
+
+	Character c;
+	Item[] items;
+	
+	MyGame2() {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	} // main 종료
+
+} // class 종료

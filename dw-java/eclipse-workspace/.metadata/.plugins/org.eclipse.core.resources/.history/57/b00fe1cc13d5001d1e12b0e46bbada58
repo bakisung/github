@@ -1,0 +1,16 @@
+package e_oop.myGame;
+
+public class Beggar {
+
+	String name;			// 이름
+	double money;			// 돈
+	double levelUpMoney;	// 레벨업에 필요한 돈
+	int level;				// 레벨
+	
+	Beggar(String name, double money, int level) {
+		this.name = name;
+		this.money = money;
+		this.level = level;
+		this.levelUpMoney = money;
+	}
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0px;
+        }
+        ul {
+            padding: 0px;
+            list-style-type: none;
+            border: 5px solid teal;
+        }
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: beige;
+            border: 5px solid tomato;
+            border-radius: 8px;
+        }
+        .container {
+            display: grid;
+            height: 500px;
+
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            /* align-items: stretch; */
+            /* align-items: start; */
+            /* align-items: end; */
+            /* align-items: center; */
+
+            /* justify-items: start; */
+        }
+        /* align는 수직방향, justify는 수평방향 */
+
+        /* li:nth-child(1){grid-area: }
+        li:nth-child(2){grid-area: }
+        li:nth-child(3){grid-area: }
+        li:nth-child(4){grid-area: }
+        li:nth-child(5){grid-area: } */
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+    </ul>
+</body>
+</html>

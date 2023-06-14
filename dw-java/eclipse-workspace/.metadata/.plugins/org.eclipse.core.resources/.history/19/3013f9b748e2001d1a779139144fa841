@@ -1,0 +1,9 @@
+package i_collection;
+
+public class Board_p {
+
+	public static void main(String[] args) {
+
+	}
+
+}

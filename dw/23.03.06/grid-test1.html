@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0px;
+        }
+        ul {
+            padding: 0px;
+            list-style-type: none;
+            border: 5px solid teal;
+        }
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: beige;
+            border: 5px solid tomato;
+            border-radius: 8px;
+        }
+        .container {
+            display: grid;
+            height: 500px;
+
+            /* grid-template-columns: 10% 20% 10% */
+            grid-template-columns: 1fr 3fr;
+            /* grid-template-columns: 1fr 3fr; */
+            /* grid-template-columns: 1fr 3fr; */
+            grid-template-rows: 1fr 3fr 1fr;
+            gap: 20px 10px;
+            /* gap: 20px 10px; */ /* grid-gap 으로 써도된다 */
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+    </ul>
+</body>
+</html>

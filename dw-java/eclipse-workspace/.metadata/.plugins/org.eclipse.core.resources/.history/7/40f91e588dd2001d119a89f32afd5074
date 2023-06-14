@@ -1,0 +1,105 @@
+package c_statement;
+
+import java.util.Scanner;
+
+public class ReptetitiveStatement {
+
+	public static void main(String[] args) {
+
+		//=======================================절취선=======================================
+		
+		// while 문과 do-while 문 비교
+//		int a = 0;
+//		while(a < 0) {
+//			System.out.println(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while(a < 0);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 1) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 1);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+		
+//		int a;
+//		a = 0;
+//		while(a < 10) {
+//			System.out.print(a + " ");
+//			a++;
+//		}
+//		System.out.println();
+//		
+//		a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			a++;
+//		} while (a < 10);
+//		System.out.println();
+		
+		//=======================================절취선=======================================
+
+//		int a = 0;
+//		do {
+//			System.out.print(a + " ");
+//			++a;
+//		} while (a < 10);
+		
+		//=======================================절취선=======================================
+		
+		// 숫자 맞추기 게임을 만들어 봅시다. Up & Down 게임 (Do while 활용)
+		
+		int a = (int)(Math.floor(Math.random()*100 + 1));
+		System.out.println("(정답은 " + a + ")");
+		int inputNum;
+		int b = 3;
+		
+		do {
+			Scanner s = new Scanner(System.in);
+			System.out.println("0-100 범위에서 숫자를 입력하세요.");
+			inputNum = Integer.parseInt(s.nextLine());
+			
+			if (inputNum > a) {
+				System.out.println("DOWN ㅋ");
+			} else if (inputNum < a) {
+				System.out.println("UP ㅋ");
+			}
+			b--;
+			if (inputNum == a) {
+				System.out.println("정답입니다!");
+				break;
+			} else if (b <= 0) {
+				System.out.println("3번의 기회를 모두 소진하였습니다.");
+				break;
+			}
+		} while(inputNum != a);
+			System.out.println("end");
+		
+//		while(b <= 3);
+//			System.out.println("기회를 모두 소진하였습니다.");
+		
+		//=======================================절취선=======================================
+
+
+	}
+
+}

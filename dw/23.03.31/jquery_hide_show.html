@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .wrapper *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+        .big {
+            font-size: 200%;
+            color: black;
+            font-weight: bold;
+        }
+        .back {
+            background-color: yellow;
+        }
+        .reddish {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="width: 500px;">
+        <ul>
+            <li class="start">li class="start"</li>
+            <li class="my">li class="my"</li>
+            <li>li</li>
+            <li class="my">li class="my"</li>
+            <li class="stop">li class="stop"</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul>
+    </div>
+    <button id="hideBtn">요소숨기기</button>
+    <button id="showBtn">요소보이기</button>
+    <button id="toggleBtn">요소숨기기&보이기</button>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        function showConsole(target) {
+            console.log(target);
+        }
+
+        $('.start').addClass('reddish');
+        $('li:last').css('border', '3px solid red');
+
+        showConsole($('.start').prop('tagName'));
+        showConsole($('.start').prop('tagName').toLowerCase()); //소문자
+        showConsole($('.start').prop('tagName').toUpperCase()); //대문자
+
+        $('#hideBtn').on('click', function () {
+            // $('li:last').hide(); // hide = display: none 과 같은 효과(숨기다)
+            $('li:last').hide(2000); // hide 효과가 2초의 시간동안 발동된다.
+            alert('없어졌다!!')
+        });
+        $('#showBtn').on('click', function () {
+            // $('li:last').show(); // hide = display: block 과 같은 효과(나타나다)
+            $('li:last').show(2000); // hide 효과가 2초의 시간동안 발동된다.
+            $('li:last').show(3000, function () {
+                alert('나타났다!!')
+            });
+        }); 
+        $('#toggleBtn').on('click', function () {
+            $('li:last').toggle();
+        })
+
+        
+
+    </script>
+</body>
+</html>

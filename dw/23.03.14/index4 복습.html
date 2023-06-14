@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text"></div>
+    <button onclick="callback()">click</button>
+    
+    <script> 
+    // 예제.
+    // 입력한 텍스트를 div 영역에 표시하고 클릭 버튼을 누르면 
+    // 백그라운드 컬러를 레드로 변경한다.
+        const inputText = prompt("아무말이나 지껄여주세요.");
+        const divElement = document.querySelector("#text");
+            divElement.innerHTML = inputText;
+        const callback = function () {
+            const divElement = document.querySelector("#text");
+            divElement.innerHTML = inputText;
+            divElement.style.backgroundColor = "red";
+        };
+    </script>
+</body>
+</html>

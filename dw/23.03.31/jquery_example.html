@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>무궁화 꽃이 피었습니다.</p>
+    </div>
+    <p>싱하는 예쁘다~</p>
+    <div>
+        <p>사뿐히 즈려밟고 가시옵소서</p>
+    </div>
+    
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        // 선택한 div 안에 있는 p태그를 클릭하면 그 클릭한 p태그가 그 자리 밑에 복사됨
+        $(document).ready(function () {
+            $('p').on('click', function () {
+                let elem = $(this);
+
+                if ('div' == elem.parent().prop('tagName').toLowerCase()) {
+                    let txt = elem.text();
+                    elem.parent('div').append($('<p>').prop({innerHTML : txt, style : 'color: red'}))
+
+                //     elem.parent().append('<p style="color: red">' + txt + '</p>');
+                
+                // elem.parent().append(elem.clone().css('color', 'red'));
+                } else {
+                    alert('작업대상이 아닙니다.')
+                }
+            })
+        })
+    </script>
+</body>
+</html>

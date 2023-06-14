@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .wrapper *{
+        display: block;
+        border: 2px solid lightgray;
+        color: lightgray;
+        padding: 5px;
+        margin: 15px;
+    }
+    .big {
+        font-size: 200%;
+        color: black;
+        font-weight: bold;
+    }
+    .back {
+        background-color: yellow;
+    }
+    .reddish {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="width: 500px;">
+        <ul>
+            <li class="start">li class="start"</li>
+            <li class="my">li class="my"</li>
+            <li>li</li>
+            <li class="my">li class="my"</li>
+            <li class="stop">li class="stop"</li>
+            <li>li</li>
+            <li>li</li>
+            <li>li</li>
+        </ul>
+    </div>
+    <button id="addClassBtn">클래스추가버튼</button>
+    <button id="removeClassBtn">클래스삭제버튼</button>    
+    <button id="toggleClassBtn">클래스토글버튼</button>    
+    <button id="attrCheckBtn">속성확인버튼</button>    
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <script>
+        // 클래스 추가 버튼
+        $(document).ready(function (){
+            $('#addClassBtn').on('click', function (){
+                $('li:last').addClass('big back');
+            })
+
+        // 클래스 삭제 버튼
+            $('#removeClassBtn').on('click', function (){
+                console.log($('li:last').hasClass('big'))
+                // ㄴhasClass : 마지막 li에 big이라는 클래스를 가지고 있냐 : 가지고 있다면 true 값 반환, 가지고 없다면 false 값을 반환한다.
+                if($('li:last').hasClass('big')){
+                $('li:last').removeClass('big back');
+                }
+            })
+
+        // 클래스 토글 버튼
+            $('#toggleClassBtn').on('click', function (){
+                $('li:last').toggleClass('big back');
+            })
+
+        // 속성 확인 버튼
+            $('#attrCheckBtn').on('click', function (){
+                // $('li:last').attr('class');
+                // console.log($('li:last').attr('class'))
+                let last = $('li:last');
+                let classNm = last.attr('class')
+                console.log(`last 가 가지고 있는 속성 : 클래스 - ${classNm}`);
+
+                last.attr('class', 'reddish');
+                // last.attr('class')는 ~의 클래스가 무엇이냐 불러오는건데
+                // last.attr('class', 'reddish')로 추가하면 ~의 클래스를 reddish로 바꿔준다.
+                classNm = last.attr('class');
+                console.log(`last 가 가지고 있는 속성 : 클래스 - ${classNm}`);
+
+                last.attr('id', 'testId'); // 마지막 li 요소에 ID 부여
+                // alert($('#testId').text()); // 마지막 li 요소의 부여된 ID를 활용하여 text 출력
+                $('#testId').text('테스트 ID를 부여한 li 입니다');
+            })
+        });
+    </script>
+</body>
+</html>
