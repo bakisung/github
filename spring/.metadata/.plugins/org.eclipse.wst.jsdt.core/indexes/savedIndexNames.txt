@@ -3,7 +3,6 @@ INDEX VERSION 1.4+C:\github\spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\
 256870941.index
 1522409000.index
 468477851.index
-3181117865.index
 737698316.index
 1851420277.index
 3484849153.index

@@ -6,17 +6,17 @@
 	<div class="container-fluid">
 		<div class="row md-2">
 			<div class="col-sm-6">
-				<h1>회원관리 메인 페이지</h1>
+				<h1>${param.subject }</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item">
-						<a href="/member/main.do">
-							<i class="fa fa-dashboard"></i>회원관리 메인 페이지
+						<a href="#">
+							<i class="fa fa-dashboard"></i>${param.subject }
 						</a>
 					</li>
 					<li class="breadcrumb-item active">
-						목록
+						${param.item }
 					</li>
 				</ol>
 			</div>
