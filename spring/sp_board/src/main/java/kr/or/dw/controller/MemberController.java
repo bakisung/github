@@ -1,5 +1,8 @@
 package kr.or.dw.controller;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.dw.service.MemberService;
+import kr.or.dw.vo.MemberVO;
+import kr.or.dw.vo.MenuVO;
 
 @Controller
 @RequestMapping("/member")
@@ -25,11 +30,14 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/list")
-	public ModelAndView list(ModelAndView mnv) {
+	public ModelAndView list(ModelAndView mnv) throws SQLException {
 		String url = "/member/list.open";
+		List<MemberVO> memberList = memberService.MemberList();
 		
+		mnv.addObject("memberList", memberList);
 		mnv.setViewName(url);
 		
 		return mnv;
 	}
+	
 }

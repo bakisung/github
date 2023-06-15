@@ -80,5 +80,4 @@ public class CommonController {
 		
 		return entity;
 	}
-	
 }

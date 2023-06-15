@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <body>
@@ -53,25 +54,26 @@
 		                	<th>전화번호</th>
 		                	<th>등록날짜</th> <!-- yyyy-MM-dd  -->
 		               	</tr>
-		               	
+		               	<c:forEach items="${memberList }" var="member">
 		               	<tr>
 		               		<td>
-		               			<a href="">ID</a>
+		               			<a href="">${member.id }</a>
 		               			
 		               		</td>
 		               		<td>
-		               			비밀번호
+		               			${member.pwd }
 		               		</td>
 		               		<td>
-		               			이메일
+		               			${member.email }
 		               		</td>
 		               		<td>
-		               			<a href="tel:010-1234-5678">전화번호</a>
+		               			<a href="tel:${member.phone }">${member.phone }</a>
 		               		</td>
 		               		<td>
-		               			날짜
+		               			<fmt:formatDate value="${member.regdate }" pattern="yyyy-MM-dd"/>
 		               		</td>
 		               	</tr>
+		               	</c:forEach>
 		    		</table>
     		   </div> <!-- col-sm-12 -->
     		 </div> <!-- row -->

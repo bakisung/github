@@ -1,6 +1,7 @@
 package kr.or.dw.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import kr.or.dw.dao.MemberDAO;
 import kr.or.dw.vo.MemberVO;
+import kr.or.dw.vo.MenuVO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -26,12 +28,14 @@ public class MemberServiceImpl implements MemberService{
 			session.setMaxInactiveInterval(5 * 60);
 		}
 		
+	}
+
+	@Override
+	public List<MemberVO> MemberList() throws SQLException {
 		
+		List<MemberVO> memberList = memberDAO.MemberList();
 		
-		
-		
-		
-		
+		return memberList;
 	}
 
 }
