@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
       <c:forEach items="${menuList}" var="menu">
       	<li class="nav-item">
-      		<a href="javascript:subMenu('${menu.mcode}'); goPage('${menu.murl}');" class="nav-link">${menu.mname}</a>
+      		<a href="javascript:subMenu('${menu.mcode}'); goPage('${menu.murl}', '${menu.mcode}');" class="nav-link">${menu.mname}</a>
       	</li>
       </c:forEach>
     </ul>
