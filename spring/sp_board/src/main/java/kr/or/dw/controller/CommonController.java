@@ -32,9 +32,7 @@ public class CommonController {
 	@Autowired
 	private MenuService menuService;
 	
-//	@RequestMapping("/common/loginForm")
 	@GetMapping("/common/loginForm")
-//	@postMapping("/common/loginForm")
 	public String loginForm(HttpServletResponse res) throws Exception {
 		String url = "/common/loginForm";
 		
@@ -52,7 +50,7 @@ public class CommonController {
 	
 	@RequestMapping("/index")
 	public ModelAndView index(ModelAndView mnv) throws SQLException {
-		String url = "/common/indexPage";
+		String url = "/common/indexPage.page";
 		
 		List<MenuVO> menuList = menuService.selectMainMenuList(); 
 		
