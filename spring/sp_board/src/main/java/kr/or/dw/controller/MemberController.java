@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.dw.service.MemberService;
 
@@ -21,5 +22,14 @@ public class MemberController {
 	public String main() {
 		String url = "/member/main.open";
 		return url;
+	}
+	
+	@RequestMapping("/list")
+	public ModelAndView list(ModelAndView mnv) {
+		String url = "/member/list.open";
+		
+		mnv.setViewName(url);
+		
+		return mnv;
 	}
 }

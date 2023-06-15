@@ -5,7 +5,7 @@
 <div class="content-wrapper">
 	<jsp:include page="../content_header.jsp">
 		<jsp:param value="회원관리 메인페이지" name="subject"/>
-		<jsp:param value="목록" name="item"/>
+		<jsp:param value="메인" name="item"/>
 	</jsp:include>
 	
 	<div class="content">

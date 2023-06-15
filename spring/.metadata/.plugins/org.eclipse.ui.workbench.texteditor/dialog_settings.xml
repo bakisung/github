@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="forEach" key="selection"/>
+		<item value="jack" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="jack"/>
 			<item value="foreach"/>
 			<item value="search"/>
 			<item value="dist"/>
@@ -26,7 +27,6 @@
 			<item value="spring"/>
 			<item value="net.sf"/>
 			<item value="ojdbc"/>
-			<item value="framework"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>
