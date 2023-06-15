@@ -2,12 +2,12 @@
     pageEncoding="UTF-8"%>
 
 <%-- <%@ include file="../include/header.jsp" %> --%>
+<div class="content-wrapper">
+	<%@ include file="../content_header.jsp" %>
 
-	<div class="content-wrapper">
-		<div class="content-header">
-			<h1>회원관리 메인 페이지</h1>
+		<div class="content">
+			메인 content 영역입니다.
 		</div>
-		<div class="content">ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
-	</div>
+</div>
 
 <%-- <%@ include file="../include/footer.jsp" %> --%>
