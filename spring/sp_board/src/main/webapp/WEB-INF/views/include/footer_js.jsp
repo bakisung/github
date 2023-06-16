@@ -58,12 +58,8 @@
 			// url : 변경할 주소
 			history.pushState(mcode, null, renewURL);
 		};
-		$('#if_list').attr('src', '<%=request.getContextPath()%>' + murl);		
+		$('#if_list').attr('src', '<%=request.getContextPath()%>' + murl);
 		
 	};
-	
-	
-	
-	
 	
 </script>

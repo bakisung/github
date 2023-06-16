@@ -15,6 +15,7 @@
     	<section class="content">
     	  <div class="card">    		
     	  	<div class="card-header with-border">
+    	  		<button type="button" class="btn btn-danger" onclick="OpenWindow('registForm.do', '회원등록', 650, 750);">회원등록</button>
     	  		<div id="keyword" class="card-tools" style="width:550px;">
 				  <div class="input-group row">	
 				  <!-- sort num -->

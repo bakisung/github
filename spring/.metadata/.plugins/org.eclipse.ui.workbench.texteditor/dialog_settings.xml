@@ -6,27 +6,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="target" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="target"/>
+			<item value="submenu"/>
+			<item value="sub"/>
+			<item value="foreach"/>
+			<item value="1.0.0"/>
+			<item value="oracle.ojdbc6-version"/>
+			<item value="11.2"/>
 			<item value="HOME"/>
 			<item value="home"/>
 			<item value="jack"/>
-			<item value="foreach"/>
 			<item value="search"/>
 			<item value="dist"/>
 			<item value="Alex"/>
 			<item value="starter"/>
 			<item value="com"/>
-			<item value="body"/>
-			<item value="Home"/>
-			<item value="sqlSession"/>
-			<item value="ㄴ빈ㄷㄴ냐ㅐㅜ"/>
-			<item value="mvnre"/>
-			<item value="spring"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>
