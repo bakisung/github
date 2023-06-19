@@ -1,0 +1,15 @@
+package kr.or.dw.dao;
+
+import java.util.List;
+
+import kr.or.dw.vo.BoardVO;
+
+@
+public interface BoardDAO {
+
+	static List<BoardVO> GetBoardList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

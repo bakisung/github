@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security=3.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 인증 -->
+	<!-- 
+		사용자의 아이디/비밀번호를 인증처리하는 과정으로 Spring Security에서는
+		AuthenticationManager, AutenticationProvider가 있다.
+		
+		인증정보를 가져오는 기능을 하는 인터페이스가 org.springframework.security.core.userdetails.UserDetailsService 이다.
+		데이터베이스에서 정보를 가져오도록 이 인터페이스를 구현해둔 클래스가 org.springframework.security.core.userdetails.UserDetailsService.jdbc.JdbcDaoImpl 이다.
+	 -->
+	 <authentication-manager>
+	 	<authentication-provider>
+	 		<user-service>
+	 			<user name="user" password="user" authorities="ROLE_USER"/>
+	 			<user name="member" password="member" authorities="ROLE_USER"/>
+	 		</user-service>
+	 	</authentication-provider>
+	 </authentication-manager>
+	 
+	 <!-- 인허가 -->
+	<http use-expressions="true" pattern="/**">
+		<access-denied-handler error-page="/security/accessDenied"/>
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+		<intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')"/>
+		<intercept-url pattern="/member/**" access="hasRole('ROLE_USER')"/>
+		<intercept-url pattern="/home/**" access="isAuthenticated()"/>
+		<intercept-url pattern="/**" access="permitAll"/>
+		
+		<!-- 
+			<form-login> 요소는 로그인을 위해서 폼을 사용한다. 로그인 처리의 기본 URL은 "/login" 이다.
+			login-page : 커스텀 로그인 페이지를 지정한다.
+			default-target-url : 로그인 후에 기본으로 보여질 페이지이다. 특정 페이지를 클릭해서 로그인 화면이 나왔다면 로그인 성공 후 앞서 클릭한 페이지로 이동한다.
+			authentication-failure-url : 로그인 실패시 보여질 페이지를 지정한다. 기본값은 "/login?error" 이다.
+			username-parameter : 로그인 폼에 아이디 입력 필드에 사용될 name 값이다. 기본값은 "username" 이다.
+			password-parameter : 로그인 폼에 비밀번호 입력 필드에 사용될 name 값이다. 기본값은 "password" 이다.
+		 -->
+		<form-login
+			login-page="/common/loginForm"		
+			login-processing-url="/common/loginPost"
+			username-parameter="id"		
+			password-parameter="pwd"		
+		/>
+		
+		<logout
+		
+		/>
+	</http>
+	
+</beans:beans>

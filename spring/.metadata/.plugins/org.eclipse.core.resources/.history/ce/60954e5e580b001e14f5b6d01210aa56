@@ -1,0 +1,14 @@
+package kr.or.dw.service;
+
+import java.util.List;
+
+import kr.or.dw.vo.BoardVO;
+
+public class BoardServiceImpl implements BoardService{
+
+	@Override
+	public List<BoardVO> boardList() {
+		return null;
+	}
+
+}

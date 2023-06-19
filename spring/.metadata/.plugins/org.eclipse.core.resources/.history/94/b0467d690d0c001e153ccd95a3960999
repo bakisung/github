@@ -1,0 +1,5 @@
+package dw.com.spring.security;
+
+public class LoginFailureHandler {
+
+}

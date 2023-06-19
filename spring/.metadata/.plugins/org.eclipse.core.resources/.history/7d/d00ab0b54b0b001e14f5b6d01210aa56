@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dw.dao.MemberDAO">
+
+	<select id="selectMemberById" parameterType="str" resultType="member">
+	<!-- MemberDAO.selectMEmberById -->
+		SELECT 	*
+		FROM	member
+		WHERE	id = #{id}
+	</select>
+	
+	<select id="MemberList" resultType="member">
+		SELECT 	*
+		FROM 	member
+		WHERE 	id = #
+	</select>
+
+</mapper>
