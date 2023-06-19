@@ -26,6 +26,7 @@
 		<tiles.extras-version>3.0.8</tiles.extras-version>
 		<tiles.servlet-version>3.0.8</tiles.servlet-version>
 		<tiles.jsp-version>3.0.8</tiles.jsp-version>
+		<commons.fileupload-version>1.3.1</commons.fileupload-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -88,27 +89,33 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>${jackson.databind-version}</version>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
 		<dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-jsp</artifactId>
 		    <version>${tiles.jsp-version}</version>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-servlet -->
 		<dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-servlet</artifactId>
 		    <version>${tiles.servlet-version}</version>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
 		<dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-extras</artifactId>
 		    <version>${tiles.extras-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${commons.fileupload-version}</version>
+		</dependency>
+		
+		
+		
 		
 		
 				

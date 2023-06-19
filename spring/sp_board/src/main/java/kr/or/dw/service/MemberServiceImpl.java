@@ -38,4 +38,10 @@ public class MemberServiceImpl implements MemberService{
 		return memberList;
 	}
 
+	@Override
+	public MemberVO selectMemberById(String id) throws SQLException {
+		MemberVO member = memberDAO.selectMemberById(id);
+		return member;
+	}
+
 }

@@ -6,27 +6,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="navbar-nav" key="selection"/>
+		<item value="Entity" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="navbar-nav"/>
-			<item value="target"/>
-			<item value="submenu"/>
-			<item value="sub"/>
-			<item value="foreach"/>
-			<item value="1.0.0"/>
-			<item value="oracle.ojdbc6-version"/>
-			<item value="11.2"/>
-			<item value="HOME"/>
-			<item value="home"/>
-			<item value="jack"/>
-			<item value="search"/>
-			<item value="dist"/>
-			<item value="Alex"/>
-			<item value="starter"/>
+			<item value="entity"/>
+			<item value="httpentity"/>
+			<item value="http"/>
+			<item value="id"/>
+			<item value="aspec"/>
+			<item value="success"/>
+			<item value="ficture"/>
+			<item value="업로드"/>
+			<item value="pictureView"/>
+			<item value="headen"/>
+			<item value="파일 선택"/>
+			<item value="inputFile"/>
+			<item value="disable"/>
+			<item value="none"/>
+			<item value="green"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>
