@@ -7,6 +7,8 @@ C:\github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\152240900
 \sp_board\src\main\java
 C:\github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1238371283.index
 \sp_security\src\main\java
+C:\github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3628565678.index
+\sp_board\src\main\java
 C:\github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1838804924.index
 \sp_board\src\main\java
 C:\github\spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1072812199.index

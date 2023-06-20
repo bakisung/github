@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public List<MemberVO> MemberList() throws SQLException {
 		
-		List<MemberVO> memberList = memberDAO.MemberList();
+		List<MemberVO> memberList = memberDAO.selectAllMemberList();
 		
 		return memberList;
 	}
@@ -42,6 +42,11 @@ public class MemberServiceImpl implements MemberService{
 	public MemberVO selectMemberById(String id) throws SQLException {
 		MemberVO member = memberDAO.selectMemberById(id);
 		return member;
+	}
+
+	@Override
+	public void regist(MemberVO member) throws SQLException {
+		memberDAO.insertMember(member);
 	}
 
 }

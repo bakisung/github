@@ -13,6 +13,8 @@ public interface MemberDAO {
 	// 회원정보 조회
 	MemberVO selectMemberById(String id) throws SQLException;
 
-	List<MemberVO> MemberList() throws SQLException;
+	List<MemberVO> selectAllMemberList() throws SQLException;
+
+	void insertMember(MemberVO member) throws SQLException;
 	
 }

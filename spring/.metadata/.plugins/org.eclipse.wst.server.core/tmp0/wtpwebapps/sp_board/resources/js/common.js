@@ -40,6 +40,7 @@ function preViewPicture(inputImage, target) {
 	
 	// 파일명 inputTag에 삽입
 	document.getElementById('inputFileName').value = inputImage.files[0].name;
+	
 	// 미리보기
 	if (inputImage.files) {
 		let reader = new FileReader();

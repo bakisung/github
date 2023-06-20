@@ -1,12 +1,15 @@
 package kr.or.dw.controller;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.swing.Spring;
 
 import org.slf4j.Logger;
@@ -15,11 +18,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.or.dw.command.MemberRegistCommand;
 import kr.or.dw.service.MemberService;
 import kr.or.dw.vo.MemberVO;
 import kr.or.dw.vo.MenuVO;
@@ -50,12 +55,41 @@ public class MemberController {
 		return mnv;
 	}
 	
-//	회원등록
+	// 회원 상세정보 페이지
+	@RequestMapping("/memberView")
+	public ModelAndView memberView(ModelAndView mnv, HttpServletRequest req) throws SQLException {
+		String url = "member/memberView.open";
+		String id = req.getParameter("id");
+		MemberVO memberView = memberService.selectMemberById(id);
+		
+		mnv.addObject("memberView", memberView);
+		mnv.setViewName(url);
+		
+		return mnv;
+	}
+
+	// 회원등록 양식
 	@RequestMapping("/registForm")
 	public String registForm() {
 		String url = "member/regist.open";
 		return url;
 	}
+	
+	
+	// 회원등록
+		@RequestMapping("/regist")
+		   public void regist(MemberRegistCommand memberReq, HttpServletRequest req, HttpServletResponse res) throws SQLException, IOException{
+		      MemberVO member = memberReq.toMemberVO();
+		      memberService.regist(member);
+		      
+		      res.setContentType("text/html; charset=utf-8");
+		      PrintWriter out = res.getWriter();
+		      out.println("<script>");
+		      out.println("alert('회원등록이 정상적으로 되었습니다.');");
+		      out.println("window.opener.location.href='" + req.getContextPath() + "/member/list.do';");
+		      out.println("window.close();");
+		      out.println("</script>");
+		   }
 	
 	// 아이디 중복확인
 	@RequestMapping("/idCheck")
