@@ -2,10 +2,8 @@ package kr.or.dw.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.AccessDeniedException;
 import java.sql.SQLException;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,9 +24,8 @@ import kr.or.dw.vo.MenuVO;
 
 @Controller
 public class CommonController {
-
-	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
 	@Autowired
 	private MemberService memberService;
@@ -44,7 +41,7 @@ public class CommonController {
 	}
 	
 //	@RequestMapping("/common/login")
-//	public String login(String id, String pwd, HttpSession session) throws SQLException {
+//	public String login(String id, String pwd, HttpSession session) throws SQLException{
 //		String url = "redirect:/index.do";
 //		
 //		memberService.login(id, pwd, session);
@@ -53,7 +50,7 @@ public class CommonController {
 //	}
 	
 	@RequestMapping("/security/accessDenied")
-	public String AccessDenied(HttpServletResponse res) throws Exception{
+	public String accessDenied(HttpServletResponse res) throws Exception{
 		String url = "security/accessDenied.open";
 		
 		res.setStatus(302);
@@ -68,9 +65,10 @@ public class CommonController {
 		PrintWriter out = res.getWriter();
 		
 		out.println("<script>");
-		out.println("alert('세션이 만료되었습니다.\\n다시 로그인하세요!'");
-		out.println("location.href='" + req.getContextPath() + "';");
+		out.println("alert('세션이 만료되었습니다.\\n다시 로그인하세요!')");
+		out.println("location.href='/';");
 		out.println("</script>");
+		out.close();
 	}
 	
 	@RequestMapping("/common/LoginExpired")
@@ -80,16 +78,17 @@ public class CommonController {
 		PrintWriter out = res.getWriter();
 		
 		out.println("<script>");
-		out.println("alert('중복 로그인이 확인되었습니다.//n 다시 로그인하면 다른 장치의 로그인은 해제됩니다!!'");
-		out.println("location.href='" + req.getContextPath() + "';");
+		out.println("alert('중복 로그인이 확인되었습니다.\\n 다시 로그인하면 다른 장치의 로그인은 해제됩니다!')");
+		out.println("location.href='/';");
 		out.println("</script>");
+		out.close();
 	}
 	
 	@RequestMapping("/index")
-	public ModelAndView index(ModelAndView mnv) throws SQLException {
+	public ModelAndView index(ModelAndView mnv) throws SQLException{
 		String url = "/common/indexPage.page";
 		
-		List<MenuVO> menuList = menuService.selectMainMenuList(); 
+		List<MenuVO> menuList = menuService.selectMainMenuList();
 		
 		mnv.addObject("menuList", menuList);
 		mnv.setViewName(url);
@@ -117,4 +116,6 @@ public class CommonController {
 		
 		return entity;
 	}
+	
+	
 }

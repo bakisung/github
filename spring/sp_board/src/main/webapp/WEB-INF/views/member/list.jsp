@@ -58,10 +58,9 @@
 		                	<th>등록날짜</th> <!-- yyyy-MM-dd  -->
 		               	</tr>
 		               	<c:forEach items="${memberList }" var="member">
-		               	<tr>
+		               	<tr ${member.enabled eq '0' ? 'style="background-color: red;"' : 'style="background-color: gray;"' }>
 		               		<td>
-		               			<a href="" onclick="OpenWindow('memberView.do?id=${member.id }', '회원등록', 1000, 1000);">${member.id }</a>
-		               			
+		               			<a href="" onclick="OpenWindow('detail.do?id=${member.id }', '회원상세보기', 800, 700);">${member.id }</a>
 		               		</td>
 		               		<td>
 		               			${member.pwd }

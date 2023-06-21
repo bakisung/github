@@ -6,18 +6,24 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import kr.or.dw.vo.MemberVO;
-import kr.or.dw.vo.MenuVO;
 
 public interface MemberService {
 	
 	// 로그인
 	void login(String id, String pwd, HttpSession session) throws SQLException;
 	
-	// 회원 목록 조회
-	List<MemberVO> MemberList() throws SQLException;
+	List<MemberVO> selectAllMemberList() throws SQLException;
 
 	MemberVO selectMemberById(String id) throws SQLException;
-
+	
 	void regist(MemberVO member) throws SQLException;
 
+	void modify(MemberVO member) throws SQLException;
+
+	void remove(String id) throws SQLException;
+
+	void disabled(String id) throws SQLException;
+
+	void enabled(String id) throws SQLException;
+	
 }

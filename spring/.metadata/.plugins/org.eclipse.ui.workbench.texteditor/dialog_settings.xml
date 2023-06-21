@@ -6,27 +6,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="list" key="selection"/>
+		<item value="eq" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="eq"/>
+			<item value="stop"/>
+			<item value="fiel"/>
+			<item value="pic"/>
+			<item value="req"/>
+			<item value="green"/>
+			<item value="auto"/>
+			<item value="modi"/>
+			<item value="upload"/>
+			<item value="model"/>
 			<item value="list"/>
 			<item value="select"/>
-			<item value="model"/>
 			<item value="sele"/>
 			<item value="Open"/>
 			<item value="open"/>
-			<item value="chain"/>
-			<item value="c"/>
-			<item value="authen"/>
-			<item value="phone"/>
-			<item value="회원등록"/>
-			<item value="회원 등록"/>
-			<item value="registForm"/>
-			<item value="저장된"/>
-			<item value="inputFileName"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>

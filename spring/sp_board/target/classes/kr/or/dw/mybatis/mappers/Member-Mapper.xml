@@ -18,32 +18,36 @@
 	</select>
 	
 	<insert id="insertMember" parameterType="member">
-		INSERT INTO member (
-							id
-							,pwd
-							,email
-							,picture
-							,enabled
-							,regdate
-							,phone
-							,name
-							,register
-							,address
-							,authority
-							)
-					VALUES	(
-							#{id}
-							,#{pwd}
-							,#{email}
-							,#{picture}
-							,1
-							,sysdate
-							,#{phone}
-							,#{name}
-							,'SYSTEM'
-							,'굴다리'
-							,#{authority}
-					)
+		INSERT INTO member(id, pwd, email, phone, picture, name, authority, enabled, regdate)
+		VALUES(#{id}, #{pwd}, #{email}, #{phone}, #{picture}, #{name}, #{authority}, 1, SYSDATE)
 	</insert>
 
+	<update id="updateMember" parameterType="member">
+		UPDATE member
+		SET
+			pwd 		= #{pwd}
+			,email 		= #{email}
+			,phone 		= #{phone}
+			,name 		= #{name}
+			,picture 	= #{picture}
+			,authority 	= #{authority}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="member">
+		DELETE FROM member
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="disabledMember" parameterType="str">
+		UPDATE 	member
+		SET 	enabled	= 0
+		WHERE 	id = #{id}
+	</update>
+	
+	<update id="enabledMember" parameterType="str">
+		UPDATE 	member
+		SET 	enabled	= 1
+		WHERE 	id = #{id}
+	</update>
 </mapper>

@@ -10,11 +10,10 @@ import org.springframework.stereotype.Service;
 
 import kr.or.dw.dao.MemberDAO;
 import kr.or.dw.vo.MemberVO;
-import kr.or.dw.vo.MenuVO;
 
 @Service
 public class MemberServiceImpl implements MemberService{
-
+	
 	@Autowired
 	private MemberDAO memberDAO;
 	
@@ -22,19 +21,16 @@ public class MemberServiceImpl implements MemberService{
 	public void login(String id, String pwd, HttpSession session) throws SQLException {
 		MemberVO member = memberDAO.selectMemberById(id);
 		
-		if (pwd.equals(member.getPwd())) {
+		if(pwd.equals(member.getPwd())) {
 			System.out.println("[로그인 성공!!!] 회원의 정보를 세션에 저장합니다.");
 			session.setAttribute("loginUser", member);
 			session.setMaxInactiveInterval(5 * 60);
 		}
-		
 	}
 
 	@Override
-	public List<MemberVO> MemberList() throws SQLException {
-		
+	public List<MemberVO> selectAllMemberList() throws SQLException {
 		List<MemberVO> memberList = memberDAO.selectAllMemberList();
-		
 		return memberList;
 	}
 
@@ -47,6 +43,26 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void regist(MemberVO member) throws SQLException {
 		memberDAO.insertMember(member);
+	}
+
+	@Override
+	public void modify(MemberVO member) throws SQLException {
+		memberDAO.updateMember(member);
+	}
+
+	@Override
+	public void remove(String id) throws SQLException {
+		memberDAO.deleteMember(id);
+	}
+
+	@Override
+	public void disabled(String id) throws SQLException {
+		memberDAO.disabledMember(id);
+	}
+
+	@Override
+	public void enabled(String id) throws SQLException {
+		memberDAO.enabledMember(id);
 	}
 
 }

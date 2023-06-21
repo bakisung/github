@@ -16,5 +16,13 @@ public interface MemberDAO {
 	List<MemberVO> selectAllMemberList() throws SQLException;
 
 	void insertMember(MemberVO member) throws SQLException;
+
+	void updateMember(MemberVO member) throws SQLException;
+
+	void deleteMember(String id) throws SQLException;
+
+	void disabledMember(String id) throws SQLException;
+
+	void enabledMember(String id) throws SQLException;
 	
 }
