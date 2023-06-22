@@ -1,13 +1,18 @@
 package kr.or.dw.service;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.or.dw.command.PageMaker;
+import kr.or.dw.command.SearchCriteria;
 import kr.or.dw.dao.MemberDAO;
 import kr.or.dw.vo.MemberVO;
 
@@ -63,6 +68,28 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void enabled(String id) throws SQLException {
 		memberDAO.enabledMember(id);
+	}
+
+	@Override
+	public Map<String, Object> selectSearchMemberList(SearchCriteria cri) throws SQLException {
+		
+		List<MemberVO> memberList = null;
+		
+		int offset = cri.getPageStartRowNum();
+		int limit = cri.getPerPageNum();
+		RowBounds rowBounds = new RowBounds(offset, limit);		// RowBounds : 쿼리에서 페이징 처리된 결과를 알아서 필요한 만큼 가져온다.
+		
+		memberList = memberDAO.selectSearchMemberList(cri, rowBounds);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(memberDAO.selectSearchMemberListCount(cri));
+		
+		Map<String, Object> dataMap = new HashMap<String, Object>();
+		dataMap.put("memberList", memberList);
+		dataMap.put("pageMaker", pageMaker);
+		
+		return dataMap;
 	}
 
 }

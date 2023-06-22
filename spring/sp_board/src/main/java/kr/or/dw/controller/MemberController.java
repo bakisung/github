@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Resource;
@@ -30,6 +32,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.dw.command.MemberModifyCommand;
 import kr.or.dw.command.MemberRegistCommand;
+import kr.or.dw.command.SearchCriteria;
 import kr.or.dw.service.MemberService;
 import kr.or.dw.vo.MemberVO;
 
@@ -49,12 +52,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/list")
-	public ModelAndView list(ModelAndView mnv) throws SQLException{
+	public ModelAndView list(ModelAndView mnv, SearchCriteria cri) throws SQLException{
 		String url = "/member/list.open";
 		
-		List<MemberVO> memberList = memberService.selectAllMemberList();
+		Map<String, Object> dataMap = memberService.selectSearchMemberList(cri);
 		
-		mnv.addObject("memberList", memberList);
+		mnv.addAllObjects(dataMap);
 		mnv.setViewName(url);
 		
 		return mnv;

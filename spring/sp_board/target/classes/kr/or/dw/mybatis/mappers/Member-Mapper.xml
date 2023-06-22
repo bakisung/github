@@ -50,4 +50,31 @@
 		SET 	enabled	= 1
 		WHERE 	id = #{id}
 	</update>
+	
+	<sql id="search">
+		<if test="searchType == 'i'.toString()">
+			AND id LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'p'.toString()">
+			AND phone LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'e'.toString()">
+			AND email LIKE '%' || #{keyword} || '%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchMemberList" resultType="member">
+		SELECT 	*
+		FROM	member
+		WHERE 	1=1
+		<include refid="search"/>
+	</select>
+	
+	<select id="selectSearchMemberListCount" resultType="int">
+		SELECT 	COUNT(*)
+		FROM	member
+		WHERE 	1=1
+		<include refid="search"/>
+	</select>
+	
 </mapper>

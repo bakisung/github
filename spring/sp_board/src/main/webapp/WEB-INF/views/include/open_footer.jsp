@@ -15,7 +15,7 @@
 <!-- common.js -->
 <script src="<%= request.getContextPath()%>/resources/js/common.js"></script>
 
-<%@ include file="footer_js.jsp" %>
+<%-- <%@ include file="footer_js.jsp" %> --%>
 
 </body>
 </html>

@@ -23,6 +23,7 @@
 
 	function subMenu(mcode){
 		if(mcode != 'M000000'){
+			console.log(mcode);
 			$.ajax({
 				url : "<%=request.getContextPath()%>/common/subMenu.do?mcode="+mcode,
 				dataType : "json",
@@ -59,7 +60,9 @@
 			history.pushState(mcode, null, renewURL);
 		};
 		$('#if_list').attr('src', '<%=request.getContextPath()%>' + murl);
-		
 	};
+	
+	goPage('${menu.murl}', '${menu.mcode}');
+	subMenu('${menu.mcode}'.substring(0,3)+"0000");
 	
 </script>

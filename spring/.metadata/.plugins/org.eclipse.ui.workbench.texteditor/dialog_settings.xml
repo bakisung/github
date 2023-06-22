@@ -6,27 +6,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="eq" key="selection"/>
+		<item value="if_list" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="eq"/>
-			<item value="stop"/>
-			<item value="fiel"/>
-			<item value="pic"/>
-			<item value="req"/>
-			<item value="green"/>
-			<item value="auto"/>
-			<item value="modi"/>
-			<item value="upload"/>
-			<item value="model"/>
+			<item value="if_list"/>
+			<item value="aside class=&quot;main"/>
+			<item value="nav-item"/>
+			<item value="main-sidebar"/>
+			<item value="submenu"/>
+			<item value="sub"/>
 			<item value="list"/>
+			<item value="href"/>
+			<item value="a"/>
+			<item value="input-group"/>
+			<item value="searchForm"/>
 			<item value="select"/>
-			<item value="sele"/>
-			<item value="Open"/>
-			<item value="open"/>
+			<item value="culc"/>
+			<item value="tr"/>
+			<item value="attr"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>
@@ -39,7 +39,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1102" key="DIALOG_X_ORIGIN"/>
-		<item value="409" key="DIALOG_Y_ORIGIN"/>
+		<item value="1249" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

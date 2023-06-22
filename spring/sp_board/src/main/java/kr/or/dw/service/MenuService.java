@@ -11,4 +11,6 @@ public interface MenuService {
 
 	// 서브 메뉴 목록 조회
 	List<MenuVO> selectSubMenuList(String mcode) throws SQLException;
+
+	MenuVO selectMenuByMcode(String mcode) throws SQLException;
 }

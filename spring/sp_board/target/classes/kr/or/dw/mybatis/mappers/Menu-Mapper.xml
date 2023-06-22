@@ -17,5 +17,11 @@
 		WHERE 	upcode = #{mcode}
 		AND		isnav = 1
 	</select>
+	
+	<select id="selectMenuByMcode" parameterType="str" resultType="menu">
+		SELECT 	*
+		FROM	menu
+		WHERE 	mcode = #{mcode}
+	</select>
 
 </mapper>

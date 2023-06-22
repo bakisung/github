@@ -25,7 +25,7 @@ window.onload = function(){
 		};
 	});
 	
-	// 정지 버튼 클릭
+	// 비활성화 및 활성화 버튼 클릭
 	$('button#stopBtn').on('click', function(){
 		location.href="stop.do?id=${member.id}&enabled=${member.enabled}";
 	});

@@ -63,7 +63,7 @@
 										<button type="button" id="deleteBtn" class="btn btn-danger">삭 제</button>
 									</div>
 									<div class="col-sm-3 text-center">
-										<button type="button" id="stopBtn" class="btn btn-info">비활성화/활성화 </button>
+										<button type="button" id="stopBtn" class="btn btn-info">${member.enabled == 1 ? '비활성화' : '활성화' }</button>
 									</div>
 								</sec:authorize>
 								<div class="col-sm-3 text-center">

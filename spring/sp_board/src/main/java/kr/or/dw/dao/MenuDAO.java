@@ -12,6 +12,8 @@ public interface MenuDAO {
 
 	List<MenuVO> selectMainMenuList() throws SQLException;
 
-	List<MenuVO> selectSubMenuList(String mcode);
+	List<MenuVO> selectSubMenuList(String mcode) throws SQLException;
+
+	MenuVO selectMenuByMcode(String mcode) throws SQLException;
 	
 }

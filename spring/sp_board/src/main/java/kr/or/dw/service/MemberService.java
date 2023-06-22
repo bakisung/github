@@ -2,9 +2,11 @@ package kr.or.dw.service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import kr.or.dw.command.SearchCriteria;
 import kr.or.dw.vo.MemberVO;
 
 public interface MemberService {
@@ -25,5 +27,7 @@ public interface MemberService {
 	void disabled(String id) throws SQLException;
 
 	void enabled(String id) throws SQLException;
+
+	Map<String, Object> selectSearchMemberList(SearchCriteria cri) throws SQLException;
 	
 }
