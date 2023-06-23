@@ -6,12 +6,18 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="if_list" key="selection"/>
+		<item value="registBtn" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="registbtn"/>
+			<item value="작성자"/>
+			<item value="card card-outline card-info"/>
+			<item value="registForm"/>
+			<item value="form"/>
+			<item value="from"/>
 			<item value="if_list"/>
 			<item value="aside class=&quot;main"/>
 			<item value="nav-item"/>
@@ -21,12 +27,6 @@
 			<item value="list"/>
 			<item value="href"/>
 			<item value="a"/>
-			<item value="input-group"/>
-			<item value="searchForm"/>
-			<item value="select"/>
-			<item value="culc"/>
-			<item value="tr"/>
-			<item value="attr"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>

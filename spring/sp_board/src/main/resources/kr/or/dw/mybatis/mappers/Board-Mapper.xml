@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dw.dao.BoardDAO">
+	
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			AND title LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND writer LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND content LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			AND ( 
+			title LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			AND ( 
+			writer LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			AND (
+			title LIKE '%' || #{keyword} || '%'
+			OR
+			writer LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+	</sql>
+	
+	<select id="selectSearchBoardList" resultType="board">
+		SELECT *
+		  FROM board
+		 WHERE 1=1
+		 <include refid="search"/>
+		 ORDER BY regdate desc
+	</select>
+	
+	<select id="selectSearchBoardListCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM board
+		 WHERE 1=1
+		 <include refid="search"/>
+	</select>
+	
+</mapper>
