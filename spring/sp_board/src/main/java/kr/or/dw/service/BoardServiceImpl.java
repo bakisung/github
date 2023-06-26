@@ -46,5 +46,33 @@ public class BoardServiceImpl implements BoardService{
 		
 		return dataMap;
 	}
+
+	@Override
+	public void write(BoardVO board) throws SQLException {
+		boardDAO.insertBoard(board);
+	}
+
+	@Override
+	public BoardVO selectBoardList(int bno) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BoardVO selectBoard(int bno) throws SQLException {
+		BoardVO board = boardDAO.selectBoard(bno);
+		boardDAO.increaseViewCnt(bno);
+		return board;
+	}
+
+	@Override
+	public void modify(BoardVO board) throws SQLException {
+		boardDAO.updateBoard(board);
+	}
+
+	@Override
+	public void remove(int bno) throws SQLException {
+		boardDAO.deleteBoard(bno);
+	}
 	
 }

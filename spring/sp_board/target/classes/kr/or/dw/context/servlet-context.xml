@@ -43,6 +43,12 @@
 	
 	<context:component-scan base-package="kr.or.dw" />
 	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/**/regist.do"/>
+			<mapping path="/**/modify.do"/>
+			<beans:bean class="kr.or.dw.interceptor.XSSInterceptor"/>
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>

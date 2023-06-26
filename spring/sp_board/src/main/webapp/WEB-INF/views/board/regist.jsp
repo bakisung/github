@@ -49,12 +49,12 @@
 		$('#registBtn').on('click', function() {
 			let form = $('form[role="form"]');
 			
-			if (form.title.value == "") {
+			if($('#title').val() == "") {
 				alert("제목을 입력하시게..");
 				return;
 			}
 			
-			if(form.content.value.length > 1000){
+			if($('#content').length > 1000){
 				alert("글자수가 100자를 초과할 수 없습니다.");
 				return;
 			}
