@@ -37,6 +37,10 @@ public class SearchCriteria {
 		}
 	}
 	
+	public void setPage(int page) {
+		this.page = page;
+	}
+	
 	public void setPerPageNum(String perPageNum) {
 		if(perPageNum != null && !perPageNum.isEmpty()) {
 			this.perPageNum = Integer.parseInt(perPageNum);

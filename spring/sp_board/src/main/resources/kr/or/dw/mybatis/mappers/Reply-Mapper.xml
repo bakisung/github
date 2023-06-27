@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dw.dao.ReplyDAO">
+
+	<insert id="insertReply" parameterType="reply">
+		INSERT INTO reply(rno, bno, replytext, replyer, regdate)
+		VALUES(reply_seq.nextval, #{bno}, #{replytext}, #{replyer}, SYSDATE)
+	</insert>
+	
+	<select id="selectPageReplyList" resultType="reply">
+		SELECT	*
+		FROM	reply
+		WHERE	bno = #{bno}
+		ORDER BY rno ASC
+	</select>
+	
+	<select id="countReply" resultType="int">
+		SELECT	COUNT(bno)
+		FROM	reply
+		WHERE	bno = #{bno}
+	</select>
+	
+	<delete id="deleteReply" parameterType="int">
+		DELETE FROM	reply
+		WHERE		rno = #{rno}
+	</delete>
+	
+</mapper>

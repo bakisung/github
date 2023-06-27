@@ -257,6 +257,17 @@ public class MemberController {
 		return fileName;
 	}
 	
+	@RequestMapping("/getMemberToJson")
+	public ResponseEntity<MemberVO> getMemberToJson(String id) throws SQLException{
+		ResponseEntity<MemberVO> entity = null;
+		
+		MemberVO member = memberService.selectMemberById(id);
+		
+		entity = new ResponseEntity<MemberVO>(member, HttpStatus.OK);
+		
+		return entity;
+	}
+	
 	@RequestMapping("/getPicture")
 	public ResponseEntity<byte[]> getPicture(String picture) throws Exception {
 		InputStream in = null;

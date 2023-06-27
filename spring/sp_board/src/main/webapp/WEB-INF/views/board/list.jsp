@@ -47,6 +47,7 @@
 						<tr>
 							<td colspan="5">
 								<strong>해당 게시글이 없습니다.</strong>
+							</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${boardList }" var="board">		
@@ -61,7 +62,7 @@
 							<td>
 								<fmt:formatDate value="${board.regdate }" pattern="yyyy-MM-dd"></fmt:formatDate>
 							</td>
-							<td>${board.viewcnt }</td>
+							<td><span class="badge bg-red">${board.viewcnt }</span></td>
 						</tr>
 					</c:forEach>
 				</table>
