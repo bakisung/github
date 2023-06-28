@@ -11,6 +11,8 @@
 		<typeAlias type="kr.or.dw.vo.MenuVO" alias="menu"/>
 		<typeAlias type="kr.or.dw.vo.BoardVO" alias="board"/>
 		<typeAlias type="kr.or.dw.vo.ReplyVO" alias="reply"/>
+		<typeAlias type="kr.or.dw.vo.PdsVO" alias="pds"/>
+		<typeAlias type="kr.or.dw.vo.AttachVO" alias="attach"/>
 	</typeAliases>
 	
 </configuration>

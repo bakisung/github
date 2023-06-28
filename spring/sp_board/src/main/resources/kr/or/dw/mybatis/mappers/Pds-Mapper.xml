@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dw.dao.PdsDAO">
+
+	<insert id="insertPds" parameterType="pds">
+		INSERT INTO pds(pno, title, writer, content, regdate)
+		VALUES(pds_seq.nextval, #{title}, #{writer}, #{content}, SYSDATE)
+		<selectKey resultType="int" keyProperty="pno" order="AFTER">
+			SELECT pds_seq.currval FROM dual
+		</selectKey>
+	</insert>
+
+</mapper>

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import kr.or.dw.command.PageMaker;
 import kr.or.dw.command.SearchCriteria;
 import kr.or.dw.dao.BoardDAO;
+import kr.or.dw.dao.ReplyDAO;
 import kr.or.dw.vo.BoardVO;
 
 @Service
@@ -19,6 +20,9 @@ public class BoardServiceImpl implements BoardService{
 
 	@Autowired
 	private BoardDAO boardDAO;
+	
+	@Autowired
+	private ReplyDAO  replyDAO;
 	
 	@Override
 	public Map<String, Object> selectBoardList(SearchCriteria cri) throws SQLException {
@@ -31,6 +35,12 @@ public class BoardServiceImpl implements BoardService{
 		
 		// 현재 page 번호에 맞는 리스트를 perPageNum 개수 만큼 가져오기
 		boardList = boardDAO.selectSearchBoardList(cri, rowBounds);
+		
+		// reply count 입력
+		for(BoardVO board : boardList) {
+			int replycnt = replyDAO.countReply(board.getBno());
+			board.setReplycnt(replycnt);
+		}
 		
 		// 전체 board 개수
 		int totalCount = boardDAO.selectSearchBoardListCount(cri);

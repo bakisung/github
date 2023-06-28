@@ -12,6 +12,8 @@ public interface ReplyService {
 
 	Map<String, Object> selectReplyList(int bno, SearchCriteria cri) throws SQLException;
 
+	void modifyReply(ReplyVO reply) throws SQLException;
+
 	void removeReply(int rno) throws SQLException;
 	
 }

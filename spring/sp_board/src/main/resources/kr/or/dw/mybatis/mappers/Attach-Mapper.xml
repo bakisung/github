@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dw.dao.AttachDAO">
+
+	<insert id="insertAttach" parameterType="attach">
+		INSERT INTO attach (ano, uploadPath, fileName, fileType, pno, attacher, regdate)
+					VALUES (
+						    attach_seq.nextval
+						   ,#{uploadPath}
+						   ,#{fileName}
+						   ,#{fileType}
+						   ,#{pno}
+						   ,#{attacher}
+						   ,SYSDATE
+							)
+	</insert>
+
+</mapper>

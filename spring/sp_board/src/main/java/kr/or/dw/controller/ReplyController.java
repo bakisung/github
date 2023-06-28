@@ -72,29 +72,48 @@ public class ReplyController {
 		return entity;
 	}
 	
-//	@RequestMapping(value="/{bno}/{rno}/{page}", method=RequestMethod.POST)
-//	public ResponseEntity<String> removeReply(@PathVariable int bno, @PathVariable int rno, @PathVariable int page){
-//		
-//		ResponseEntity<String> entity = null;
-//		
-//		try {
-//			replyService.removeReply(rno);
-//			
-//			SearchCriteria cri = new SearchCriteria();
-//			cri.setPage(page);
-//			
-//			Map<String, Object> dataMap = replyService.selectReplyList(bno, cri);
-//			PageMaker pageMaker = (PageMaker) dataMap.get("pageMaker");
-//			int startPage = pageMaker.getStartPage();
-//			
-//			entity = new ResponseEntity<String>(startPage + "", HttpStatus.OK);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//		
-//		return entity;
-//		
-//	}
-
+//	에이젝스에서 직렬화 했으므로 @RequestBody로 역직렬화 해준다.
+	@RequestMapping(value="/{rno}", method = {RequestMethod.PUT, RequestMethod.PATCH})
+	public ResponseEntity<String> modify(@RequestBody ReplyVO reply) throws SQLException{
+		ResponseEntity<String> entity = null;
+		
+		try {
+			replyService.modifyReply(reply);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();	// 이걸 작성해줘야 콘솔창에서 오류를 나타내준다.
+			entity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/{bno}/{rno}/{page}", method = RequestMethod.DELETE)
+	public ResponseEntity<String> remove(@PathVariable("rno") int rno
+										, @PathVariable("bno") int bno
+										, @PathVariable("page") int page) throws SQLException{
+		
+		ResponseEntity<String> entity = null;
+		
+		try {
+			replyService.removeReply(rno);
+			
+			SearchCriteria cri = new SearchCriteria();
+			
+			Map<String, Object> dataMap = replyService.selectReplyList(bno, cri);
+			PageMaker pageMaker = (PageMaker) dataMap.get("pageMaker");
+			
+			int realEndPage = pageMaker.getRealEndPage();
+			if (page > realEndPage) page = realEndPage;
+			
+			entity = new ResponseEntity<String>("" + page, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();	// 이걸 작성해줘야 콘솔창에서 오류를 나타내준다.
+			entity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return entity;
+	}
+	
 }

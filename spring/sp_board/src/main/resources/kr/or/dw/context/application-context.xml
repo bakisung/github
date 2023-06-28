@@ -9,10 +9,14 @@
 	<bean id="imgPath" class="java.lang.String">
 		<constructor-arg value="${summernote.img}"></constructor-arg>
 	</bean>
+	<bean id="fileUploadPath" class="java.lang.String">
+		<constructor-arg value="${pds.upload}"></constructor-arg>
+	</bean>
 
 	<bean id="memberService" class="kr.or.dw.service.MemberServiceImpl"/>
 	<bean id="menuService" class="kr.or.dw.service.MenuServiceImpl"/>
 	<bean id="boardService" class="kr.or.dw.service.BoardServiceImpl"/>
 	<bean id="replyService" class="kr.or.dw.service.ReplyServiceImpl"/>
+	<bean id="pdsService" class="kr.or.dw.service.PdsServiceImpl"/>
 	
 </beans>

@@ -12,8 +12,6 @@
 			<i class="fa fa-clock"></i>{{prettifyDate regdate}}
 			<a class="btn btn-primary btn-xs" id="modifyReplyBtn" data-rno={{rno}}
 				style="display: {{loginUserCheck replyer}}"; data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">수 정</a>
-			<a class="btn btn-danger btn-xs" id="removeReplyBtn" data-rno={{rno}}
-				style="display: {{loginUserCheck replyer}}"; data-replyer={{replyer}} data-toggle="modal" data-target="#removeModal">삭 제</a>
 		</span>
 
 		<h3 class="timeline-header"><strong style="display:none;">{{rno}}</strong>{{replyer}}</h3>
@@ -27,33 +25,6 @@
 
 
 function ShowReply(){
-	/* 댓글 삭제 버튼 클릭 */
-	<%-- $('#removeReplyBtn').on('click', function() {
-		
-		let rno = $(this).attr("data-rno");
-		let page = ${pageMaker.cri.page};
-		
-		let data = {
-				"bno" : "${board.bno}",
-				"rno" : rno,
-				"page" : page
-		};
-		
-		$.ajax({
-			url : "<%=request.getContextPath()%>/replies",
-			type : "post",
-			data : JSON.stringify(data),
-			contentType : "application/json",
-			success : function(data){
-				alert("댓글이 삭제 되었습니다.");
-				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + data);
-			},
-			error : function(error){
-				alert("삭제를 실패했습니다.\n관리자에게 문의하세요.");
-			}
-		});
-		
-	}) --%>
 	
 	let replyPage = 1;
 	
@@ -102,8 +73,60 @@ function ShowReply(){
 				alert("댓글 등록을 실패했습니다.\n관리자에게 문의하세요.");
 			}
 		});
+	});
+	
+	$('div.timeline').on('click', '#modifyReplyBtn', function() {
+		let rno = $(this).attr("data-rno");
+		let replyer = $(this).attr("data-replyer");
+		let replytext = $('#' + rno + '-replytext').text();
 		
+		$('#replytext').val(replytext);
+		$('.modal-title').text(rno);
+	});
+	
+	/* 디테일 모달에서 수정 버튼 눌렀을때 */
+	$('#replyModBtn').on('click', function(){
+		let rno = $('.modal-title').text();
+		let replytext = $('#replytext').val();
 		
+		$.ajax({
+			url : "<%=request.getContextPath()%>/replies/" + rno,
+			type : "PUT",
+			data : JSON.stringify({replytext : replytext, rno : rno}),
+			contentType : "application/json",
+			success : function(result) {
+				alert("수정되었습니다.2");
+				let curPage = $('#pagination').find('li.active').find('a').text();
+				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + replyPage)
+			},
+			error : function() {
+				alert("수정을 실패했습니다.");
+			},
+			complete : function() {
+				$('#modifyModal').modal('hide');
+			}
+		})
+	});
+
+	$('#replyDelBtn').on('click', function(){
+		let rno = $('.modal-title').text();
+		let curPage = $('#pagination').find('li.active').find('a').text();
+		
+		$.ajax({
+			url : "<%=request.getContextPath()%>/replies/${board.bno}/" + rno + "/" + curPage,
+			type : "DELETE",
+			dataType : "text",
+			success : function(page){
+				alert("삭제되었습니다.");
+				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + page);
+			},
+			error : function(){
+				alert("삭제를 실패했습니다.");
+			},
+			complete : function(){
+				$('#modifyModal').modal('hide');
+			}
+		});
 	});
 	
 };

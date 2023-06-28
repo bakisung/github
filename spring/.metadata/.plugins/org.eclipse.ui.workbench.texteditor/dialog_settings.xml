@@ -6,27 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="uploadFile" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="uploadFile"/>
+			<item value="card-footer"/>
+			<item value="pdf"/>
+			<item value="removeReplyBtn"/>
+			<item value="replyModBtn"/>
+			<item value="modifyReplyBtn"/>
+			<item value="find"/>
+			<item value="pagination"/>
+			<item value="timeline"/>
 			<item value="pageInfo"/>
 			<item value="pageMaker"/>
-			<item value="remove"/>
-			<item value="modifyReplyBtn"/>
-			<item value="modifyModal"/>
-			<item value="regdate"/>
-			<item value="pagination"/>
-			<item value="repliesDiv"/>
-			<item value="clock"/>
-			<item value="getpic"/>
-			<item value="get"/>
-			<item value="fas fa-angle-left"/>
-			<item value="getpa"/>
-			<item value="getPagin"/>
-			<item value="pagi"/>
 		</list>
 		<list key="replacehistory">
 			<item value="resources/bootstrap"/>

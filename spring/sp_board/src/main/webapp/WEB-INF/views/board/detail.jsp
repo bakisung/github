@@ -85,6 +85,26 @@
 	<input type="hidden" name="bno" value="${board.bno }">
 </form>
 
+<!-- 댓글 수정 Modal -->
+<div id="modifyModal" class="modal modal-default fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" style="display:none;"></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body" data-rno>
+				<p><input type="text" id="replytext" class="form-control"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-info" id="replyModBtn">수정</button>
+				<button type="button" class="btn btn-danger" id="replyDelBtn">삭제</button>
+				<button type="button" class="btn btn-default" id="cancelBtn">닫기</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script>
 window.onload = function(){
 

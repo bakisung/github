@@ -17,6 +17,7 @@ public interface ReplyDAO {
 
 	int countReply(int bno) throws SQLException;
 
-	void deleteReply(int rno) throws SQLException;
+	void updateReply(ReplyVO reply) throws SQLException;
 
+	void deleteReply(int rno) throws SQLException;
 }

@@ -53,9 +53,18 @@
 					<c:forEach items="${boardList }" var="board">		
 						<tr style="font-size: 0.85em;">
 							<td>${board.bno }</td>
-							<td>
+							<td style="text-align:left;">
 								<a href="javascript:OpenWindow('detail.do?bno=${board.bno }', '게시글상세보기', 800, 700);">
-									${board.title }
+									<span class="col-sm-12">
+										${board.title }
+										<c:if test="${board.replycnt ne 0 }">				<!-- eq : = , ne : != -->
+											<span class="nav-item">
+												&nbsp;&nbsp;
+												<i class="fa fa-comment"></i>
+												<span class="badge badge-warning navbar-badge">${board.replycnt }</span>
+											</span>
+										</c:if> 			
+									</span>
 								</a>
 							</td>
 							<td>${board.writer }</td>
