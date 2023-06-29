@@ -64,9 +64,9 @@ window.onload = function(){
 		let form = $('form[role="form"]');
 		
 		let files = $('input[name="uploadFile"]');
-		for(let file of files){		/* <- 향상된 for 문의 한 종류이다 - files에 있는 녀석들을 하나씩 꺼내서 file에 담아준다. */
-			console.log(file.name + " ; " + file.value);
-			if (file.value == "") {
+		for(let file of files){
+			console.log(file.name + " : " + file.value);
+			if(file.value == ""){
 				alert("파일을 선택하세요.");
 				file.focus();
 				file.click();

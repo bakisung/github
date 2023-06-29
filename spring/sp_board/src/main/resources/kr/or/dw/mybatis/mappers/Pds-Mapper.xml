@@ -11,5 +11,81 @@
 			SELECT pds_seq.currval FROM dual
 		</selectKey>
 	</insert>
+	
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			AND title LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND writer LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND content LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			AND ( 
+			title LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			AND ( 
+			writer LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			AND (
+			title LIKE '%' || #{keyword} || '%'
+			OR
+			writer LIKE '%' || #{keyword} || '%'
+			OR
+			content LIKE '%' || #{keyword} || '%'
+			)
+		</if>
+	</sql>
+	
+	<select id="selectSearchPdsList" resultType="pds">
+		SELECT *
+		  FROM pds
+		 WHERE 1=1
+		 <include refid="search"/>
+		 ORDER BY pno DESC
+	</select>
+	
+	<select id="selectSearchPdsListCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM pds
+		 WHERE 1=1
+		 <include refid="search"/>
+		 ORDER BY pno DESC
+	</select>
+	
+	<select id="selectPdsByPno" resultType="pds">
+		SELECT *
+		  FROM pds
+		 WHERE pno = #{pno}
+	</select>
+	
+	<update id="increaseViewCnt">
+		UPDATE pds SET viewcnt = NVL(viewcnt, 0) + 1 WHERE pno = #{pno}
+	</update>
+	
+	<update id="updatePds">
+		UPDATE pds SET title 		= #{title}
+					  ,content 		= #{content}
+					  ,updatedate 	= SYSDATE
+				 WHERE pno 			= #{pno}
+	</update>
+	
+	<delete id="deletePds">
+		DELETE
+		FROM pds
+		WHERE pno = #{pno}
+	</delete>
+	
+	
 
 </mapper>

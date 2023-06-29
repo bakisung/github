@@ -6,25 +6,31 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="uploadFile" key="selection"/>
+		<item value="remove" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="uploadFile"/>
-			<item value="card-footer"/>
-			<item value="pdf"/>
-			<item value="removeReplyBtn"/>
-			<item value="replyModBtn"/>
-			<item value="modifyReplyBtn"/>
-			<item value="find"/>
-			<item value="pagination"/>
-			<item value="timeline"/>
-			<item value="pageInfo"/>
-			<item value="pageMaker"/>
+			<item value="remove"/>
+			<item value="removeBtn"/>
+			<item value="form"/>
+			<item value="pno"/>
+			<item value="registForm"/>
+			<item value="attached"/>
+			<item value="foreach"/>
+			<item value="fromobj"/>
+			<item value="modifyBtn"/>
+			<item value="vi"/>
+			<item value="bno"/>
+			<item value="board"/>
+			<item value="searchList_go\"/>
+			<item value="searchList_go"/>
+			<item value="search"/>
 		</list>
 		<list key="replacehistory">
+			<item value="pno"/>
+			<item value="pds"/>
 			<item value="resources/bootstrap"/>
 			<item value="&lt;%= request.getContextPath()%&gt;/resources/bootstrap/plugins"/>
 			<item value="&lt;%= request.getContextPath()%&gt;/resources/bootstrap/dist "/>

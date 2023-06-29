@@ -63,12 +63,6 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public BoardVO selectBoardList(int bno) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public BoardVO selectBoard(int bno) throws SQLException {
 		BoardVO board = boardDAO.selectBoard(bno);
 		boardDAO.increaseViewCnt(bno);

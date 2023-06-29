@@ -11,8 +11,6 @@ public interface BoardService {
 
 	void write(BoardVO board) throws SQLException;
 
-	BoardVO selectBoardList(int bno) throws SQLException;
-
 	BoardVO selectBoard(int bno) throws SQLException;
 
 	void modify(BoardVO board) throws SQLException;

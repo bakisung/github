@@ -25,7 +25,7 @@
 						</select>
 						<input class="form-control" type="text" name="keyword" placeholder="검색어를 입력하세요." value="">
 						<span class="input-group-append">
-							<button class="btn btn-primary" type="button" onclick="searchList_go();">
+							<button class="btn btn-primary" type="button" onclick="searchList_go(1);">
 								<i class="fa fa-fw fa-search"></i>
 							</button>
 						</span>
@@ -42,41 +42,37 @@
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
-<%-- 					<c:if test="${empty boardList }"> --%>
-<!-- 						<tr> -->
-<!-- 							<td colspan="5"> -->
-<!-- 								<strong>해당 내용이 없습니다.</strong> -->
-<!-- 							</td> -->
-<!-- 						</tr> -->
-<%-- 					</c:if> --%>
-<%-- 					<c:forEach items="${boardList }" var="board"> --%>
-<!-- 						<tr style="font-size: 0.85em;"> -->
-<%-- 							<td>${board.bno }</td> --%>
-<!-- 							<td style="text-align:left;"> -->
-<%-- 								<a href="javascript:OpenWindow('detail.do?bno=${board.bno }', '상세보기', 800, 700)"> --%>
-<%-- 									<span class="col-sm-12">${board.title } --%>
-<%-- 										<c:if test="${board.replycnt ne 0 }"> --%>
-<!-- 											<span class="nav-item">&nbsp;&nbsp; -->
-<!-- 												<i class="fa fa-comment"></i> -->
-<%-- 												<span class="badge badge-warning navbar-badge">${board.replycnt }</span> --%>
-<!-- 											</span> -->
-<%-- 										</c:if> --%>
-<!-- 									</span> -->
-<!-- 								</a> -->
-<!-- 							</td> -->
-<%-- 							<td>${board.writer }</td> --%>
-<!-- 							<td> -->
-<%-- 								<fmt:formatDate value="${board.regdate }" pattern="yyyy-MM-dd"/> --%>
-<!-- 							</td> -->
-<%-- 							<td><span class="badge bg-red">${board.viewcnt }</span></td> --%>
-<!-- 						</tr> -->
-<%-- 					</c:forEach> --%>
+					<c:if test="${empty pdsList }">
+						<tr>
+							<td colspan="5">
+								<strong>해당 내용이 없습니다.</strong>
+							</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${pdsList }" var="pds">
+						<tr style="font-size: 0.85em;">
+							<td>${pds.pno }</td>
+							<td style="text-align:left;">
+								<a href="javascript:OpenWindow('detail.do?pno=${pds.pno }', '상세보기', 800, 700)">
+									<span class="col-sm-12">${pds.title }
+										
+									</span>
+								</a>
+							</td>
+							<td>${pds.writer }</td>
+							<td>${pds.attachList.size() }</td>
+							<td>
+								<fmt:formatDate value="${pds.regdate }" pattern="yyyy-MM-dd"/>
+							</td>
+							<td><span class="badge bg-red">${pds.viewcnt }</span></td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 			<div class="card-footer">
 				<nav aria-label="pds list Navigation">
 					<ul class="pagination justify-content-center m-0">
-<%-- 				<%@ include file="/WEB-INF/views/common/pagination.jsp" %> --%>
+						<%@ include file="/WEB-INF/views/common/pagination.jsp" %>
 					</ul>
 				</nav>
 			</div>		

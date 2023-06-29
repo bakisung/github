@@ -16,5 +16,25 @@
 						   ,SYSDATE
 							)
 	</insert>
+	
+	<select id="selectAttachByPno" parameterType="int" resultType="attach">
+		SELECT *
+		  FROM attach
+		 WHERE pno = #{pno}
+	</select>
+	
+	<select id="selectAttachByAno" parameterType="int" resultType="attach">
+		SELECT *
+		  FROM attach
+		 WHERE ano = #{ano}
+	</select>
+	
+	<delete id="deleteAttach">
+		DELETE FROM attach WHERE ano = #{ano}
+	</delete>
+	
+	<delete id="deleteAllAttach">
+		DELETE FROM attach WHERE pno = #{pno}
+	</delete>
 
 </mapper>
