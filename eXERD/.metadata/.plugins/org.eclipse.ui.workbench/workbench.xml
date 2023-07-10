@@ -28,6 +28,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -35,8 +36,11 @@
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="testErd.exerd" partName="testErd.exerd" path="C:/github/eXERD/newProject/testErd.exerd" title="testErd.exerd" tooltip="newProject/testErd.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/testErd.exerd"/>
 </editor>
-<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="webBoard.exerd" partName="webBoard.exerd" path="C:/github/eXERD/newProject/webBoard.exerd" title="webBoard.exerd" tooltip="newProject/webBoard.exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="webBoard.exerd" partName="webBoard.exerd" path="C:/github/eXERD/newProject/webBoard.exerd" title="webBoard.exerd" tooltip="newProject/webBoard.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/webBoard.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="test_easyrp_project.exerd" partName="test_easyrp_project.exerd" path="C:/github/eXERD/newProject/test_easyrp_project.exerd" title="test_easyrp_project.exerd" tooltip="newProject/test_easyrp_project.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/test_easyrp_project.exerd"/>
 </editor>
 </editors>
 <views>
@@ -47,10 +51,9 @@
 </filters>
 <expanded>
 <element path="/newProject"/>
-<element path="/sp_board"/>
 </expanded>
 <selection>
-<element path="/sp_board/sp_board.exerd"/>
+<element path="/newProject/test_easyrp_project.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -72,7 +75,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -143,7 +146,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomFolder" ratio="0.7518797" ratioLeft="700" ratioRight="231" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottomFolder" ratio="0.9688507" ratioLeft="902" ratioRight="29" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.domain" label="도메인"/>
 <page content="com.tomato.exerd.validate.ui.ValidateView" label="검토"/>
@@ -178,6 +181,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/sp_board/sp_board.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/webBoard.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/testErd.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/testErd.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/sp_board/sp_board.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/test_easyrp_project.exerd"/>
 </editors>
 <item historyLabel="sp_board.exerd" index="0"/>
 <item historyLabel="testErd.exerd" index="1"/>
@@ -191,21 +197,21 @@
 <item historyLabel="sp_board.exerd" index="4"/>
 <item historyLabel="sp_board.exerd" index="4"/>
 <item historyLabel="testErd.exerd" index="6"/>
-<item active="true" historyLabel="webBoard.exerd" index="5"/>
+<item historyLabel="webBoard.exerd" index="5"/>
+<item historyLabel="testErd.exerd" index="7"/>
+<item historyLabel="webBoard.exerd" index="5"/>
+<item historyLabel="testErd.exerd" index="7"/>
+<item historyLabel="webBoard.exerd" index="5"/>
+<item historyLabel="sp_board.exerd" index="8"/>
+<item historyLabel="webBoard.exerd" index="5"/>
+<item historyLabel="testErd.exerd" index="7"/>
+<item active="true" historyLabel="test_easyrp_project.exerd" index="9"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="leftFolder"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@19925f4"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@d1c1dc"/>
-<trimItem IMemento.internal.id="rightFolder"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -213,19 +219,21 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomFolder"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="test_easyrp_project.exerd" tooltip="newProject/test_easyrp_project.exerd">
+<persistable path="/newProject/test_easyrp_project.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="sp_board.exerd" tooltip="sp_board/sp_board.exerd">
+<persistable path="/sp_board/sp_board.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="webBoard.exerd" tooltip="newProject/webBoard.exerd">
 <persistable path="/newProject/webBoard.exerd"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="testErd.exerd" tooltip="newProject/testErd.exerd">
 <persistable path="/newProject/testErd.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="sp_board.exerd" tooltip="sp_board/sp_board.exerd">
-<persistable path="/sp_board/sp_board.exerd"/>
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="test_test_project.exerd" tooltip="C:\dwFinal\프로젝트 관련 자료\test_test_project.exerd">
 <persistable uri="file:/C:/dwFinal/프로젝트%20관련%20자료/test_test_project.exerd"/>
