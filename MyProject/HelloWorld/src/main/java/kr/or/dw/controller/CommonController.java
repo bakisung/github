@@ -1,4 +1,4 @@
-package kr.or.dw.common;
+package kr.or.dw.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,10 @@ public class CommonController {
 	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
 	@GetMapping("/common/main.do")
-	public String main (){
+	public String main () throws Exception {
 		
 		String url = "/common/main";
+		
 		return url;
 		
 	}

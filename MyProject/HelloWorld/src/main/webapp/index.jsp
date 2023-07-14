@@ -3,5 +3,5 @@
 <script>
 	console.log("asdf");
 	alert("123");
-	location.href="common/main.do";
+	location.href="/common/main.do";
 </script>
