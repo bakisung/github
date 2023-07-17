@@ -18,8 +18,7 @@
 	 	<authentication-provider ref="authenticator"/>
 	 </authentication-manager>
 	 
-	 <beans:bean id="authenticator"
-	 			 class="kr.or.dw.security.CustomAuthenticationProvider"/>
+	 <beans:bean id="authenticator" class="kr.or.dw.security.CustomAuthenticationProvider"/>
 	 
 	 <!-- 인허가 -->
 	 <!-- 
@@ -50,10 +49,10 @@
 			password-parameter : 로그인 폼에 비밀번호 입력 필드에 사용될 name 값 이다. 기본값은 "password" 이다.
 		 -->
 		<form-login
-			login-page="/common/loginForm"
+			login-page="/common/loginPage"
 			login-processing-url="/common/login.do"
 			username-parameter="id"
-			password-parameter="pwd"
+			password-parameter="password"
 			authentication-success-handler-ref="loginSuccessHandler"
 			authentication-failure-handler-ref="loginFailureHandler"
 		/>
@@ -76,7 +75,7 @@
 		
 	<beans:bean id="loginSuccessHandler"
 				class="kr.or.dw.security.LoginSuccessHandler"
-				p:defaultTargetUrl="/index.do"/>
+				p:defaultTargetUrl="/common/main.do"/>
 	<beans:bean id="loginFailureHandler"
 				class="kr.or.dw.security.LoginFailureHandler"/>
 	<beans:bean id="sessionRegistry"

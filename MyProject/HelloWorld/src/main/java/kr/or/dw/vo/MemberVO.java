@@ -15,5 +15,6 @@ public class MemberVO {
 	private String member_authority;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date member_create_date;
+	private int member_enabled;
 	
 }
