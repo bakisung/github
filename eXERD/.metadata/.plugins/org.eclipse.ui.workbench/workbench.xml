@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="16" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="2382" y="143">
 <fastViewData fastViewLocation="1024"/>
@@ -29,6 +29,7 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -38,6 +39,9 @@
 </editor>
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="webBoard.exerd" partName="webBoard.exerd" path="C:/github/eXERD/newProject/webBoard.exerd" title="webBoard.exerd" tooltip="newProject/webBoard.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/webBoard.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="test2_easyrp_project.exerd" partName="test2_easyrp_project.exerd" path="C:/github/eXERD/newProject/test2_easyrp_project.exerd" title="test2_easyrp_project.exerd" tooltip="newProject/test2_easyrp_project.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/test2_easyrp_project.exerd"/>
 </editor>
 <editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="test_easyrp_project.exerd" partName="test_easyrp_project.exerd" path="C:/github/eXERD/newProject/test_easyrp_project.exerd" title="test_easyrp_project.exerd" tooltip="newProject/test_easyrp_project.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/test_easyrp_project.exerd"/>
@@ -71,6 +75,11 @@
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인"/>
+<view id="org.eclipse.search.ui.views.SearchView" partName="검색">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
 </view>
@@ -109,6 +118,7 @@
 <view id="com.tomato.exerd.ui.views.thumbnail"/>
 <view id="com.tomato.exerd.modelview3.ModelView3"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -137,12 +147,14 @@
 </folder>
 </info>
 <info folder="true" part="rightFolder" ratio="0.24946466" ratioLeft="233" ratioRight="701" relationship="4" relative="org.eclipse.ui.internal.ViewStack@d1c1dc">
-<folder activePageID="com.tomato.exerd.modelview3.ModelView3" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="com.tomato.exerd.modelview3.ModelView3" label="모델"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="아웃라인"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="검색"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
