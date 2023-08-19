@@ -1,3 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\github\\dw-java\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\github\\dw-java\\.git;
+GitRepositoriesView.GitDirectories=/Users/park/Downloads/github/dw-java/eclipse-workspace/C\:/Users/park/Downloads/github/dw-java/eclipse-workspace/\\github\\dw-java\\.git;\:/Users/park/Downloads/github/.git\:
+GitRepositoriesView.GitDirectories.relative=C\:\\github\\dw-java\\.git;\:/Users/park/Downloads/github/.git\:
+core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

@@ -128,7 +128,7 @@ public class Main {
 		for ( ; ; ) {
 			if (inputstage.equals("n")) {
 				System.out.println("오전 8시.. 알람이 울린다..\n오늘은 월요일.. 학원을 어떻게하지?\n"
-						+ "1)다시 잔다. 2)ㅈ같지만 일어나서 준비한다.\n\n"
+						+ "1)다시 잔다. 2)힘들지만 일어나서 준비한다.\n\n"
 						+ "\t\t\t입력 (1, 2)");
 				String inputstage2 = s.nextLine();
 				if (inputstage2.equals("1")) {
@@ -170,7 +170,7 @@ public class Main {
 			if (inputstage2.equals("n")) {
 				for ( ; ; ) {
 				System.out.println("김진용 선생님 : " + username + "님 복습했어요 안했어요\n"
-						+ "1)했다고 구라를 친다. 2)안했다고 솔직하게 말씀드린다.\n\n"
+						+ "1)했다고 거짓말을 한다. 2)안했다고 솔직하게 말씀드린다.\n\n"
 						+ "\t\t\t입력 (1, 2)");
 				String inputstage3 = s.nextLine();
 				
