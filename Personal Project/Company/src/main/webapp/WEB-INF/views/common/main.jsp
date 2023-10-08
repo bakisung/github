@@ -2,25 +2,34 @@
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
+
+<html lang="ko" data-bs-theme="light">
+
 <head>
 
-	<!-- 부트스트랩 cdn -->
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-		rel="stylesheet"
-		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-		crossorigin="anonymous">
-	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<meta name="author"
-		content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	<meta name="generator" content="Hugo 0.112.5">
-	<title>Hello World</title>
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Hugo 0.118.2">
+	
+	<title>홈페이지</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+	<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+	<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+	
+	<meta name="theme-color" content="#712cf9">
 	
 	<style>
+	
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -94,439 +103,501 @@
 			z-index: 1500;
 		}
 		
-		/* a 태그 좌우 간격 */
-		.btn-margin {
-			margin-left: 0.5em;
-			margin-right: 0.5em;
+		.bd-mode-toggle .dropdown-menu .active .bi {
+			display: block !important;
 		}
 		
 	</style>
-
+	
 </head>
 
 <body>
 
-	<div class="container">
-		<header class="border-bottom lh-1 py-3">
-			<div
-				class="row flex-nowrap justify-content-between align-items-center">
-				<div class="col-4 pt-1">
-					<a class="link-secondary" href="#">
-						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-apple" viewBox="0 0 16 16" style="margin-left:1em;">
-							<path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
-							<path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>		
-						</svg>
-					</a>
-				</div>
-				<div class="col-4 text-center">
-					<a class="blog-header-logo text-body-emphasis text-decoration-none fw-semibold" href="#" style="font-size: 1.9em">Hello World</a>
-				</div>
-				<div class="col-4 d-flex justify-content-end align-items-center">
-					<a class="link-secondary" href="#" aria-label="Search"> <svg
-							xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-							fill="none" stroke="currentColor" stroke-linecap="round"
-							stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
-							viewBox="0 0 24 24">
-							<title>Search</title><circle cx="10.5" cy="10.5" r="7.5" />
-							<path d="M21 21l-5.2-5.2" /></svg>
-					</a> 
-					<a class="btn btn-sm btn-outline-secondary btn-margin" href="<%=request.getContextPath()%>/common/loginPage.do">로그인</a>
-					<a class="btn btn-sm btn-outline-secondary btn-margin" href="#">회원가입</a>
-				</div>
-			</div>
-		</header>
+	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+	
+		<symbol id="check2" viewBox="0 0 16 16">
+			<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+		</symbol>
+		
+		<symbol id="circle-half" viewBox="0 0 16 16">
+			<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+		</symbol>
+		
+		<symbol id="moon-stars-fill" viewBox="0 0 16 16">
+			<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+			<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+		</symbol>
+		
+		<symbol id="sun-fill" viewBox="0 0 16 16">
+			<path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+		</symbol>
+	     
+	</svg>
 
-		<div class="nav-scroller py-1 mb-3 border-bottom">
-			<nav class="nav nav-underline justify-content-between">
-				<a class="nav-item nav-link link-body-emphasis active" href="#">Main</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Board</a> 
-				<a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
-				<a class="nav-item nav-link link-body-emphasis" href="#">Style</a> <a
-					class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
-			</nav>
-		</div>
+	<!-- 화면 테마 설정 Start -->
+	<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+		
+		<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+			<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+				<use href="#sun-fill"></use>
+			</svg>
+			<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+		</button>
+		
+		<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+			<li>
+				<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+						<use href="#sun-fill"></use>
+					</svg>
+					Light
+					<svg class="bi ms-auto d-none" width="1em" height="1em">
+						<use href="#check2"></use>
+					</svg>
+				</button>
+			</li>
+			<li>
+				<button type="button"
+					class="dropdown-item d-flex align-items-center"
+					data-bs-theme-value="dark" aria-pressed="false">
+					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+						<use href="#moon-stars-fill"></use></svg>
+					Dark
+					<svg class="bi ms-auto d-none" width="1em" height="1em">
+						<use href="#check2"></use></svg>
+				</button>
+			</li>
+			<li>
+				<button type="button"
+					class="dropdown-item d-flex align-items-center"
+					data-bs-theme-value="auto" aria-pressed="false">
+					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+						<use href="#circle-half"></use></svg>
+					Auto
+					<svg class="bi ms-auto d-none" width="1em" height="1em">
+						<use href="#check2"></use></svg>
+				</button>
+			</li>
+		</ul>
+		
 	</div>
-
-	<main class="container">
-		<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-			<div class="col-lg-6 px-0">
-				<h1 class="display-4 fst-italic">
-					Title of a longer featured blog post
-				</h1>
-				<p class="lead my-3">
-					Multiple lines of text that form the lede,
-					informing new readers quickly and efficiently about what’s most
-					interesting in this post’s contents.
-				</p>
-				<p class="lead mb-0">
-					<a href="#" class="text-body-emphasis fw-bold">Continue reading...</a>
-				</p>
-			</div>
-		</div>
-
-		<div class="row mb-2">
-			<div class="col-md-6">
-				<div
-					class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-					<div class="col p-4 d-flex flex-column position-static">
-						<strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-						<h3 class="mb-0">Featured post</h3>
-						<div class="mb-1 text-body-secondary">Nov 12</div>
-						<p class="card-text mb-auto">This is a wider card with
-							supporting text below as a natural lead-in to additional content.</p>
-						<a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-							Continue reading <svg class="bi">
-								<use xlink:href="#chevron-right" /></svg>
-						</a>
-					</div>
-					<div class="col-auto d-none d-lg-block">
-						<svg class="bd-placeholder-img" width="200" height="250"
-							xmlns="http://www.w3.org/2000/svg" role="img"
-							aria-label="Placeholder: Thumbnail"
-							preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title><rect width="100%" height="100%"
-								fill="#55595c" />
-							<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div
-					class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-					<div class="col p-4 d-flex flex-column position-static">
-						<strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-						<h3 class="mb-0">Post title</h3>
-						<div class="mb-1 text-body-secondary">Nov 11</div>
-						<p class="mb-auto">This is a wider card with supporting text
-							below as a natural lead-in to additional content.</p>
-						<a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-							Continue reading <svg class="bi">
-								<use xlink:href="#chevron-right" /></svg>
-						</a>
-					</div>
-					<div class="col-auto d-none d-lg-block">
-						<svg class="bd-placeholder-img" width="200" height="250"
-							xmlns="http://www.w3.org/2000/svg" role="img"
-							aria-label="Placeholder: Thumbnail"
-							preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title><rect width="100%" height="100%"
-								fill="#55595c" />
-							<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row g-5">
-			<div class="col-md-8">
-				<h3 class="pb-4 mb-4 fst-italic border-bottom">From the
-					Firehose</h3>
-
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-					<p class="blog-post-meta">
-						January 1, 2021 by <a href="#">Mark</a>
-					</p>
-
-					<p>This blog post shows a few different types of content that’s
-						supported and styled with Bootstrap. Basic typography, lists,
-						tables, images, code, and more are all supported as expected.</p>
-					<hr>
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<h2>Blockquotes</h2>
-					<p>This is an example blockquote in action:</p>
-					<blockquote class="blockquote">
-						<p>Quoted text goes here.</p>
-					</blockquote>
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<h3>Example lists</h3>
-					<p>This is some additional paragraph placeholder content. It's
-						a slightly shorter version of the other highly repetitive body
-						text used throughout. This is an example unordered list:</p>
-					<ul>
-						<li>First list item</li>
-						<li>Second list item with a longer description</li>
-						<li>Third list item to close it out</li>
-					</ul>
-					<p>And this is an ordered list:</p>
-					<ol>
-						<li>First list item</li>
-						<li>Second list item with a longer description</li>
-						<li>Third list item to close it out</li>
-					</ol>
-					<p>And this is a definition list:</p>
-					<dl>
-						<dt>HyperText Markup Language (HTML)</dt>
-						<dd>The language used to describe and define the content of a
-							Web page</dd>
-						<dt>Cascading Style Sheets (CSS)</dt>
-						<dd>Used to describe the appearance of Web content</dd>
-						<dt>JavaScript (JS)</dt>
-						<dd>The programming language used to build advanced Web sites
-							and applications</dd>
-					</dl>
-					<h2>Inline HTML elements</h2>
+	<!-- 화면 테마 설정 End-- >
+	
+	<!-- Header & Navbar Start -->
+	<header class="navbar navbar-expand-lg fixed-top">
+		<div class="container">
+			<a class="navbar-brand pe-sm-3" href="index.html">
+				<span class="text-primary flex-shrink-0 me-2">
+					<svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+						<path fill="currentColor" d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"></path>
+					</svg>
+				</span>
+				Company
+			</a>
+			<a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="" style="margin-right: 1em;">
+				로그인
+			</a>
+			<a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="">
+				회원가입
+			</a>
+			<button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+			<nav class="collapse navbar-collapse" id="navbarNav">
+		            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+		       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
+		         <div class="dropdown-menu overflow-hidden p-0">
+		           <div class="d-lg-flex">
+		             <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+		               <ul class="list-unstyled mb-0">
+		                 <li><a class="dropdown-item" href="index.html">Template Intro Page</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/landings.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">Mobile App Showcase</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/mobile-app.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-product.html">Product Landing</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/product-landing.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-saas-v1.html">SaaS v.1</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/saas-1.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-saas-v2.html">SaaS v.2</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/saas-2.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-saas-v3.html">SaaS v.3<span class="text-danger fs-xs ms-2">New</span></a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/saas-3.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-shop.html">Shop Homepage</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/shop-homepage.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-marketing-agency.html">Marketing Agency</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/marketing-agency.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-creative-agency.html">Creative Agency</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/creative-agency.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-conference.html">Conference (Event)<span class="text-danger fs-xs ms-2">New</span></a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/conference.jpg);"></span></li>
+		               </ul>
+		             </div>
+		             <div class="mega-dropdown-column pb-2 pt-lg-3 pb-lg-4">
+		               <ul class="list-unstyled mb-0">
+		                 <li><a class="dropdown-item" href="landing-web-studio.html">Web Studio</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/web-studio.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-corporate.html">Corporate</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/corporate.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-business-consulting.html">Business Consulting</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/business-consulting.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-coworking-space.html">Coworking Space</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/coworking.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-yoga-studio.html">Yoga Studio</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/yoga-studio.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-influencer.html">Influencer<span class="text-danger fs-xs ms-2">New</span></a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/influencer.jpg);"></span></li>
+		                 <li><a class="dropdown-item" href="landing-blog.html">Blog Homepage</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/blog-homepage.jpg);"></span></li>
+		                    </ul>
+		                  </div>
+		                  <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+		                </div>
+		              </div>
+		            </li>
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
+		              <ul class="dropdown-menu">
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="portfolio-list-v1.html">List View v.1</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-list-v2.html">List View v.2</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-grid-v1.html">Grid View v.1</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-grid-v2.html">Grid View v.2</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-slider.html">Slider View</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-single-v1.html">Single Project v.1</a></li>
+		                    <li><a class="dropdown-item" href="portfolio-single-v2.html">Single Project v.2</a></li>
+		                  </ul>
+		                </li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="shop-catalog.html">Catalog (Listing)</a></li>
+		                    <li><a class="dropdown-item" href="shop-single.html">Product Page</a></li>
+		                    <li><a class="dropdown-item" href="shop-checkout.html">Checkout</a></li>
+		                  </ul>
+		                </li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid View with Sidebar</a></li>
+		                    <li><a class="dropdown-item" href="blog-grid.html">Grid View no Sidebar</a></li>
+		                    <li><a class="dropdown-item" href="blog-list-sidebar.html">List View with Sidebar</a></li>
+		                    <li><a class="dropdown-item" href="blog-list.html">List View no Sidebar</a></li>
+		                    <li><a class="dropdown-item" href="blog-single-v1.html">Single post v.1</a></li>
+		                    <li><a class="dropdown-item" href="blog-single-v2.html">Single post v.2</a></li>
+		                    <li><a class="dropdown-item" href="blog-single-v3.html">Single post v.3</a></li>
+		                  </ul>
+		                </li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="about-agency.html">About - Agency</a></li>
+		                    <li><a class="dropdown-item" href="about-product.html">About - Product</a></li>
+		                  </ul>
+		                </li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="services-v1.html">Services v.1</a></li>
+		                    <li><a class="dropdown-item" href="services-v2.html">Services v.2</a></li>
+		                    <li><a class="dropdown-item" href="services-v3.html">Services v.3</a></li>
+		                  </ul>
+		                </li>
+		                <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="contacts-v1.html">Contacts v.1</a></li>
+		                    <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+		                    <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+		                  </ul>
+		                </li>
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Specialty Pages</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="404-v1.html">404 Error v.1</a></li>
+		                    <li><a class="dropdown-item" href="404-v2.html">404 Error v.2</a></li>
+		                    <li><a class="dropdown-item" href="404-v3.html">404 Error v.3</a></li>
+		                  </ul>
+		                </li>
+		              </ul>
+		            </li>
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Account</a>
+		              <ul class="dropdown-menu">
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Auth pages</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="account-signin.html">Sign In</a></li>
+		                    <li><a class="dropdown-item" href="account-signup.html">Sign Up</a></li>
+		                    <li><a class="dropdown-item" href="account-signinup.html">Sign In / Up</a></li>
+		                    <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
+		                  </ul>
+		                </li>
+		                <li><a class="dropdown-item" href="account-overview.html">Overview</a></li>
+		                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
+		                <li><a class="dropdown-item" href="account-billing.html">Billing</a></li>
+		                <li><a class="dropdown-item" href="account-orders.html">Orders</a></li>
+		                <li><a class="dropdown-item" href="account-earnings.html">Earnings</a></li>
+		                <li><a class="dropdown-item" href="account-chat.html">Chat (Messages)</a></li>
+		                <li><a class="dropdown-item" href="account-favorites.html">Favorites (Wishlist)</a></li>
+		              </ul>
+		            </li>
+		            <li class="nav-item"><a class="nav-link" href="components/typography.html">UI Kit</a></li>
+		            <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Docs</a></li>
+		          </ul>
+		          <div class="d-sm-none p-3 mt-n3">
+		          	<section class="py-5 text-center container">
+			<div class="row py-lg-5">
+				<div class="col-lg-6 col-md-8 mx-auto">
+					<h1 class="fw-light">Album example</h1>
+					<p class="lead text-body-secondary">Something short and leading
+						about the collection below—its contents, the creator, etc. Make it
+						short and sweet, but not too short so folks don’t simply skip over
+						it entirely.</p>
 					<p>
-						HTML defines a long list of available inline tags, a complete list
-						of which can be found on the <a
-							href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla
-							Developer Network</a>.
+						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a
+							href="#" class="btn btn-secondary my-2">Secondary action</a>
 					</p>
-					<ul>
-						<li><strong>To bold text</strong>, use <code
-								class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-						<li><em>To italicize text</em>, use <code
-								class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-						<li>Abbreviations, like <abbr
-							title="HyperText Markup Language">HTML</abbr> should use <code
-								class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>,
-							with an optional <code
-								class="language-plaintext highlighter-rouge">title</code>
-							attribute for the full phrase.
-						</li>
-						<li>Citations, like <cite>— Mark Otto</cite>, should use <code
-								class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.
-						</li>
-						<li><del>Deleted</del> text should use <code
-								class="language-plaintext highlighter-rouge">&lt;del&gt;</code>
-							and <ins>inserted</ins> text should use <code
-								class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-						<li>Superscript <sup>text</sup> uses <code
-								class="language-plaintext highlighter-rouge">&lt;sup&gt;</code>
-							and subscript <sub>text</sub> uses <code
-								class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.
-						</li>
-					</ul>
-					<p>Most of these elements are styled by browsers with few
-						modifications on our part.</p>
-					<h2>Heading</h2>
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<h3>Sub-heading</h3>
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<pre>
-						<code>Example code block</code>
-					</pre>
-					<p>This is some additional paragraph placeholder content. It's
-						a slightly shorter version of the other highly repetitive body
-						text used throughout.</p>
-				</article>
-
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Another blog
-						post</h2>
-					<p class="blog-post-meta">
-						December 23, 2020 by <a href="#">Jacob</a>
-					</p>
-
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<blockquote>
-						<p>
-							Longer quote goes here, maybe with some <strong>emphasized
-								text</strong> in the middle of it.
-						</p>
-					</blockquote>
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<h3>Example table</h3>
-					<p>And don't forget about tables in these posts:</p>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Upvotes</th>
-								<th>Downvotes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Alice</td>
-								<td>10</td>
-								<td>11</td>
-							</tr>
-							<tr>
-								<td>Bob</td>
-								<td>4</td>
-								<td>3</td>
-							</tr>
-							<tr>
-								<td>Charlie</td>
-								<td>7</td>
-								<td>9</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<td>Totals</td>
-								<td>21</td>
-								<td>23</td>
-							</tr>
-						</tfoot>
-					</table>
-
-					<p>This is some additional paragraph placeholder content. It's
-						a slightly shorter version of the other highly repetitive body
-						text used throughout.</p>
-				</article>
-
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
-					<p class="blog-post-meta">
-						December 14, 2020 by <a href="#">Chris</a>
-					</p>
-
-					<p>This is some additional paragraph placeholder content. It
-						has been written to fill the available space and show how a longer
-						snippet of text affects the surrounding content. We'll repeat it
-						often to keep the demonstration flowing, so be on the lookout for
-						this exact same string of text.</p>
-					<ul>
-						<li>First list item</li>
-						<li>Second list item with a longer description</li>
-						<li>Third list item to close it out</li>
-					</ul>
-					<p>This is some additional paragraph placeholder content. It's
-						a slightly shorter version of the other highly repetitive body
-						text used throughout.</p>
-				</article>
-
-				<nav class="blog-pagination" aria-label="Pagination">
-					<a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-					<a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-				</nav>
-
+				</div>
 			</div>
+		</section>
+		          </div>
+		        </nav>
+		      </div>
+        </header>
+	<!-- Header & Navbar End -->
 
-			<div class="col-md-4">
-				<div class="position-sticky" style="top: 2rem;">
-					<div class="p-4 mb-3 bg-body-tertiary rounded">
-						<h4 class="fst-italic">About</h4>
-						<p class="mb-0">Customize this section to tell your visitors a
-							little bit about your publication, writers, content, or something
-							else entirely. Totally up to you.</p>
+	<!-- Main Start -->
+	<main>
+
+		<section class="py-5 text-center container">
+			<div class="row py-lg-5">
+				<div class="col-lg-6 col-md-8 mx-auto">
+					<h1 class="fw-light">Album example</h1>
+					<p class="lead text-body-secondary">Something short and leading
+						about the collection below—its contents, the creator, etc. Make it
+						short and sweet, but not too short so folks don’t simply skip over
+						it entirely.</p>
+					<p>
+						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a
+							href="#" class="btn btn-secondary my-2">Secondary action</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<div class="album py-5 bg-body-tertiary">
+			<div class="container">
+
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<div>
-						<h4 class="fst-italic">Recent posts</h4>
-						<ul class="list-unstyled">
-							<li><a
-								class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-								href="#"> <svg class="bd-placeholder-img" width="100%"
-										height="96" xmlns="http://www.w3.org/2000/svg"
-										aria-hidden="true" preserveAspectRatio="xMidYMid slice"
-										focusable="false">
-										<rect width="100%" height="100%" fill="#777" /></svg>
-									<div class="col-lg-8">
-										<h6 class="mb-0">Example blog post title</h6>
-										<small class="text-body-secondary">January 15, 2023</small>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 									</div>
-							</a></li>
-							<li><a
-								class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-								href="#"> <svg class="bd-placeholder-img" width="100%"
-										height="96" xmlns="http://www.w3.org/2000/svg"
-										aria-hidden="true" preserveAspectRatio="xMidYMid slice"
-										focusable="false">
-										<rect width="100%" height="100%" fill="#777" /></svg>
-									<div class="col-lg-8">
-										<h6 class="mb-0">This is another blog post title</h6>
-										<small class="text-body-secondary">January 14, 2023</small>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 									</div>
-							</a></li>
-							<li><a
-								class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-								href="#"> <svg class="bd-placeholder-img" width="100%"
-										height="96" xmlns="http://www.w3.org/2000/svg"
-										aria-hidden="true" preserveAspectRatio="xMidYMid slice"
-										focusable="false">
-										<rect width="100%" height="100%" fill="#777" /></svg>
-									<div class="col-lg-8">
-										<h6 class="mb-0">Longer blog post title: This one has
-											multiple lines!</h6>
-										<small class="text-body-secondary">January 13, 2023</small>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 									</div>
-							</a></li>
-						</ul>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
 					</div>
 
-					<div class="p-4">
-						<h4 class="fst-italic">Archives</h4>
-						<ol class="list-unstyled mb-0">
-							<li><a href="#">March 2021</a></li>
-							<li><a href="#">February 2021</a></li>
-							<li><a href="#">January 2021</a></li>
-							<li><a href="#">December 2020</a></li>
-							<li><a href="#">November 2020</a></li>
-							<li><a href="#">October 2020</a></li>
-							<li><a href="#">September 2020</a></li>
-							<li><a href="#">August 2020</a></li>
-							<li><a href="#">July 2020</a></li>
-							<li><a href="#">June 2020</a></li>
-							<li><a href="#">May 2020</a></li>
-							<li><a href="#">April 2020</a></li>
-						</ol>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
 					</div>
-
-					<div class="p-4">
-						<h4 class="fst-italic">Elsewhere</h4>
-						<ol class="list-unstyled">
-							<li><a href="#">GitHub</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Facebook</a></li>
-						</ol>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 	</main>
+	<!-- Main End -->
+
+	<!-- Footer Start -->
+	<footer class="text-body-secondary py-5">
+		<div class="container">
+			<p class="float-end mb-1">
+				<a href="#">Back to top</a>
+			</p>
+			<p class="mb-1">Album example is © Bootstrap, but please download
+				and customize it for yourself!</p>
+			<p class="mb-0">
+				New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+					href="/docs/5.3/getting-started/introduction/">getting started
+					guide</a>.
+			</p>
+		</div>
+	</footer>
+	<!-- Footer End -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 
-<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-	<p>
-		Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a>
-		by <a href="https://twitter.com/mdo">@mdo</a>.
-	</p>
-	<p class="mb-0">
-		<a href="#">Back to top</a>
-	</p>
-</footer>
-
-<!-- 부트스트랩 cdn -->
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-	crossorigin="anonymous"></script>
-
 </html>
-
-<!-- 부트스트랩 cdn -->
