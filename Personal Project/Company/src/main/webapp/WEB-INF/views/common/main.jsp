@@ -184,7 +184,7 @@
 	<!-- 화면 테마 설정 End-- >
 	
 	<!-- Header & Navbar Start -->
-	<header class="navbar navbar-expand-lg fixed-top">
+	<header class="navbar navbar-expand-lg fixed-top" style="background: white; border-bottom: 1px solid #DADCE0;">
 		<div class="container">
 			<a class="navbar-brand pe-sm-3" href="index.html">
 				<span class="text-primary flex-shrink-0 me-2">
@@ -203,7 +203,8 @@
 			<button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
 			<nav class="collapse navbar-collapse" id="navbarNav">
 		            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
-		       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
+		     
+		       <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">소개</a>
 		         <div class="dropdown-menu overflow-hidden p-0">
 		           <div class="d-lg-flex">
 		             <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
@@ -235,7 +236,8 @@
 		                </div>
 		              </div>
 		            </li>
-		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
+		            
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">채용</a>
 		              <ul class="dropdown-menu">
 		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
 		                  <ul class="dropdown-menu">
@@ -296,7 +298,8 @@
 		                </li>
 		              </ul>
 		            </li>
-		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Account</a>
+		            
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">소식</a>
 		              <ul class="dropdown-menu">
 		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Auth pages</a>
 		                  <ul class="dropdown-menu">
@@ -315,26 +318,50 @@
 		                <li><a class="dropdown-item" href="account-favorites.html">Favorites (Wishlist)</a></li>
 		              </ul>
 		            </li>
-		            <li class="nav-item"><a class="nav-link" href="components/typography.html">UI Kit</a></li>
-		            <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Docs</a></li>
+		            
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">사업</a>
+		              <ul class="dropdown-menu">
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Auth pages</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="account-signin.html">Sign In</a></li>
+		                    <li><a class="dropdown-item" href="account-signup.html">Sign Up</a></li>
+		                    <li><a class="dropdown-item" href="account-signinup.html">Sign In / Up</a></li>
+		                    <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
+		                  </ul>
+		                </li>
+		                <li><a class="dropdown-item" href="account-overview.html">Overview</a></li>
+		                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
+		                <li><a class="dropdown-item" href="account-billing.html">Billing</a></li>
+		                <li><a class="dropdown-item" href="account-orders.html">Orders</a></li>
+		                <li><a class="dropdown-item" href="account-earnings.html">Earnings</a></li>
+		                <li><a class="dropdown-item" href="account-chat.html">Chat (Messages)</a></li>
+		                <li><a class="dropdown-item" href="account-favorites.html">Favorites (Wishlist)</a></li>
+		              </ul>
+		            </li>
+		            
+		            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">문의</a>
+		              <ul class="dropdown-menu">
+		                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Auth pages</a>
+		                  <ul class="dropdown-menu">
+		                    <li><a class="dropdown-item" href="account-signin.html">Sign In</a></li>
+		                    <li><a class="dropdown-item" href="account-signup.html">Sign Up</a></li>
+		                    <li><a class="dropdown-item" href="account-signinup.html">Sign In / Up</a></li>
+		                    <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
+		                  </ul>
+		                </li>
+		                <li><a class="dropdown-item" href="account-overview.html">Overview</a></li>
+		                <li><a class="dropdown-item" href="account-settings.html">Settings</a></li>
+		                <li><a class="dropdown-item" href="account-billing.html">Billing</a></li>
+		                <li><a class="dropdown-item" href="account-orders.html">Orders</a></li>
+		                <li><a class="dropdown-item" href="account-earnings.html">Earnings</a></li>
+		                <li><a class="dropdown-item" href="account-chat.html">Chat (Messages)</a></li>
+		                <li><a class="dropdown-item" href="account-favorites.html">Favorites (Wishlist)</a></li>
+		              </ul>
+		            </li>
+		            
+		            <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Etc.</a></li>
+		            
 		          </ul>
-		          <div class="d-sm-none p-3 mt-n3">
-		          	<section class="py-5 text-center container">
-			<div class="row py-lg-5">
-				<div class="col-lg-6 col-md-8 mx-auto">
-					<h1 class="fw-light">Album example</h1>
-					<p class="lead text-body-secondary">Something short and leading
-						about the collection below—its contents, the creator, etc. Make it
-						short and sweet, but not too short so folks don’t simply skip over
-						it entirely.</p>
-					<p>
-						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a
-							href="#" class="btn btn-secondary my-2">Secondary action</a>
-					</p>
-				</div>
-			</div>
-		</section>
-		          </div>
 		        </nav>
 		      </div>
         </header>
@@ -344,20 +371,90 @@
 	<main>
 
 		<section class="py-5 text-center container">
-			<div class="row py-lg-5">
-				<div class="col-lg-6 col-md-8 mx-auto">
-					<h1 class="fw-light">Album example</h1>
+		
+			
+			<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="/resources/img/slide1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/resources/img/slide2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/resources/img/slide3.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/resources/img/slide4.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+			
+<section class="new-rewards_wrap" style="background-color: #1E3932; color: white;">
+    <div class="new-rewards_inner d-flex justify-content-center align-items-center">
+        <div class="new-rewards_logo" style="margin-right: 1em;">
+            <img src="https://image.istarbucks.co.kr/common/img/main/rewards-logo.png" alt="Starbucks Rewards" style="height: 10em; margin: 2em;">
+        </div>
+
+        <div class="new-rewards_conts" style="margin-top: 2em; margin-bottom: 2em;">
+            <div class="info-cont row">
+                <div class="info-cont_txt col-md-9">
+                    <h2>
+                        스타벅스만의 특별한 <strong>혜택</strong>
+                    </h2>
+                    <p>
+                        <strong>스타벅스 회원이세요?</strong> 로그인을 통해 나만의 리워드를 확인해보세요.
+                        <br>
+                        <strong>스타벅스 회원이 아니세요?</strong> 가입을 통해 리워드 혜택을 즐기세요.
+                    </p>
+                </div>
+                <div class="btn-signin_group col-md-3 flex-row align-items-center">
+                    <a href="/mem/join.do" class="btn btn-primary flex-grow-1">회원가입</a>
+<!--                     <br> -->
+<!--                     <a href="javascript:$.loginLib.showLayerLogin();" class="btn btn-primary flex-grow-1">로그인</a> -->
+                </div>
+            </div>
+            <hr>
+            <div class="gift-cont row">
+                <div class="gift-cont_txt col-md-9">
+                    <p>
+                        회원 가입 후, 스타벅스 e-Gift Card를 "나에게 선물하기"로 구매!
+                        <br>
+                        카드를 등록하여 스타벅스 리워드 회원이 되시면 쿠폰을 드립니다!
+                    </p>
+                </div>
+                <div class="btn_egift col-md-3">
+                    <a href="/msr/sceGift/gift_step1.do" class="btn btn-success btn-block">e-Gift Card</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+		<section class="py-10 text-center container">
+			<div class="row py-lg-4">
+				<div class="col-lg-8 col-md-12 mx-auto">
+					<h1 class="fw-bold">사업</h1>
 					<p class="lead text-body-secondary">Something short and leading
 						about the collection below—its contents, the creator, etc. Make it
-						short and sweet, but not too short so folks don’t simply skip over
-						it entirely.</p>
-					<p>
-						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a
-							href="#" class="btn btn-secondary my-2">Secondary action</a>
-					</p>
+						short and sweet,</p>
+<!-- 					<p> -->
+<!-- 						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a -->
+<!-- 							href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+<!-- 					</p> -->
 				</div>
 			</div>
 		</section>
+		
 
 		<div class="album py-5 bg-body-tertiary">
 			<div class="container">
@@ -371,7 +468,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">제조</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -394,7 +491,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">유통</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -417,7 +514,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">판매</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -441,7 +538,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">IT</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -464,7 +561,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">건설</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -487,7 +584,7 @@
 								preserveAspectRatio="xMidYMid slice" focusable="false">
 								<title>Placeholder</title><rect width="100%" height="100%"
 									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">금융</text></svg>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting
 									text below as a natural lead-in to additional content. This
@@ -502,79 +599,207 @@
 							</div>
 						</div>
 					</div>
+					
+					
 
-					<div class="col">
-						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-body-secondary">9 mins</small>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-body-secondary">9 mins</small>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card shadow-sm">
-							<svg class="bd-placeholder-img card-img-top" width="100%"
-								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
-								aria-label="Placeholder: Thumbnail"
-								preserveAspectRatio="xMidYMid slice" focusable="false">
-								<title>Placeholder</title><rect width="100%" height="100%"
-									fill="#55595c"></rect>
-								<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-body-secondary">9 mins</small>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
+		
+		
+		<section class="py-10 text-center container">
+			<div class="row py-lg-4">
+				<div class="col-lg-8 col-md-12 mx-auto">
+					<h1 class="fw-bold">문화</h1>
+					<p class="lead text-body-secondary">Something short and leading
+						about the collection below—its contents, the creator, etc. Make it
+						short and sweet,</p>
+<!-- 					<p> -->
+<!-- 						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a -->
+<!-- 							href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+<!-- 					</p> -->
+				</div>
+			</div>
+		</section>
+		
+
+		<div class="album py-5 bg-body-tertiary">
+			<div class="container">
+
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">제조</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">유통</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">판매</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+<section class="py-10 text-center container">
+			<div class="row py-lg-4">
+				<div class="col-lg-8 col-md-12 mx-auto">
+					<h1 class="fw-bold">직무</h1>
+					<p class="lead text-body-secondary">Something short and leading
+						about the collection below—its contents, the creator, etc. Make it
+						short and sweet,</p>
+<!-- 					<p> -->
+<!-- 						<a href="#" class="btn btn-primary my-2">Main call to action</a> <a -->
+<!-- 							href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+<!-- 					</p> -->
+				</div>
+			</div>
+		</section>
+		
+
+		<div class="album py-5 bg-body-tertiary">
+			<div class="container">
+
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">제조</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">유통</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%"
+								height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+								aria-label="Placeholder: Thumbnail"
+								preserveAspectRatio="xMidYMid slice" focusable="false">
+								<title>Placeholder</title><rect width="100%" height="100%"
+									fill="#55595c"></rect>
+								<text x="50%" y="50%" fill="#eceeef" dy=".3em">판매</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-body-secondary">9 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		
+
+
+		
 
 	</main>
 	<!-- Main End -->
