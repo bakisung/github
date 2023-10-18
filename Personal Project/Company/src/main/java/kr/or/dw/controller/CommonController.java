@@ -12,12 +12,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.dw.service.MemberService;
 
+/**
+ * Please explain the class!!
+ *
+ * @author : park hee sung
+ * @fileName : CommonController
+ * @since : 2023/10/16
+ */
 
-@Controller
+@RestController
 @RequestMapping("/common")
 public class CommonController {
 	
@@ -28,23 +36,40 @@ public class CommonController {
 	
 	// 메인 페이지로 이동
 	@RequestMapping("/main.do")
-	public String main () throws Exception {
+	public ModelAndView main (ModelAndView mnv) throws Exception {
 		
 		System.out.println("CommonController -> /common/main.do");
 		
 		String url = "/common/main";
-		return url;
+		mnv.setViewName(url);
+		
+		return mnv;
+		
+	}
+	
+	// 회원가입 페이지로 이동
+	@RequestMapping(value = "/signinPage")
+	public ModelAndView signin (ModelAndView mnv) throws Exception {
+		
+		System.out.println("CommonController -> /common/signinPage.do");
+		
+		String url = "/common/signinPage";
+		mnv.setViewName(url);
+		
+		return mnv;
 		
 	}
 
 	// 로그인 페이지로 이동
-	@RequestMapping("/loginPage.do")
-	public String login () throws Exception {
+	@RequestMapping(value = "/loginPage")
+	public ModelAndView login (ModelAndView mnv) throws Exception {
 		
 		System.out.println("CommonController -> /common/loginPage.do");
 		
 		String url = "/common/loginPage";
-		return url;
+		mnv.setViewName(url);
+		
+		return mnv;
 		
 	}
 	
