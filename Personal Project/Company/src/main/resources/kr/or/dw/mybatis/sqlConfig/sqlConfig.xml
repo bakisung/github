@@ -13,7 +13,6 @@
 		<typeAlias type="java.lang.String" alias="str"/>
 		<typeAlias type="java.lang.Integer" alias="int"/>
 		<typeAlias type="kr.or.dw.vo.MemberVO" alias="member"/>
-		<typeAlias type="kr.or.dw.vo.ProcessVO" alias="process"/>
 	</typeAliases>
 
 </configuration>

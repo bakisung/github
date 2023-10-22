@@ -31,14 +31,40 @@
 						</a>
 							<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 					
-						<div class="form-floating">
-							<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-							<label for="floatingInput">Email address</label>
+						<div class="form-floating" style="margin-bottom: 0.5em;">
+							<input type="email" class="form-control" id="id" name="id" placeholder="name@example.com">
+							<label for="floatingInput">아이디를 입력해주세요.</label>
 						</div>
+						
 						<div class="form-floating">
-							<input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-							<label for="floatingPassword">Password</label>
+							<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+							<label for="floatingPassword">비밀번호를 입력해주세요.</label>
 						</div>
+						
+<!-- 						<div class="form-floating"> -->
+<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
+<!-- 							<label for="floatingInput">이름을 입력해주세요.</label> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="form-floating"> -->
+<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
+<!-- 							<label for="floatingInput">주민등록번호를 입력해주세요.</label> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="form-floating"> -->
+<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
+<!-- 							<label for="floatingInput">연락처를 입력해주세요.</label> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="form-floating"> -->
+<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
+<!-- 							<label for="floatingInput">이메일을 입력해주세요.</label> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="form-floating"> -->
+<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
+<!-- 							<label for="floatingInput">주소를 입력해주세요.</label> -->
+<!-- 						</div> -->
 						
 						<div class="form-check text-start my-3">
 							<input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
@@ -47,7 +73,7 @@
 							</label>
 						</div>
 						
-						<button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+						<button class="btn btn-primary w-100 py-2" type="button" id="signBtn">Sign in</button>
 						<p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
 					
 					</form>
@@ -61,5 +87,39 @@
 		
 	</main>
 	<!-- Main End -->
+	
+<script>
+
+	$(document).ready(function () {
+			
+			$('#signBtn').on('click', function() {
+				alert('버튼 클릭 이벤트 발생');
+			
+				var data = {
+					id: $("#id").val(),
+					password: $("#password").val()
+				};
+				
+				$.ajax({
+					
+					type: 'post',
+					url: '<%=request.getContextPath()%>/common/member.do',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function () {
+						console.log("로그인 성공");
+					},
+					error: function () {
+						console.log("로그인 실패");
+					}
+					
+				});
+				
+			});
+	
+	});
+
+</script>
 
 <%@ include file="../include/footer.jsp" %>

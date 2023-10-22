@@ -1,5 +1,6 @@
 package kr.or.dw.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
@@ -73,6 +74,23 @@ public class CommonController {
 		
 	}
 	
+	// 로그인 버튼 클릭
+	@RequestMapping("/member")
+	public void login(HttpServletResponse res) throws IOException {
+		
+		System.out.println("CommonController -> /common/member.do");
+		
+		res.setContentType("text/html; charset=utf-8");
+		PrintWriter out = res.getWriter();
+		
+		out.println("<script>");
+		out.println("alert('로그인 성공')");
+		out.println("location.href='/';");
+		out.println("</script>");
+		out.close();
+		
+	}
+	
 //	// 로그인 처리 (시큐리티를 사용하지 않는 버전)
 //	@RequestMapping("/login.do")
 //	public String login(String id, String password, HttpSession session) throws SQLException {
@@ -86,39 +104,39 @@ public class CommonController {
 //		return url;
 //	}
 	
-	@RequestMapping("/security/accessDenied")
-	public String accessDenied(HttpServletResponse res) throws Exception{
-		String url = "/security/accessDenied.open";
-		
-		res.setStatus(302);
-		
-		return url;
-	}
-	
-	@RequestMapping("/common/LoginTimeOut")
-	public void loginTimeOut(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		
-		res.setContentType("text/html; charset=utf-8");
-		PrintWriter out = res.getWriter();
-		
-		out.println("<script>");
-		out.println("alert('세션이 만료되었습니다.\\n다시 로그인하세요.')");
-		out.println("location.href='/';");
-		out.println("</script>");
-		out.close();
-	}
-	
-	@RequestMapping("/common/LoginExpired")
-	public void loginExpired(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		
-		res.setContentType("text/html; charset=utf-8");
-		PrintWriter out = res.getWriter();
-		
-		out.println("<script>");
-		out.println("alert('중복 로그인이 확인되었습니다.\\n 다시 로그인하면 다른 장치의 로그인은 해제됩니다!')");
-		out.println("location.href='/';");
-		out.println("</script>");
-		out.close();
-	}
+//	@RequestMapping("/security/accessDenied")
+//	public String accessDenied(HttpServletResponse res) throws Exception{
+//		String url = "/security/accessDenied.open";
+//		
+//		res.setStatus(302);
+//		
+//		return url;
+//	}
+//	
+//	@RequestMapping("/common/LoginTimeOut")
+//	public void loginTimeOut(HttpServletRequest req, HttpServletResponse res) throws Exception {
+//		
+//		res.setContentType("text/html; charset=utf-8");
+//		PrintWriter out = res.getWriter();
+//		
+//		out.println("<script>");
+//		out.println("alert('세션이 만료되었습니다.\\n다시 로그인하세요.')");
+//		out.println("location.href='/';");
+//		out.println("</script>");
+//		out.close();
+//	}
+//	
+//	@RequestMapping("/common/LoginExpired")
+//	public void loginExpired(HttpServletRequest req, HttpServletResponse res) throws Exception {
+//		
+//		res.setContentType("text/html; charset=utf-8");
+//		PrintWriter out = res.getWriter();
+//		
+//		out.println("<script>");
+//		out.println("alert('중복 로그인이 확인되었습니다.\\n 다시 로그인하면 다른 장치의 로그인은 해제됩니다!')");
+//		out.println("location.href='/';");
+//		out.println("</script>");
+//		out.close();
+//	}
 	
 }
