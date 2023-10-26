@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '2.7.17'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// 스프링 부트에서 JSP 파일을 사용 가능하도록 해준다.
+	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
+	implementation 'javax.servlet:jstl'
+	
+	// view/*.jsp 내장 톱캣 서버 실행 후 파일이 웹사이트에서 열리지 않는 경우에 아래와 같이 추가한다.
+	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.60'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
