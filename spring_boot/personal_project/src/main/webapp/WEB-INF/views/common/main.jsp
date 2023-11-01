@@ -435,3 +435,7 @@
 	<!-- Main End -->
 
 <%@ include file="../include/footer.jsp" %>
+
+<script>
+	$(document).ready(function())
+</script>

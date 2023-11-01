@@ -41,31 +41,6 @@
 							<label for="floatingPassword">비밀번호를 입력해주세요.</label>
 						</div>
 						
-<!-- 						<div class="form-floating"> -->
-<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
-<!-- 							<label for="floatingInput">이름을 입력해주세요.</label> -->
-<!-- 						</div> -->
-						
-<!-- 						<div class="form-floating"> -->
-<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
-<!-- 							<label for="floatingInput">주민등록번호를 입력해주세요.</label> -->
-<!-- 						</div> -->
-						
-<!-- 						<div class="form-floating"> -->
-<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
-<!-- 							<label for="floatingInput">연락처를 입력해주세요.</label> -->
-<!-- 						</div> -->
-						
-<!-- 						<div class="form-floating"> -->
-<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
-<!-- 							<label for="floatingInput">이메일을 입력해주세요.</label> -->
-<!-- 						</div> -->
-						
-<!-- 						<div class="form-floating"> -->
-<!-- 							<input type="email" class="form-control" id="floatingInput" name="id" placeholder="name@example.com"> -->
-<!-- 							<label for="floatingInput">주소를 입력해주세요.</label> -->
-<!-- 						</div> -->
-						
 						<div class="form-check text-start my-3">
 							<input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
 							<label class="form-check-label" for="flexCheckDefault">

@@ -17,7 +17,26 @@ public class CommonController {
 		System.out.println("CommonController 진입 성공\n메인 페이지로 이동합니다.");
 	
 		String url = "/common/main";
+		return url;
+	
+	}
+	
+	@GetMapping(value = "/loginPage")
+	public String loginPage() {
 		
+		System.out.println("CommonController 진입 성공\n로그인 페이지로 이동합니다.");
+		
+		String url = "/common/loginPage";
+		return url;
+	
+	}
+	
+	@GetMapping(value = "/signUpPage")
+	public String signinPage() {
+		
+		System.out.println("CommonController 진입 성공\n회원가입 페이지로 이동합니다.");
+		
+		String url = "/common/signUpPage";
 		return url;
 	
 	}
