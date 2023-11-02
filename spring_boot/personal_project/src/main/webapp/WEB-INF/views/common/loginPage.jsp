@@ -32,7 +32,7 @@
 							<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 					
 						<div class="form-floating" style="margin-bottom: 0.5em;">
-							<input type="email" class="form-control" id="id" name="id" placeholder="name@example.com">
+							<input type="text" class="form-control" id="username" name="username" placeholder="name@example.com">
 							<label for="floatingInput">아이디를 입력해주세요.</label>
 						</div>
 						
@@ -71,7 +71,7 @@
 				alert('버튼 클릭 이벤트 발생');
 			
 				var data = {
-					id: $("#id").val(),
+					id: $("#username").val(),
 					password: $("#password").val()
 				};
 				
