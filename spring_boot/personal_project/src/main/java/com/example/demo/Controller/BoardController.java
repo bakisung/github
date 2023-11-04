@@ -21,10 +21,9 @@ public class BoardController {
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public ModelAndView openBoardList(ModelAndView mnv) throws SQLException {
 
-		System.out.println("BoardController 진입 성공\n"
-							+ "openBoardList 실행");
+		System.out.println("BoardController 진입 성공\n" + "openBoardList 실행");
 		
-		mnv = new ModelAndView("/board/boardList");
+		mnv = new ModelAndView("/board/main");
 		
 		List<BoardVO> list = boardService.selectBoardList();
 		mnv.addObject("list", list);

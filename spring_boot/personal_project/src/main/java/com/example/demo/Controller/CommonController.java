@@ -44,4 +44,15 @@ public class CommonController {
 	
 	}
 	
+	@GetMapping(value = "/common/board")
+	public String boardMainPage() {
+		
+		System.out.println("1. CommonController 진입\n" + "2. boardMainPage 진입\n" + "3. 게시판 메인 페이지로 이동합니다.");
+		
+		String url = "/board/main";
+		
+		return url;
+	
+	}
+	
 }

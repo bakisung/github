@@ -79,6 +79,17 @@
 			<div class="row py-lg-4">
 				<div class="col-lg-8 col-md-12 mx-auto">
 					<h1 class="fw-bold">사업</h1>
+					
+					
+					<!-- 임시 게시판 페이지 이동 버튼 -->
+					<div>
+						<button id="moveBoardBtn">
+							게시판으로 이동
+						</button>
+					
+					
+					
+					
 					<p class="lead text-body-secondary">Something short and leading
 						about the collection below—its contents, the creator, etc. Make it
 						short and sweet,</p>
@@ -437,5 +448,22 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
-	$(document).ready(function())
+
+	$(document).ready(function() {
+		$(document).ready(function() {
+			$('#moveBoardBtn').on('click', function() {
+				alert('게시판으로 이동합니다.');
+				location.href = '<%=request.getContextPath()%>/common/board';
+			});
+		});
+	});
+	
 </script>
+
+<!-- <script>
+	$(document).ready(function()){
+		$('#moveBoardBtn').on('click', function () {
+					
+		})
+	}
+</script> -->
