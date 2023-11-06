@@ -18,6 +18,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	// 게시판 메인 페이지로 이동
 	@RequestMapping(value="/board", method=RequestMethod.GET)
 	public ModelAndView openBoardList(ModelAndView mnv) throws SQLException {
 
@@ -31,5 +32,10 @@ public class BoardController {
 		return mnv;
 	
 	}
+	
+	// 게시글 등록 페이지로 이동
+//	@RequestMapping(value = "/board/registForm", )
+//	public ModelAndView 
+	
 	
 }

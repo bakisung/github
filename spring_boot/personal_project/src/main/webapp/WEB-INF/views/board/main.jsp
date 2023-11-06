@@ -5,32 +5,98 @@
 
 	<!-- Main Start -->
 	<main>
-		<section class="py-5 text-center container">
+		<section class="py-5 text-center container" style="margin-top: 3em;">
+		
+		<div class="card mb-3 mb-lg-5">
 		
 			<div class="card border-0 flex-fill w-100" data-list="{&quot;valueNames&quot;: [&quot;name&quot;, &quot;email&quot;, &quot;id&quot;, {&quot;name&quot;: &quot;date&quot;, &quot;attr&quot;: &quot;data-signed&quot;}, &quot;status&quot;], &quot;page&quot;: 8}" id="users">
-				<div class="card-header border-0 card-header-space-between">
-				    <!-- Title -->
-					<h2 class="card-header-title h4 text-uppercase">
-					    Users
-					</h2>
-					<!-- Dropdown -->
-					<div class="dropdown ms-4">
-						<a href="javascript: void(0);" class="dropdown-toggle no-arrow text-secondary" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="14" width="14"><g><circle cx="12" cy="3.25" r="3.25" style="fill: currentColor"></circle><circle cx="12" cy="12" r="3.25" style="fill: currentColor"></circle><circle cx="12" cy="20.75" r="3.25" style="fill: currentColor"></circle></g></svg>
-						</a>
-						<div class="dropdown-menu">
-						    <a href="javascript: void(0);" class="dropdown-item">
-						        Export report
-						    </a>
-						    <a href="javascript: void(0);" class="dropdown-item">
-						        Share
-						    </a>
-						    <a href="javascript: void(0);" class="dropdown-item">
-						        Action
-						    </a>
-						</div>
-					</div>
-				</div>
+
+<div class="card-header" style="background-color: white">
+          <div class="row justify-content-between align-items-center flex-grow-1">
+            <div class="col-md">
+              <div class="d-flex justify-content-between align-items-center">
+                <h4 class="card-header-title">게시판</h4>
+
+                <!-- Datatable Info -->
+                <div id="datatableCounterInfo" style="display: none;">
+                  <div class="d-flex align-items-center">
+                    <span class="fs-6 me-3">
+                      <span id="datatableCounter">0</span>
+                      Selected
+                    </span>
+                    <a class="btn btn-outline-danger btn-sm" href="javascript:;">
+                      <i class="tio-delete-outlined"></i> Delete
+                    </a>
+                  </div>
+                </div>
+                <!-- End Datatable Info -->
+              </div>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-auto">
+              <!-- Filter -->
+              <div class="row align-items-sm-center">
+                <div class="col-sm-auto">
+                  <div class="row align-items-center gx-0">
+                    <div class="col">
+                      <span class="text-secondary me-2">Keyword:</span>
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-auto">
+                      <!-- Select -->
+                      <div class="tom-select-custom tom-select-custom-end">
+                    
+                    
+                     <select class="form-control col-md-2 custom-select" name="searchType" id="searchType" style="font-size: 0.8em;">
+								<option value="ne" ${cri.searchType eq 'ne' ? 'selected' : '' }>코드번호 + 담당자</option>
+								<option value="n" ${cri.searchType eq 'n' ? 'selected' : '' }>코드번호</option>
+								<option value="e" ${cri.searchType eq 'e' ? 'selected' : '' }>담당자</option>
+							</select>
+							
+							
+                      </div>
+                      <!-- End Select -->
+                    </div>
+                    <!-- End Col -->
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <!-- End Row -->
+                </div>
+                <!-- End Col -->
+
+
+                <div class="col-md">
+                  <form>
+                    <!-- Search -->
+                    <div class="input-group input-group-merge input-group-flush">
+                      <div class="input-group-prepend input-group-text">
+                        <i class="bi-search"></i>
+                      </div>
+                      <input id="datatableSearch" type="search" class="form-control" placeholder="Search" aria-label="Search">
+                    </div>
+                    <!-- End Search -->
+                  </form>
+                </div>
+                
+                <div class="col-md">
+	                <button class="btn btn-success" id="registBtn">등록</button>
+	                <button class="btn btn-danger" id="deleteBtn">삭제</button>
+                </div>
+
+                <!-- End Col -->
+              </div>
+              <!-- End Filter -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
 
                             <!-- Table -->
                             <div class="table-responsive">
@@ -77,9 +143,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/9e7ac59225f733be5944b3e91271b33adb30cae7/56230/assets/images/profiles/profile-14.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Hakeem Chan</span>
                                             </td>
                                             <td class="email">lobortis.augue@natoquepenatibuset.ca</td>
@@ -93,9 +156,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/44bfbd93721837b9534e9dc6fc058dbaef92d03a/f9236/assets/images/profiles/profile-23.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Orli J. Goodman</span>
                                             </td>
                                             <td class="email">pede@at.com</td>
@@ -109,9 +169,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/236af360580cfc7622e3a7d309d709a5018937c5/e3ee4/assets/images/profiles/profile-16.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Halee P. Lane</span>
                                             </td>
                                             <td class="email">diam@nislNullaeu.net</td>
@@ -125,9 +182,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <span class="avatar-title text-bg-primary-soft">KS</span>
-                                                </div>
                                                 <span class="name fw-bold">Kimberly Salinas</span>
                                             </td>
                                             <td class="email">in.lobortis.tellus@faucibusorci.co.uk</td>
@@ -141,9 +195,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/963edcf9fc0c25098f00370b3b3d021e2ddac277/e69d6/assets/images/profiles/profile-17.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Galena Oliver</span>
                                             </td>
                                             <td class="email">eleifend.nec@ligulaconsectetuerrhoncus.ca</td>
@@ -157,9 +208,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/768c1ecfdff6a59ab55d514b80bd59e8dfa28996/35a64/assets/images/profiles/profile-19.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Kelly Doyle</span>
                                             </td>
                                             <td class="email">urna.et@volutpatNulladignissim.org</td>
@@ -173,9 +221,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <img src="https://d33wubrfki0l68.cloudfront.net/0b34af989cce5e54297f16547b3eff1ace44dad5/eb8ea/assets/images/profiles/profile-20.jpeg" alt="..." class="avatar-img" width="30" height="30">
-                                                </div>
                                                 <span class="name fw-bold">Keane Wyatt</span>
                                             </td>
                                             <td class="email">quam@Ut.org</td>
@@ -189,9 +234,6 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-circle avatar-xs me-2">
-                                                    <span class="avatar-title text-bg-success-soft">NA</span>
-                                                </div>
                                                 <span class="name fw-bold">Nasim Aguirre</span>
                                             </td>
                                             <td class="email">nisl@mollis.net</td>
@@ -209,10 +251,18 @@
                                     </div>
 
                                     <!-- Pagination -->
-                                    <ul class="pagination list-pagination mb-0" style="display: flex;"><li class="page-item active"><a class="page page-link" href="javascript: void(0);" data-i="1" data-page="8">1</a></li><li class="page-item"><a class="page page-link" href="javascript: void(0);" data-i="2" data-page="8">2</a></li><li class="page-item"><a class="page page-link" href="javascript: void(0);" data-i="3" data-page="8">3</a></li></ul>
+                                    <ul class="pagination list-pagination mb-0" style="display: flex;">
+                                    <li class="paginate_item page-item disabled"><a class="paginate_button previous page-link" aria-controls="datatable" data-dt-idx="0" tabindex="0" id="datatable_previous"><span aria-hidden="true">Prev</span></a></li>
+                                    <li class="page-item active"><a class="page page-link" href="javascript: void(0);" data-i="1" data-page="8">1</a></li><li class="page-item"><a class="page page-link" href="javascript: void(0);" data-i="2" data-page="8">2</a></li><li class="page-item"><a class="page page-link" href="javascript: void(0);" data-i="3" data-page="8">3</a></li>
+                               		<li class="paginate_item page-item"><a class="paginate_button next page-link" aria-controls="datatable" data-dt-idx="4" tabindex="0" id="datatable_next"><span aria-hidden="true">Next</span></a></li>
+                                	</ul>
                                 </div>
                             </div>
                             
+                        </div>
+                        
+                        
+                        
                         </div>
 		
 		</section>
@@ -222,13 +272,14 @@
 <%@ include file="../include/footer.jsp" %>
 
 <script>
+
 	$(document).ready(function()){
 		
+		// 게시글 등록 버튼 클릭
+		$('#registBtn').on('click', function () {
+			location.href = "<%=request.getContextPath()%>/board/registForm"
+		})	
+	
 	}
+	
 </script>
-
-
-
-
-
-
