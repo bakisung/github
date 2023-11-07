@@ -85,7 +85,7 @@
                 </div>
                 
                 <div class="col-md">
-	                <button class="btn btn-success" id="registBtn">등록</button>
+	                <button class="btn btn-success" id="registFormBtn">등록</button>
 	                <button class="btn btn-danger" id="deleteBtn">삭제</button>
                 </div>
 
@@ -273,13 +273,16 @@
 
 <script>
 
-	$(document).ready(function()){
+	$(document).ready(function() {
 		
 		// 게시글 등록 버튼 클릭
-		$('#registBtn').on('click', function () {
+		$('#registFormBtn').on('click', function () {
+			
+			alert('게시글 등록 버튼 클릭');
 			location.href = "<%=request.getContextPath()%>/board/registForm"
-		})	
+		
+		});	
 	
-	}
+	});
 	
 </script>
