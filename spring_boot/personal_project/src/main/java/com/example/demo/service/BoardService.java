@@ -8,5 +8,7 @@ import com.example.demo.vo.BoardVO;
 public interface BoardService {
 
 	List<BoardVO> selectBoardList() throws SQLException;
+	
+	void registBoard(BoardVO boardVO) throws SQLException;
 
 }

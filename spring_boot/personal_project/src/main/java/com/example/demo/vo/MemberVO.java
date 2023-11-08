@@ -10,7 +10,7 @@ import lombok.Data;
 public class MemberVO {
 
 	
-	private int u_no; // 계정번호
+	private int user_no; // 계정번호
 	private String id;	
 	private String pwd;
 	private String name;

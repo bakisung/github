@@ -43,4 +43,6 @@ public interface BoardDAO {
 
 	List<BoardVO> selectBoardList() throws SQLException;
 
+	void insertBoard(BoardVO boardVO) throws SQLException;
+
 }

@@ -2,9 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mappers.Board-Mapper">
 
+	<!-- select : resultType, insert : parameterType -->
+
 	<select id="selectBoardList" resultType="board">
 		SELECT 	*
 		FROM	board
 	</select>
+
+	<!-- 게시글 등록 -->
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO board(
+			board_no,
+			user_no,
+			title,
+			content,
+			writer,
+			regdate,
+			enabled,
+			files,
+			file_name,
+			update_date,
+			updater
+		) VALUES(
+			'board_no',
+			'user_no',
+			#{title},
+			#{content},
+			'writer',
+			#{regdate},
+			#{enabled},
+			'files',
+			'file_name',
+			'update_date',
+			'updater'
+		)
+	</insert>
 
 </mapper>

@@ -1,21 +1,21 @@
 package com.example.demo.Controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.service.BoardService;
+import com.example.demo.vo.BoardVO;
 
-@Controller
+@RestController
 @RequestMapping(value="/board")
 public class BoardController {
 	
@@ -53,19 +53,53 @@ public class BoardController {
 		
 	}
 	
-	// 게시글 등록
-	@PostMapping(value = "/regist")
-	public void regist(HttpServletResponse res, String board_no) throws IOException {
-		
-		res.setContentType("text/html; charset=utf-8");
-		PrintWriter out = res.getWriter();
-		
-		out.println("<script>");
-		out.println("alert('게시글이 등록 되었습니다.')");
-		out.println("window.opener.location.reload();");
-		out.println("window.close();");
-		out.println("</script>");
-		
-	}
+	// 게시글 등록 (RESTful API 방식)
+    @PostMapping(value = "/regist")
+    public ResponseEntity<String> regist(@RequestBody BoardVO boardVO) throws SQLException{
+        
+    	System.out.println("BoardController 진입 성공\n" + "regist 실행");
+
+    	System.out.println("boardVO : " + boardVO);
+    	System.out.println("title : " + boardVO.getTitle());
+    	System.out.println("content : " + boardVO.getContent());
+    	
+    	System.out.println("try & catch 진입 전");
+        
+    	// 여기서 실제로 게시글을 등록하는 서비스 호출
+        try {
+        	
+        	System.out.println("try 진입");
+        	System.out.println("registBoard 실행 전");
+            boardService.registBoard(boardVO);
+            System.out.println("registBoard 실행 후");
+            
+            return new ResponseEntity<>("게시글이 등록되었습니다.", HttpStatus.OK);
+            
+        } catch (Exception e) {
+        	
+        	System.out.println("catch 진입");
+        	
+            return new ResponseEntity<>("게시글 등록에 실패했습니다. 다시 시도해주세요.", HttpStatus.INTERNAL_SERVER_ERROR);
+            
+        }
+    }
+	
+//	// 게시글 등록
+//	@PostMapping(value = "/regist")
+//	public void regist(HttpServletResponse res, String board_no) throws IOException {
+//		
+//		System.out.println("BoardController 진입 성공\n" + "regist 실행");
+//		
+//		res.setContentType("text/html; charset=utf-8");
+//		PrintWriter out = res.getWriter();
+//		
+//		out.println("<script>");
+//		out.println("alert('게시글이 등록 되었습니다.')");
+//		out.println("window.location.href='/common/main';");
+////		out.println("window.opener.location.reload();");
+////		out.println("window.close();");
+//		out.println("</script>");
+//		
+//	}
 	
 }

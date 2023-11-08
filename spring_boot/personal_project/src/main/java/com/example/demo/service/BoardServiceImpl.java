@@ -19,10 +19,18 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVO> selectBoardList() throws SQLException {
 		
 		List<BoardVO> boardList = null;
-		
 		boardList = boardDAO.selectBoardList();
 		
 		return boardList;
+	
+	}
+
+	@Override
+	public void registBoard(BoardVO boardVO) throws SQLException {
+		
+		System.out.println("현재 위치 : BoardServiceImpl\n" + "boardDAO.insertBoard(boardVO) 실행합니다.");
+		boardDAO.insertBoard(boardVO);
+		System.out.println("현재 위치 : BoardServiceImpl\n" + "boardDAO.insertBoard(boardVO) 실행 완료되었습니다.");
 	
 	}
 

@@ -451,7 +451,6 @@
 
 	$(document).ready(function() {
 		$('#moveBoardBtn').on('click', function() {
-			alert('게시판으로 이동합니다.');
 			location.href = '<%=request.getContextPath()%>/board/main';
 		});
 	});

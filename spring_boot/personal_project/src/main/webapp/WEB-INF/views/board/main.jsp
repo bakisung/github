@@ -275,10 +275,9 @@
 
 	$(document).ready(function() {
 		
-		// 게시글 등록 버튼 클릭
+		// 게시글 등록 페이지 이동 버튼 클릭
 		$('#registFormBtn').on('click', function () {
 			
-			alert('게시글 등록 버튼 클릭');
 			location.href = "<%=request.getContextPath()%>/board/registForm"
 		
 		});	
