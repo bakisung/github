@@ -34,10 +34,14 @@ dependencies {
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
 	
 	// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
-	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.3.1'
+	// implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.3.1'
 	
 	// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
-	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.9.0.0'
+	// implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.9.0.0'
+	
+	// MyBatis 
+	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc11', version: '21.8.0.0'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
 	
 	// spring security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -47,8 +51,22 @@ dependencies {
 	// JWT
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	
+	// log4j
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+// 기본 내장되어 있는 logback과의 충돌 방지를 위해 spring-boot-starter-logging를 제외 시켜준다.
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    all {
+        //logback과의 충돌 방지
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
 }

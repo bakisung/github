@@ -36,6 +36,7 @@
     $(document).ready(function() {
         $('#regist').on('submit', function (e) {
             e.preventDefault(); // 기본 제출 동작을 방지합니다.
+            
             var title = $('#title').val();
             var content = $('#content').val();
 

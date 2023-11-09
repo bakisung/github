@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mybatis.mappers.Board-Mapper">
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.example.demo.dao.BoardDAO">
 
 	<!-- select : resultType, insert : parameterType -->
 
-	<select id="selectBoardList" resultType="board">
-		SELECT 	*
-		FROM	board
-	</select>
+<!-- 	<select id="selectBoardList" resultType="board"> -->
+<!-- 		SELECT 	* -->
+<!-- 		FROM	board -->
+<!-- 	</select> -->
 
 	<!-- 게시글 등록 -->
 	<insert id="insertBoard" parameterType="board">
@@ -16,25 +19,13 @@
 			user_no,
 			title,
 			content,
-			writer,
-			regdate,
-			enabled,
-			files,
-			file_name,
-			update_date,
-			updater
+			writer
 		) VALUES(
 			'board_no',
-			'user_no',
+			'0000000000000',
 			#{title},
 			#{content},
-			'writer',
-			#{regdate},
-			#{enabled},
-			'files',
-			'file_name',
-			'update_date',
-			'updater'
+			'writer'
 		)
 	</insert>
 

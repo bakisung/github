@@ -18,15 +18,6 @@
 		
 		<typeAlias type="com.example.demo.vo.MemberVO" alias="member"/>
 		<typeAlias type="com.example.demo.vo.BoardVO" alias="board"/>
-		<!-- 희성이꼬 --><!-- 즐, 똥, 엿--><!-- 맛있겠다 -->
-<!-- 		<typeAlias type="kr.or.dw.vo.BsheetVO" alias="bsheet"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.BuyDetailVO" alias="buyDetail"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.CalendarVO" alias="calendar"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.ProcessVO" alias="process"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.WhVO" alias="wh"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.FactoryVO" alias="factory"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.WorkOrderVO" alias="workOrder"/> -->
-<!-- 		<typeAlias type="kr.or.dw.vo.WhTransferVO" alias="whTransfer"/> -->
 	</typeAliases>
 
 </configuration>
