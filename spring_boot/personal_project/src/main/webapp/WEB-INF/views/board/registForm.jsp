@@ -47,12 +47,12 @@
                 url: '<%=request.getContextPath()%>/board/regist',
                 data: data,
                 contentType: 'application/json; charset=UTF-8',
-                dataType: 'json',
                 success: function (data) {
                     alert('게시글이 등록되었습니다.');
                     window.location.href = "<%=request.getContextPath()%>/board/main";
                 },
                 error: function (error) {
+                	console.log('에러 메세지 : ', error);
                     alert('게시글 등록에 실패했습니다. 다시 시도해주세요.');
                 }
             });

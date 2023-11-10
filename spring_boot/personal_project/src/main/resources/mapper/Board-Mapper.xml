@@ -7,21 +7,14 @@
 
 	<!-- select : resultType, insert : parameterType -->
 
-<!-- 	<select id="selectBoardList" resultType="board"> -->
-<!-- 		SELECT 	* -->
-<!-- 		FROM	board -->
-<!-- 	</select> -->
-
 	<!-- 게시글 등록 -->
 	<insert id="insertBoard" parameterType="com.example.demo.dao.BoardDAO">
 		INSERT INTO board(
-			board_no,
 			user_no,
 			title,
 			content,
 			writer
 		) VALUES(
-			'board_no',
 			'0000000000000',
 			#{title},
 			#{content},
