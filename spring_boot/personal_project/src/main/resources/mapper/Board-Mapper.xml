@@ -6,9 +6,15 @@
 <mapper namespace="com.example.demo.dao.BoardDAO">
 
 	<!-- select : resultType, insert : parameterType -->
+	
+	<select id="selectBoardList" resultType="com.example.demo.vo.BoardVO">
+		SELECT 	*
+		FROM	board
+		ORDER BY regdate DESC
+	</select>
 
 	<!-- 게시글 등록 -->
-	<insert id="insertBoard" parameterType="com.example.demo.dao.BoardDAO">
+	<insert id="insertBoard" parameterType="com.example.demo.vo.BoardVO">
 		INSERT INTO board(
 			user_no,
 			title,

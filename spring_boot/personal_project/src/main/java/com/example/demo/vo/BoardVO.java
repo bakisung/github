@@ -18,5 +18,7 @@ public class BoardVO {
 	private String file_name    ;
 	private Date update_date   	;
 	private String updater      ;
+	private int view_count		;
+	private int like_count		;
 	
 }

@@ -451,7 +451,7 @@
 
 	$(document).ready(function() {
 		$('#moveBoardBtn').on('click', function() {
-			location.href = '<%=request.getContextPath()%>/board/main';
+			location.href = '<%=request.getContextPath()%>/board';
 		});
 	});
 	
