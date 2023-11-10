@@ -63,10 +63,7 @@ public class BoardController {
     	System.out.println("title : " + boardVO.getTitle());
     	System.out.println("content : " + boardVO.getContent());
     	
-    	System.out.println("try & catch 진입 전");
-        
-    	// 여기서 실제로 게시글을 등록하는 서비스 호출
-//        try {
+        try {
         	
         	System.out.println("try 진입");
         	System.out.println("registBoard 실행 전");
@@ -75,13 +72,13 @@ public class BoardController {
             
             return new ResponseEntity<>("게시글이 등록되었습니다.", HttpStatus.OK);
             
-//        } catch (Exception e) {
-//        	
-//        	System.out.println("catch 진입");
-//        	
-//            return new ResponseEntity<>("게시글 등록에 실패했습니다. 다시 시도해주세요.", HttpStatus.INTERNAL_SERVER_ERROR);
-//            
-//        }
+        } catch (Exception e) {
+        	
+        	System.out.println("catch 진입");
+        	
+            return new ResponseEntity<>("게시글 등록에 실패했습니다. 다시 시도해주세요.", HttpStatus.INTERNAL_SERVER_ERROR);
+            
+        }
     }
 	
 }

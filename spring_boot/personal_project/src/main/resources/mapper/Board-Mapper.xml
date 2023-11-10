@@ -13,7 +13,7 @@
 <!-- 	</select> -->
 
 	<!-- 게시글 등록 -->
-	<insert id="insertBoard" parameterType="board">
+	<insert id="insertBoard" parameterType="com.example.demo.dao.BoardDAO">
 		INSERT INTO board(
 			board_no,
 			user_no,
