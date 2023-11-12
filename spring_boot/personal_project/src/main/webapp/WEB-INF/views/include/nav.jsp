@@ -15,13 +15,18 @@
 	
 	<title>홈페이지</title>
 	
-	<!-- 제이쿼리 cdn -->
+	<!-- 제이쿼리 -->
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<!-- 에이젝스 cdn -->
+	<!-- 에이젝스 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- 부트스트랩 cdn -->
+	<!-- 부트스트랩 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		
+	<!-- 섬머노트 (스프링부트에서는 기본적인 경로를 "/src/main/resources/static" 으로 잡아준다.)-->
+	<script src="/summernote/summernote-0.8.18-dist/summernote-lite.js"></script>
+	<script src="/summernote/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+	<link rel="stylesheet" href="/summernote/summernote-0.8.18-dist/summernote-lite.css">
 	
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">

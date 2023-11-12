@@ -51,22 +51,8 @@ dependencies {
 	// JWT
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	
-	// log4j
-	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
-	
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-// 기본 내장되어 있는 logback과의 충돌 방지를 위해 spring-boot-starter-logging를 제외 시켜준다.
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-    all {
-        //logback과의 충돌 방지
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-    }
 }
