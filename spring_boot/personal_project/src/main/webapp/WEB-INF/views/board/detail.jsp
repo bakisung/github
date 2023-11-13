@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ include file="../include/nav.jsp" %>
 
 <!-- Main Start -->
 <main>
-	<h1>게시글 디테일 페이지 입니다.</h1>
     <section class="py-5 text-center container" style="margin-top: 3em;">
         <div class="row">
             <div class="col-md-12" style="max-width: 80%">
@@ -12,6 +14,19 @@
                     <div class="card card-outline card-info">
                     
                         <div class="card-header">
+							<h1>게시글 디테일 페이지 입니다.</h1>
+							<table>
+					        	<tr>
+					        		<input type="hidden" value="${board.board_no }">
+					                <td>
+					                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox" value=""></div>
+					                </td>
+					                <td>${board.board_no}</td>
+					                <td>${board.title}</td>
+					                <td>${board.writer }</td>
+					                <td>${board.regdate }</td>
+					            </tr>
+							</table>
                             <input class="card-title" id="title" name="title" style="display: inline; float: left; margin: 0.2em;">
                             <div class="col-md" style="float: right;">
                                 <button type="submit" class="btn btn-success" id="registFormBtn">등록</button>

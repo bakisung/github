@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -84,20 +85,20 @@ public class BoardController {
         }
     }
     
-    // 게시글 디테일 페이지로 이동
- 	@GetMapping(value = "/{board_no}")
- 	public ModelAndView selectBoardDetail(ModelAndView mnv, String url, @PathVariable("board_no") String board_no) throws SQLException {
- 		
- 		System.out.println("BoardController 진입 성공\n" + "selectBoardDetail 실행");
- 		System.out.println("board_no : " + board_no);
- 		BoardVO board = boardService.selectBoardDetail(board_no);
- 		
- 		url = "/board/detail";
- 		mnv.setViewName(url);
- 		mnv.addObject("board", board);
- 		
- 		return mnv;
- 		
- 	}
+    // 게시글 상세페이지
+    @GetMapping(value = "/{board_no}")
+    public ModelAndView selectBoardDetail(ModelAndView mnv, @PathVariable String board_no) throws SQLException {
+    	
+    	System.out.println("BoardController 진입 \n" + "selectBoardDetail 실행");
+    	System.out.println("board_no : " + board_no);
+    	
+    	BoardVO board = boardService.selectBoardDetail(board_no);
+    	String url = "/board/detail";
+    	
+    	mnv.setViewName(url);
+    	mnv.addObject("board", board);
+    	
+    	return mnv;
+    }
     
 }
