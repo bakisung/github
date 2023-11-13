@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +45,6 @@ public class BoardController {
 		System.out.println("BoardController 진입 성공\n" + "registForm 실행");
 
 		url = "/board/registForm";
-		
 		mnv.setViewName(url);
 		
 		return mnv;
@@ -83,5 +83,21 @@ public class BoardController {
             
         }
     }
-	
+    
+    // 게시글 디테일 페이지로 이동
+ 	@GetMapping(value = "/{board_no}")
+ 	public ModelAndView selectBoardDetail(ModelAndView mnv, String url, @PathVariable("board_no") String board_no) throws SQLException {
+ 		
+ 		System.out.println("BoardController 진입 성공\n" + "selectBoardDetail 실행");
+ 		System.out.println("board_no : " + board_no);
+ 		BoardVO board = boardService.selectBoardDetail(board_no);
+ 		
+ 		url = "/board/detail";
+ 		mnv.setViewName(url);
+ 		mnv.addObject("board", board);
+ 		
+ 		return mnv;
+ 		
+ 	}
+    
 }

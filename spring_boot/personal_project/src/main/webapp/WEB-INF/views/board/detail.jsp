@@ -4,7 +4,7 @@
 
 <!-- Main Start -->
 <main>
-
+	<h1>게시글 디테일 페이지 입니다.</h1>
     <section class="py-5 text-center container" style="margin-top: 3em;">
         <div class="row">
             <div class="col-md-12" style="max-width: 80%">
@@ -27,7 +27,7 @@
 								<button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
 							</div>
 							<div class="card-footer fileInput">
-							
+								<h1>파일 위치입니다.</h1>
 							</div>
 						</div>
 						

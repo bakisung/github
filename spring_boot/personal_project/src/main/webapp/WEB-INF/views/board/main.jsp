@@ -138,11 +138,12 @@
 						        	
 						        <c:forEach items="${boardList }" var="boardList">
 						        	<tr>
+						        		<input type="hidden" value="${boardList.board_no }">
 						                <td>
 						                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox" value=""></div>
 						                </td>
-						                <td>${boardList.board_no }</td>
-						                <td>${boardList.title }</td>
+						                <td>${boardList.board_no}</td>
+						                <td id="moveBoardDetailPageBtn">${boardList.title}</td>
 						                <td>${boardList.writer }</td>
 						                <td>${boardList.regdate }</td>
 						                <td>${boardList.view_count }</td>
@@ -182,11 +183,31 @@
 		
 		// 게시글 등록 페이지 이동 버튼 클릭
 		$('#registFormBtn').on('click', function () {
-			
 			location.href = "<%=request.getContextPath()%>/board/registForm"
+		});
 		
-		});	
-	
+		// 게시글 상세 페이지 이동
+	    $('#moveBoardDetailPageBtn').on('click', function (e) {
+	        e.preventDefault();
+
+	        var board_no = $(this).data('board_no');
+	       
+	        console.log('board_no : ' + board_no);
+
+	        $.ajax({
+	            type: 'GET',
+	            url: '<%=request.getContextPath()%>/board/' + board_no,
+	            success: function (data) {
+	                console.log('게시글 정보 : ', data);
+	                // 여기에서 필요한 동작 수행
+	            },
+	            error: function (error) {
+	                console.log('에러 메세지 : ', error);
+	                alert('게시글 정보를 가져오는데 실패했습니다.');
+	            }
+	        });
+	    });
+		
 	});
 	
 </script>

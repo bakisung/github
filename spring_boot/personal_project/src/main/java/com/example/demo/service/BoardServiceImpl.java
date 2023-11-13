@@ -34,4 +34,14 @@ public class BoardServiceImpl implements BoardService{
 	
 	}
 
+	@Override
+	public BoardVO selectBoardDetail(String board_no) throws SQLException {
+		System.out.println("서비스 진입");
+		System.out.println("BoardVO.getBoard_no : " + board_no);
+		
+		BoardVO board = boardDAO.selectBoardDetail(board_no);
+		
+		return board;
+	}
+
 }

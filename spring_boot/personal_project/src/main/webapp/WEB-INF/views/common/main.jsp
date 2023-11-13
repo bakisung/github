@@ -456,11 +456,3 @@
 	});
 	
 </script>
-
-<!-- <script>
-	$(document).ready(function()){
-		$('#moveBoardBtn').on('click', function () {
-					
-		})
-	}
-</script> -->

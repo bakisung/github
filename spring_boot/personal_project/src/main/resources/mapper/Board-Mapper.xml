@@ -27,5 +27,11 @@
 			'writer'
 		)
 	</insert>
+	
+	<select id="selectBoardDetail" resultType="com.example.demo.vo.BoardVO">
+		SELECT 	*
+		FROM	board
+		WHERE	board_no = #{board_no}
+	</select>
 
 </mapper>
