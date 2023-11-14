@@ -22,7 +22,7 @@
                         <textarea class="summernote" id="content" name="content"></textarea>
                         
                         <div class="form-group">
-							<div class="card-header">
+							<div class="card-footer">
 								<h5 style="display:inline; line-height:40px;">첨부파일 : </h5>
 								<button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
 							</div>

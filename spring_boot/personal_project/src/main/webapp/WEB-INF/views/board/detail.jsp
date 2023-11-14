@@ -13,37 +13,33 @@
                 <form id="regist">
                     <div class="card card-outline card-info">
                     
-                        <div class="card-header">
-							<h1>게시글 디테일 페이지 입니다.</h1>
-							<table>
-					        	<tr>
-					        		<input type="hidden" value="${board.board_no }">
-					                <td>
-					                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox" value=""></div>
-					                </td>
-					                <td>${board.board_no}</td>
-					                <td>${board.title}</td>
-					                <td>${board.writer }</td>
-					                <td>${board.regdate }</td>
-					            </tr>
-							</table>
-                            <input class="card-title" id="title" name="title" style="display: inline; float: left; margin: 0.2em;">
-                            <div class="col-md" style="float: right;">
-                                <button type="submit" class="btn btn-success" id="registFormBtn">등록</button>
-                                <button type="button" class="btn btn-danger" id="deleteBtn">취소</button>
-                            </div>
+                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+						    <h4 style="margin: 0;">${board.title}</h4>
+						    <div class="col-md" style="text-align: right;">
+						        <button type="submit" class="btn btn-success" id="registFormBtn">수정</button>
+						        <button type="button" class="btn btn-danger" id="deleteBtn">돌아가기</button>
+						    </div>
+						</div>
+						
+						<div class="note-toolbar" role="toolbar" style="background-color: white;">
+						    <div class="note-btn-group note-fontname" style="display: flex; justify-content: space-around;">
+						        <div>작성자: ${board.writer}</div>
+						        <div>작성일: ${board.regdate}</div>
+						        <div>좋아요: ${board.like_count}</div>
+						        <div>조회수: ${board.view_count}</div>
+						    </div>
+						</div>
+                        
+                        <div class="card-body" style="min-height: 400px;">
+                        	${board.content }
                         </div>
                         
-                        <textarea class="summernote" id="content" name="content"></textarea>
-                        
-                        <div class="form-group">
-							<div class="card-header">
-								<h5 style="display:inline; line-height:40px;">첨부파일 : </h5>
-								<button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
-							</div>
-							<div class="card-footer fileInput">
-								<h1>파일 위치입니다.</h1>
-							</div>
+						<div class="card-footer">
+							<h5 style="display:inline;">첨부파일 : </h5>
+							<button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
+						</div>
+						<div class="card-footer fileInput">
+							<p>파일 위치입니다.</p>
 						</div>
 						
                         <div class="card-footer">
