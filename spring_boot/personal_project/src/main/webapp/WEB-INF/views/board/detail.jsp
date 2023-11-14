@@ -10,14 +10,15 @@
     <section class="py-5 text-center container" style="margin-top: 3em;">
         <div class="row">
             <div class="col-md-12" style="max-width: 80%">
-                <form id="regist">
+                <form id="modifyForm">
                     <div class="card card-outline card-info">
-                    
+                    	
+                    	<input type="hidden" name="board_no" value="${board.board_no }">
                         <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
 						    <h4 style="margin: 0;">${board.title}</h4>
 						    <div class="col-md" style="text-align: right;">
-						        <button type="submit" class="btn btn-success" id="registFormBtn">수정</button>
-						        <button type="button" class="btn btn-danger" id="deleteBtn">돌아가기</button>
+						        <button type="submit" class="btn btn-success" id="modifyFormBtn">수정</button>
+						        <button type="button" class="btn btn-danger" id="returnBtn">돌아가기</button>
 						    </div>
 						</div>
 						
@@ -29,7 +30,7 @@
 						        <div>조회수: ${board.view_count}</div>
 						    </div>
 						</div>
-                        
+
                         <div class="card-body" style="min-height: 400px;">
                         	${board.content }
                         </div>
@@ -84,38 +85,22 @@
                 }
             });
         });
+    	
+    	// 게시글 목록으로 돌아가기
+    	$('#returnBtn').on('click', function () {
+    		history.go(-1);
+		})
+		
+		//게시글 수정 페이지로 이동
+		$('#modifyFormBtn').on('click', function () {
+			let form_object = $('form[id=modifyForm]');
+			var board_no = $('input[name="board_no"]').val();
+			
+			form_object.attr({
+				'action' : '/board/' + board_no + '/edit',
+				'method' : 'get'
+			});
+		});
    		
-    	// 서머노트
-	    $('.summernote').summernote({
-	        // 에디터 높이
-	        height: 150,
-	        // 에디터 한글 설정
-	        lang: "ko-KR",
-	        // 에디터에 커서 이동 (input창의 autofocus라고 생각)
-	        focus : true,
-	        toolbar: [
-	            // 글꼴 설정
-	            ['fontname', ['fontname']],
-	            // 글자 크기 설정
-	            ['fontsize', ['fontsize']],
-	            // 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
-	            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-	            // 글자색
-	            ['color', ['forecolor','color']],
-	            // 표만들기
-	            ['table', ['table']],
-	            // 글머리 기호, 번호매기기, 문단정렬
-	            ['para', ['ul', 'ol', 'paragraph']],
-	            // 줄간격
-	            ['height', ['height']],
-	            // 코드보기, 확대해서보기, 도움말
-	            ['view', ['codeview','fullscreen', 'help']]
-	        ],
-	        // 추가한 글꼴
-	        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
-	        // 추가한 폰트사이즈
-	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
-	    });
-    
     });
 </script>

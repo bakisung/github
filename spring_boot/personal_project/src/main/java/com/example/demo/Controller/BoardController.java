@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -85,7 +86,7 @@ public class BoardController {
         }
     }
     
-    // 게시글 상세페이지
+    // 게시글 상세페이지로 이동
     @GetMapping(value = "/{board_no}")
     public ModelAndView selectBoardDetail(ModelAndView mnv, @PathVariable String board_no) throws SQLException {
     	
@@ -94,6 +95,22 @@ public class BoardController {
     	
     	BoardVO board = boardService.selectBoardDetail(board_no);
     	String url = "/board/detail";
+    	
+    	mnv.setViewName(url);
+    	mnv.addObject("board", board);
+    	
+    	return mnv;
+    }
+    
+    // 게시글 수정 페이지로 이동
+    @GetMapping(value = "/{board_no}/edit")
+    public ModelAndView modifyFormBoard(ModelAndView mnv, @PathVariable String board_no) throws SQLException {
+    	
+    	System.out.println("BoardController 진입\n" + "modifyBoard 실행");
+    	System.out.println("board_no : " + board_no);
+    	
+    	BoardVO board = boardService.selectBoardDetail(board_no);
+    	String url = "/board/modifyForm";
     	
     	mnv.setViewName(url);
     	mnv.addObject("board", board);

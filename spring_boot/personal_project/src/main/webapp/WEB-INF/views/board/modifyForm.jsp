@@ -10,16 +10,17 @@
             <div class="col-md-12" style="max-width: 80%">
                 <form id="regist">
                     <div class="card card-outline card-info">
-                    
                         <div class="card-header">
-                            <input class="card-title" id="title" name="title" style="display: inline; float: left; margin: 0.2em;">
+                            <input class="card-title" id="title" name="title" style="display: inline; float: left; margin: 0.2em;" value="${board.title }">
                             <div class="col-md" style="float: right;">
-                                <button type="submit" class="btn btn-success" id="registBtn">등록</button>
+                                <button type="submit" class="btn btn-success" id="registFormBtn">등록</button>
                                 <button type="button" class="btn btn-danger" id="canselBtn">취소</button>
                             </div>
                         </div>
                         
-                        <textarea class="summernote" id="content" name="content"></textarea>
+                        <textarea class="summernote" id="content" name="content">
+                        	${board.content }
+                        </textarea>
                         
                         <div class="form-group">
 							<div class="card-footer">
@@ -105,11 +106,11 @@
 	        // 추가한 폰트사이즈
 	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
 	    });
-    
-	 	// 등록을 취소한다.
+    	
+	 	// 수정을 취소한다.
     	$('#canselBtn').on('click', function () {
     		history.go(-1);
 		})
-    	
+    
     });
 </script>

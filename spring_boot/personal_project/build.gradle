@@ -51,6 +51,9 @@ dependencies {
 	// JWT
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	
+	// 프론트 변경사항이 있는 경우 서버 재실행	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
 }
 
 tasks.named('test') {
