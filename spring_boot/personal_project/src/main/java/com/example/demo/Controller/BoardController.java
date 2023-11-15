@@ -1,8 +1,15 @@
 package com.example.demo.Controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +20,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.service.BoardService;
 import com.example.demo.vo.BoardVO;
+import com.google.gson.JsonObject;
 
 @RestController
 @RequestMapping(value="/board")
@@ -116,6 +126,19 @@ public class BoardController {
     	mnv.addObject("board", board);
     	
     	return mnv;
+    }
+    
+    // 서머노트 이미지 첨부
+    @PostMapping(value = "/image", produces = "application/json; charset=utf8")
+    @ResponseBody
+    public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest req) throws IOException {
+
+    	System.out.println("BoardController 진입\n" + "uploadSummernoteImageFile 실행");
+    	System.out.println("multipartFile : " + multipartFile);
+    	
+    	JsonObject json = new JsonObject();
+    	
+    	return null;
     }
     
 }

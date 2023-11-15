@@ -76,6 +76,7 @@
    		
     	// 서머노트
 	    $('.summernote').summernote({
+	    	
 	        // 에디터 높이
 	        height: 150,
 	        // 에디터 한글 설정
@@ -97,14 +98,61 @@
 	            ['para', ['ul', 'ol', 'paragraph']],
 	            // 줄간격
 	            ['height', ['height']],
+	            // 첨부파일
+	            ['insert',['picture','link','video']],
 	            // 코드보기, 확대해서보기, 도움말
 	            ['view', ['codeview','fullscreen', 'help']]
 	        ],
 	        // 추가한 글꼴
 	        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
 	        // 추가한 폰트사이즈
-	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
-	    });
+	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
+	        
+	        // 이미지 첨부	(참고: https://truecode-95.tistory.com/208)
+	        callbacks: {
+	        	
+	        	onImageUpload : function (files) {
+					uploadSummernoteImageFile(files[0],this);
+				},
+				onPaste: function (e) {
+					var clipboardData = e.originalEvent.clipboardData;
+					
+					if (clipboardData && clipboardData.items && clipboardData.items.length) {
+						var item = clipboardData.items[0];
+						if (item.kind === 'file' && item.type.indexOf('image/') !== -1) {
+							e.preventDefault();
+						}
+					}
+				}
+				
+	        }
+		
+	    }); // 서머노트 종료
+    	
+	    function uploadSummernoteImageFile(file, el) {
+        	var data = new FormData();	
+	        data.append("file",file);
+			
+	        $.ajax({
+				url: '/board/image',
+				type: "POST",
+				enctype: 'multipart/form-data',
+				data: data,
+				cache: false,
+				contentType : false,
+				processData : false,
+				success : function(data) {
+				          var json = JSON.parse(data);
+				          $(el).summernote('editor.insertImage',json["url"]);
+				              jsonArray.push(json["url"]);
+				              jsonFn(jsonArray);
+				},
+				error : function(e) {
+			    	console.log(e);
+				}
+			});
+		};
+    	
     
 	 	// 등록을 취소한다.
     	$('#canselBtn').on('click', function () {
@@ -112,4 +160,5 @@
 		})
     	
     });
+    
 </script>
