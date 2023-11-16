@@ -1,40 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ include file="../include/nav.jsp" %>
 
 <!-- Main Start -->
 <main>
-
     <section class="py-5 text-center container" style="margin-top: 3em;">
         <div class="row">
             <div class="col-md-12" style="max-width: 80%">
                 <form id="regist">
                     <div class="card card-outline card-info">
-                    
                         <div class="card-header">
                             <input class="card-title" id="title" name="title" style="display: inline; float: left; margin: 0.2em;">
                             <div class="col-md" style="float: right;">
                                 <button type="submit" class="btn btn-success" id="registBtn">등록</button>
-                                <button type="button" class="btn btn-danger" id="canselBtn">취소</button>
+                                <button type="button" class="btn btn-danger" id="cancelBtn">취소</button>
                             </div>
                         </div>
-                        
+
                         <textarea class="summernote" id="content" name="content"></textarea>
-                        
+
                         <div class="form-group">
-							<div class="card-footer">
-								<h5 style="display:inline; line-height:40px;">첨부파일 : </h5>
-								<button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
-							</div>
-							<div class="card-footer fileInput">
-							
-							</div>
-						</div>
-						
+                            <div class="card-footer">
+                                <h5 style="display:inline; line-height:40px;">첨부파일 : </h5>
+                                <button class="btn btn-xs btn-primary" type="button" id="addFileBtn">ADD FILE</button>
+                            </div>
+                            <div class="card-footer fileInput">
+                                <!-- 파일 업로드 부분 -->
+                            </div>
+                        </div>
+
                         <div class="card-footer">
                             Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
                         </div>
-                        
                     </div>
                 </form>
             </div>
@@ -47,8 +43,7 @@
 
 <script>
     $(document).ready(function() {
-    	
-    	// 게시글 등록
+        // 게시글 등록
         $('#regist').on('submit', function (e) {
             e.preventDefault(); // 기본 제출 동작을 방지합니다.
 
@@ -73,92 +68,68 @@
                 }
             });
         });
-   		
-    	// 서머노트
-	    $('.summernote').summernote({
-	    	
-	        // 에디터 높이
-	        height: 150,
-	        // 에디터 한글 설정
-	        lang: "ko-KR",
-	        // 에디터에 커서 이동 (input창의 autofocus라고 생각)
-	        focus : true,
-	        toolbar: [
-	            // 글꼴 설정
-	            ['fontname', ['fontname']],
-	            // 글자 크기 설정
-	            ['fontsize', ['fontsize']],
-	            // 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
-	            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
-	            // 글자색
-	            ['color', ['forecolor','color']],
-	            // 표만들기
-	            ['table', ['table']],
-	            // 글머리 기호, 번호매기기, 문단정렬
-	            ['para', ['ul', 'ol', 'paragraph']],
-	            // 줄간격
-	            ['height', ['height']],
-	            // 첨부파일
-	            ['insert',['picture','link','video']],
-	            // 코드보기, 확대해서보기, 도움말
-	            ['view', ['codeview','fullscreen', 'help']]
-	        ],
-	        // 추가한 글꼴
-	        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
-	        // 추가한 폰트사이즈
-	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72'],
-	        
-	        // 이미지 첨부	(참고: https://truecode-95.tistory.com/208)
-	        callbacks: {
-	        	
-	        	onImageUpload : function (files) {
-					uploadSummernoteImageFile(files[0],this);
-				},
-				onPaste: function (e) {
-					var clipboardData = e.originalEvent.clipboardData;
-					
-					if (clipboardData && clipboardData.items && clipboardData.items.length) {
-						var item = clipboardData.items[0];
-						if (item.kind === 'file' && item.type.indexOf('image/') !== -1) {
-							e.preventDefault();
-						}
-					}
-				}
-				
-	        }
-		
-	    }); // 서머노트 종료
-    	
-	    function uploadSummernoteImageFile(file, el) {
-        	var data = new FormData();	
-	        data.append("file",file);
-			
-	        $.ajax({
-				url: '/board/image',
-				type: "POST",
-				enctype: 'multipart/form-data',
-				data: data,
-				cache: false,
-				contentType : false,
-				processData : false,
-				success : function(data) {
-				          var json = JSON.parse(data);
-				          $(el).summernote('editor.insertImage',json["url"]);
-				              jsonArray.push(json["url"]);
-				              jsonFn(jsonArray);
-				},
-				error : function(e) {
-			    	console.log(e);
-				}
-			});
-		};
-    	
-    
-	 	// 등록을 취소한다.
-    	$('#canselBtn').on('click', function () {
-    		history.go(-1);
-		})
-    	
+
+        // 서머노트
+        $('.summernote').summernote({
+            height: 400,
+            lang: "ko-KR",
+            focus: true,
+            toolbar: [
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                ['color', ['forecolor', 'color']],
+                ['table', ['table']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['picture', 'link', 'video']],
+                ['view', ['codeview', 'fullscreen', 'help']]
+            ],
+            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋음체', '바탕체'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+            callbacks: {
+                onImageUpload: function(files) {
+                    for (var i = 0; i < files.length; i++) {
+                        uploadSummernoteImageFile(files[i], this);
+                    }
+                }
+            }
+        });
+
+        // 등록을 취소한다.
+        $('#cancelBtn').on('click', function () {
+            history.go(-1);
+        })
+
+        // 파일 추가 버튼
+        $('#addFileBtn').on('click', function() {
+            if ($('input[name="uploadFile"]').length >= 5) {
+                alert("파일 추가는 5개까지만 가능합니다");
+                return;
+            }
+
+            var input = $('<input>').attr({
+                "type": "file",
+                "name": "uploadFile"
+            }).css("display", "inline");
+
+            var div = $('<div>').addClass("inputRow");
+            div.append(input).append("<button style='border:0; outline:0;' class='badge bg-red' type='button' class='cancelBtn'>X</button>")
+            div.appendTo('.fileInput');
+        });
+
+        // 파일 삭제 버튼
+        $('div.fileInput').on('click', '.cancelBtn', function(){
+            $(this).parent('div.inputRow').remove();
+        });
+
+        $('.fileInput').on('change', 'input[type="file"]', function() {
+            if (this.files[0].size > 1024*1024*40) {
+                alert("파일 용량이 40MB를 초과하였습니다.");
+                this.value = "";
+                $(this.focus());
+                return;
+            }
+        });
     });
-    
 </script>
