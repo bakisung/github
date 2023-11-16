@@ -138,7 +138,30 @@ public class BoardController {
     	
     	JsonObject json = new JsonObject();
     	
-    	return null;
+//    	String fileRoot = EgovProperties.getProperty("Globals.tempDir");
+//    	String originalFileName = multipartFile.getOriginalFilename();	// 오리지널 파일명
+//    	String extension = originalFileName.substring(originalFileName.lastIndexOf(".")); 	// 파일 확장자
+//    	
+//    	String savedFileName = UUID.randomUUID() + extension;	// 저장될 파일명
+//    	File targetFile = new File(fileRoot + savedFileName);
+//    	
+//    	try {
+//    		// 파일 저장
+//    		InputStream fileStream = multipartFile.getInputStream();
+//    		FileUtils.copyInputStreamToFile(fileStream, targetFile);
+//    		
+//    		// 파일을 열기 위해여 common/getImg.do 호출 / 파라미터로 savedFileName 보냄
+//    		json.addProperty("url", "common/getImg.do?savedFileName=" + savedFileName);
+//    		json.addProperty("responseCode", "success");
+//		} catch (IOException e) {
+//			FileUtils.deleteQuietly(targetFile);
+//			json.addProperty("responseCode", "error");
+//			e.printStackTrace();
+//		}
+    	
+    	String jsonvalue = json.toString();
+    	
+    	return jsonvalue;
     }
     
 }
