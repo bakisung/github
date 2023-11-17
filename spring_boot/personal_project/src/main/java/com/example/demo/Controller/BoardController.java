@@ -22,6 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.service.BoardService;
 import com.example.demo.vo.BoardVO;
+import com.google.gson.JsonObject;
+
+import oracle.jdbc.driver.json.tree.JsonpObjectImpl;
 
 @RestController
 @RequestMapping(value="/board")
@@ -124,42 +127,62 @@ public class BoardController {
     
     // 게시글 수정
     
-    // 서머노트 이미지 첨부
-    @PostMapping(value = "/image", produces = "application/json; charset=utf8")
+//    // 서머노트 이미지 첨부
+//    @PostMapping(value = "/image", produces = "application/json; charset=utf8")
+//    @ResponseBody
+//    public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest req) throws IOException {
+//
+//    	System.out.println("BoardController 진입\n" + "uploadSummernoteImageFile 실행");
+//    	System.out.println("multipartFile : " + multipartFile);
+//    	
+////    	JsonObject json = new JsonObject();
+//    	
+////    	String fileRoot = EgovProperties.getProperty("Globals.tempDir");
+////    	String originalFileName = multipartFile.getOriginalFilename();	// 오리지널 파일명
+////    	String extension = originalFileName.substring(originalFileName.lastIndexOf(".")); 	// 파일 확장자
+////    	
+////    	String savedFileName = UUID.randomUUID() + extension;	// 저장될 파일명
+////    	File targetFile = new File(fileRoot + savedFileName);
+////    	
+////    	try {
+////    		// 파일 저장
+////    		InputStream fileStream = multipartFile.getInputStream();
+////    		FileUtils.copyInputStreamToFile(fileStream, targetFile);
+////    		
+////    		// 파일을 열기 위해여 common/getImg.do 호출 / 파라미터로 savedFileName 보냄
+////    		json.addProperty("url", "common/getImg.do?savedFileName=" + savedFileName);
+////    		json.addProperty("responseCode", "success");
+////		} catch (IOException e) {
+////			FileUtils.deleteQuietly(targetFile);
+////			json.addProperty("responseCode", "error");
+////			e.printStackTrace();
+////		}
+//    	
+////    	String jsonvalue = json.toString();
+//    	
+////    	return jsonvalue;
+//    	
+//    	return null;
+//    };
+    
+    // 서머노트 이미지 업로드 파일을 temp(임시) 폴더에 저장
+    @PostMapping(value = "/uploadSummernoteImageFile", produces = "application/json; charset=utf8")
     @ResponseBody
-    public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest req) throws IOException {
+    public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+    	
+    	// 저장 루트
+    	String realPath = "/Users/park/Downloads/realPath/"; // 임시로 설정해두었으니 수정 필요 예상
 
     	System.out.println("BoardController 진입\n" + "uploadSummernoteImageFile 실행");
     	System.out.println("multipartFile : " + multipartFile);
     	
-//    	JsonObject json = new JsonObject();
+    	// json 객체 생성
+    	JsonObject jsonObject = new JsonObject();
     	
-//    	String fileRoot = EgovProperties.getProperty("Globals.tempDir");
-//    	String originalFileName = multipartFile.getOriginalFilename();	// 오리지널 파일명
-//    	String extension = originalFileName.substring(originalFileName.lastIndexOf(".")); 	// 파일 확장자
-//    	
-//    	String savedFileName = UUID.randomUUID() + extension;	// 저장될 파일명
-//    	File targetFile = new File(fileRoot + savedFileName);
-//    	
-//    	try {
-//    		// 파일 저장
-//    		InputStream fileStream = multipartFile.getInputStream();
-//    		FileUtils.copyInputStreamToFile(fileStream, targetFile);
-//    		
-//    		// 파일을 열기 위해여 common/getImg.do 호출 / 파라미터로 savedFileName 보냄
-//    		json.addProperty("url", "common/getImg.do?savedFileName=" + savedFileName);
-//    		json.addProperty("responseCode", "success");
-//		} catch (IOException e) {
-//			FileUtils.deleteQuietly(targetFile);
-//			json.addProperty("responseCode", "error");
-//			e.printStackTrace();
-//		}
-    	
-//    	String jsonvalue = json.toString();
-    	
-//    	return jsonvalue;
+    	// 이미지 파일이 저장될 경로
+    	String contextRoot = realPath + "/upload_image/image/fileupload/29/";
     	
     	return null;
-    }
+    };
     
 }

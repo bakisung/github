@@ -69,7 +69,7 @@
             });
         });
 
-        // 서머노트
+        // 서머노트 (참조 : https://sirobako.co.kr/detail/29)
         $('.summernote').summernote({
             height: 400,
             lang: "ko-KR",
@@ -88,13 +88,46 @@
             fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋음체', '바탕체'],
             fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
             callbacks: {
-                onImageUpload: function(files) {
-                    for (var i = 0; i < files.length; i++) {
-                        uploadSummernoteImageFile(files[i], this);
-                    }
-                }
-            }
-        });
+                onImageUpload: function (files, editor, welEditable) {
+					// 파일 업로드
+					for (var i = files.length - 1; i >= 0; i--) {
+						var fileName = files[i].name;
+						
+						// 이미지 alt 속성 삽입을 위한 설정
+						var caption = prompt('이미지 설명 : ', fileName);
+						
+						if (caption == '') {
+							caption = '이미지';
+						}
+						
+						uploadSummernoteImageFile(files[i], this, caption);
+					}
+				}	// onImageUpload 종료
+            }	// callbacks 종료
+            
+            // 이미지 업로드 함수 ajax 활용
+            function uploadSummernoteImageFile(file, el, caption() {
+				data = new FormData();
+				data.append('file', file);
+				
+				$.ajax({
+					data: data,
+					type: 'POST',
+					url: 'uploadSummernoteImageFile',
+					contentType: false,
+					enctype: 'multipart/form-data',
+					processData: false,
+					success: function (data) {
+						$(el).summernote('editor.insertImage', data.url, 
+							function ($image){
+								$image.attr('alt', caption)	// 캡션 정보를 이미지의 alt 속성에 설정
+							}; 
+						);		
+					};	// success 종료
+				};	// ajax 종료
+			};	// function 종료
+            
+        });	// summernote 종료
 
         // 등록을 취소한다.
         $('#cancelBtn').on('click', function () {

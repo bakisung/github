@@ -54,6 +54,15 @@ dependencies {
 	// 프론트 변경사항이 있는 경우 서버 재실행	
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	
+	// content-type이 multipart/form-data인 HTTP 요청에 대한 처리는 spring-boot-starter-web에 포함되어 있다.
+	// .
+	
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	// JsonObject 객체를 사용하기 위함
+	implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+	
+	
+	
 }
 
 tasks.named('test') {
