@@ -1,11 +1,14 @@
 package com.example.demo.Controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -181,8 +184,32 @@ public class BoardController {
     	
     	// 이미지 파일이 저장될 경로
     	String contextRoot = realPath + "/upload_image/image/fileupload/29/";
+    	String fileRoot = contextRoot;
     	
-    	return null;
+    	// 업로드된 파일의 원본 파일명과 확장자를 추출한다.
+    	String originalFileName = multipartFile.getOriginalFilename();	// 파일명
+    	String extension = originalFileName.substring(originalFileName.lastIndexOf("."));	// 확장자
+    	
+    	// 새로운 파일명 생성 (고유한 식별자 + 확장자)
+    	String savedFileName = UUID.randomUUID() + extension;
+    	
+    	// 저장될 파일의 경로와 파일명을 나타내는 File 객체 생성
+    	File targetFile = new File(fileRoot + savedFileName);
+    	
+    	try {
+			// 업로드된 파일의 InputStream 얻기
+    		java.io.InputStream fileStream = multipartFile.getInputStream();
+    		
+    		// 업로드된 파일을 지정된 경로에 저장
+    		FileUtils.copyInputStreamToFile(fileStream, targetFile);
+    		
+		} catch (Exception e) {
+			
+		}
+    	
+    	// JSON 객체를 문자열로 변환하여 반환
+        String a = jsonObject.toString();
+        return a;
     };
     
 }
