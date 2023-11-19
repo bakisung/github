@@ -1,14 +1,13 @@
 package com.example.demo.Controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.tomcat.util.http.fileupload.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +26,6 @@ import com.example.demo.service.BoardService;
 import com.example.demo.vo.BoardVO;
 import com.google.gson.JsonObject;
 
-import oracle.jdbc.driver.json.tree.JsonpObjectImpl;
 
 @RestController
 @RequestMapping(value="/board")
@@ -201,6 +199,8 @@ public class BoardController {
     		java.io.InputStream fileStream = multipartFile.getInputStream();
     		
     		// 업로드된 파일을 지정된 경로에 저장
+    		// 2023.11.19 copyInputStreamToFile 메소드를 불러오지 못하는 이슈가 있었다.
+    		// 원인은 FileUtils 객체를 임포트 할때, commons가 아닌 tomcat으로 임포트한게 원인이었다.
     		FileUtils.copyInputStreamToFile(fileStream, targetFile);
     		
 		} catch (Exception e) {
@@ -209,6 +209,7 @@ public class BoardController {
     	
     	// JSON 객체를 문자열로 변환하여 반환
         String a = jsonObject.toString();
+        
         return a;
     };
     
