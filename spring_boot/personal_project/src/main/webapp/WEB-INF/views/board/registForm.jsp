@@ -105,27 +105,28 @@
 				}	// onImageUpload 종료
             }	// callbacks 종료
             
-            // 이미지 업로드 함수 ajax 활용
-            function uploadSummernoteImageFile(file, el, caption() {
-				data = new FormData();
-				data.append('file', file);
-				
-				$.ajax({
-					data: data,
-					type: 'POST',
-					url: 'uploadSummernoteImageFile',
-					contentType: false,
-					enctype: 'multipart/form-data',
-					processData: false,
-					success: function (data) {
-						$(el).summernote('editor.insertImage', data.url, 
-							function ($image){
-								$image.attr('alt', caption)	// 캡션 정보를 이미지의 alt 속성에 설정
-							}; 
-						);		
-					};	// success 종료
-				};	// ajax 종료
-			};	// function 종료
+	     	// 이미지 업로드 함수 ajax 활용
+	        function uploadSummernoteImageFile(file, el, caption) {
+	            var data = new FormData();
+	            data.append('file', file);
+	            
+	            $.ajax({
+	                data: data,
+	                type: 'POST',
+	                url: 'uploadSummernoteImageFile',
+	                contentType: false,
+	                enctype: 'multipart/form-data',
+	                processData: false,
+	                success: function (data) {
+	                    $(el).summernote('editor.insertImage', data.url, 
+	                        function ($image){
+	                            $image.attr('alt', caption); // 캡션 정보를 이미지의 alt 속성에 설정
+	                        }
+	                    );      
+	                } // success 종료
+	            }); // ajax 종료
+	        } // function 종료
+
             
         });	// summernote 종료
 
