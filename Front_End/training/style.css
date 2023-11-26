@@ -1,0 +1,23 @@
+h1.title {
+    background-color: black;
+    color: white;
+}
+
+div.question {
+    border: 3px solid blue;
+    padding: 1em;
+    margin: 3em;
+}
+
+div.questionStart {
+    border: 3px solid red;
+    padding: 1em;
+    margin: 3em;
+}
+
+/* 23.03.16 첫번째 문제 : 아이디 CSS 추가 */
+    .style {
+        background-color: black;
+        color: white;
+    }
+/*  */
