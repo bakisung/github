@@ -84,4 +84,27 @@ $(document).ready(function(){
         $(window).on('resize', changeColor);
     //
 
+    // 23.03.17 첫번째 문제
+        function verify() {
+            const inputNumber = $('input#inputNumber').val();   // 사용자가 입력한 숫자
+            const randumNumber = Math.ceil(Math.random() * 10); // 0 ~ 9를 올림한다.
+            
+            if (!isNaN(inputNumber) && inputNumber >= 0 && inputNumber < 11) {
+                $('p#verifyNumber').html('<br>당신이 입력한 숫자는 " ' + inputNumber + ' " 입니다.<br>제가 선택한 숫자는 " ' + randumNumber + ' " 입니다.');
+                if (inputNumber == randumNumber) {
+                    $('p#answer').html('정답입니다 !!')
+                } else {
+                    $('p#answer').html('오답입니다 ㅠㅠ')
+                }
+            } else if(isNaN(inputNumber)) {
+                $('p#verifyNumber').html('숫자만 입력하세요.');
+            } else if (inputNumber < 0 || inputNumber > 10) {
+                $('p#verifyNumber').html('허용 범위를 초과했습니다.');
+            }
+            $('input#inputNumber').val(''); // 기존에 입력한 숫자를 초기화
+        };
+        
+        $('button#verifyBtn').on('click', verify);
+    //
+
 });
