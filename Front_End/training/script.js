@@ -107,4 +107,12 @@ $(document).ready(function(){
         $('button#verifyBtn').on('click', verify);
     //
 
+    // 23.03.17 두번째 문제
+    function userName() {
+        const inputName = $('input#inputName').val();
+        $('h3#userName').html('환영합니다. "' + inputName + '" 님');
+    }
+
+    $('button#nameBtn').on('click', userName);
+
 });
