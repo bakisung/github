@@ -123,4 +123,10 @@ $(document).ready(function(){
     
     $('select#optionList').on('change', callback);
 
+    // 23.03.20 Drag 문제
+    function dragEvent(params) {
+        alert('이벤트 발생 !!');
+    }
+    $('div.box').on('dragover', dragEvent);
+
 });
