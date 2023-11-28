@@ -115,4 +115,12 @@ $(document).ready(function(){
 
     $('button#nameBtn').on('click', userName);
 
+    // 23.03.20 셀렉트 문제
+    function callback() {
+        const selectOption = $('select#optionList option:selected').val();
+        $('h3#selectOption').html('당신이 선택한 옵션은 "' + selectOption + '" 입니다.');
+    }
+    
+    $('select#optionList').on('change', callback);
+
 });
