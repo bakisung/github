@@ -22,7 +22,7 @@ div.questionStart {
     }
 /*  */
 
-/*  */
+/* 23.03.20 Drag 문제 */
     div.box {
         border: 1px solid black;
         width: 200px;
@@ -48,6 +48,18 @@ div.questionStart {
         padding: 1em;
         float: left;
         background-color: aqua;
+    }
+    
+    div.dragoverCSS {
+        background-color: orange;
+    }
+
+    div.dragleaveCSS {
+        background-color: red;
+    }
+
+    div.dropCSS {
+        background-color: blue;
     }
 
 /*  */

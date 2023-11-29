@@ -42,10 +42,10 @@ for (let i = 0; i < divList.length; i++) {
         e.preventDefault(); /* drop이벤트를 막고 있는 */
         divList[i].classList.add("hovered");
     });
-    divList[i].addEventListener("dragleave", (ㄷ) => {
+    divList[i].addEventListener("dragleave", (e) => {
         divList[i].classList.remove("hovered");
     });
-    divList[i].addEventListener("drop", (ㄷ) => {
+    divList[i].addEventListener("drop", (e) => {
         divList[i].appendChild(image);
     });
 };

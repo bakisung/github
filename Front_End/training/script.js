@@ -124,9 +124,26 @@ $(document).ready(function(){
     $('select#optionList').on('change', callback);
 
     // 23.03.20 Drag 문제
-    function dragEvent(params) {
-        alert('이벤트 발생 !!');
-    }
-    $('div.box').on('dragover', dragEvent);
+    const divList = $('div.box')
+
+    function dragoverEvent(e) {
+        e.preventDefault();
+        $(this).addClass('dragoverCSS');
+    };
+    
+    function dragleaveEvent(e) {
+        e.preventDefault();
+        $(this).removeClass('dragoverCSS');
+        $(this).addClass('dragleaveCSS');
+    };
+    
+    function dropEvent(e) {
+        e.preventDefault();
+        $(this).addClass('dropCSS');
+    };
+
+    $(divList).on('dragover', dragoverEvent);
+    $(divList).on('dragleave', dragleaveEvent);
+    $(divList).on('drop', dropEvent);
 
 });
