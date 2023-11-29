@@ -61,5 +61,13 @@ div.questionStart {
     div.dropCSS {
         background-color: blue;
     }
+    /*  */
+
+    /* 23.03.21 Counter 문제 */
+    button.countBtn {
+        padding: 10px;
+        font-size: 1.2em;
+    }
+    /*  */
 
 /*  */

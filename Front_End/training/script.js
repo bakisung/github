@@ -146,4 +146,43 @@ $(document).ready(function(){
     $(divList).on('dragleave', dragleaveEvent);
     $(divList).on('drop', dropEvent);
 
+    // 23.03.21 Count 문제
+    let number = $('h1#number').html();
+    console.log(number);
+    
+    function minusEvent(params) {
+        number --;
+        $('h1#number').html(number);
+        $('h1#number').css('color', number < 0 ? 'red' : (number === 0 ? 'black' : 'blue'));
+    };
+    
+    function resetEvent(params) {
+        number = 0;
+        
+        $('h1#number').html(number);
+        $('h1#number').css('color', number < 0 ? 'red' : (number === 0 ? 'black' : 'blue'));
+    };
+    
+    function plusEvent(params) {
+        number ++;
+        $('h1#number').html(number);
+        $('h1#number').css('color', number < 0 ? 'red' : (number === 0 ? 'black' : 'blue'));
+    };
+    
+    $('button#minus').on('click', minusEvent);
+    $('button#reset').on('click', resetEvent);
+    $('button#plus').on('click', plusEvent);
+
+    // 23.03.24 구구단 문제
+    let firstNumber;
+    let secondNumber;
+
+    for (let i = 2; i < 10; i++) {
+        $('div#multiplication').append('<table><tr><td>이건 테이블일세</td></tr></table>')
+        // for (let j = 1; j < 10; j++)
+
+        // };
+
+    };
+
 });
