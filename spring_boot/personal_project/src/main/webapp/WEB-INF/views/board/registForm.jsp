@@ -43,7 +43,8 @@
 
 <script>
     $(document).ready(function() {
-        // 게시글 등록
+    	
+    	// 게시글 등록
         $('#regist').on('submit', function (e) {
             e.preventDefault(); // 기본 제출 동작을 방지합니다.
 
@@ -68,102 +69,43 @@
                 }
             });
         });
-
-        // 서머노트 (참조 : https://sirobako.co.kr/detail/29)
-        $('.summernote').summernote({
-            height: 400,
-            lang: "ko-KR",
-            focus: true,
-            toolbar: [
-                ['fontname', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
-                ['color', ['forecolor', 'color']],
-                ['table', ['table']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']],
-                ['insert', ['picture', 'link', 'video']],
-                ['view', ['codeview', 'fullscreen', 'help']]
-            ],
-            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋음체', '바탕체'],
-            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
-            callbacks: {
-                onImageUpload: function (files, editor, welEditable) {
-					// 파일 업로드
-					for (var i = files.length - 1; i >= 0; i--) {
-						var fileName = files[i].name;
-						
-						// 이미지 alt 속성 삽입을 위한 설정
-						var caption = prompt('이미지 설명 : ', fileName);
-						
-						if (caption == '') {
-							caption = '이미지';
-						}
-						
-						uploadSummernoteImageFile(files[i], this, caption);
-					}
-				}	// onImageUpload 종료
-            }	// callbacks 종료
-            
-	     	// 이미지 업로드 함수 ajax 활용
-	        function uploadSummernoteImageFile(file, el, caption) {
-	            var data = new FormData();
-	            data.append('file', file);
-	            
-	            $.ajax({
-	                data: data,
-	                type: 'POST',
-	                url: 'uploadSummernoteImageFile',
-	                contentType: false,
-	                enctype: 'multipart/form-data',
-	                processData: false,
-	                success: function (data) {
-	                    $(el).summernote('editor.insertImage', data.url, 
-	                        function ($image){
-	                            $image.attr('alt', caption); // 캡션 정보를 이미지의 alt 속성에 설정
-	                        }
-	                    );      
-	                } // success 종료
-	            }); // ajax 종료
-	        } // function 종료
-
-            
-        });	// summernote 종료
-
-        // 등록을 취소한다.
-        $('#cancelBtn').on('click', function () {
-            history.go(-1);
-        })
-
-        // 파일 추가 버튼
-        $('#addFileBtn').on('click', function() {
-            if ($('input[name="uploadFile"]').length >= 5) {
-                alert("파일 추가는 5개까지만 가능합니다");
-                return;
-            }
-
-            var input = $('<input>').attr({
-                "type": "file",
-                "name": "uploadFile"
-            }).css("display", "inline");
-
-            var div = $('<div>').addClass("inputRow");
-            div.append(input).append("<button style='border:0; outline:0;' class='badge bg-red' type='button' class='cancelBtn'>X</button>")
-            div.appendTo('.fileInput');
-        });
-
-        // 파일 삭제 버튼
-        $('div.fileInput').on('click', '.cancelBtn', function(){
-            $(this).parent('div.inputRow').remove();
-        });
-
-        $('.fileInput').on('change', 'input[type="file"]', function() {
-            if (this.files[0].size > 1024*1024*40) {
-                alert("파일 용량이 40MB를 초과하였습니다.");
-                this.value = "";
-                $(this.focus());
-                return;
-            }
-        });
+   		
+    	// 서머노트
+	    $('.summernote').summernote({
+	        // 에디터 높이
+	        height: 400,
+	        // 에디터 한글 설정
+	        lang: "ko-KR",
+	        // 에디터에 커서 이동 (input창의 autofocus라고 생각)
+	        focus : true,
+	        toolbar: [
+	            // 글꼴 설정
+	            ['fontname', ['fontname']],
+	            // 글자 크기 설정
+	            ['fontsize', ['fontsize']],
+	            // 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
+	            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+	            // 글자색
+	            ['color', ['forecolor','color']],
+	            // 표만들기
+	            ['table', ['table']],
+	            // 글머리 기호, 번호매기기, 문단정렬
+	            ['para', ['ul', 'ol', 'paragraph']],
+	            // 줄간격
+	            ['height', ['height']],
+	            // 코드보기, 확대해서보기, 도움말
+	            ['view', ['codeview','fullscreen', 'help']]
+	        ],
+	        // 추가한 글꼴
+	        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
+	        // 추가한 폰트사이즈
+	        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+	    });
+    	
+	 	// 수정을 취소한다.
+    	$('#canselBtn').on('click', function () {
+    		history.go(-1);
+		})
+    
     });
 </script>
