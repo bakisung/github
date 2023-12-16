@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
 import java.io.File;
 import java.sql.SQLException;
